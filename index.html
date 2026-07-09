@@ -796,7 +796,7 @@
         </div>
         <label class="quiz-check">
           <input type="checkbox" id="qDsgvo" />
-          <span>Ich stimme der Verarbeitung meiner Daten gemäß Datenschutzerklärung zu. *</span>
+          <span>Ich stimme der Verarbeitung meiner Daten gemäß <a href="datenschutz.html" target="_blank" rel="noopener" style="color:#0f7bc8">Datenschutzerklärung</a> zu. *</span>
         </label>
       </div>
     </div>
@@ -1284,8 +1284,8 @@
         <ul>
           <li><a href="mailto:info@thera-recruiting.de">info@thera-recruiting.de</a></li>
           <li><a href="#quiz-anker" style="color:#0ea5e9;font-weight:600;">→ Zur kostenlosen Anfrage</a></li>
-          <li><a href="#" id="openImpressum">Impressum</a></li>
-          <li><a href="#" id="openDatenschutz">Datenschutz</a></li>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
         </ul>
       </div>
     </div>
@@ -1582,8 +1582,6 @@
   (function(){
     function openModal(id){ document.getElementById(id).classList.add('open'); document.documentElement.style.overflow='hidden'; }
     function closeAll(){ document.querySelectorAll('.lmodal-bg').forEach(function(m){ m.classList.remove('open'); }); document.documentElement.style.overflow=''; }
-    document.getElementById('openImpressum').addEventListener('click', function(e){ e.preventDefault(); openModal('modalImpressum'); });
-    document.getElementById('openDatenschutz').addEventListener('click', function(e){ e.preventDefault(); openModal('modalDatenschutz'); });
     document.querySelectorAll('.lmodal-close').forEach(function(btn){ btn.addEventListener('click', closeAll); });
     document.querySelectorAll('.lmodal-bg').forEach(function(bg){ bg.addEventListener('click', function(e){ if(e.target===bg) closeAll(); }); });
     document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeAll(); });
