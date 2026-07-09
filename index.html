@@ -411,22 +411,29 @@
     .quiz-thanks h3 { font-size:20px; font-weight:800; color:#fff; margin-bottom:8px; }
     .quiz-thanks p { font-size:15px; color:rgba(255,255,255,.7); }
     .quiz-thanks strong { color:#fff; }
-    /* LEGAL MODALS */
-    .lmodal-bg { position:fixed; inset:0; z-index:2000; background:rgba(8,20,40,.72); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; padding:16px; opacity:0; pointer-events:none; transition:opacity .25s; }
-    .lmodal-bg.open { opacity:1; pointer-events:all; }
-    .lmodal { background:#fff; border-radius:16px; max-width:720px; width:100%; max-height:88vh; overflow-y:auto; position:relative; padding:30px 20px; box-shadow:0 32px 80px rgba(0,0,0,.25); animation:modalIn .3s cubic-bezier(.34,1.56,.64,1) both; }
-    @keyframes modalIn { from{opacity:0;transform:scale(.94) translateY(16px)} to{opacity:1;transform:none} }
-    .lmodal-close { position:absolute; top:14px; right:14px; width:40px; height:40px; border-radius:8px; cursor:pointer; background:#f4f7fb; border:none; font-size:18px; color:#5c6880; display:flex; align-items:center; justify-content:center; transition:background .2s,color .2s; }
-    .lmodal-close:hover { background:#e8edf5; color:#0d1f3c; }
-    .lmodal h2 { font-size:22px; font-weight:800; color:#0d1f3c; margin-bottom:6px; letter-spacing:-.02em; }
-    .lmodal .lm-sub { font-size:13px; color:#94a3b8; margin-bottom:22px; }
-    .lmodal h3 { font-size:15px; font-weight:700; color:#0d2b4e; margin:20px 0 8px; }
-    .lmodal p, .lmodal li { font-size:14px; color:#5c6880; line-height:1.75; }
-    .lmodal ul { padding-left:20px; display:flex; flex-direction:column; gap:4px; }
-    .lmodal a { color:#0f7bc8; }
-    .lmodal hr { border:none; border-top:1px solid #edf0f7; margin:20px 0; }
 
     /* ======= QUALITY REFINEMENTS ======= */
+
+    /* "Die gute Nachricht" — last problem card gets a positive look */
+    .prob-card:last-child { border-left-color: var(--teal); background: linear-gradient(135deg, rgba(15,123,200,.04) 0%, #fff 100%); }
+    .prob-card:last-child h3 { color: var(--teal); }
+
+    /* Photo badge pulse dot */
+    @keyframes blink { 0%,100% { box-shadow:0 0 0 0 rgba(15,123,200,.55); } 60% { box-shadow:0 0 0 6px rgba(15,123,200,0); } }
+    .photo-badge::before { animation: blink 2.6s ease-in-out infinite; }
+
+    /* "0 €" stat — gold gradient like the others */
+    .stat-n.gold { background: linear-gradient(135deg, #f5c542 0%, #d4760a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+    /* Hero outline button — more presence */
+    .hero .btn-o { border-color: rgba(255,255,255,.55); }
+    .hero .btn-o:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.75); }
+
+    /* faq-sec: subtle top separator so it doesn't merge with about-sec */
+    .faq-sec { border-top: 1px solid var(--gb2); }
+
+    /* stat-l: slightly larger for readability */
+    .stat-l { font-size: 13px; }
 
     /* Hero: richer, deeper gradient */
     .hero { background: linear-gradient(140deg, rgba(7,16,42,.97) 0%, rgba(13,43,78,.88) 48%, rgba(6,82,160,.66) 100%), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&q=85&fit=crop&crop=center') center/cover no-repeat; }
@@ -984,8 +991,8 @@
       <div class="usp-card r" style="transition-delay:.22s">
         <div class="usp-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
         <div>
-          <h4>Komplett Done4You</h4>
-          <p>Wir übernehmen Anzeigen, Sichtung, Vorqualifizierung und Erstgespräche. Ihr Aufwand: max. 1h pro Woche.</p>
+          <h4>Wir übernehmen alles</h4>
+          <p>Anzeigen, Sichtung, Vorqualifizierung und Erstgespräche — Ihr Aufwand liegt bei max. 1 Stunde pro Woche.</p>
         </div>
       </div>
       <div class="usp-card r" style="transition-delay:.28s">
@@ -1027,7 +1034,7 @@
         <div class="stat-l">bis zur Vertragsunterzeichnung</div>
       </div>
       <div class="stat-card r" style="transition-delay:.23s">
-        <div class="stat-n" style="color:#fff">0 €</div>
+        <div class="stat-n gold">0 €</div>
         <div class="stat-l">Risiko — Sie zahlen nur bei Erfolg</div>
       </div>
     </div>
@@ -1326,26 +1333,6 @@
   /* Fallback: show all hidden elements after 1.5s in case Observer fails */
   setTimeout(() => { document.querySelectorAll('.r:not(.vis)').forEach(el => el.classList.add('vis')); }, 1500);
 
-  /* Counters */
-  function animCnt(el) {
-    const to = +el.dataset.to, dur = 1300, s = performance.now();
-    const t = now => {
-      const p = Math.min((now - s) / dur, 1), e = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(to * e);
-      if (p < 1) requestAnimationFrame(t);
-    };
-    requestAnimationFrame(t);
-  }
-  const cio = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.querySelectorAll('.cnt').forEach(animCnt);
-        cio.unobserve(e.target);
-      }
-    });
-  }, { threshold: .25 });
-  document.querySelectorAll('.stats-grid').forEach(el => cio.observe(el));
-
   /* FAQ accordion */
   document.querySelectorAll('.faq-q').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -1501,92 +1488,7 @@
 })();
 </script>
 
-<!-- ════ IMPRESSUM MODAL ════ -->
-<div class="lmodal-bg" id="modalImpressum" role="dialog" aria-modal="true" aria-labelledby="imp-h">
-  <div class="lmodal">
-    <button class="lmodal-close" aria-label="Schließen">✕</button>
-    <h2 id="imp-h">Impressum</h2>
-    <p class="lm-sub">Angaben gemäß § 5 TMG</p>
 
-    <h3>Verantwortlich</h3>
-    <p>Marc Richter<br>Thera Recruiting<br>Dresden, Deutschland</p>
-
-    <h3>Kontakt</h3>
-    <p>
-      Telefon: <a href="tel:015510657637">01551 065 7637</a><br>
-      E-Mail: <a href="mailto:info@thera-recruiting.de">info@thera-recruiting.de</a>
-    </p>
-
-    <hr>
-
-    <h3>Berufsbezeichnung und berufsrechtliche Regelungen</h3>
-    <p>Berufsbezeichnung: Physiotherapeut (verliehen in der Bundesrepublik Deutschland).<br>
-    Thera Recruiting ist ein auf Therapieberufe spezialisierter Recruiting-Dienstleister. Das Unternehmen vermittelt Fachkräfte in den Bereichen Physiotherapie, Ergotherapie und Logopädie.</p>
-
-    <hr>
-
-    <h3>Streitschlichtung</h3>
-    <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>.<br>
-    Unsere E-Mail-Adresse finden Sie oben im Impressum. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
-
-    <hr>
-
-    <h3>Haftung für Inhalte</h3>
-    <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.</p>
-  </div>
-</div>
-
-<!-- ════ DATENSCHUTZ MODAL ════ -->
-<div class="lmodal-bg" id="modalDatenschutz" role="dialog" aria-modal="true" aria-labelledby="ds-h">
-  <div class="lmodal">
-    <button class="lmodal-close" aria-label="Schließen">✕</button>
-    <h2 id="ds-h">Datenschutzerklärung</h2>
-    <p class="lm-sub">Zuletzt aktualisiert: Mai 2025</p>
-
-    <h3>1. Verantwortlicher</h3>
-    <p>Marc Richter, Thera Recruiting, Dresden<br>
-    E-Mail: <a href="mailto:info@thera-recruiting.de">info@thera-recruiting.de</a><br>
-    Telefon: <a href="tel:015510657637">01551 065 7637</a></p>
-
-    <h3>2. Erhebung und Verarbeitung personenbezogener Daten</h3>
-    <p>Wir erheben personenbezogene Daten nur, wenn Sie uns diese im Rahmen des Kontaktformulars (Quiz) freiwillig mitteilen. Dies umfasst:</p>
-    <ul>
-      <li>Name</li>
-      <li>E-Mail-Adresse</li>
-      <li>Telefonnummer (optional)</li>
-      <li>Angaben zu Ihrem Personalbedarf</li>
-    </ul>
-
-    <h3>3. Zweck der Datenverarbeitung</h3>
-    <p>Die von Ihnen übermittelten Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage und zur Kontaktaufnahme durch Thera Recruiting verwendet. Eine Weitergabe an Dritte erfolgt nicht, sofern dies nicht zur Vertragserfüllung erforderlich ist.</p>
-
-    <h3>4. Rechtsgrundlage</h3>
-    <p>Die Verarbeitung Ihrer Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO (Einwilligung) sowie Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung bzw. vorvertragliche Maßnahmen).</p>
-
-    <h3>5. Speicherdauer</h3>
-    <p>Ihre Daten werden gespeichert, solange es für die Bearbeitung Ihrer Anfrage notwendig ist, oder bis Sie der Speicherung widersprechen. Gesetzliche Aufbewahrungsfristen bleiben unberührt.</p>
-
-    <h3>6. Ihre Rechte</h3>
-    <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer personenbezogenen Daten. Darüber hinaus haben Sie ein Widerspruchsrecht sowie das Recht auf Datenübertragbarkeit. Zur Ausübung Ihrer Rechte wenden Sie sich bitte an: <a href="mailto:info@thera-recruiting.de">info@thera-recruiting.de</a></p>
-
-    <h3>7. Hosting &amp; Cookies</h3>
-    <p>Diese Website wird statisch bereitgestellt. Es werden keine Tracking-Cookies gesetzt. Externe Dienste (Google Fonts, Unsplash/Pexels CDN) können im Rahmen der Seitenauslieferung technisch notwendige Verbindungen herstellen.</p>
-
-    <h3>8. Beschwerderecht</h3>
-    <p>Sie haben das Recht, sich bei der zuständigen Datenschutzaufsichtsbehörde zu beschweren. In Sachsen ist dies der Sächsische Datenschutz- und Transparenzbeauftragte, <a href="https://www.saechsdsb.de" target="_blank" rel="noopener">www.saechsdsb.de</a>.</p>
-  </div>
-</div>
-
-<script>
-  // Legal modals
-  (function(){
-    function openModal(id){ document.getElementById(id).classList.add('open'); document.documentElement.style.overflow='hidden'; }
-    function closeAll(){ document.querySelectorAll('.lmodal-bg').forEach(function(m){ m.classList.remove('open'); }); document.documentElement.style.overflow=''; }
-    document.querySelectorAll('.lmodal-close').forEach(function(btn){ btn.addEventListener('click', closeAll); });
-    document.querySelectorAll('.lmodal-bg').forEach(function(bg){ bg.addEventListener('click', function(e){ if(e.target===bg) closeAll(); }); });
-    document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeAll(); });
-  })();
-</script>
 </div><!-- /.page-wrap -->
 </body>
 </html>
