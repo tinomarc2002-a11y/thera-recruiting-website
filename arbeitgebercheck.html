@@ -1,0 +1,2071 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recruiting-Check 2026 für Therapie-Praxen | Thera-Recruiting</title>
+<meta name="description" content="Kostenloser Recruiting-Check 2026 für Physio-, Ergo- und Logopädie-Praxen. In 3 Minuten ehrliche Auswertung entlang des Recruiting-Funnels: Reichweite, Arbeitgebermarke, Bewerbungsprozess.">
+<meta name="theme-color" content="#1B5B8B">
+<meta name="robots" content="index,follow">
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="favicon.svg">
+
+<!-- Open Graph / Social Sharing -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Thera-Recruiting">
+<meta property="og:title" content="Recruiting-Check 2026 für Therapie-Praxen">
+<meta property="og:description" content="In 3 Minuten ehrliche Auswertung entlang des Recruiting-Funnels: Reichweite, Arbeitgebermarke, Bewerbungsprozess.">
+<meta property="og:image" content="logo.svg">
+
+<!-- Selbst gehostete Schriften (DSGVO-konform, keine Verbindung zu Google) -->
+<link rel="preload" href="fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/onest.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts.css">
+
+<style>
+/* ============== ROOT TOKENS ============== */
+:root {
+  --blue-deep: #1B5B8B;
+  --blue-mid: #2C7BB6;
+  --blue-soft: #E8F1F8;
+  --blue-line: #C9DCE9;
+
+  --orange: #F5A623;
+  --orange-dark: #D88A0F;
+  --orange-soft: #FEF2DE;
+
+  --cream: #FAF7F2;
+  --paper: #FFFFFF;
+  --ink: #14223A;
+  --ink-soft: #3B4A60;
+  --muted: #7A8499;
+  --line: #E8E2D6;
+
+  /* Tier colors */
+  --tier-red: #C03434;
+  --tier-orange: #E89414;
+  --tier-yellow: #C9A21F;
+  --tier-green: #1F7A2F;
+
+  --shadow-sm: 0 1px 2px rgba(20,34,58,0.04), 0 1px 3px rgba(20,34,58,0.03);
+  --shadow-md: 0 4px 12px rgba(20,34,58,0.06), 0 2px 4px rgba(20,34,58,0.04);
+  --shadow-lg: 0 20px 40px -10px rgba(27,91,139,0.18), 0 8px 16px -8px rgba(20,34,58,0.08);
+  --shadow-orange: 0 8px 24px -8px rgba(245,166,35,0.45);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Onest', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ============== RESET ============== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--cream);
+  font-feature-settings: "ss01", "cv02";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img { max-width: 100%; display: block; }
+button { font: inherit; border: none; background: none; cursor: pointer; color: inherit; }
+input { font: inherit; }
+
+/* ============== LAYOUT ============== */
+.container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+/* ============== HEADER ============== */
+.site-header {
+  padding: 24px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 247, 242, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(232, 226, 214, 0.5);
+}
+.site-header .container { display: flex; justify-content: space-between; align-items: center; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand img { height: 42px; width: auto; }
+.header-meta { font-size: 14px; color: var(--muted); font-weight: 500; }
+.header-meta strong { color: var(--blue-deep); font-weight: 600; }
+@media (max-width: 640px) {
+  .header-meta { display: none; }
+  .brand img { height: 36px; }
+}
+
+/* ============== HERO ============== */
+.hero {
+  padding: 80px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(245,166,35,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -150px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(27,91,139,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-inner { position: relative; z-index: 1; max-width: 820px; }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-sm);
+}
+.eyebrow .dot {
+  width: 7px;
+  height: 7px;
+  background: var(--orange);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 4px rgba(245,166,35,0.15);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(245,166,35,0.15); }
+  50% { box-shadow: 0 0 0 7px rgba(245,166,35,0.05); }
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(38px, 5.5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+.hero h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--blue-deep);
+}
+.hero h1 .highlight {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+.hero h1 .highlight::after {
+  content: '';
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  bottom: 4px;
+  height: 14px;
+  background: var(--orange);
+  opacity: 0.35;
+  z-index: -1;
+  border-radius: 2px;
+}
+
+.hero p.lead {
+  font-size: clamp(17px, 2vw, 20px);
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin-bottom: 36px;
+  max-width: 620px;
+}
+
+.cta-row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--orange);
+  color: white;
+  padding: 18px 32px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 17px;
+  box-shadow: var(--shadow-orange);
+  transition: all 0.2s ease;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background: var(--orange-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -8px rgba(245,166,35,0.55);
+}
+.btn-primary:active { transform: translateY(0); }
+.btn-primary svg { transition: transform 0.2s ease; }
+.btn-primary:hover svg { transform: translateX(3px); }
+
+.trust-row {
+  display: flex;
+  gap: 28px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+.trust-item .icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--blue-soft);
+  color: var(--blue-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ============== QUIZ SECTION ============== */
+.quiz-section {
+  padding: 80px 0 100px;
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+}
+.quiz-section::before {
+  content: '';
+  position: absolute;
+  top: 80px;
+  left: -140px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(44,123,182,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.quiz-section::after {
+  content: '';
+  position: absolute;
+  bottom: 120px;
+  right: -140px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(245,166,35,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.quiz-section .container { position: relative; z-index: 1; }
+
+.progress-wrap {
+  margin-bottom: 32px;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.progress-meta .step { color: var(--blue-deep); }
+.progress-meta .step strong { font-family: var(--font-display); font-weight: 600; font-size: 16px; }
+.progress-meta .percent { color: var(--muted); }
+
+.progress-bar {
+  height: 6px;
+  background: var(--blue-soft);
+  border-radius: 100px;
+  overflow: hidden;
+  position: relative;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--blue-mid) 0%, var(--orange) 100%);
+  border-radius: 100px;
+  width: 0%;
+  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.section-label {
+  max-width: 760px;
+  margin: 0 auto 26px;
+  display: flex;
+  justify-content: center;
+}
+.section-label.hidden { display: none; }
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  animation: badgePop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.section-badge .emoji { font-size: 15px; line-height: 1; }
+@keyframes badgePop {
+  0% { opacity: 0; transform: scale(0.85) translateY(4px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.question-card {
+  background: var(--paper);
+  max-width: 760px;
+  margin: 0 auto;
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(38px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-38px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.question-card h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(24px, 3.2vw, 34px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.question-hint {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 36px;
+}
+
+.options-list { display: flex; flex-direction: column; gap: 12px; }
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  background: var(--paper);
+  border: 2px solid var(--line);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-size: 16.5px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: transform 0.14s cubic-bezier(0.34, 1.4, 0.64, 1), border-color 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
+  position: relative;
+}
+.option:hover {
+  border-color: var(--blue-mid);
+  background: rgba(232, 241, 248, 0.45);
+  transform: translateX(3px);
+}
+.option:active { transform: scale(0.985); }
+.option.selected {
+  border-color: var(--blue-deep);
+  background: var(--blue-soft);
+  color: var(--blue-deep);
+  box-shadow: 0 6px 18px -6px rgba(27,91,139,0.32);
+}
+
+.opt-label { flex: 1; line-height: 1.35; }
+
+.option .check {
+  width: 26px;
+  height: 26px;
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.18s ease;
+  background: var(--paper);
+}
+.option[data-type="multi"] .check { border-radius: 7px; }
+.option.selected .check {
+  border-color: var(--blue-deep);
+  background: var(--blue-deep);
+  animation: checkPop 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes checkPop {
+  0% { transform: scale(0.55); }
+  60% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+.option.selected .check::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+}
+.option[data-type="multi"].selected .check::after {
+  width: 14px;
+  height: 14px;
+  background: none;
+  border-radius: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='3,7.5 6,10.5 11,4'/%3E%3C/svg%3E");
+}
+
+.quiz-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  gap: 16px;
+}
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px 16px;
+  border-radius: 100px;
+  transition: all 0.2s ease;
+}
+.btn-back:hover { color: var(--blue-deep); background: var(--blue-soft); }
+.btn-back:disabled { opacity: 0.3; cursor: not-allowed; }
+.btn-back:disabled:hover { background: none; color: var(--muted); }
+
+.btn-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--blue-deep);
+  color: white;
+  padding: 16px 28px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+.btn-next:hover { background: var(--blue-mid); transform: translateX(2px); }
+.btn-next:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-next:disabled:hover { background: var(--blue-deep); transform: none; }
+.btn-next svg { transition: transform 0.2s ease; }
+.btn-next:hover:not(:disabled) svg { transform: translateX(3px); }
+
+/* ============== RESULT ============== */
+.result-section {
+  padding: 80px 0 100px;
+  background: linear-gradient(180deg, var(--paper) 0%, var(--cream) 100%);
+  display: none;
+}
+.result-section.active { display: block; animation: fadeIn 0.6s ease; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.result-header { text-align: center; max-width: 720px; margin: 0 auto 48px; }
+.result-eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--orange-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 16px;
+}
+.result-header h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(32px, 4.5vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.result-header p {
+  color: var(--ink-soft);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* SCORE CARD */
+.score-card {
+  background: var(--paper);
+  border-radius: var(--radius-lg);
+  padding: 56px 40px;
+  max-width: 820px;
+  margin: 0 auto 28px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--blue-line);
+  position: relative;
+  overflow: hidden;
+}
+.score-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--blue-deep) 0%, var(--blue-mid) 50%, var(--orange) 100%);
+}
+
+.score-display {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.score-gauge { position: relative; width: 200px; height: 200px; flex-shrink: 0; }
+.score-gauge svg { transform: rotate(-90deg); width: 100%; height: 100%; }
+.gauge-track { fill: none; stroke: var(--blue-soft); stroke-width: 14; }
+.gauge-fill {
+  fill: none;
+  stroke-width: 14;
+  stroke-linecap: round;
+  stroke-dasharray: 502.65;
+  stroke-dashoffset: 502.65;
+  transition: stroke-dashoffset 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.score-number {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.score-number .num {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.score-number .max { font-size: 14px; color: var(--muted); font-weight: 500; margin-top: 4px; }
+
+.score-meta { flex: 1; min-width: 240px; }
+.score-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px 8px 14px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.score-badge .emoji { width: 9px; height: 9px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+.score-badge.kritisch { background: #FEEBEB; color: var(--tier-red); }
+.score-badge.durchschnitt { background: var(--orange-soft); color: var(--orange-dark); }
+.score-badge.attraktiv { background: #FAF1D6; color: var(--tier-yellow); }
+.score-badge.top { background: #E8F5E8; color: var(--tier-green); }
+
+.score-meta h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+.score-meta p { color: var(--ink-soft); line-height: 1.55; font-size: 16px; }
+
+@media (max-width: 600px) {
+  .score-card { padding: 40px 24px; }
+  .score-display { flex-direction: column; gap: 32px; text-align: center; }
+  .score-meta { text-align: center; }
+}
+
+/* POST-SCORE CTA (sprung zum Formular) */
+.post-score-cta {
+  max-width: 820px;
+  margin: 0 auto 32px;
+  background: linear-gradient(135deg, #1B5B8B 0%, #2C7BB6 100%);
+  border-radius: var(--radius-lg);
+  padding: 28px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  box-shadow: var(--shadow-lg);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.post-score-cta::after {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -40px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(245,166,35,0.3) 0%, transparent 70%);
+  pointer-events: none;
+}
+.post-score-cta-text {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-width: 240px;
+}
+.post-score-cta-text .label {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+  color: white;
+}
+.post-score-cta-text .sub {
+  font-size: 14px;
+  color: rgba(255,255,255,0.78);
+}
+.post-score-cta .btn-primary {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  font-size: 16px;
+  padding: 16px 26px;
+}
+@media (max-width: 640px) {
+  .post-score-cta {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    padding: 28px 24px;
+  }
+  .post-score-cta .btn-primary { justify-content: center; }
+}
+
+/* CATEGORY BREAKDOWN */
+.breakdown {
+  background: var(--paper);
+  border-radius: var(--radius-lg);
+  padding: 32px 40px;
+  max-width: 820px;
+  margin: 0 auto 28px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--line);
+}
+.breakdown-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  margin-bottom: 24px;
+  color: var(--ink);
+}
+.breakdown-list { display: grid; gap: 20px; }
+.breakdown-row { display: grid; gap: 8px; }
+.breakdown-row-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 15px;
+}
+.breakdown-row-head .label { font-weight: 600; color: var(--ink); }
+.breakdown-row-head .value { color: var(--muted); font-weight: 500; font-variant-numeric: tabular-nums; }
+.breakdown-row-head .value strong { color: var(--blue-deep); font-weight: 700; }
+.breakdown-bar {
+  height: 8px;
+  background: var(--blue-soft);
+  border-radius: 100px;
+  overflow: hidden;
+  position: relative;
+}
+.breakdown-bar-fill {
+  height: 100%;
+  border-radius: 100px;
+  width: 0%;
+  transition: width 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
+}
+@media (max-width: 600px) { .breakdown { padding: 28px 24px; } }
+
+/* GOLDFRAGE REALITY CHECK */
+.goldfrage {
+  background: linear-gradient(135deg, #FFF8E8 0%, #FEF2DE 100%);
+  border: 1px solid #F5D88A;
+  border-left: 4px solid var(--orange);
+  border-radius: var(--radius-md);
+  padding: 28px 32px;
+  max-width: 820px;
+  margin: 0 auto 48px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.goldfrage-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  background: var(--orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+}
+.goldfrage-text { flex: 1; }
+.goldfrage-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--orange-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 4px;
+}
+.goldfrage-text h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 19px;
+  color: var(--ink);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+.goldfrage-text p { color: var(--ink-soft); font-size: 15px; line-height: 1.55; }
+@media (max-width: 600px) { .goldfrage { padding: 24px; flex-direction: column; } }
+
+/* INSIGHTS */
+.insights {
+  max-width: 820px;
+  margin: 0 auto 56px;
+}
+.insights-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.insights-title .num-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--orange);
+  color: white;
+  border-radius: 50%;
+  font-size: 14px;
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+.insight-list { display: flex; flex-direction: column; gap: 12px; }
+.insight {
+  display: flex;
+  gap: 20px;
+  padding: 24px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--orange);
+}
+.insight-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: var(--orange-soft);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--orange-dark);
+  font-size: 18px;
+}
+.insight h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--ink);
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+.insight p { color: var(--ink-soft); font-size: 15px; line-height: 1.55; }
+
+/* ============== BOOKING FORM ============== */
+.booking {
+  background: var(--blue-deep);
+  border-radius: var(--radius-lg);
+  padding: 56px 48px;
+  max-width: 820px;
+  margin: 0 auto;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.booking::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(245,166,35,0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+.booking::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(44,123,182,0.4) 0%, transparent 70%);
+  pointer-events: none;
+}
+.booking-inner { position: relative; z-index: 1; }
+
+.booking-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 20px;
+}
+
+.booking h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(28px, 4vw, 38px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.booking h3 em { font-style: italic; color: var(--orange); }
+.booking > .booking-inner > p.lead-text {
+  font-size: 17px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 32px;
+  max-width: 540px;
+}
+
+.booking-list { display: grid; gap: 12px; margin-bottom: 36px; }
+.booking-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: rgba(255,255,255,0.9);
+}
+.booking-item .check-icon {
+  width: 24px;
+  height: 24px;
+  background: var(--orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.booking-form { display: grid; gap: 14px; margin-bottom: 24px; }
+@media (min-width: 640px) {
+  .booking-form { grid-template-columns: 1fr 1fr; }
+  .booking-form .field-full { grid-column: 1 / -1; }
+}
+
+.field { position: relative; }
+.field input {
+  width: 100%;
+  padding: 16px 18px;
+  background: rgba(255,255,255,0.96);
+  border: 1.5px solid rgba(255,255,255,0.4);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  font-size: 16px;
+  transition: all 0.2s ease;
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+.field input::placeholder { color: var(--muted); font-weight: 400; }
+.field input:focus {
+  outline: none;
+  border-color: var(--orange);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(245,166,35,0.35);
+}
+
+.booking-submit {
+  width: 100%;
+  background: var(--orange);
+  color: white;
+  padding: 20px 32px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 17px;
+  box-shadow: 0 8px 24px -6px rgba(0,0,0,0.3);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.booking-submit:hover { background: var(--orange-dark); transform: translateY(-2px); }
+.booking-submit:active { transform: translateY(0); }
+
+.booking-meta {
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  margin-top: 20px;
+}
+.booking-meta a {
+  color: var(--orange);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+.booking-meta a:hover { color: #FFC75A; }
+
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 40px 20px;
+}
+.form-success.active { display: block; }
+.form-success .success-icon {
+  width: 64px;
+  height: 64px;
+  background: var(--orange);
+  border-radius: 50%;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-success h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 28px;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+}
+.form-success p { color: rgba(255,255,255,0.8); font-size: 16px; max-width: 440px; margin: 0 auto; }
+
+@media (max-width: 640px) {
+  .booking { padding: 40px 24px; }
+}
+
+/* ============== FOOTER ============== */
+.site-footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  color: var(--muted);
+}
+.site-footer .container { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+.site-footer a { color: var(--muted); text-decoration: none; margin-left: 20px; transition: color 0.2s ease; }
+.site-footer a:hover { color: var(--blue-deep); }
+
+/* ============== MOBILE OPTIMIZATIONS ============== */
+@media (max-width: 768px) {
+  body { font-size: 16px; }
+  .container { padding: 0 18px; }
+
+  /* Header */
+  .site-header { padding: 18px 0; }
+
+  /* Hero */
+  .hero { padding: 48px 0 40px; }
+  .hero h1 { font-size: clamp(30px, 8vw, 40px); line-height: 1.1; margin-bottom: 18px; }
+  .hero h1 .highlight { white-space: normal; }
+  .hero h1 .highlight::after { bottom: 2px; height: 10px; }
+  .hero p.lead { font-size: 16px; margin-bottom: 28px; }
+  .eyebrow { font-size: 12px; padding: 6px 14px; margin-bottom: 20px; }
+  .btn-primary { padding: 16px 24px; font-size: 15px; width: 100%; justify-content: center; }
+  .cta-row { width: 100%; }
+  .trust-row { gap: 16px; margin-top: 28px; }
+  .trust-item { font-size: 13px; }
+
+  /* Quiz */
+  .quiz-section { padding: 48px 0 64px; }
+  .progress-wrap { margin-bottom: 24px; }
+  .section-label { font-size: 11px; letter-spacing: 0.1em; margin-bottom: 18px; }
+  .question-card h2 { font-size: 22px; line-height: 1.25; }
+  .question-hint { margin-bottom: 24px; }
+  .option { padding: 12px 14px; font-size: 15.5px; gap: 12px; }
+  .opt-emoji { width: 40px; height: 40px; font-size: 20px; border-radius: 10px; }
+  .option .check { width: 24px; height: 24px; }
+  .quiz-nav { margin-top: 28px; gap: 8px; }
+  .btn-next { padding: 14px 22px; font-size: 15px; }
+  .btn-back { padding: 10px 14px; font-size: 14px; }
+
+  /* Result */
+  .result-section { padding: 48px 0 64px; }
+  .result-header { margin-bottom: 32px; }
+  .result-header h2 { font-size: 28px; }
+  .result-header p { font-size: 16px; }
+
+  .score-card { padding: 32px 22px; margin-bottom: 20px; }
+  .score-gauge { width: 160px; height: 160px; }
+  .score-number .num { font-size: 52px; }
+  .score-meta h3 { font-size: 22px; }
+  .score-meta p { font-size: 15px; }
+  .score-badge { font-size: 12px; padding: 6px 12px 6px 10px; }
+
+  /* Post-score CTA */
+  .post-score-cta { padding: 24px 22px; margin-bottom: 20px; }
+  .post-score-cta-text .label { font-size: 18px; }
+  .post-score-cta-text .sub { font-size: 13px; }
+  .post-score-cta .btn-primary { padding: 14px 20px; font-size: 14px; width: 100%; }
+
+  /* Breakdown */
+  .breakdown { padding: 24px 22px; margin-bottom: 20px; }
+  .breakdown-title { font-size: 18px; margin-bottom: 18px; }
+  .breakdown-row-head { font-size: 14px; }
+
+  /* Goldfrage */
+  .goldfrage { padding: 22px; margin-bottom: 32px; }
+  .goldfrage-icon { width: 38px; height: 38px; font-size: 18px; }
+  .goldfrage-text h4 { font-size: 17px; }
+  .goldfrage-text p { font-size: 14px; }
+
+  /* Insights */
+  .insights { margin-bottom: 36px; }
+  .insights-title { font-size: 19px; }
+  .insight { padding: 20px; gap: 16px; }
+  .insight-icon { width: 36px; height: 36px; font-size: 16px; }
+  .insight h4 { font-size: 16px; }
+  .insight p { font-size: 14px; }
+
+  /* Booking */
+  .booking { padding: 36px 22px; }
+  .booking h3 { font-size: 24px; }
+  .booking > .booking-inner > p.lead-text { font-size: 15px; margin-bottom: 24px; }
+  .booking-list { margin-bottom: 28px; }
+  .booking-item { font-size: 14px; gap: 10px; }
+  .booking-eyebrow { font-size: 11px; padding: 5px 11px; }
+  .booking-submit { padding: 18px 22px; font-size: 15px; }
+  .booking-form { gap: 12px; margin-bottom: 18px; }
+  .field input { padding: 14px 16px; font-size: 15px; }
+
+  /* Footer */
+  .site-footer { padding: 28px 0; }
+  .site-footer .container { font-size: 13px; }
+  .site-footer a { margin-left: 0; margin-right: 14px; }
+}
+
+@media (max-width: 380px) {
+  .hero h1 { font-size: 26px; }
+  .question-card h2 { font-size: 20px; }
+  .score-gauge { width: 140px; height: 140px; }
+  .score-number .num { font-size: 44px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="container">
+    <div class="brand">
+      <a href="index.html" style="display:flex;align-items:center;"><img src="logo.svg" alt="Thera-Recruiting"></a>
+    </div>
+    <div class="header-meta">
+      Recruiting-Check 2026 · <strong>kostenlos</strong>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="start">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="eyebrow">
+        <span class="dot"></span>
+        Für Physio-, Ergo- und Logopädie-Praxen
+      </div>
+
+      <h1>
+        Wie gut ist Ihre Praxis im <em>Recruiting</em> <span class="highlight">aufgestellt?</span>
+      </h1>
+
+      <p class="lead">
+        15 Fragen entlang des kompletten Recruiting-Funnels: Reichweite, Arbeitgebermarke, Bewerbungsprozess. In 3 Minuten erfahren Sie, wo Sie aktuell Bewerber verlieren – und welche 3 Hebel den größten Unterschied machen.
+      </p>
+
+      <div class="cta-row">
+        <a href="#quiz" class="btn-primary" onclick="startQuiz()">
+          Kostenlosen Check starten
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="9" x2="14" y2="9"/><polyline points="9,4 14,9 9,14"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="trust-row">
+        <div class="trust-item">
+          <span class="icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6.5 5,9.5 10,3.5"/></svg></span>
+          100% kostenfrei
+        </div>
+        <div class="trust-item">
+          <span class="icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6.5 5,9.5 10,3.5"/></svg></span>
+          Sofortiges Ergebnis
+        </div>
+        <div class="trust-item">
+          <span class="icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6.5 5,9.5 10,3.5"/></svg></span>
+          Auswertung entlang des Recruiting-Funnels
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUIZ ============ -->
+<section class="quiz-section" id="quiz">
+  <div class="container">
+    <div class="progress-wrap">
+      <div class="progress-meta">
+        <span class="step">Frage <strong id="currentStep">1</strong> von 15</span>
+        <span class="percent" id="percentLabel">0% abgeschlossen</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    </div>
+
+    <div class="section-label hidden" id="sectionLabel"></div>
+
+    <div class="question-card" id="questionCard">
+      <h2 id="questionText"></h2>
+      <div class="question-hint" id="questionHint"></div>
+      <div class="options-list" id="optionsList"></div>
+
+      <div class="quiz-nav">
+        <button class="btn-back" id="btnBack" onclick="prevQuestion()" disabled>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9,2 4,7 9,12"/></svg>
+          Zurück
+        </button>
+        <button class="btn-next" id="btnNext" onclick="nextQuestion()" disabled>
+          <span id="nextLabel">Weiter</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="8" x2="12" y2="8"/><polyline points="8,3 12,8 8,13"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESULT ============ -->
+<section class="result-section" id="result">
+  <div class="container">
+    <div class="result-header">
+      <div class="result-eyebrow">Ihr Ergebnis</div>
+      <h2>Ihr Recruiting-Score 2026.</h2>
+      <p>Basierend auf 10 bewerteten Fragen entlang des Recruiting-Funnels – plus eine Reality-Check-Frage.</p>
+    </div>
+
+    <!-- Score gauge + tier -->
+    <div class="score-card">
+      <div class="score-display">
+        <div class="score-gauge">
+          <svg viewBox="0 0 200 200">
+            <circle class="gauge-track" cx="100" cy="100" r="80"/>
+            <circle class="gauge-fill" id="gaugeFill" cx="100" cy="100" r="80" stroke="var(--blue-deep)"/>
+          </svg>
+          <div class="score-number">
+            <span class="num" id="scoreNum">0</span>
+            <span class="max">von 100 Punkten</span>
+          </div>
+        </div>
+        <div class="score-meta">
+          <span class="score-badge" id="scoreBadge"><span class="emoji"></span><span class="text"></span></span>
+          <h3 id="scoreTitle"></h3>
+          <p id="scoreText"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Direct CTA to skip to booking -->
+    <div class="post-score-cta">
+      <div class="post-score-cta-text">
+        <div class="label">Direkt mit uns Ihre Hebel besprechen?</div>
+        <div class="sub">15 Minuten, kostenfrei, ohne Verpflichtung – wir zeigen Ihnen, wie Sie Ihre 3 Hebel umsetzen.</div>
+      </div>
+      <a href="#bookingAnchor" class="btn-primary" onclick="scrollToBooking(event)">
+        Unverbindliches Analysegespräch sichern
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="9" x2="14" y2="9"/><polyline points="9,4 14,9 9,14"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Category breakdown -->
+    <div class="breakdown">
+      <h3 class="breakdown-title">Auswertung nach Kategorien</h3>
+      <div class="breakdown-list" id="breakdownList"></div>
+    </div>
+
+    <!-- Goldfrage Reality Check -->
+    <div class="goldfrage" id="goldfrageBox">
+      <div class="goldfrage-icon">★</div>
+      <div class="goldfrage-text">
+        <div class="goldfrage-eyebrow">Reality-Check</div>
+        <h4 id="goldfrageTitle"></h4>
+        <p id="goldfrageText"></p>
+      </div>
+    </div>
+
+    <!-- Top 3 Hebel -->
+    <div class="insights">
+      <h3 class="insights-title">
+        <span class="num-badge">3</span>
+        Ihre größten Hebel
+      </h3>
+      <div class="insight-list" id="insightList"></div>
+    </div>
+
+    <!-- Booking form -->
+    <div class="booking" id="bookingAnchor">
+      <div class="booking-inner">
+        <div class="booking-eyebrow">Nächster Schritt</div>
+        <h3>Wir holen die Bewerber, die Sie <em>aktuell verpassen.</em></h3>
+        <p class="lead-text">
+          In einem kostenfreien 15-Minuten-Analysegespräch zeigen wir Ihnen konkret, wie Sie Ihre 3 Recruiting-Hebel umsetzen – maßgeschneidert für Ihre Praxis und Ihren Fachbereich. Kein Verkaufsdruck, keine Verpflichtung.
+        </p>
+
+        <div class="booking-list">
+          <div class="booking-item">
+            <span class="check-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6.5 5,9.5 10,3.5"/></svg></span>
+            Konkrete Recruiting-Strategie für Ihre 3 schwächsten Hebel
+          </div>
+          <div class="booking-item">
+            <span class="check-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6.5 5,9.5 10,3.5"/></svg></span>
+            Marktvergleich mit anderen Praxen Ihres Fachbereichs
+          </div>
+          <div class="booking-item">
+            <span class="check-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6.5 5,9.5 10,3.5"/></svg></span>
+            Klarer Fahrplan – auch wenn Sie nicht mit uns arbeiten
+          </div>
+        </div>
+
+        <form class="booking-form" id="bookingForm" onsubmit="submitBooking(event)" action="https://formspree.io/f/xaqzewdo" method="POST">
+          <input type="hidden" name="_next" value="danke.html">
+          <div class="field">
+            <input type="text" name="name" placeholder="Vor- und Nachname" required autocomplete="name">
+          </div>
+          <div class="field">
+            <input type="tel" name="telefon" placeholder="Telefonnummer" required autocomplete="tel">
+          </div>
+          <div class="field field-full">
+            <input type="email" name="email" placeholder="E-Mail-Adresse" required autocomplete="email">
+          </div>
+          <button type="submit" class="booking-submit field-full">
+            Unverbindliches Analysegespräch sichern
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="9" x2="14" y2="9"/><polyline points="9,4 14,9 9,14"/></svg>
+          </button>
+        </form>
+
+        <p class="booking-meta">Wir melden uns innerhalb von 24 Stunden bei Ihnen. Mit dem Absenden stimmen Sie unserer <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a> zu.</p>
+
+        <div class="form-success" id="formSuccess">
+          <div class="success-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="5,15 11,21 23,7"/></svg>
+          </div>
+          <h4>Vielen Dank!</h4>
+          <p>Wir haben Ihre Anfrage erhalten und melden uns innerhalb von 24 Stunden bei Ihnen, um einen passenden Termin zu finden.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div>© <span id="year"></span> Thera-Recruiting.de</div>
+    <div>
+      <a href="index.html">Startseite</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ============== SECTIONS ==============
+const sections = {
+  reichweite: { name: 'Reichweite & Sichtbarkeit', max: 35, color: '#2C7BB6', text: '#1B5B8B', soft: '#E8F1F8' },
+  marke:      { name: 'Arbeitgebermarke',          max: 35, color: '#F5A623', text: '#C77A0A', soft: '#FEF2DE' },
+  prozess:    { name: 'Bewerbungsprozess',         max: 30, color: '#17A89B', text: '#0E7A70', soft: '#E2F5F2' }
+};
+
+// Non-scored question groups (for the badge above the question)
+const contextBadge   = { name: 'Kurz zu Ihrer Praxis', text: '#6B7280', soft: '#F0EEE8' };
+const goldfrageBadge = { name: 'Die Goldfrage',        text: '#C77A0A', soft: '#FEF2DE' };
+
+// ============== QUESTIONS ==============
+// Q1-Q3 + Q15 are NOT scored (context / goldfrage)
+// Q4-Q14 sum to exactly 100 points across 3 sections
+const questions = [
+  // === Context (not scored) ===
+  {
+    id: 'q1',
+    text: 'Welchen Therapiebereich deckt Ihre Praxis hauptsächlich ab?',
+    hint: 'Nur für Benchmarking – fließt nicht in die Bewertung ein',
+    type: 'single',
+    scored: false,
+    options: [
+      { label: 'Physiotherapie', value: 'Physiotherapie' },
+      { label: 'Ergotherapie', value: 'Ergotherapie' },
+      { label: 'Logopädie', value: 'Logopädie' },
+      { label: 'Mehrere Fachbereiche', value: 'Mehrere Fachbereiche' }
+    ]
+  },
+  {
+    id: 'q2',
+    text: 'Wie viele offene Stellen haben Sie aktuell?',
+    type: 'single',
+    scored: false,
+    options: [
+      { label: 'Keine' },
+      { label: '1 Stelle' },
+      { label: '2 bis 3 Stellen' },
+      { label: '4 oder mehr Stellen' }
+    ]
+  },
+  {
+    id: 'q3',
+    text: 'Wie lange suchen Sie bereits nach Mitarbeitern?',
+    type: 'single',
+    scored: false,
+    options: [
+      { label: 'Unter 1 Monat' },
+      { label: '1 bis 3 Monate' },
+      { label: '3 bis 6 Monate' },
+      { label: 'Über 6 Monate' }
+    ]
+  },
+  {
+    id: 'q4',
+    text: 'Wie viele qualifizierte Bewerbungen erhalten Sie aktuell pro Monat?',
+    hint: 'Anker-Frage – fließt nicht in die Bewertung ein',
+    type: 'single',
+    scored: false,
+    options: [
+      { label: 'Keine' },
+      { label: '1 bis 2' },
+      { label: '3 bis 5' },
+      { label: 'Mehr als 5' }
+    ]
+  },
+
+  // === Reichweite & Sichtbarkeit (35 Punkte) ===
+  {
+    id: 'q5',
+    section: 'reichweite',
+    text: 'Welche Recruiting-Kanäle nutzen Sie aktuell aktiv?',
+    hint: 'Mehrfachauswahl möglich',
+    type: 'multi',
+    options: [
+      { label: 'Jobportale (Stepstone, Indeed, therapie.de)', points: 1 },
+      { label: 'Stellenanzeige auf eigener Website', points: 2 },
+      { label: 'Mitarbeiter-Empfehlungsprogramm', points: 2 },
+      { label: 'Social Media organisch (Instagram, Facebook)', points: 2 },
+      { label: 'Bezahlte Social Media Ads (Meta, TikTok)', points: 4 },
+      { label: 'Direktansprache / Active Sourcing', points: 3 },
+      { label: 'Externe Recruiting-Agentur', points: 2 },
+      { label: 'Eigene Karriere-Landingpage', points: 2 },
+      { label: 'Keine davon – wir warten auf Initiativbewerbungen', points: 0, exclusive: true }
+    ],
+    maxPoints: 15
+  },
+  {
+    id: 'q6',
+    section: 'reichweite',
+    text: 'Wie aktiv sprechen Sie passive Kandidaten an?',
+    hint: 'Passive Kandidaten = Therapeuten in Festanstellung, die nicht aktiv suchen',
+    type: 'single',
+    options: [
+      { label: 'Gar nicht – wir reagieren nur auf Bewerbungen', points: 0 },
+      { label: 'Gelegentlich (Empfehlungen, Kontakte)', points: 4 },
+      { label: 'Regelmäßig (Social Media, organisch)', points: 8 },
+      { label: 'Systematisch (Ads, Direktansprache, Kampagnen)', points: 12 }
+    ],
+    maxPoints: 12
+  },
+  {
+    id: 'q7',
+    section: 'reichweite',
+    text: 'Wie sichtbar ist Ihr Team auf Social Media (insb. Instagram)?',
+    type: 'single',
+    options: [
+      { label: 'Gar nicht – kein Profil oder inaktiv', points: 0 },
+      { label: 'Selten und unregelmäßig', points: 3 },
+      { label: 'Regelmäßig (1× pro Woche)', points: 6 },
+      { label: 'Sehr aktiv mit klarer Recruiting-Strategie', points: 8 }
+    ],
+    maxPoints: 8
+  },
+
+  // === Arbeitgebermarke (35 Punkte) ===
+  {
+    id: 'q8',
+    section: 'marke',
+    text: 'Können Bewerber auf Ihrer Website erkennen, warum sie ausgerechnet bei Ihnen arbeiten sollten?',
+    type: 'single',
+    options: [
+      { label: 'Nein – keine eigene Karriereseite', points: 0 },
+      { label: 'Standardseite ohne klaren USP', points: 3 },
+      { label: 'Mit Team-Vorstellung und Benefits', points: 7 },
+      { label: 'Vollständig: USP, Story, Team, Benefits, Gehalt', points: 10 }
+    ],
+    maxPoints: 10
+  },
+  {
+    id: 'q9',
+    section: 'marke',
+    text: 'Wie aussagekräftig sind Ihre Stellenanzeigen?',
+    type: 'single',
+    options: [
+      { label: 'Standardtext, oft kopiert', points: 0 },
+      { label: 'Aufgaben + Anforderungen aufgelistet', points: 3 },
+      { label: 'Mit Benefits und ungefährem Gehalt', points: 5 },
+      { label: 'Mit klarem USP, Story, Benefits und konkreter Gehaltsangabe', points: 8 }
+    ],
+    maxPoints: 8
+  },
+  {
+    id: 'q10',
+    section: 'marke',
+    text: 'Können Sie aus dem Stand 3 konkrete Gründe nennen, warum man bei IHNEN arbeiten sollte?',
+    type: 'single',
+    options: [
+      { label: 'Nein, das müsste ich erst formulieren', points: 0 },
+      { label: '1 bis 2 Gründe vielleicht', points: 2 },
+      { label: 'Ja, 3 klare Gründe', points: 5 },
+      { label: 'Ja – und mein Team kann sie auch nennen', points: 7 }
+    ],
+    maxPoints: 7
+  },
+  {
+    id: 'q11',
+    section: 'marke',
+    text: 'Welche differenzierenden Benefits bieten Sie aktuell?',
+    hint: 'Mehrfachauswahl möglich',
+    type: 'multi',
+    options: [
+      { label: 'Flexible Arbeitszeiten', points: 2 },
+      { label: '4-Tage-Woche', points: 2 },
+      { label: 'Fortbildungsbudget + Freistellung', points: 2 },
+      { label: 'Gesundheitsbudget / EGYM Wellpass', points: 1 },
+      { label: 'Betriebliche Altersvorsorge', points: 1 },
+      { label: 'Jobrad / Tankgutschein', points: 1 },
+      { label: 'Erfolgsbonus / Provision', points: 1 },
+      { label: 'Mitarbeiter-Events / Team-Wochenenden', points: 1 },
+      { label: 'Keine davon', points: 0, exclusive: true }
+    ],
+    maxPoints: 10
+  },
+
+  // === Bewerbungsprozess (30 Punkte) ===
+  {
+    id: 'q12',
+    section: 'prozess',
+    text: 'Wie aufwendig ist eine Bewerbung bei Ihnen?',
+    type: 'single',
+    options: [
+      { label: 'Lebenslauf + Anschreiben erforderlich', points: 0 },
+      { label: 'Lebenslauf ausreichend', points: 4 },
+      { label: 'Kurzes Online-Formular', points: 8 },
+      { label: 'Unter 60 Sekunden, ohne Lebenslauf', points: 12 }
+    ],
+    maxPoints: 12
+  },
+  {
+    id: 'q13',
+    section: 'prozess',
+    text: 'Wie schnell antworten Sie auf eingehende Bewerbungen?',
+    type: 'single',
+    options: [
+      { label: 'Länger als 1 Woche', points: 0 },
+      { label: '3 bis 7 Tage', points: 3 },
+      { label: '1 bis 2 Tage', points: 7 },
+      { label: 'Innerhalb von 24 Stunden', points: 10 }
+    ],
+    maxPoints: 10
+  },
+  {
+    id: 'q14',
+    section: 'prozess',
+    text: 'Haben Sie einen strukturierten Bewerbungs- und Probearbeits-Prozess?',
+    type: 'single',
+    options: [
+      { label: 'Nein – läuft spontan je nach Bewerber', points: 0 },
+      { label: 'Grob, nicht dokumentiert', points: 3 },
+      { label: 'Klar strukturiert (Gespräch + Probearbeit)', points: 6 },
+      { label: 'Mit Schnuppertag, Hospitation und Dokumentation', points: 8 }
+    ],
+    maxPoints: 8
+  },
+
+  // === Goldfrage (separat ausgewertet) ===
+  {
+    id: 'q15',
+    text: 'Würden Sie sich selbst heute bei Ihrer Praxis bewerben?',
+    hint: 'Goldfrage – bitte ehrlich antworten',
+    type: 'single',
+    scored: false,
+    isGoldfrage: true,
+    options: [
+      { label: 'Definitiv nicht', value: 0 },
+      { label: 'Eher nicht', value: 1 },
+      { label: 'Wahrscheinlich', value: 2 },
+      { label: 'Definitiv', value: 3 }
+    ]
+  }
+];
+
+// ============== INSIGHTS LIBRARY (per question) ==============
+// Each insight ties directly back to a recruiting-service offering
+const insightsLib = {
+  q5: {
+    title: 'Kanalmix erweitern – raus aus der Jobportal-Falle',
+    text: 'Wer nur auf Jobportalen sucht, erreicht ausschließlich aktive Wechsler (rund 20% des Marktes). Die starken Therapeuten sind passiv – die erreichen Sie nur über Social Media Ads, Direktansprache und eine gezielte Außenwirkung.'
+  },
+  q6: {
+    title: 'Passive Kandidaten systematisch ansprechen',
+    text: 'Solange Sie nur auf Bewerbungen reagieren, kämpfen Sie um die 20% wechselbereiten Therapeuten gegen alle anderen Praxen. Wer passive Therapeuten systematisch mit Ads und Direktansprache anspricht, verdoppelt seine Auswahl – und gewinnt die Stärksten.'
+  },
+  q7: {
+    title: 'Team auf Social Media sichtbar machen',
+    text: 'Instagram ist heute der wichtigste Vertrauensanker im Recruiting. Wenn Bewerber Ihr Team, Ihre Atmosphäre und Ihren Alltag nicht sehen können, bewerben sie sich nicht. Regelmäßige Team-Inhalte ändern das fundamental.'
+  },
+  q8: {
+    title: 'Eigene Karriereseite mit klarem USP aufbauen',
+    text: 'Eine Karriereseite mit klarem "Warum bei uns?"-Statement, Team, Benefits und Gehalt vervielfacht die Bewerbungen aus jedem Kanal. Ohne sie verpufft jeder Ad-Euro – egal wie gut die Anzeige ist.'
+  },
+  q9: {
+    title: 'Stellenanzeigen radikal überarbeiten',
+    text: 'Standard-Stellenanzeigen ohne Gehalt und ohne Story filtern genau die guten Therapeuten heraus. Konkrete Gehaltsangabe + Praxis-Story + klare Benefits erhöhen die Bewerbungsrate erfahrungsgemäß um Faktor 2 bis 3.'
+  },
+  q10: {
+    title: 'Eigenen USP klar formulieren',
+    text: 'Wenn Sie selbst nicht aus dem Stand 3 Gründe nennen können, warum jemand bei IHNEN arbeiten soll – wie sollen es Ihre Anzeigen, Ihre Website oder Ihre Ads tun? Das ist der wichtigste Schritt vor allem anderen.'
+  },
+  q11: {
+    title: 'Differenzierende Benefits einführen',
+    text: 'Mit den richtigen Benefits (4-Tage-Woche, Fortbildungsbudget mit Freistellung, EGYM Wellpass) heben Sie sich klar von Standard-Praxen ab – und geben Ihrem Marketing ein konkretes Versprechen, mit dem es werben kann.'
+  },
+  q12: {
+    title: 'Bewerbungsprozess radikal vereinfachen',
+    text: 'Lebenslauf und Anschreiben sind heute Conversion-Killer. Eine Bewerbung in unter 60 Sekunden ohne Unterlagen vervielfacht die Bewerbungen – erfahrungsgemäß Faktor 3 bis 5. Das ist der schnellste Hebel überhaupt.'
+  },
+  q13: {
+    title: 'Antwortzeit auf unter 24 Stunden bringen',
+    text: 'Bewerber sind heute innerhalb von Tagen bei der nächsten Praxis. Wer länger als 48 Stunden braucht, verliert die guten Kandidaten an schnellere Praxen. Eine 24h-Antwortgarantie ist Pflicht.'
+  },
+  q14: {
+    title: 'Strukturierten Recruiting-Prozess etablieren',
+    text: 'Ohne klaren Ablauf (Gespräch → Hospitation/Probearbeit → Entscheidung) wirken Sie unprofessionell – und verlieren Bewerber, die mehrere Praxen vergleichen. Ein strukturierter Prozess ist ein Auswahl-Kriterium für gute Therapeuten.'
+  }
+};
+
+// ============== STATE ==============
+let currentIdx = 0;
+let navDirection = 'forward';
+let answers = {};
+let quizStarted = false;
+
+// ============== INIT ==============
+document.getElementById('year').textContent = new Date().getFullYear();
+
+function startQuiz() {
+  if (!quizStarted) {
+    quizStarted = true;
+    renderQuestion(0);
+  }
+}
+
+// ============== RENDER ==============
+function renderQuestion(idx) {
+  const q = questions[idx];
+  currentIdx = idx;
+
+  // Re-trigger directional slide animation
+  const card = document.getElementById('questionCard');
+  card.style.animation = 'none';
+  card.offsetHeight;
+  const anim = navDirection === 'back' ? 'slideInLeft' : 'slideInRight';
+  card.style.animation = anim + ' 0.4s cubic-bezier(0.22, 1, 0.36, 1)';
+
+  // Section badge (colored, with emoji)
+  const sectionLabel = document.getElementById('sectionLabel');
+  let badge = null;
+  if (q.section && sections[q.section]) {
+    badge = sections[q.section];
+  } else if (q.isGoldfrage) {
+    badge = goldfrageBadge;
+  } else if (q.scored === false) {
+    badge = contextBadge;
+  }
+  if (badge) {
+    sectionLabel.innerHTML = `<span class="section-badge" style="background:${badge.soft}; color:${badge.text};">${badge.name}</span>`;
+    sectionLabel.classList.remove('hidden');
+  } else {
+    sectionLabel.classList.add('hidden');
+  }
+
+  document.getElementById('questionText').textContent = q.text;
+  const hintEl = document.getElementById('questionHint');
+  hintEl.textContent = q.hint || '';
+  hintEl.style.display = q.hint ? 'block' : 'none';
+
+  document.getElementById('currentStep').textContent = idx + 1;
+  const pct = Math.round((idx) / questions.length * 100);
+  document.getElementById('percentLabel').textContent = `${pct}% abgeschlossen`;
+  document.getElementById('progressFill').style.width = pct + '%';
+
+  // Render options
+  const list = document.getElementById('optionsList');
+  list.innerHTML = '';
+  q.options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option';
+    btn.setAttribute('data-type', q.type);
+    btn.setAttribute('data-idx', i);
+    btn.innerHTML = `<span class="opt-label">${opt.label}</span><span class="check"></span>`;
+    btn.onclick = () => selectOption(i);
+
+    // Restore previous selection
+    const existing = answers[q.id];
+    if (q.type === 'single' && existing !== undefined && existing === i) {
+      btn.classList.add('selected');
+    }
+    if (q.type === 'multi' && Array.isArray(existing) && existing.includes(i)) {
+      btn.classList.add('selected');
+    }
+    list.appendChild(btn);
+  });
+
+  document.getElementById('btnBack').disabled = idx === 0;
+  document.getElementById('btnNext').disabled = !hasAnswer(q);
+  document.getElementById('nextLabel').textContent = idx === questions.length - 1 ? 'Ergebnis anzeigen' : 'Weiter';
+}
+
+function hasAnswer(q) {
+  const a = answers[q.id];
+  if (q.type === 'single') return a !== undefined;
+  if (q.type === 'multi') return Array.isArray(a) && a.length > 0;
+  return false;
+}
+
+function selectOption(optIdx) {
+  const q = questions[currentIdx];
+
+  if (q.type === 'single') {
+    answers[q.id] = optIdx;
+    document.querySelectorAll('.option').forEach((el, i) => {
+      el.classList.toggle('selected', i === optIdx);
+    });
+    setTimeout(() => {
+      if (currentIdx < questions.length - 1) {
+        nextQuestion();
+      } else {
+        document.getElementById('btnNext').disabled = false;
+      }
+    }, 280);
+  } else if (q.type === 'multi') {
+    if (!Array.isArray(answers[q.id])) answers[q.id] = [];
+    const arr = answers[q.id];
+    const opt = q.options[optIdx];
+
+    if (opt.exclusive) {
+      if (arr.includes(optIdx)) {
+        answers[q.id] = [];
+      } else {
+        answers[q.id] = [optIdx];
+      }
+    } else {
+      const exclusiveIdx = q.options.findIndex(o => o.exclusive);
+      if (exclusiveIdx >= 0) {
+        const ei = arr.indexOf(exclusiveIdx);
+        if (ei >= 0) arr.splice(ei, 1);
+      }
+      const i = arr.indexOf(optIdx);
+      if (i >= 0) arr.splice(i, 1);
+      else arr.push(optIdx);
+    }
+
+    document.querySelectorAll('.option').forEach((el, i) => {
+      el.classList.toggle('selected', answers[q.id].includes(i));
+    });
+    document.getElementById('btnNext').disabled = !hasAnswer(q);
+  }
+}
+
+function nextQuestion() {
+  if (currentIdx < questions.length - 1) {
+    navDirection = 'forward';
+    renderQuestion(currentIdx + 1);
+    document.getElementById('quiz').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else {
+    showResult();
+  }
+}
+
+function prevQuestion() {
+  if (currentIdx > 0) {
+    navDirection = 'back';
+    renderQuestion(currentIdx - 1);
+    document.getElementById('quiz').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+// ============== SCORE ==============
+function calculateScore() {
+  let total = 0;
+  const sectionScores = {};
+  Object.keys(sections).forEach(k => sectionScores[k] = { earned: 0, max: sections[k].max, name: sections[k].name });
+
+  const questionScores = {}; // per question, for picking weakest
+
+  questions.forEach(q => {
+    if (q.scored === false) return;
+
+    const a = answers[q.id];
+    let pts = 0;
+    if (q.type === 'single' && a !== undefined) {
+      pts = q.options[a].points;
+    } else if (q.type === 'multi' && Array.isArray(a)) {
+      pts = a.reduce((sum, idx) => sum + q.options[idx].points, 0);
+      if (q.maxPoints) pts = Math.min(pts, q.maxPoints);
+    }
+
+    total += pts;
+    if (q.section) sectionScores[q.section].earned += pts;
+    questionScores[q.id] = { earned: pts, max: q.maxPoints || 0, ratio: q.maxPoints ? pts / q.maxPoints : 1 };
+  });
+
+  return { total: Math.min(total, 100), sectionScores, questionScores };
+}
+
+function getWeakestQuestions(questionScores, n = 3) {
+  return Object.entries(questionScores)
+    .map(([qid, s]) => ({ qid, ratio: s.ratio }))
+    .sort((a, b) => a.ratio - b.ratio)
+    .slice(0, n)
+    .map(r => r.qid);
+}
+
+function getScoreTier(score) {
+  if (score <= 49) return {
+    badge: 'kritisch',
+    badgeText: 'Kritischer Handlungsbedarf',
+    title: 'Hier liegt sehr viel Potenzial.',
+    text: 'Ihre Praxis verliert aktuell mit hoher Wahrscheinlichkeit Bewerber an attraktivere Arbeitgeber. Die gute Nachricht: Schon mit wenigen gezielten Maßnahmen verändern Sie das Bild deutlich – die Hebel unten zeigen, wo Sie ansetzen können.',
+    color: '#C03434'
+  };
+  if (score <= 69) return {
+    badge: 'durchschnitt',
+    badgeText: 'Durchschnittlicher Arbeitgeber',
+    title: 'Sie liegen im Mittelfeld.',
+    text: 'Ihre Praxis ist auf einem soliden Niveau – aber nicht herausragend. Bewerber haben heute die Wahl und entscheiden sich für die attraktivsten Praxen. Mit gezielten Optimierungen schaffen Sie den Sprung in die Top-Liga.',
+    color: '#E89414'
+  };
+  if (score <= 84) return {
+    badge: 'attraktiv',
+    badgeText: 'Attraktiver Arbeitgeber',
+    title: 'Sie sind überdurchschnittlich attraktiv.',
+    text: 'Sie sind bereits attraktiver als die meisten Praxen Ihrer Region. Jetzt geht es darum, die verbleibenden Hebel zu nutzen und Ihre Stärken systematisch nach außen zu kommunizieren.',
+    color: '#C9A21F'
+  };
+  return {
+    badge: 'top',
+    badgeText: 'Top-Arbeitgeber',
+    title: 'Sie gehören zu den Top-Arbeitgebern.',
+    text: 'Beeindruckend – Sie machen es bereits sehr gut. Jetzt geht es darum, diese Position systematisch sichtbar zu machen und gezielt für die Mitarbeitergewinnung einzusetzen. Hier liegt der eigentliche Hebel.',
+    color: '#1F7A2F'
+  };
+}
+
+function getGoldfrageInsight(goldValue, score) {
+  // goldValue: 0 = definitiv nicht, 1 = eher nicht, 2 = wahrscheinlich, 3 = definitiv
+  if (goldValue === 0) return {
+    title: 'Sie würden sich selbst nicht bewerben.',
+    text: score >= 70
+      ? `Trotz solidem Score (${score}/100) gibt es offenbar tieferliegende Themen, die selbst Sie als Inhaber stören. Das ist der wichtigste Ansatzpunkt – egal was die Punktzahl sagt.`
+      : 'Das ist eine ehrliche Antwort – und sie deckt sich mit dem Score. Genau hier liegt der Ansatzpunkt: Was würde sich für Sie selbst ändern müssen, damit Sie wieder gerne hier arbeiten würden?'
+  };
+  if (goldValue === 1) return {
+    title: 'Sie haben Zweifel an Ihrer eigenen Praxis.',
+    text: 'Diese Antwort ist wertvoll: Sie sehen ehrlich, dass nicht alles rund läuft. Die Hebel unten helfen, genau die Punkte anzugehen, die Sie selbst stören würden.'
+  };
+  if (goldValue === 2) return {
+    title: 'Sie würden sich wahrscheinlich bewerben.',
+    text: 'Ein gutes Zeichen – die Grundlagen passen. Mit gezielten Verbesserungen wird aus "wahrscheinlich" ein klares "definitiv" – und genau das wirkt auch nach außen.'
+  };
+  return {
+    title: 'Sie würden sich definitiv selbst bewerben.',
+    text: score >= 70
+      ? 'Das passt zum Score – Sie wissen, was Sie haben, und stehen voll dahinter. Diese Authentizität ist Ihr stärkstes Recruiting-Argument. Jetzt muss es nur noch sichtbar werden.'
+      : `Interessant: Sie würden sich selbst bewerben, der Score liegt aber bei ${score}/100. Das deutet darauf hin, dass Ihre Praxis besser ist, als sie nach außen wirkt – oder Sie zu wenig vergleichen. Beides klären wir gerne im Gespräch.`
+  };
+}
+
+// ============== SHOW RESULT ==============
+function showResult() {
+  const { total, sectionScores, questionScores } = calculateScore();
+  const tier = getScoreTier(total);
+  const weakest = getWeakestQuestions(questionScores, 3);
+
+  document.getElementById('quiz').style.display = 'none';
+  document.getElementById('result').classList.add('active');
+
+  // === Score Badge ===
+  const badge = document.getElementById('scoreBadge');
+  badge.className = 'score-badge ' + tier.badge;
+  badge.querySelector('.emoji').style.background = tier.color;
+  badge.querySelector('.text').textContent = tier.badgeText;
+
+  document.getElementById('scoreTitle').textContent = tier.title;
+  document.getElementById('scoreText').textContent = tier.text;
+
+  // === Gauge ===
+  const gauge = document.getElementById('gaugeFill');
+  gauge.setAttribute('stroke', tier.color);
+  const circumference = 2 * Math.PI * 80;
+  const offset = circumference - (total / 100) * circumference;
+
+  setTimeout(() => {
+    gauge.style.strokeDashoffset = offset;
+    animateNumber(document.getElementById('scoreNum'), 0, total, 1500);
+  }, 200);
+
+  // === Category breakdown ===
+  const breakdownList = document.getElementById('breakdownList');
+  breakdownList.innerHTML = '';
+  Object.entries(sectionScores).forEach(([key, s]) => {
+    const pct = Math.round((s.earned / s.max) * 100);
+    const row = document.createElement('div');
+    row.className = 'breakdown-row';
+    row.innerHTML = `
+      <div class="breakdown-row-head">
+        <span class="label">${s.name}</span>
+        <span class="value"><strong>${s.earned}</strong> von ${s.max} Punkten · ${pct}%</span>
+      </div>
+      <div class="breakdown-bar">
+        <div class="breakdown-bar-fill" style="background: ${sections[key].color};"></div>
+      </div>
+    `;
+    breakdownList.appendChild(row);
+    // Animate bar
+    setTimeout(() => {
+      row.querySelector('.breakdown-bar-fill').style.width = pct + '%';
+    }, 100);
+  });
+
+  // === Goldfrage Reality Check ===
+  const goldAnswer = answers['q15'];
+  if (goldAnswer !== undefined) {
+    const goldInsight = getGoldfrageInsight(goldAnswer, total);
+    document.getElementById('goldfrageTitle').textContent = goldInsight.title;
+    document.getElementById('goldfrageText').textContent = goldInsight.text;
+    document.getElementById('goldfrageBox').style.display = '';
+  } else {
+    document.getElementById('goldfrageBox').style.display = 'none';
+  }
+
+  // === Insights (3 weakest questions) ===
+  const insightList = document.getElementById('insightList');
+  insightList.innerHTML = '';
+  weakest.forEach((qid, i) => {
+    const insight = insightsLib[qid];
+    if (!insight) return;
+    const div = document.createElement('div');
+    div.className = 'insight';
+    div.innerHTML = `
+      <div class="insight-icon">${i + 1}</div>
+      <div>
+        <h4>${insight.title}</h4>
+        <p>${insight.text}</p>
+      </div>
+    `;
+    insightList.appendChild(div);
+  });
+
+  document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function animateNumber(el, from, to, duration) {
+  const start = performance.now();
+  function tick(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(from + (to - from) * eased);
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+// Smooth scroll to booking with header offset
+function scrollToBooking(e) {
+  e.preventDefault();
+  const target = document.getElementById('bookingAnchor');
+  if (!target) return;
+  const headerOffset = 100;
+  const y = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+  window.scrollTo({ top: y, behavior: 'smooth' });
+}
+
+// ============== FORM SUBMIT ==============
+// Endpoints
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xaqzewdo';
+const THANK_YOU_URL = 'danke.html';
+
+// Build a complete, human-readable payload of every answer + scores
+function buildLeadPayload(contact) {
+  const { total, sectionScores } = calculateScore();
+  const tier = getScoreTier(total);
+
+  const payload = {};
+
+  // Contact (top of the email)
+  payload['Name'] = contact.name;
+  payload['Telefon'] = contact.telefon;
+  payload['E-Mail'] = contact.email;
+
+  // Headline score
+  payload['Gesamt-Score'] = total + ' / 100 – ' + tier.badgeText;
+
+  // Category scores
+  Object.values(sectionScores).forEach(function (s) {
+    payload[s.name] = s.earned + ' / ' + s.max;
+  });
+
+  // Goldfrage
+  const gold = answers['q15'];
+  if (gold !== undefined) {
+    payload['Würde sich selbst bewerben'] = questions[14].options[gold].label;
+  }
+
+  // Per-question answers (numbered, readable) + a combined summary block
+  const lines = [];
+  lines.push('═══ KONTAKT ═══');
+  lines.push('Name:     ' + contact.name);
+  lines.push('Telefon:  ' + contact.telefon);
+  lines.push('E-Mail:   ' + contact.email);
+  lines.push('');
+  lines.push('═══ ERGEBNIS ═══');
+  lines.push('Gesamt-Score: ' + total + ' / 100 (' + tier.badgeText + ')');
+  Object.values(sectionScores).forEach(function (s) {
+    lines.push(s.name + ': ' + s.earned + ' / ' + s.max);
+  });
+  lines.push('');
+  lines.push('═══ ALLE ANTWORTEN ═══');
+
+  questions.forEach(function (q, qi) {
+    const a = answers[q.id];
+    let answerText = '— (übersprungen)';
+    if (q.type === 'single' && a !== undefined) {
+      answerText = q.options[a].label;
+    } else if (q.type === 'multi' && Array.isArray(a) && a.length) {
+      answerText = a.map(function (idx) { return q.options[idx].label; }).join(', ');
+    }
+    const num = String(qi + 1).padStart(2, '0');
+    payload[num + '. ' + q.text] = answerText;
+    lines.push(num + '. ' + q.text);
+    lines.push('    → ' + answerText);
+  });
+
+  // One readable block (guarantees clean formatting in the email)
+  payload['Komplette Auswertung'] = lines.join('\n');
+
+  // Email subject + reply-to
+  payload['_subject'] = 'Recruiting-Check: ' + contact.name + ' – Score ' + total + '/100';
+  payload['email'] = contact.email; // Formspree uses this as reply-to
+
+  return { payload: payload, total: total };
+}
+
+function submitBooking(e) {
+  e.preventDefault();
+  const form = e.target;
+  const fd = new FormData(form);
+  const contact = {
+    name: (fd.get('name') || '').trim(),
+    telefon: (fd.get('telefon') || '').trim(),
+    email: (fd.get('email') || '').trim()
+  };
+
+  // Sending state
+  const btn = form.querySelector('.booking-submit');
+  if (btn) {
+    btn.disabled = true;
+    btn.style.opacity = '0.7';
+    btn.textContent = 'Wird gesendet …';
+  }
+
+  const built = buildLeadPayload(contact);
+
+  fetch(FORMSPREE_ENDPOINT, {
+    method: 'POST',
+    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+    body: JSON.stringify(built.payload)
+  })
+  .then(function (res) {
+    if (!res.ok) console.error('Formspree responded with status', res.status);
+  })
+  .catch(function (err) { console.error('Lead submit error:', err); })
+  .finally(function () {
+    window.location.href = THANK_YOU_URL;
+  });
+
+  return false;
+}
+
+// Initialize first question
+renderQuestion(0);
+</script>
+
+</body>
+</html>
