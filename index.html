@@ -172,7 +172,7 @@
     .sec { padding: 64px 0; }
     .sec-sm { padding: 48px 0; }
     .center { text-align: center; }
-    .r { opacity:0; transform:translateY(14px); transition: opacity .5s var(--ease), transform .5s var(--ease); }
+    .r { opacity:0; transform:translateY(22px) scale(.985); transition: opacity .55s var(--ease), transform .7s var(--spring); }
     .r.lft { transform:translateX(-26px); }
     .r.rgt { transform:translateX(26px); }
     .r.vis { opacity:1; transform:none; }
@@ -445,6 +445,65 @@
 
     /* Anchor jumps land below the fixed nav */
     section[id] { scroll-margin-top: 84px; }
+
+    /* ======= PLAYFUL MOTION LAYER ======= */
+
+    /* Buttons: glossy light sweep on hover */
+    .btn::after { content:''; position:absolute; top:0; left:-120%; width:60%; height:100%; background:linear-gradient(100deg, transparent, rgba(255,255,255,.35), transparent); transform:skewX(-18deg); transition:none; pointer-events:none; }
+    .btn:hover::after { animation: btnSweep .7s var(--ease); }
+    @keyframes btnSweep { from { left:-120%; } to { left:150%; } }
+
+    /* Section tag: gold line grows in when revealed */
+    .r .tag::before { width:0; transition: width .6s .15s var(--ease); }
+    .r.vis .tag::before { width:26px; }
+
+    /* Ghost numbers: gentle idle float + hover pop */
+    @keyframes floaty { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-6px); } }
+    .saeul-idx { transition: transform .35s var(--spring), color .25s ease; will-change:transform; }
+    .saeul-card:hover .saeul-idx { transform:translateY(-4px) scale(1.06); }
+    .saeul-card:nth-child(1):hover .saeul-idx { color:rgba(15,123,200,.55); }
+    .saeul-card:nth-child(2):hover .saeul-idx { color:rgba(232,134,15,.6); }
+    .saeul-card:nth-child(3):hover .saeul-idx { color:rgba(13,43,78,.5); }
+    .prob-n { transition: transform .3s var(--spring), letter-spacing .3s ease; display:inline-block; }
+    .prob-item:hover .prob-n { transform:translateX(4px); letter-spacing:.16em; }
+
+    /* Cards: springier lift */
+    .saeul-card { transition: transform .32s var(--spring), box-shadow .3s ease, border-color .25s ease; }
+    .usp-card { transition: background .18s ease, transform .3s var(--spring); }
+    .usp-card:hover { transform:translateX(3px); }
+
+    /* Hero primary CTA: soft attention pulse */
+    @keyframes ctaGlow { 0%,100% { box-shadow:0 4px 16px rgba(14,165,233,.32), inset 0 1px 0 rgba(255,255,255,.14); } 50% { box-shadow:0 6px 26px rgba(14,165,233,.5), inset 0 1px 0 rgba(255,255,255,.14); } }
+    .hero-ctas .btn-p { animation: ctaGlow 3.2s ease-in-out infinite; }
+    .hero-ctas .btn-p:hover { animation:none; }
+
+    /* Photo badge: floats subtly */
+    .photo-badge { animation: floaty 4.5s ease-in-out infinite; }
+
+    /* Stat numbers: pop when they scroll in */
+    .stat-card.vis .stat-n { animation: statPop .6s var(--spring) both; }
+    @keyframes statPop { 0% { transform:scale(.6); opacity:0; } 60% { transform:scale(1.08); } 100% { transform:scale(1); opacity:1; } }
+
+    /* Process number circles: pop + gentle ring on hover */
+    .proc-num { transition: transform .3s var(--spring), box-shadow .3s ease; }
+    .proc-step:hover .proc-num { transform:scale(1.12) rotate(-4deg); }
+
+    /* FAQ chevron: springy rotate already; add row nudge on hover */
+    .faq-q { transition: color .15s, padding-left .2s var(--ease); }
+    .faq-q:hover { padding-left:22px; }
+
+    /* Freebie PDF mock: playful straighten on hover */
+    .freebie-pdf { transition: transform .4s var(--spring), box-shadow .3s ease; }
+    .freebie-visual:hover .freebie-pdf { transform:rotate(0deg) scale(1.03); box-shadow:0 14px 44px rgba(13,43,78,.22); }
+
+    /* Nav logo: subtle wiggle on hover */
+    .nav-logo .brand-svg { transition: transform .35s var(--spring); transform-origin:left center; }
+    .nav-logo:hover .brand-svg { transform:scale(1.04); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-ctas .btn-p, .photo-badge, .stat-card.vis .stat-n { animation:none !important; }
+      .btn:hover::after { animation:none !important; }
+    }
 
     /* Hero: brand deco layer (dot grid texture, logo motifs, wave) */
     .hero::before { content:''; position:absolute; inset:0; background-image: radial-gradient(rgba(255,255,255,.055) 1px, transparent 1px); background-size: 30px 30px; -webkit-mask-image: linear-gradient(165deg, rgba(0,0,0,.7) 0%, transparent 62%); mask-image: linear-gradient(165deg, rgba(0,0,0,.7) 0%, transparent 62%); pointer-events:none; }
