@@ -248,7 +248,9 @@
     .prob-sec { background:var(--bg2); }
     .prob-list { display:grid; grid-template-columns:1fr; border-top:1px solid var(--gb2); }
     .prob-item { padding:22px 0 24px; border-bottom:1px solid var(--gb); }
-    .prob-n { display:block; font-size:12.5px; font-weight:800; color:var(--gold); letter-spacing:.1em; margin-bottom:8px; font-variant-numeric:tabular-nums; }
+    .prob-n { display:flex; align-items:center; gap:9px; margin-bottom:10px; }
+    .prob-n::before { content:''; width:22px; height:3px; border-radius:3px; background:linear-gradient(90deg, var(--gold), var(--teal)); flex-shrink:0; }
+    .prob-n span { font-size:11px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--muted2); }
     .prob-item h3 { font-size:16px; font-weight:700; margin-bottom:8px; color:var(--text); letter-spacing:-.01em; }
     .prob-item p { font-size:14px; color:var(--muted); line-height:1.68; max-width:560px; }
     .prob-good { margin-top:40px; background:linear-gradient(120deg,#0d2b4e 0%,#0e3a66 55%,#0f6bb0 120%); border-radius:var(--r); padding:30px 24px; color:#fff; display:flex; flex-direction:column; gap:20px; position:relative; overflow:hidden; }
@@ -269,10 +271,11 @@
     .saeul-card:nth-child(1):hover { border-color:rgba(15,123,200,.4); }
     .saeul-card:nth-child(2):hover { border-color:rgba(232,134,15,.4); }
     .saeul-card:nth-child(3):hover { border-color:rgba(13,43,78,.4); }
-    .saeul-idx { display:block; font-size:44px; font-weight:900; line-height:1; letter-spacing:-.04em; margin-bottom:14px; font-variant-numeric:tabular-nums; }
-    .saeul-card:nth-child(1) .saeul-idx { color:rgba(15,123,200,.25); }
-    .saeul-card:nth-child(2) .saeul-idx { color:rgba(232,134,15,.30); }
-    .saeul-card:nth-child(3) .saeul-idx { color:rgba(13,43,78,.20); }
+    .saeul-ill { width:60px; height:60px; border-radius:16px; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
+    .saeul-ill svg { width:32px; height:32px; display:block; }
+    .saeul-card:nth-child(1) .saeul-ill { background:linear-gradient(140deg, rgba(15,123,200,.16), rgba(15,123,200,.04)); }
+    .saeul-card:nth-child(2) .saeul-ill { background:linear-gradient(140deg, rgba(232,134,15,.18), rgba(232,134,15,.04)); }
+    .saeul-card:nth-child(3) .saeul-ill { background:linear-gradient(140deg, rgba(13,43,78,.13), rgba(13,43,78,.04)); }
     .saeul-card h3 { font-size:16px; font-weight:700; margin-bottom:10px; line-height:1.25; color:var(--text); letter-spacing:-.01em; }
     .saeul-card p { font-size:14px; color:var(--muted); line-height:1.6; }
     .feat-list { margin-top:14px; display:flex; flex-direction:column; gap:8px; }
@@ -291,7 +294,9 @@
     .usp-card { background:var(--white); border:none; border-bottom:1px solid var(--gb); border-radius:0; padding:20px 16px; display:flex; flex-direction:row; gap:14px; transition:background .18s ease; box-shadow:none; min-width:0; }
     .usp-card:last-child { border-bottom:none; }
     .usp-card:hover { background:var(--bg2); transform:none; box-shadow:none; }
-    .usp-n { font-size:12px; font-weight:800; color:var(--gold); letter-spacing:.08em; flex-shrink:0; margin-top:3px; font-variant-numeric:tabular-nums; }
+    .usp-ic { width:42px; height:42px; border-radius:12px; background:linear-gradient(140deg, rgba(15,123,200,.14), rgba(15,123,200,.04)); display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+    .usp-ic svg { width:22px; height:22px; display:block; }
+    .usp-card:nth-child(2) .usp-ic, .usp-card:nth-child(4) .usp-ic, .usp-card:nth-child(6) .usp-ic { background:linear-gradient(140deg, rgba(232,134,15,.16), rgba(232,134,15,.04)); }
     .usp-card > div { min-width:0; }
     .usp-card h4 { font-size:15px; font-weight:700; margin-bottom:5px; color:var(--text); letter-spacing:-.01em; }
     .usp-card p { font-size:13.5px; color:var(--muted); line-height:1.6; }
@@ -443,6 +448,11 @@
     .stats-grid .stat-card:nth-child(odd) { border-top-color: #38bdf8; }
     .stats-grid .stat-card:nth-child(even) { border-top-color: #f5aa1c; }
 
+    /* Wave divider: white section flows into the navy stats band */
+    .stats-sec { position: relative; overflow: hidden; }
+    .stats-wave { position: absolute; top: 0; left: 0; width: 100%; height: 44px; pointer-events: none; z-index: 1; }
+    .stats-wave svg { display: block; width: 100%; height: 100%; }
+
     /* Anchor jumps land below the fixed nav */
     section[id] { scroll-margin-top: 84px; }
 
@@ -457,15 +467,14 @@
     .r .tag::before { width:0; transition: width .6s .15s var(--ease); }
     .r.vis .tag::before { width:26px; }
 
-    /* Ghost numbers: gentle idle float + hover pop */
+    /* Illustration tiles: playful tilt + lift on hover */
     @keyframes floaty { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-6px); } }
-    .saeul-idx { transition: transform .35s var(--spring), color .25s ease; will-change:transform; }
-    .saeul-card:hover .saeul-idx { transform:translateY(-4px) scale(1.06); }
-    .saeul-card:nth-child(1):hover .saeul-idx { color:rgba(15,123,200,.55); }
-    .saeul-card:nth-child(2):hover .saeul-idx { color:rgba(232,134,15,.6); }
-    .saeul-card:nth-child(3):hover .saeul-idx { color:rgba(13,43,78,.5); }
-    .prob-n { transition: transform .3s var(--spring), letter-spacing .3s ease; display:inline-block; }
-    .prob-item:hover .prob-n { transform:translateX(4px); letter-spacing:.16em; }
+    .saeul-ill, .usp-ic { transition: transform .38s var(--spring); will-change:transform; }
+    .saeul-card:hover .saeul-ill { transform:translateY(-4px) rotate(-5deg) scale(1.05); }
+    .usp-card:hover .usp-ic { transform:rotate(-6deg) scale(1.08); }
+    /* Problem marker: line extends on hover */
+    .prob-n::before { transition: width .3s var(--spring); }
+    .prob-item:hover .prob-n::before { width:34px; }
 
     /* Cards: springier lift */
     .saeul-card { transition: transform .32s var(--spring), box-shadow .3s ease, border-color .25s ease; }
@@ -938,27 +947,27 @@
     </div>
     <div class="prob-list">
       <div class="prob-item wide r" style="transition-delay:.05s">
-        <span class="prob-n">01</span>
+        <span class="prob-n"><span>Team-Überlastung</span></span>
         <h3>Überlastetes Team durch offene Stellen</h3>
         <p>Ihre Kollegen übernehmen Überstunden, die Stimmung kippt — und Wartelisten für Patienten werden immer länger.</p>
       </div>
       <div class="prob-item r" style="transition-delay:.11s">
-        <span class="prob-n">02</span>
+        <span class="prob-n"><span>Fehlende Reichweite</span></span>
         <h3>Stellenportale erreichen nur einen Bruchteil</h3>
         <p>Passive Jobportale sprechen nur Therapeuten an, die aktiv suchen — doch 70 % derer, die wechseln würden, sind dort gar nicht zu finden.</p>
       </div>
       <div class="prob-item r" style="transition-delay:.17s">
-        <span class="prob-n">03</span>
+        <span class="prob-n"><span>Hohe Kosten</span></span>
         <h3>Headhunter: hohe Kosten, kein Fokus</h3>
         <p>Klassische Headhunter nehmen 20–30 % des Jahresgehalts — ohne Spezialisierung auf Therapieberufe und oft ohne Nachbesetzungsgarantie.</p>
       </div>
       <div class="prob-item r" style="transition-delay:.23s">
-        <span class="prob-n">04</span>
+        <span class="prob-n"><span>Kaum Sichtbarkeit</span></span>
         <h3>Fehlende digitale Sichtbarkeit</h3>
         <p>Therapeuten sehen Ihre Praxis gar nicht erst. Die digitale Außenwirkung als Arbeitgeber ist nicht vorhanden.</p>
       </div>
       <div class="prob-item r" style="transition-delay:.29s">
-        <span class="prob-n">05</span>
+        <span class="prob-n"><span>Fluktuation</span></span>
         <h3>Hohe Fluktuation durch Schnelleinstellungen</h3>
         <p>Wer aus der Not heraus einstellt, zahlt doppelt: Einarbeitung, Ausfall, erneute Suche — ein endloser Kreislauf.</p>
       </div>
@@ -985,7 +994,12 @@
     </div>
     <div class="saeul-grid">
       <div class="saeul-card r" style="transition-delay:.05s">
-        <span class="saeul-idx">01</span>
+        <div class="saeul-ill" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 27C16 27 5 20.5 5 12.5C5 8.9 7.9 6 11.5 6C13.6 6 15.4 7.1 16 8.7C16.6 7.1 18.4 6 20.5 6C24.1 6 27 8.9 27 12.5C27 20.5 16 27 16 27Z" fill="rgba(15,123,200,.14)" stroke="#0f7bc8" stroke-width="2"/>
+            <path d="M7.5 15H12l1.8-3.6L16.6 18l1.9-3H24.5" stroke="#e8860f" stroke-width="2"/>
+          </svg>
+        </div>
         <h3>Insider-Wissen statt raten</h3>
         <p>Marc Richter ist selbst ausgebildeter Physiotherapeut. Wir kennen die Wechselmotive, die Frust-Punkte und die Sprache der Therapeuten — aus eigener Erfahrung.</p>
         <div class="feat-list">
@@ -995,7 +1009,13 @@
         </div>
       </div>
       <div class="saeul-card r" style="transition-delay:.13s">
-        <span class="saeul-idx">02</span>
+        <div class="saeul-ill" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 6v9a5 5 0 0010 0V6" stroke="#0f7bc8" stroke-width="2.4"/>
+            <path d="M7.6 6h6.8v4.2H7.6zM24.4 6h-6.8v4.2h6.8" fill="rgba(232,134,15,.18)" stroke="#e8860f" stroke-width="2.2"/>
+            <path d="M16 24.5v3M11.7 25.4l-1.4 2.2M20.3 25.4l1.4 2.2" stroke="#e8860f" stroke-width="2.2"/>
+          </svg>
+        </div>
         <h3>Kandidaten, die kein Portal kennt</h3>
         <p>70 % der wechselwilligen Therapeuten sind auf keiner Jobbörse aktiv. Wir erreichen genau diese — über unser branchenspezifisches Netzwerk und gezielte digitale Ansprache.</p>
         <div class="feat-list">
@@ -1005,7 +1025,12 @@
         </div>
       </div>
       <div class="saeul-card r" style="transition-delay:.21s">
-        <span class="saeul-idx">03</span>
+        <div class="saeul-ill" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 4l10 4v7c0 6.5-4.5 10.5-10 12-5.5-1.5-10-5.5-10-12V8l10-4z" fill="rgba(15,123,200,.12)" stroke="#0f7bc8" stroke-width="2"/>
+            <path d="M11.5 16l3 3 6-6.5" stroke="#e8860f" stroke-width="2.4"/>
+          </svg>
+        </div>
         <h3>Null Risiko, null Aufwand</h3>
         <p>Wir tragen das Risiko: Unsere Vergütung wird erst fällig, wenn Sie einstellen. Bis dahin übernehmen wir die komplette Arbeit — Sie führen nur die finalen Gespräche.</p>
         <div class="feat-list">
@@ -1049,42 +1074,74 @@
     </div>
     <div class="usp-grid">
       <div class="usp-card r" style="transition-delay:.04s">
-        <span class="usp-n">01</span>
+        <div class="usp-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="8.5" stroke="#0f7bc8" stroke-width="2"/>
+            <path d="M15 9.4a3.6 3.6 0 00-5 .4c-1.3 1.6-1.3 3.6 0 5.2a3.6 3.6 0 005 .4M8.4 11.3h4.2M8.4 13.5h3.4" stroke="#e8860f" stroke-width="1.8"/>
+          </svg>
+        </div>
         <div>
           <h4>0 € Vorabkosten</h4>
           <p>Kein Retainer, keine Einrichtungsgebühr — die Vergütung wird erst mit der Unterschrift Ihres neuen Therapeuten fällig.</p>
         </div>
       </div>
       <div class="usp-card r" style="transition-delay:.10s">
-        <span class="usp-n">02</span>
+        <div class="usp-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19.5 12a7.5 7.5 0 10-2.1 5.2" stroke="#0f7bc8" stroke-width="2"/>
+            <path d="M19.5 7.2v4.6h-4.6" stroke="#e8860f" stroke-width="2"/>
+          </svg>
+        </div>
         <div>
           <h4>Nachbesetzungsgarantie</h4>
           <p>Sollte ein vermittelter Therapeut frühzeitig kündigen, besetzen wir die Stelle kostenfrei nach.</p>
         </div>
       </div>
       <div class="usp-card r" style="transition-delay:.16s">
-        <span class="usp-n">03</span>
+        <div class="usp-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 3.5h7.5L18 8v12.5H6z" stroke="#0f7bc8" stroke-width="2"/>
+            <path d="M13.5 3.5V8H18" stroke="#0f7bc8" stroke-width="2"/>
+            <path d="M8.5 15c1-1.6 2-1.6 3 0s2 1.6 3 0" stroke="#e8860f" stroke-width="1.9"/>
+          </svg>
+        </div>
         <div>
           <h4>Nur Festanstellungen</h4>
           <p>Wir vermitteln ausschließlich in feste Arbeitsverhältnisse — für Stabilität statt Leihpersonal-Drehtür.</p>
         </div>
       </div>
       <div class="usp-card r" style="transition-delay:.22s">
-        <span class="usp-n">04</span>
+        <div class="usp-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3.5l8 4-8 4-8-4 8-4z" fill="rgba(232,134,15,.18)" stroke="#e8860f" stroke-width="1.9"/>
+            <path d="M4 12l8 4 8-4M4 16.5l8 4 8-4" stroke="#0f7bc8" stroke-width="1.9"/>
+          </svg>
+        </div>
         <div>
           <h4>Wir übernehmen alles</h4>
           <p>Anzeigen, Sichtung, Vorqualifizierung, Terminierung — Ihr Team bleibt währenddessen komplett bei den Patienten.</p>
         </div>
       </div>
       <div class="usp-card r" style="transition-delay:.28s">
-        <span class="usp-n">05</span>
+        <div class="usp-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="8.5" stroke="#0f7bc8" stroke-width="2"/>
+            <path d="M12 7.4V12l3.2 2" stroke="#e8860f" stroke-width="2"/>
+          </svg>
+        </div>
         <div>
           <h4>Rückmeldung in 24h</h4>
           <p>Sie erhalten innerhalb von 24 Stunden eine Antwort — auch am Wochenende kein Problem.</p>
         </div>
       </div>
       <div class="usp-card r" style="transition-delay:.34s">
-        <span class="usp-n">06</span>
+        <div class="usp-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="8.5" stroke="#0f7bc8" stroke-width="2"/>
+            <circle cx="12" cy="12" r="4.4" stroke="#0f7bc8" stroke-width="2"/>
+            <circle cx="12" cy="12" r="1.7" fill="#e8860f"/>
+          </svg>
+        </div>
         <div>
           <h4>Branchenspezialist</h4>
           <p>Wir arbeiten mit keiner anderen Branche: Jede Kampagne, jeder Kandidatenpool und jedes Gespräch dreht sich um Therapieberufe.</p>
@@ -1097,6 +1154,12 @@
 
 <!-- ════ STATS ════ -->
 <section class="sec-sm stats-sec" aria-labelledby="stats-h">
+  <div class="stats-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 44" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0 H1440 V18 C1160 42, 1000 8, 720 26 C460 42, 260 10, 0 28 Z" fill="#ffffff"/>
+      <path d="M0 30 C260 12, 460 44, 720 28 C1000 12, 1160 46, 1440 20" stroke="rgba(245,170,28,.45)" stroke-width="2" fill="none"/>
+    </svg>
+  </div>
   <div class="wrap">
     <div class="sh center r" style="margin-bottom:40px">
       <h2 class="title" id="stats-h" style="color:#fff">Eine <span class="gt">Besetzung</span> in Zahlen</h2>
