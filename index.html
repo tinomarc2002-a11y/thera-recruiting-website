@@ -168,8 +168,8 @@
     .r.vis { opacity:1; transform:none; }
     .gt { color: var(--teal); }
     .gt-o { color: var(--gold); }
-    .tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(15,123,200,.08); border: 1px solid rgba(15,123,200,.22); color: var(--teal); font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 4px 12px; border-radius: 5px; margin-bottom: 18px; }
-    .tag::before { display:none; }
+    .tag { display: inline-flex; align-items: center; gap: 10px; background: none; border: none; color: var(--teal); font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; padding: 0; margin-bottom: 16px; }
+    .tag::before { content: ''; display: inline-block; width: 26px; height: 2px; background: var(--gold); }
     /* Buttons - mobile base */
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; font-family: inherit; font-weight: 700; cursor: pointer; border: none; border-radius: 8px; position: relative; overflow: hidden; transition: transform .2s var(--ease), box-shadow .25s, background .2s; touch-action: manipulation; -webkit-tap-highlight-color: transparent; text-decoration: none; min-height: 48px; }
     .btn:hover { transform:translateY(-2px); }
@@ -234,14 +234,20 @@
     .hstat:nth-child(2) { border-left:1px solid rgba(255,255,255,.08); }
     .hstat strong { display:block; font-size:18px; font-weight:900; color:#fff; letter-spacing:-.03em; line-height:1; }
     .hstat span { display:block; font-size:10px; color:rgba(255,255,255,.52); margin-top:4px; letter-spacing:.02em; }
-    /* PROBLEM - mobile: 1 column */
+    /* PROBLEM - editorial numbered list */
     .prob-sec { background:var(--bg2); }
-    .prob-grid { display:grid; grid-template-columns:1fr; gap:14px; }
-    .prob-card { background:var(--white); border:1px solid var(--gb); border-radius:var(--r); padding:20px 16px; transition:border-color .2s ease, box-shadow .2s ease, transform .2s ease; box-shadow:var(--shadow); border-left:3px solid transparent; display:flex; flex-direction:column; }
-    .prob-card:hover { border-color:rgba(15,123,200,.35); box-shadow:var(--shadow-md); transform:translateY(-2px); border-left-color:var(--gold); }
-    .prob-card h3 { font-size:15px; font-weight:700; margin-bottom:10px; color:var(--text); letter-spacing:-.01em; }
-    .prob-card p { font-size:14px; color:var(--muted); line-height:1.68; }
-    .prob-tag { display:inline-block; margin-top:auto; padding-top:14px; font-size:11.5px; color:var(--navy); letter-spacing:.02em; font-weight:700; }
+    .prob-list { display:grid; grid-template-columns:1fr; border-top:1px solid var(--gb2); }
+    .prob-item { padding:22px 0 24px; border-bottom:1px solid var(--gb); }
+    .prob-n { display:block; font-size:12.5px; font-weight:800; color:var(--gold); letter-spacing:.1em; margin-bottom:8px; font-variant-numeric:tabular-nums; }
+    .prob-item h3 { font-size:16px; font-weight:700; margin-bottom:8px; color:var(--text); letter-spacing:-.01em; }
+    .prob-item p { font-size:14px; color:var(--muted); line-height:1.68; max-width:560px; }
+    .prob-good { margin-top:40px; background:linear-gradient(120deg,#0d2b4e 0%,#0e3a66 55%,#0f6bb0 120%); border-radius:var(--r); padding:30px 24px; color:#fff; display:flex; flex-direction:column; gap:20px; position:relative; overflow:hidden; }
+    .prob-good::before { content:''; position:absolute; top:-70px; right:-50px; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, rgba(245,170,28,.22), transparent 65%); pointer-events:none; }
+    .pg-tag { display:block; font-size:11.5px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:#f5c542; margin-bottom:10px; }
+    .prob-good h3 { font-size:19px; font-weight:800; letter-spacing:-.02em; line-height:1.25; margin-bottom:8px; }
+    .prob-good p { font-size:14px; color:rgba(255,255,255,.72); line-height:1.6; max-width:520px; }
+    .prob-good .btn { flex-shrink:0; position:relative; z-index:1; background:#0f7bc8; color:#fff; }
+    .prob-good .btn:hover { background:#0d6db0; }
     /* SAEUL - mobile: 1 column */
     .saeul-sec { background:var(--bg); }
     .saeul-grid { display:grid; grid-template-columns:1fr; gap:18px; }
@@ -253,17 +259,12 @@
     .saeul-card:nth-child(1):hover { border-color:rgba(15,123,200,.4); }
     .saeul-card:nth-child(2):hover { border-color:rgba(232,134,15,.4); }
     .saeul-card:nth-child(3):hover { border-color:rgba(13,43,78,.4); }
-    .saeul-card:nth-child(1) .saeul-icon { background:rgba(15,123,200,.1); }
-    .saeul-card:nth-child(2) .saeul-icon { background:rgba(232,134,15,.1); }
-    .saeul-card:nth-child(3) .saeul-icon { background:rgba(13,43,78,.08); }
-    .saeul-card:nth-child(2) .saeul-icon svg { stroke:var(--gold); }
-    .saeul-num { font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--teal); margin-bottom:16px; background:rgba(15,123,200,.09); display:inline-block; padding:3px 10px; border-radius:4px; }
-    .saeul-icon { width:44px; height:44px; border-radius:12px; margin-bottom:14px; background:rgba(13,43,78,.07); display:flex; align-items:center; justify-content:center; }
-    .saeul-icon svg { width:20px; height:20px; stroke:var(--navy); fill:none; stroke-width:1.7; }
+    .saeul-idx { display:block; font-size:44px; font-weight:900; line-height:1; letter-spacing:-.04em; margin-bottom:14px; font-variant-numeric:tabular-nums; }
+    .saeul-card:nth-child(1) .saeul-idx { color:rgba(15,123,200,.25); }
+    .saeul-card:nth-child(2) .saeul-idx { color:rgba(232,134,15,.30); }
+    .saeul-card:nth-child(3) .saeul-idx { color:rgba(13,43,78,.20); }
     .saeul-card h3 { font-size:16px; font-weight:700; margin-bottom:10px; line-height:1.25; color:var(--text); letter-spacing:-.01em; }
     .saeul-card p { font-size:14px; color:var(--muted); line-height:1.6; }
-    .saeul-pill { display:inline-flex; align-items:center; gap:8px; margin-top:14px; color:var(--navy); font-size:11.5px; letter-spacing:.02em; text-transform:uppercase; font-weight:700; }
-    .saeul-pill::before { content:'\2192'; color:var(--teal); }
     .feat-list { margin-top:14px; display:flex; flex-direction:column; gap:8px; }
     .feat-li { display:flex; align-items:flex-start; gap:10px; font-size:13.5px; color:var(--muted); line-height:1.55; }
     .feat-li::before { content:'\2713'; color:var(--teal); font-weight:700; font-size:12px; flex-shrink:0; margin-top:1px; }
@@ -280,8 +281,7 @@
     .usp-card { background:var(--white); border:none; border-bottom:1px solid var(--gb); border-radius:0; padding:20px 16px; display:flex; flex-direction:row; gap:14px; transition:background .18s ease; box-shadow:none; min-width:0; }
     .usp-card:last-child { border-bottom:none; }
     .usp-card:hover { background:var(--bg2); transform:none; box-shadow:none; }
-    .usp-icon { width:40px; height:40px; border-radius:10px; background:rgba(13,43,78,.07); display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
-    .usp-icon svg { width:18px; height:18px; stroke:var(--navy); fill:none; stroke-width:1.8; }
+    .usp-n { font-size:12px; font-weight:800; color:var(--gold); letter-spacing:.08em; flex-shrink:0; margin-top:3px; font-variant-numeric:tabular-nums; }
     .usp-card > div { min-width:0; }
     .usp-card h4 { font-size:15px; font-weight:700; margin-bottom:5px; color:var(--text); letter-spacing:-.01em; }
     .usp-card p { font-size:13.5px; color:var(--muted); line-height:1.6; }
@@ -414,10 +414,6 @@
 
     /* ======= QUALITY REFINEMENTS ======= */
 
-    /* "Die gute Nachricht" — last problem card gets a positive look */
-    .prob-card:last-child { border-left-color: var(--teal); background: linear-gradient(135deg, rgba(15,123,200,.04) 0%, #fff 100%); }
-    .prob-card:last-child h3 { color: var(--teal); }
-
     /* Photo badge pulse dot */
     @keyframes blink { 0%,100% { box-shadow:0 0 0 0 rgba(15,123,200,.55); } 60% { box-shadow:0 0 0 6px rgba(15,123,200,0); } }
     .photo-badge::before { animation: blink 2.6s ease-in-out infinite; }
@@ -428,9 +424,6 @@
     /* Hero outline button — more presence */
     .hero .btn-o { border-color: rgba(255,255,255,.55); }
     .hero .btn-o:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.75); }
-
-    /* faq-sec: subtle top separator so it doesn't merge with about-sec */
-    .faq-sec { border-top: 1px solid var(--gb2); }
 
     /* stat-l: slightly larger for readability */
     .stat-l { font-size: 13px; }
@@ -445,8 +438,6 @@
     @media (min-width: 1024px) { .hd-dots { display:block; } }
 
     /* Cards: layered shadows for more depth */
-    .prob-card { box-shadow: 0 1px 2px rgba(13,43,78,.05), 0 4px 18px rgba(13,43,78,.08); }
-    .prob-card:hover { box-shadow: 0 2px 6px rgba(13,43,78,.07), 0 10px 30px rgba(13,43,78,.13); }
     .saeul-card { box-shadow: 0 1px 2px rgba(13,43,78,.05), 0 4px 18px rgba(13,43,78,.08); }
     .saeul-card:hover { box-shadow: 0 4px 10px rgba(13,43,78,.08), 0 14px 38px rgba(13,43,78,.15); }
     .usp-grid { box-shadow: 0 1px 2px rgba(13,43,78,.04), 0 4px 20px rgba(13,43,78,.09); border-color: rgba(13,43,78,.08); }
@@ -495,13 +486,8 @@
     .btn-p { background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%); box-shadow: 0 2px 8px rgba(13,43,78,.20), inset 0 1px 0 rgba(255,255,255,.08); }
     .btn-p:hover { box-shadow: 0 6px 20px rgba(13,43,78,.28), inset 0 1px 0 rgba(255,255,255,.08); }
 
-    /* Saeul icon: stronger background rings */
-    .saeul-card:nth-child(1) .saeul-icon { background: rgba(15,123,200,.12); box-shadow: 0 0 0 6px rgba(15,123,200,.06); }
-    .saeul-card:nth-child(2) .saeul-icon { background: rgba(232,134,15,.12); box-shadow: 0 0 0 6px rgba(232,134,15,.06); }
-    .saeul-card:nth-child(3) .saeul-icon { background: rgba(13,43,78,.10); box-shadow: 0 0 0 6px rgba(13,43,78,.05); }
-
-    /* Tag chips: subtle glass */
-    .tag { background: rgba(15,123,200,.10); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+    /* About on white for section rhythm (bg2 → white → bg2) */
+    .about-sec { background: var(--bg); }
 
     /* ======= FREEBIE SECTION ======= */
     /* FREEBIE SECTION */
@@ -550,8 +536,11 @@
       .hstat:nth-child(2) { border-left: none; }
       .hstat strong { font-size: 20px; }
       .hstat span { font-size: 11px; }
-      .prob-grid { grid-template-columns: repeat(2,1fr); gap: 20px; }
-      .prob-card { padding: 26px; }
+      .prob-list { grid-template-columns: 1fr 1fr; column-gap: 56px; }
+      .prob-item.wide { grid-column: 1 / -1; }
+      .prob-item.wide p { max-width: 720px; }
+      .prob-good { flex-direction: row; align-items: center; justify-content: space-between; padding: 36px 40px; gap: 32px; }
+      .prob-good h3 { font-size: 21px; }
       .saeul-grid { grid-template-columns: repeat(2,1fr); gap: 22px; }
       .saeul-card { padding: 24px; }
       .pstrip-grid { grid-template-columns: repeat(2,1fr); gap: 14px; }
@@ -611,8 +600,8 @@
       .hstat { padding: 16px 18px; }
       .hstat strong { font-size: 22px; }
       .hstat span { font-size: 11px; }
-      .prob-grid { grid-template-columns: repeat(3,1fr); gap:22px; }
-      .prob-card { padding: 28px; }
+      .prob-list { column-gap: 80px; }
+      .prob-item { padding: 26px 0 28px; }
       .saeul-grid { grid-template-columns: repeat(3,1fr); gap:26px; }
       .saeul-card { padding: 28px; }
       .saeul-card h3 { font-size: 17px; }
@@ -870,31 +859,40 @@
       <h2 class="title" id="prob-h">Kennen Sie das?</h2>
       <p class="sub">Die Therapiebranche leidet. Praxen verlieren täglich Umsatz, weil offene Stellen monatelang unbesetzt bleiben.</p>
     </div>
-    <div class="prob-grid">
-      <div class="prob-card r" style="transition-delay:.07s">
+    <div class="prob-list">
+      <div class="prob-item wide r" style="transition-delay:.05s">
+        <span class="prob-n">01</span>
         <h3>Überlastetes Team durch offene Stellen</h3>
         <p>Ihre Kollegen übernehmen Überstunden, die Stimmung kippt — und Wartelisten für Patienten werden immer länger.</p>
       </div>
-      <div class="prob-card r" style="transition-delay:.15s">
+      <div class="prob-item r" style="transition-delay:.11s">
+        <span class="prob-n">02</span>
         <h3>Stellenportale erreichen nur einen Bruchteil</h3>
         <p>Passive Jobportale sprechen nur Therapeuten an, die aktiv suchen — doch 70 % derer, die wechseln würden, sind dort gar nicht zu finden.</p>
       </div>
-      <div class="prob-card r" style="transition-delay:.23s">
+      <div class="prob-item r" style="transition-delay:.17s">
+        <span class="prob-n">03</span>
         <h3>Headhunter: hohe Kosten, kein Fokus</h3>
         <p>Klassische Headhunter nehmen 20–30 % des Jahresgehalts — ohne Spezialisierung auf Therapieberufe und oft ohne Nachbesetzungsgarantie.</p>
       </div>
-      <div class="prob-card r" style="transition-delay:.31s">
+      <div class="prob-item r" style="transition-delay:.23s">
+        <span class="prob-n">04</span>
         <h3>Fehlende digitale Sichtbarkeit</h3>
         <p>Therapeuten sehen Ihre Praxis gar nicht erst. Die digitale Außenwirkung als Arbeitgeber ist nicht vorhanden.</p>
       </div>
-      <div class="prob-card r" style="transition-delay:.39s">
+      <div class="prob-item r" style="transition-delay:.29s">
+        <span class="prob-n">05</span>
         <h3>Hohe Fluktuation durch Schnelleinstellungen</h3>
         <p>Wer aus der Not heraus einstellt, zahlt doppelt: Einarbeitung, Ausfall, erneute Suche — ein endloser Kreislauf.</p>
       </div>
-      <div class="prob-card r" style="transition-delay:.47s">
-        <h3>Die gute Nachricht</h3>
-        <p>Über die Hälfte aller Therapeuten ist grundsätzlich wechselbereit — sie warten nur auf das richtige Angebot zur richtigen Zeit.</p>
+    </div>
+    <div class="prob-good r" style="transition-delay:.15s">
+      <div>
+        <span class="pg-tag">Die gute Nachricht</span>
+        <h3>Über die Hälfte aller Therapeuten ist grundsätzlich wechselbereit.</h3>
+        <p>Sie warten nur auf das richtige Angebot zur richtigen Zeit — genau hier setzen wir an.</p>
       </div>
+      <a href="#methode" class="btn btn-p">So erreichen wir sie</a>
     </div>
   </div>
 </section>
@@ -910,15 +908,7 @@
     </div>
     <div class="saeul-grid">
       <div class="saeul-card r" style="transition-delay:.05s">
-        <div class="saeul-icon">
-          <!-- Insider / Branchenkenntnis -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-            <path d="M16 3.13a4 4 0 010 7.75"/>
-            <path d="M21 21v-2a4 4 0 00-3-3.87"/>
-          </svg>
-        </div>
+        <span class="saeul-idx">01</span>
         <h3>Insider-Wissen statt raten</h3>
         <p>Marc Richter ist selbst ausgebildeter Physiotherapeut. Wir kennen die Wechselmotive, die Frust-Punkte und die Sprache der Therapeuten — aus eigener Erfahrung.</p>
         <div class="feat-list">
@@ -928,20 +918,7 @@
         </div>
       </div>
       <div class="saeul-card r" style="transition-delay:.13s">
-        <div class="saeul-icon">
-          <!-- Passive candidates / hidden network -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="2"/>
-            <circle cx="4"  cy="6"  r="2"/>
-            <circle cx="20" cy="6"  r="2"/>
-            <circle cx="4"  cy="18" r="2"/>
-            <circle cx="20" cy="18" r="2"/>
-            <line x1="6"  y1="7"  x2="10" y2="11"/>
-            <line x1="18" y1="7"  x2="14" y2="11"/>
-            <line x1="6"  y1="17" x2="10" y2="13"/>
-            <line x1="18" y1="17" x2="14" y2="13"/>
-          </svg>
-        </div>
+        <span class="saeul-idx">02</span>
         <h3>Kandidaten, die kein Portal kennt</h3>
         <p>70 % der wechselwilligen Therapeuten sind auf keiner Jobbörse aktiv. Wir erreichen genau diese — über unser branchenspezifisches Netzwerk und gezielte digitale Ansprache.</p>
         <div class="feat-list">
@@ -951,13 +928,7 @@
         </div>
       </div>
       <div class="saeul-card r" style="transition-delay:.21s">
-        <div class="saeul-icon">
-          <!-- Shield / Guarantee / Zero risk -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            <polyline points="9 12 11 14 15 10"/>
-          </svg>
-        </div>
+        <span class="saeul-idx">03</span>
         <h3>Null Risiko, null Aufwand</h3>
         <p>Erfolgsbasiert — Sie zahlen nur bei erfolgreicher Einstellung. Vorqualifizierte Kandidaten landen direkt bei Ihnen. Kein Lebenslauf-Wühlen, kein Zeitverlust.</p>
         <div class="feat-list">
@@ -1001,42 +972,42 @@
     </div>
     <div class="usp-grid">
       <div class="usp-card r" style="transition-delay:.04s">
-        <div class="usp-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <span class="usp-n">01</span>
         <div>
           <h4>0 € Vorabkosten</h4>
           <p>Kein Retainer, keine Einrichtungsgebühr. Sie zahlen ausschließlich bei erfolgreicher Einstellung.</p>
         </div>
       </div>
       <div class="usp-card r" style="transition-delay:.10s">
-        <div class="usp-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <span class="usp-n">02</span>
         <div>
           <h4>Nachbesetzungsgarantie</h4>
           <p>Sollte ein vermittelter Therapeut frühzeitig kündigen, besetzen wir die Stelle kostenfrei nach.</p>
         </div>
       </div>
       <div class="usp-card r" style="transition-delay:.16s">
-        <div class="usp-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg></div>
+        <span class="usp-n">03</span>
         <div>
           <h4>Nur Festanstellungen</h4>
           <p>Wir vermitteln ausschließlich in feste Arbeitsverhältnisse — für Stabilität statt Leihpersonal-Drehtür.</p>
         </div>
       </div>
       <div class="usp-card r" style="transition-delay:.22s">
-        <div class="usp-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <span class="usp-n">04</span>
         <div>
           <h4>Wir übernehmen alles</h4>
           <p>Anzeigen, Sichtung, Vorqualifizierung und Erstgespräche — Ihr Aufwand liegt bei max. 1 Stunde pro Woche.</p>
         </div>
       </div>
       <div class="usp-card r" style="transition-delay:.28s">
-        <div class="usp-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <span class="usp-n">05</span>
         <div>
           <h4>Rückmeldung in 24h</h4>
           <p>Sie erhalten innerhalb von 24 Stunden eine Antwort — auch am Wochenende kein Problem.</p>
         </div>
       </div>
       <div class="usp-card r" style="transition-delay:.34s">
-        <div class="usp-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <span class="usp-n">06</span>
         <div>
           <h4>Branchenspezialist</h4>
           <p>Kein Generalist. Ausschließlich Physio, Ergo und Logo — wir kennen die Branche von innen.</p>
