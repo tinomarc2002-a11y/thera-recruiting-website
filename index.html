@@ -39,6 +39,7 @@
         "description": "Spezialisiertes Recruiting für Therapiepraxen – Physiotherapeuten, Ergotherapeuten und Logopäden. Erfolgsbasiert und ohne Vorabkosten.",
         "url": "https://thera-recruiting.de/",
         "email": "info@thera-recruiting.de",
+        "telephone": "+4915510657637",
         "founder": {
           "@type": "Person",
           "name": "Marc Richter",
@@ -48,6 +49,7 @@
         },
         "address": {
           "@type": "PostalAddress",
+          "streetAddress": "Briesener zur Höhe 24",
           "addressLocality": "Dresden",
           "addressCountry": "DE"
         },
@@ -100,10 +102,18 @@
           },
           {
             "@type": "Question",
-            "name": "Wie funktioniert das erfolgsbasierte Modell?",
+            "name": "Was kostet Thera Recruiting?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Sie zahlen keinerlei Vorabgebühren. Unsere Vergütung erfolgt ausschließlich bei erfolgreicher Vermittlung — das heißt, wenn Sie jemanden einstellen. Das gesamte Risiko liegt bei uns."
+              "text": "Sie zahlen keinerlei Vorabgebühren — die Vergütung wird ausschließlich bei erfolgreicher Vermittlung fällig, zu Konditionen deutlich unter den Sätzen klassischer Headhunter. Ein konkretes Angebot erhalten Sie nach der kostenlosen Potenzial-Analyse."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Funktioniert das auch in meiner Region?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja — Thera Recruiting ist deutschlandweit tätig. Besonders wirkungsvoll in Regionen mit starkem Fachkräftemangel, da Kandidaten über Social Media gezielt angesprochen werden — unabhängig davon, ob sie aktiv auf Jobsuche sind."
             }
           },
           {
@@ -427,6 +437,14 @@
 
     /* stat-l: slightly larger for readability */
     .stat-l { font-size: 13px; }
+
+    /* Stat cards: brand-colored top accents */
+    .stat-card { border-top: 3px solid rgba(255,255,255,.14); }
+    .stats-grid .stat-card:nth-child(odd) { border-top-color: #38bdf8; }
+    .stats-grid .stat-card:nth-child(even) { border-top-color: #f5aa1c; }
+
+    /* Anchor jumps land below the fixed nav */
+    section[id] { scroll-margin-top: 84px; }
 
     /* Hero: brand deco layer (dot grid texture, logo motifs, wave) */
     .hero::before { content:''; position:absolute; inset:0; background-image: radial-gradient(rgba(255,255,255,.055) 1px, transparent 1px); background-size: 30px 30px; -webkit-mask-image: linear-gradient(165deg, rgba(0,0,0,.7) 0%, transparent 62%); mask-image: linear-gradient(165deg, rgba(0,0,0,.7) 0%, transparent 62%); pointer-events:none; }
@@ -930,11 +948,11 @@
       <div class="saeul-card r" style="transition-delay:.21s">
         <span class="saeul-idx">03</span>
         <h3>Null Risiko, null Aufwand</h3>
-        <p>Erfolgsbasiert — Sie zahlen nur bei erfolgreicher Einstellung. Vorqualifizierte Kandidaten landen direkt bei Ihnen. Kein Lebenslauf-Wühlen, kein Zeitverlust.</p>
+        <p>Wir tragen das Risiko: Unsere Vergütung wird erst fällig, wenn Sie einstellen. Bis dahin übernehmen wir die komplette Arbeit — Sie führen nur die finalen Gespräche.</p>
         <div class="feat-list">
-          <div class="feat-li">Keine Vorabkosten, keine Grundgebühr</div>
-          <div class="feat-li">Nur Festanstellungen — kein Leihpersonal</div>
-          <div class="feat-li">Max. 1 Std. Aufwand pro Woche für Sie</div>
+          <div class="feat-li">Vorqualifizierte Kandidaten statt Bewerbungsstapel</div>
+          <div class="feat-li">Keine Grundgebühr, keine Mindestlaufzeit</div>
+          <div class="feat-li">Ihr Aufwand: rund 1 Stunde pro Woche</div>
         </div>
       </div>
     </div>
@@ -968,14 +986,14 @@
   <div class="wrap">
     <div class="sh center r" style="margin-bottom:40px">
       <h2 class="title">Was Sie von uns bekommen</h2>
-      <p class="sub">Kein Risiko. Kein Aufwand. Nur Ergebnisse.</p>
+      <p class="sub">Sechs Zusagen, die bei uns Standard sind — ohne Sternchen und Kleingedrucktes.</p>
     </div>
     <div class="usp-grid">
       <div class="usp-card r" style="transition-delay:.04s">
         <span class="usp-n">01</span>
         <div>
           <h4>0 € Vorabkosten</h4>
-          <p>Kein Retainer, keine Einrichtungsgebühr. Sie zahlen ausschließlich bei erfolgreicher Einstellung.</p>
+          <p>Kein Retainer, keine Einrichtungsgebühr — die Vergütung wird erst mit der Unterschrift Ihres neuen Therapeuten fällig.</p>
         </div>
       </div>
       <div class="usp-card r" style="transition-delay:.10s">
@@ -996,7 +1014,7 @@
         <span class="usp-n">04</span>
         <div>
           <h4>Wir übernehmen alles</h4>
-          <p>Anzeigen, Sichtung, Vorqualifizierung und Erstgespräche — Ihr Aufwand liegt bei max. 1 Stunde pro Woche.</p>
+          <p>Anzeigen, Sichtung, Vorqualifizierung, Terminierung — Ihr Team bleibt währenddessen komplett bei den Patienten.</p>
         </div>
       </div>
       <div class="usp-card r" style="transition-delay:.28s">
@@ -1010,7 +1028,7 @@
         <span class="usp-n">06</span>
         <div>
           <h4>Branchenspezialist</h4>
-          <p>Kein Generalist. Ausschließlich Physio, Ergo und Logo — wir kennen die Branche von innen.</p>
+          <p>Wir arbeiten mit keiner anderen Branche: Jede Kampagne, jeder Kandidatenpool und jedes Gespräch dreht sich um Therapieberufe.</p>
         </div>
       </div>
     </div>
@@ -1022,7 +1040,7 @@
 <section class="sec-sm stats-sec" aria-labelledby="stats-h">
   <div class="wrap">
     <div class="sh center r" style="margin-bottom:40px">
-      <h2 class="title" id="stats-h" style="color:#fff">Zahlen, die <span class="gt">überzeugen</span></h2>
+      <h2 class="title" id="stats-h" style="color:#fff">Eine <span class="gt">Besetzung</span> in Zahlen</h2>
     </div>
     <div class="stats-grid">
       <div class="stat-card r" style="transition-delay:.05s">
@@ -1039,7 +1057,7 @@
       </div>
       <div class="stat-card r" style="transition-delay:.23s">
         <div class="stat-n gold">0 €</div>
-        <div class="stat-l">Risiko — Sie zahlen nur bei Erfolg</div>
+        <div class="stat-l">Vorabkosten für Ihre Praxis</div>
       </div>
     </div>
   </div>
@@ -1158,10 +1176,10 @@
       </div>
       <div class="faq-item r" style="transition-delay:.24s" role="listitem">
         <button class="faq-q" aria-expanded="false" aria-controls="fa5">
-          <span>Wie funktioniert das erfolgsbasierte Modell?</span>
+          <span>Was kostet Thera Recruiting?</span>
           <div class="faq-chev"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
         </button>
-        <div class="faq-a" id="fa5">Sie zahlen keinerlei Vorabgebühren. Unsere Vergütung erfolgt ausschließlich bei erfolgreicher Vermittlung — das heißt, wenn Sie jemanden einstellen. Das gesamte Risiko liegt bei uns.</div>
+        <div class="faq-a" id="fa5">Sie zahlen keinerlei Vorabgebühren — unsere Vergütung wird ausschließlich bei erfolgreicher Vermittlung fällig, zu Konditionen deutlich unter den Sätzen klassischer Headhunter. Ihr konkretes Angebot erhalten Sie nach der kostenlosen Potenzial-Analyse.</div>
       </div>
       <div class="faq-item r" style="transition-delay:.29s" role="listitem">
         <button class="faq-q" aria-expanded="false" aria-controls="fa6">
