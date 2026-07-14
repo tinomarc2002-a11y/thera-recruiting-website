@@ -32,14 +32,14 @@
 <style>
 /* ============== ROOT TOKENS ============== */
 :root {
-  --blue-deep: #1B5B8B;
-  --blue-mid: #2C7BB6;
-  --blue-soft: #E8F1F8;
-  --blue-line: #C9DCE9;
+  --blue-deep: #0d2b4e;
+  --blue-mid: #0f7bc8;
+  --blue-soft: #E9F3FB;
+  --blue-line: #CCE2F2;
 
-  --orange: #F5A623;
-  --orange-dark: #D88A0F;
-  --orange-soft: #FEF2DE;
+  --orange: #e8860f;
+  --orange-dark: #d4760a;
+  --orange-soft: #FBEEDD;
 
   --cream: #FAF7F2;
   --paper: #FFFFFF;
@@ -56,8 +56,8 @@
 
   --shadow-sm: 0 1px 2px rgba(20,34,58,0.04), 0 1px 3px rgba(20,34,58,0.03);
   --shadow-md: 0 4px 12px rgba(20,34,58,0.06), 0 2px 4px rgba(20,34,58,0.04);
-  --shadow-lg: 0 20px 40px -10px rgba(27,91,139,0.18), 0 8px 16px -8px rgba(20,34,58,0.08);
-  --shadow-orange: 0 8px 24px -8px rgba(245,166,35,0.45);
+  --shadow-lg: 0 20px 40px -10px rgba(13,43,78,0.18), 0 8px 16px -8px rgba(20,34,58,0.08);
+  --shadow-orange: 0 8px 24px -8px rgba(232,134,15,0.45);
 
   --radius-sm: 8px;
   --radius-md: 14px;
@@ -121,7 +121,7 @@ input { font: inherit; }
   right: -100px;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(245,166,35,0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(232,134,15,0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 .hero::after {
@@ -131,7 +131,7 @@ input { font: inherit; }
   left: -100px;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(27,91,139,0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(13,43,78,0.07) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -157,12 +157,12 @@ input { font: inherit; }
   background: var(--orange);
   border-radius: 50%;
   display: inline-block;
-  box-shadow: 0 0 0 4px rgba(245,166,35,0.15);
+  box-shadow: 0 0 0 4px rgba(232,134,15,0.15);
   animation: pulse 2s ease-in-out infinite;
 }
 @keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 4px rgba(245,166,35,0.15); }
-  50% { box-shadow: 0 0 0 7px rgba(245,166,35,0.05); }
+  0%, 100% { box-shadow: 0 0 0 4px rgba(232,134,15,0.15); }
+  50% { box-shadow: 0 0 0 7px rgba(232,134,15,0.05); }
 }
 
 .hero h1 {
@@ -225,7 +225,7 @@ input { font: inherit; }
 .btn-primary:hover {
   background: var(--orange-dark);
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px -8px rgba(245,166,35,0.55);
+  box-shadow: 0 12px 28px -8px rgba(232,134,15,0.55);
 }
 .btn-primary:active { transform: translateY(0); }
 .btn-primary svg { transition: transform 0.2s ease; }
@@ -272,7 +272,7 @@ input { font: inherit; }
   left: -140px;
   width: 380px;
   height: 380px;
-  background: radial-gradient(circle, rgba(44,123,182,0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(15,123,200,0.07) 0%, transparent 70%);
   pointer-events: none;
 }
 .quiz-section::after {
@@ -282,7 +282,7 @@ input { font: inherit; }
   right: -140px;
   width: 380px;
   height: 380px;
-  background: radial-gradient(circle, rgba(245,166,35,0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(232,134,15,0.07) 0%, transparent 70%);
   pointer-events: none;
 }
 .quiz-section .container { position: relative; z-index: 1; }
@@ -402,7 +402,7 @@ input { font: inherit; }
   border-color: var(--blue-deep);
   background: var(--blue-soft);
   color: var(--blue-deep);
-  box-shadow: 0 6px 18px -6px rgba(27,91,139,0.32);
+  box-shadow: 0 6px 18px -6px rgba(13,43,78,0.32);
 }
 
 .opt-label { flex: 1; line-height: 1.35; }
@@ -616,7 +616,7 @@ input { font: inherit; }
 .post-score-cta {
   max-width: 820px;
   margin: 0 auto 32px;
-  background: linear-gradient(135deg, #1B5B8B 0%, #2C7BB6 100%);
+  background: linear-gradient(135deg, #0d2b4e 0%, #0f7bc8 100%);
   border-radius: var(--radius-lg);
   padding: 28px 36px;
   display: flex;
@@ -635,7 +635,7 @@ input { font: inherit; }
   right: -40px;
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, rgba(245,166,35,0.3) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(232,134,15,0.3) 0%, transparent 70%);
   pointer-events: none;
 }
 .post-score-cta-text {
@@ -720,7 +720,7 @@ input { font: inherit; }
 
 /* GOLDFRAGE REALITY CHECK */
 .goldfrage {
-  background: linear-gradient(135deg, #FFF8E8 0%, #FEF2DE 100%);
+  background: linear-gradient(135deg, #FFF8E8 0%, #FBEEDD 100%);
   border: 1px solid #F5D88A;
   border-left: 4px solid var(--orange);
   border-radius: var(--radius-md);
@@ -846,7 +846,7 @@ input { font: inherit; }
   right: -100px;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(245,166,35,0.25) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(232,134,15,0.25) 0%, transparent 70%);
   pointer-events: none;
 }
 .booking::after {
@@ -856,7 +856,7 @@ input { font: inherit; }
   left: -80px;
   width: 240px;
   height: 240px;
-  background: radial-gradient(circle, rgba(44,123,182,0.4) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(15,123,200,0.4) 0%, transparent 70%);
   pointer-events: none;
 }
 .booking-inner { position: relative; z-index: 1; }
@@ -937,7 +937,7 @@ input { font: inherit; }
   outline: none;
   border-color: var(--orange);
   background: #fff;
-  box-shadow: 0 0 0 4px rgba(245,166,35,0.35);
+  box-shadow: 0 0 0 4px rgba(232,134,15,0.35);
 }
 
 .booking-submit {
@@ -1361,14 +1361,14 @@ input { font: inherit; }
 <script>
 // ============== SECTIONS ==============
 const sections = {
-  reichweite: { name: 'Reichweite & Sichtbarkeit', max: 35, color: '#2C7BB6', text: '#1B5B8B', soft: '#E8F1F8' },
-  marke:      { name: 'Arbeitgebermarke',          max: 35, color: '#F5A623', text: '#C77A0A', soft: '#FEF2DE' },
-  prozess:    { name: 'Bewerbungsprozess',         max: 30, color: '#17A89B', text: '#0E7A70', soft: '#E2F5F2' }
+  reichweite: { name: 'Reichweite & Sichtbarkeit', max: 35, color: '#0f7bc8', text: '#0a5a94', soft: '#E9F3FB' },
+  marke:      { name: 'Arbeitgebermarke',          max: 35, color: '#e8860f', text: '#a8630a', soft: '#FBEEDD' },
+  prozess:    { name: 'Bewerbungsprozess',         max: 30, color: '#163d6b', text: '#0d2b4e', soft: '#E7EBF2' }
 };
 
 // Non-scored question groups (for the badge above the question)
 const contextBadge   = { name: 'Kurz zu Ihrer Praxis', text: '#6B7280', soft: '#F0EEE8' };
-const goldfrageBadge = { name: 'Die Goldfrage',        text: '#C77A0A', soft: '#FEF2DE' };
+const goldfrageBadge = { name: 'Die Goldfrage',        text: '#a8630a', soft: '#FBEEDD' };
 
 // ============== QUESTIONS ==============
 // Q1-Q3 + Q15 are NOT scored (context / goldfrage)
