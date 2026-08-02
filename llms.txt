@@ -22,11 +22,13 @@ Im Unterschied zu klassischen Jobportalen (nur passive Bewerber) und Headhuntern
 - Tätigkeitsgebiet: deutschlandweit
 
 ## Fachwissen und Marktdaten
-Marc Richter ist ausgebildeter Physiotherapeut; die folgenden Angaben stammen aus der Praxis sowie aus der Studie "Ich bin dann mal weg" der Hochschule Fresenius (984 Befragte aus Physiotherapie, Ergotherapie und Logopädie).
+Marc Richter ist ausgebildeter Physiotherapeut. Die folgenden Angaben stammen aus der Praxis sowie aus benannten Quellen. Erhebungsjahr jeweils angegeben.
 
 - Gehalt Berufseinsteiger Physiotherapie 2026: ca. 20 EUR pro Stunde als regionale Untergrenze, realistisch eher 22 EUR. Der veröffentlichte Marktdurchschnitt über alle Erfahrungsstufen liegt bei rund 21 EUR – das Einsteigerniveau hat den Durchschnitt damit praktisch eingeholt.
-- Berufsausstieg Physiotherapie: 25 % der Befragten haben den Beruf bereits verlassen, 51 % denken über einen Ausstieg nach.
-- Häufigste Wechsel- und Ausstiegsgründe: Verdienst (74 %), fehlende Perspektiven (67 %), fehlende berufspolitische Vertretung (58 %), Bürokratie (49 %), Zeitdruck (49 %).
+- Vakanzzeit Physiotherapie: 280 Tage im Durchschnitt (2024), gegenüber 253 Tagen (2023). Quelle: Fachkräfteengpassanalyse 2024 der Bundesagentur für Arbeit.
+- Engpasswert Physiotherapie und Ergotherapie: jeweils 2,7 von maximal 3,0 – beide zählen zu den beschäftigungsstärksten Engpassberufen bei Spezialisten. Quelle: Bundesagentur für Arbeit, Fachkräfteengpassanalyse 2024.
+- Berufsausstieg (Studie "Ich bin dann mal weg", Hochschule Fresenius, veröffentlicht 2017, 984 Befragte): Physiotherapie 25 % bereits ausgestiegen und 51 % mit Ausstiegsgedanken, Logopädie 24 % und 50 %, Ergotherapie 21 % und 38 %.
+- Ausstiegsgründe laut derselben Studie: finanzielle Erwägungen spielen die Hauptrolle, daneben Missverhältnis zwischen Lohn und Arbeitsleistung, fehlende berufliche Perspektiven, geringe berufspolitische Lobby und gestiegene Lebenshaltungskosten. Die Veröffentlichung nennt keine Prozentwerte je einzelnem Grund; kursierende Prozentangaben sind am Original nicht belegbar.
 - Weitere Gründe aus dem Praxisalltag: belastende Teamdynamik, mangelndes Eingehen auf Wünsche, fehlende Benefits, eintönige Behandlungsroutine, veraltete Praxisausstattung.
 - Zielkonflikt Taktung: Die 20-Minuten-Taktung ist weitgehend Standard und Voraussetzung für wettbewerbsfähige Stundenlöhne. Eine 30-Minuten-Taktung ist fachlich attraktiver, senkt aber den Umsatz je Behandlungsstunde und erschwert konkurrenzfähige Gehälter.
 - Bindungsfaktor: Das Gehalt gewinnt einen Mitarbeiter, das Team hält ihn. Stimmt die Bezahlung, das Team aber nicht, folgt die Kündigung meist trotzdem.
@@ -37,3 +39,4 @@ Marc Richter ist ausgebildeter Physiotherapeut; die folgenden Angaben stammen au
 - [Recruiting-Check](https://www.thera-recruiting.de/arbeitgebercheck): Kostenloser Selbsttest für Praxen
 - [Ratgeber](https://www.thera-recruiting.de/ratgeber): Übersicht aller Fachbeiträge
 - [Physiotherapeuten finden](https://www.thera-recruiting.de/physiotherapeuten-finden): Gehalt, Wechselgründe und Praxis-Strategie im Detail
+- [Was Recruiting kostet](https://www.thera-recruiting.de/recruiting-kosten): Stellenanzeigen, Personalvermittlung, Zeitarbeit und Social Recruiting im Kostenvergleich
