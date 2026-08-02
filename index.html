@@ -367,6 +367,7 @@
     .pstrip-sec { background:var(--bg); padding:0 0 56px; }
     .pstrip-grid { display:grid; grid-template-columns:1fr; gap:12px; }
     .ps-item { position:relative; border-radius:14px; overflow:hidden; box-shadow:var(--shadow); }
+    .ps-item picture { display:block; }
     .ps-item img { width:100%; height:210px; object-fit:cover; display:block; transition:transform .5s var(--ease); }
     .ps-item:hover img { transform:scale(1.04); }
     .ps-label { position:absolute; bottom:0; left:0; right:0; padding:36px 18px 16px; background:linear-gradient(to top,rgba(8,25,51,.88) 0%,rgba(8,25,51,.25) 65%,transparent 100%); color:#fff; font-size:14px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; display:flex; align-items:baseline; justify-content:space-between; gap:10px; }
@@ -412,6 +413,7 @@
     .photo-wrap { position:relative; display:flex; justify-content:center; align-items:center; }
     .photo-frame { position:relative; width:100%; max-width:240px; border-radius:var(--r); overflow:hidden; box-shadow:0 16px 48px rgba(13,43,78,.18); }
     .photo-frame::before { content:''; position:absolute; inset:0; border-radius:inherit; border:1px solid var(--gb2); z-index:3; pointer-events:none; }
+    .photo-frame picture { display:block; }
     .photo-frame img { width:100%; height:auto; display:block; object-fit:cover; border-radius:inherit; }
     .photo-badge { position:absolute; bottom:-14px; left:20px; background:var(--white); border:1px solid var(--gb2); padding:8px 14px; border-radius:8px; white-space:nowrap; font-size:11.5px; font-weight:600; color:var(--text); display:flex; align-items:center; gap:8px; z-index:5; letter-spacing:.02em; box-shadow:var(--shadow); }
     .photo-badge::before { content:''; width:6px; height:6px; background:var(--teal); border-radius:50%; }
@@ -1196,15 +1198,24 @@
   <div class="wrap">
     <div class="pstrip-grid">
       <a class="ps-item" href="/physiotherapeuten-finden" aria-label="Physiotherapeuten finden – Gehalt, Wechselgründe und Strategie">
-        <img src="img/physiotherapie.jpg" alt="Physiotherapeut bei aktiver Bewegungstherapie mit Patient – Stellenbesetzung Physiotherapie" loading="lazy" decoding="async" width="760" height="560" />
+        <picture>
+          <source srcset="img/physiotherapie.webp" type="image/webp" />
+          <img src="img/physiotherapie.jpg" alt="Physiotherapeut bei aktiver Bewegungstherapie mit Patient – Stellenbesetzung Physiotherapie" loading="lazy" decoding="async" width="760" height="560" />
+        </picture>
         <div class="ps-label">Physiotherapie <span class="ps-more">Mehr erfahren →</span></div>
       </a>
       <div class="ps-item">
-        <img src="img/logopaedie.jpg" alt="Logopädin in der Sprachtherapie – Logopäden rekrutieren für Praxen" loading="lazy" decoding="async" width="760" height="560" />
+        <picture>
+          <source srcset="img/logopaedie.webp" type="image/webp" />
+          <img src="img/logopaedie.jpg" alt="Logopädin in der Sprachtherapie – Logopäden rekrutieren für Praxen" loading="lazy" decoding="async" width="760" height="560" />
+        </picture>
         <div class="ps-label">Logopädie</div>
       </div>
       <div class="ps-item">
-        <img src="img/ergotherapie.jpg" alt="Ergotherapeutin bei motorischer Übung – Ergotherapeuten finden und einstellen" loading="lazy" decoding="async" width="760" height="560" />
+        <picture>
+          <source srcset="img/ergotherapie.webp" type="image/webp" />
+          <img src="img/ergotherapie.jpg" alt="Ergotherapeutin bei motorischer Übung – Ergotherapeuten finden und einstellen" loading="lazy" decoding="async" width="760" height="560" />
+        </picture>
         <div class="ps-label">Ergotherapie</div>
       </div>
     </div>
@@ -1388,12 +1399,15 @@
     <div class="about-g">
       <div class="photo-wrap r lft">
         <div class="photo-frame">
-          <img
-            src="founder.jpg"
-            alt="Marc Richter, Gründer Thera Recruiting, ausgebildeter Physiotherapeut aus Dresden"
-            loading="lazy"
-            width="760" height="949"
-          />
+          <picture>
+            <source srcset="img/founder.webp" type="image/webp" />
+            <img
+              src="founder.jpg"
+              alt="Marc Richter, Gründer Thera Recruiting, ausgebildeter Physiotherapeut aus Dresden"
+              loading="lazy" decoding="async"
+              width="760" height="949"
+            />
+          </picture>
         </div>
         <div class="photo-badge">Marc Richter · Gründer</div>
       </div>

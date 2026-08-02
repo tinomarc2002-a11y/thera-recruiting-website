@@ -170,7 +170,8 @@
     .phero .lead { font-size: clamp(15.5px, 2.1vw, 18.5px); color:rgba(255,255,255,.82); max-width:60ch; line-height:1.6; }
     .byline { display:flex; align-items:center; gap:12px; margin-top:26px; padding-top:20px;
       border-top:1px solid rgba(255,255,255,.14); }
-    .byline img { width:44px; height:44px; border-radius:50%; object-fit:cover; object-position:top center; flex-shrink:0; }
+    .byline picture { display:block; flex-shrink:0; }
+    .byline img { width:44px; height:44px; border-radius:50%; object-fit:cover; display:block; }
     .byline-t { font-size:13px; color:rgba(255,255,255,.7); line-height:1.45; }
     .byline-t b { color:#fff; display:block; font-size:13.5px; }
 
@@ -323,7 +324,10 @@
         Beruf selbst gelernt hat.
       </p>
       <div class="byline">
-        <img src="founder.jpg" alt="Marc Richter, Gründer von Thera Recruiting" width="760" height="949" />
+        <picture>
+          <source srcset="img/founder-avatar.webp" type="image/webp" />
+          <img src="img/founder-avatar.jpg" alt="Marc Richter, Gründer von Thera Recruiting" width="176" height="176" decoding="async" />
+        </picture>
         <div class="byline-t">
           <b>Marc Richter</b>
           Ausgebildeter Physiotherapeut · Gründer von Thera Recruiting · Dresden
