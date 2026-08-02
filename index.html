@@ -17,10 +17,11 @@
   <meta property="og:url" content="https://thera-recruiting.de/" />
   <meta property="og:title" content="Therapeuten rekrutieren – Physio, Ergo & Logo | Thera Recruiting" />
   <meta property="og:description" content="Spezialist für Therapeuten-Recruiting. Wir finden qualifizierte Physiotherapeuten, Ergotherapeuten und Logopäden für Ihre Praxis – erfolgsbasiert & ohne Risiko." />
-  <meta property="og:image" content="https://thera-recruiting.de/founder.jpg" />
-  <meta property="og:image:width" content="760" />
-  <meta property="og:image:height" content="949" />
+  <meta property="og:image" content="https://thera-recruiting.de/img/og-thera-recruiting.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:alt" content="Thera Recruiting – Recruiting für Ihre Praxis: Physio, Ergo und Logo" />
   <meta property="og:locale" content="de_DE" />
   <meta property="og:site_name" content="Thera Recruiting" />
 
@@ -28,7 +29,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Therapeuten rekrutieren – Physio, Ergo & Logo | Thera Recruiting" />
   <meta name="twitter:description" content="Spezialist für Therapeuten-Recruiting. Erfolgsbasiert, ohne Vorabkosten – deutschlandweit." />
-  <meta name="twitter:image" content="https://thera-recruiting.de/founder.jpg" />
+  <meta name="twitter:image" content="https://thera-recruiting.de/img/og-thera-recruiting.jpg" />
 
   <!-- ═══ SEO: JSON-LD Structured Data ═══ -->
   <script type="application/ld+json">
@@ -36,20 +37,63 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LocalBusiness",
+        "@type": "WebSite",
+        "@id": "https://thera-recruiting.de/#website",
+        "url": "https://thera-recruiting.de/",
+        "name": "Thera Recruiting",
+        "inLanguage": "de-DE",
+        "publisher": { "@id": "https://thera-recruiting.de/#business" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://thera-recruiting.de/#marc-richter",
+        "name": "Marc Richter",
+        "givenName": "Marc",
+        "familyName": "Richter",
+        "jobTitle": "Gründer & Recruiting-Spezialist für Therapieberufe",
+        "description": "Ausgebildeter Physiotherapeut aus Dresden. Hat den Aufbau einer Therapiepraxis von null auf über 60 Mitarbeiter begleitet und daraus Thera Recruiting entwickelt – eine auf Physiotherapie, Ergotherapie und Logopädie spezialisierte Personalvermittlung.",
+        "image": "https://thera-recruiting.de/founder.jpg",
+        "email": "info@thera-recruiting.de",
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Berufsabschluss",
+          "name": "Staatlich anerkannter Physiotherapeut",
+          "recognizedBy": {
+            "@type": "Country",
+            "name": "Deutschland"
+          }
+        },
+        "knowsAbout": [
+          "Recruiting für Therapieberufe",
+          "Personalgewinnung in Physiotherapiepraxen",
+          "Social Recruiting im Gesundheitswesen",
+          "Arbeitgeberattraktivität für Therapeuten",
+          "Fachkräftemangel in der Physiotherapie, Ergotherapie und Logopädie"
+        ],
+        "knowsLanguage": "de-DE",
+        "worksFor": { "@id": "https://thera-recruiting.de/#business" },
+        "homeLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Dresden",
+            "addressCountry": "DE"
+          }
+        }
+      },
+      {
+        "@type": "EmploymentAgency",
         "@id": "https://thera-recruiting.de/#business",
         "name": "Thera Recruiting",
-        "description": "Spezialisiertes Recruiting für Therapiepraxen – Physiotherapeuten, Ergotherapeuten und Logopäden. Erfolgsbasiert und ohne Vorabkosten.",
+        "legalName": "Thera Recruiting – Marc Richter",
+        "description": "Spezialisiertes Recruiting für Therapiepraxen – Physiotherapeuten, Ergotherapeuten und Logopäden. Erfolgsbasiert und ohne Vorabkosten, deutschlandweit.",
         "url": "https://thera-recruiting.de/",
         "email": "info@thera-recruiting.de",
         "telephone": "+4915510657637",
-        "founder": {
-          "@type": "Person",
-          "name": "Marc Richter",
-          "jobTitle": "Gründer & Recruiting-Spezialist",
-          "description": "Ausgebildeter Physiotherapeut aus Dresden und Gründer von Thera Recruiting.",
-          "image": "https://thera-recruiting.de/founder.jpg"
-        },
+        "foundingDate": "2025",
+        "founder": { "@id": "https://thera-recruiting.de/#marc-richter" },
+        "employee": { "@id": "https://thera-recruiting.de/#marc-richter" },
+        "knowsLanguage": "de-DE",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Briesener zur Höhe 24",
@@ -60,13 +104,54 @@
           "@type": "Country",
           "name": "Deutschland"
         },
-        "serviceType": [
-          "Physiotherapeuten rekrutieren",
-          "Ergotherapeuten rekrutieren",
-          "Logopäden rekrutieren",
-          "Recruiting für Therapiepraxen"
+        "knowsAbout": [
+          "Fachkräftemangel in Therapieberufen",
+          "Social Recruiting für Gesundheitsberufe",
+          "Personalvermittlung in Festanstellung"
         ],
-        "priceRange": "Erfolgsbasiert"
+        "slogan": "Recruiting für Ihre Praxis — Physio, Ergo & Logo.",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Recruiting-Leistungen für Therapiepraxen",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "@id": "https://thera-recruiting.de/#service-physio",
+                "name": "Physiotherapeuten rekrutieren",
+                "serviceType": "Personalvermittlung Physiotherapie",
+                "description": "Vermittlung qualifizierter Physiotherapeutinnen und Physiotherapeuten in Festanstellung an Praxen, MVZ und Therapiezentren – deutschlandweit und erfolgsbasiert.",
+                "provider": { "@id": "https://thera-recruiting.de/#business" },
+                "areaServed": { "@type": "Country", "name": "Deutschland" }
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "@id": "https://thera-recruiting.de/#service-ergo",
+                "name": "Ergotherapeuten rekrutieren",
+                "serviceType": "Personalvermittlung Ergotherapie",
+                "description": "Vermittlung qualifizierter Ergotherapeutinnen und Ergotherapeuten in Festanstellung an Therapiepraxen – deutschlandweit und erfolgsbasiert.",
+                "provider": { "@id": "https://thera-recruiting.de/#business" },
+                "areaServed": { "@type": "Country", "name": "Deutschland" }
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "@id": "https://thera-recruiting.de/#service-logo",
+                "name": "Logopäden rekrutieren",
+                "serviceType": "Personalvermittlung Logopädie",
+                "description": "Vermittlung qualifizierter Logopädinnen und Logopäden in Festanstellung an Therapiepraxen – deutschlandweit und erfolgsbasiert.",
+                "provider": { "@id": "https://thera-recruiting.de/#business" },
+                "areaServed": { "@type": "Country", "name": "Deutschland" }
+              }
+            }
+          ]
+        }
       },
       {
         "@type": "FAQPage",
@@ -133,12 +218,10 @@
   }
   </script>
 
-  <!-- BILD: founder.jpg liegt in diesem Ordner; Logo ist als Inline-SVG in Nav & Footer eingebettet -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://images.unsplash.com" />
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- BILD: founder.jpg + img/ liegen in diesem Ordner; Logo ist als Inline-SVG in Nav & Footer eingebettet -->
+  <!-- Schriften selbst gehostet – keine Verbindung zu Google (DSGVO-konform) -->
+  <link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="fonts.css" />
   <style>
     /* -- Reset and Tokens -- */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -766,7 +849,7 @@
         <li><a href="#ueber">Über uns</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
-      <a href="arbeitgebercheck.html" class="btn btn-p btn-sm nav-cta-d">Arbeitgebercheck</a>
+      <a href="/arbeitgebercheck" class="btn btn-p btn-sm nav-cta-d">Arbeitgebercheck</a>
       <button class="hbg" id="hbg" aria-label="Menü öffnen" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -782,7 +865,7 @@
   <a href="#freebie"  class="mob-l">Gratis-Leitfaden</a>
   <a href="#ueber"    class="mob-l">Über uns</a>
   <a href="#faq"      class="mob-l">FAQ</a>
-  <a href="arbeitgebercheck.html" class="btn btn-p" style="margin-top:10px">Arbeitgebercheck</a>
+  <a href="/arbeitgebercheck" class="btn btn-p" style="margin-top:10px">Arbeitgebercheck</a>
 </div>
 
 <!-- ════ HERO ════ -->
@@ -900,7 +983,7 @@
         </div>
         <label class="quiz-check">
           <input type="checkbox" id="qDsgvo" />
-          <span>Ich stimme der Verarbeitung meiner Daten gemäß <a href="datenschutz.html" target="_blank" rel="noopener" style="color:#0f7bc8">Datenschutzerklärung</a> zu. *</span>
+          <span>Ich stimme der Verarbeitung meiner Daten gemäß <a href="/datenschutz" target="_blank" rel="noopener" style="color:#0f7bc8">Datenschutzerklärung</a> zu. *</span>
         </label>
       </div>
     </div>
@@ -1038,15 +1121,15 @@
   <div class="wrap">
     <div class="pstrip-grid">
       <div class="ps-item">
-        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=82&fit=crop&crop=top" alt="Physiotherapeut bei aktiver Bewegungstherapie mit Patient – Stellenbesetzung Physiotherapie" loading="lazy" />
+        <img src="img/physiotherapie.jpg" alt="Physiotherapeut bei aktiver Bewegungstherapie mit Patient – Stellenbesetzung Physiotherapie" loading="lazy" decoding="async" width="760" height="560" />
         <div class="ps-label">Physiotherapie</div>
       </div>
       <div class="ps-item">
-        <img src="https://images.unsplash.com/photo-1728138127500-fb73c1313f76?w=600&q=82&fit=crop&crop=center" alt="Logopädin in der Sprachtherapie – Logopäden rekrutieren für Praxen" loading="lazy" />
+        <img src="img/logopaedie.jpg" alt="Logopädin in der Sprachtherapie – Logopäden rekrutieren für Praxen" loading="lazy" decoding="async" width="760" height="560" />
         <div class="ps-label">Logopädie</div>
       </div>
       <div class="ps-item">
-        <img src="https://images.unsplash.com/photo-1709127347884-a106974ef58d?w=600&q=82&fit=crop&crop=center" alt="Ergotherapeutin bei motorischer Übung – Ergotherapeuten finden und einstellen" loading="lazy" />
+        <img src="img/ergotherapie.jpg" alt="Ergotherapeutin bei motorischer Übung – Ergotherapeuten finden und einstellen" loading="lazy" decoding="async" width="760" height="560" />
         <div class="ps-label">Ergotherapie</div>
       </div>
     </div>
@@ -1345,7 +1428,7 @@
             <svg width="17" height="17" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2 V11 M4.5 7.5 L8 11 L11.5 7.5 M3 13.5 H13"/></svg>
             Leitfaden herunterladen
           </a>
-          <a href="arbeitgebercheck.html" class="freebie-alt-link">
+          <a href="/arbeitgebercheck" class="freebie-alt-link">
             Direkt zum Arbeitgebercheck
             <svg width="17" height="17" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="9" x2="14" y2="9"/><polyline points="9,4 14,9 9,14"/></svg>
           </a>
@@ -1408,7 +1491,7 @@
           <li><a href="#freebie">Gratis-Leitfaden</a></li>
           <li><a href="#ueber">Über uns</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a href="arbeitgebercheck.html">Arbeitgebercheck</a></li>
+          <li><a href="/arbeitgebercheck">Arbeitgebercheck</a></li>
         </ul>
       </div>
       <div class="foot-col">
@@ -1416,8 +1499,8 @@
         <ul>
           <li><a href="mailto:info@thera-recruiting.de">info@thera-recruiting.de</a></li>
           <li><a href="#quiz-anker" style="color:#0ea5e9;font-weight:600;">→ Zur kostenlosen Anfrage</a></li>
-          <li><a href="impressum.html">Impressum</a></li>
-          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="/impressum">Impressum</a></li>
+          <li><a href="/datenschutz">Datenschutz</a></li>
         </ul>
       </div>
     </div>
@@ -1591,7 +1674,7 @@
       })
       .then(function(res){
         if(res.ok){
-          window.location.href = 'danke.html?name=' + encodeURIComponent(name);
+          window.location.href = '/danke?name=' + encodeURIComponent(name);
         } else {
           btn.disabled = false;
           btn.textContent = 'Jetzt senden';
