@@ -117,205 +117,50 @@
   <link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="fonts.css" />
 
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #ffffff; --bg2: #f4f7fb; --bg3: #edf0f7;
-      --navy: #0d2b4e; --navy2: #163d6b;
-      --teal: #0f7bc8; --teal2: #0762b0;
-      --gold: #e8860f; --gold2: #d4760a;
-      --white: #ffffff; --text: #0d1f3c; --muted: #4e5a70; --muted2: #94a3b8;
-      --gb: rgba(13,43,78,.09); --gb2: rgba(13,43,78,.18);
-      --shadow: 0 2px 16px rgba(13,43,78,.07);
-      --r: 14px; --ease: cubic-bezier(.25,.46,.45,.94);
-    }
-    html { background:#f7f9fc; color-scheme: light; scroll-behavior: smooth; font-size: 15px; }
-    body { font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background:#f7f9fc;
-      color: var(--text); line-height:1.65; -webkit-font-smoothing:antialiased; }
-    a { color: inherit; }
-    img { max-width:100%; display:block; }
-    ::selection { background: var(--teal); color:#fff; }
-    a:focus-visible, button:focus-visible { outline:2px solid var(--teal); outline-offset:3px; border-radius:4px; }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration:.01ms !important; transition-duration:.01ms !important; } }
-
-    .wrap { max-width: 1160px; margin:0 auto; padding: 0 16px; }
-    .narrow { max-width: 720px; margin:0 auto; }
-
-    /* NAV */
-    nav { position:sticky; top:0; z-index:100; background:var(--navy); padding:12px 0; }
-    .nav-i { display:flex; align-items:center; justify-content:space-between; gap:16px; }
-    .nav-logo { display:flex; align-items:center; }
-    .nav-back { color:rgba(255,255,255,.6); font-size:13px; text-decoration:none; letter-spacing:.02em; white-space:nowrap; }
-    .nav-back:hover { color:#fff; }
-
-    /* HERO */
-    .phero { background: radial-gradient(900px 500px at 84% 6%, rgba(15,123,200,.30) 0%, transparent 60%),
-                        linear-gradient(142deg,#07102a 0%,#0d2b4e 60%,#0a3a6e 100%);
-             color:#fff; padding: 54px 0 60px; position:relative; overflow:hidden; }
-    .phero::before { content:''; position:absolute; inset:0;
-      background-image: radial-gradient(rgba(255,255,255,.055) 1px, transparent 1px);
-      background-size: 30px 30px;
-      -webkit-mask-image: linear-gradient(165deg, rgba(0,0,0,.7) 0%, transparent 62%);
-      mask-image: linear-gradient(165deg, rgba(0,0,0,.7) 0%, transparent 62%); pointer-events:none; }
-    .phero .wrap { position:relative; z-index:1; }
-    .crumb { font-size:12.5px; color:rgba(255,255,255,.55); margin-bottom:20px; }
-    .crumb a { color:rgba(255,255,255,.75); text-decoration:none; }
-    .crumb a:hover { color:#fff; text-decoration:underline; }
-    .tagline { display:inline-flex; align-items:center; gap:10px; font-size:11.5px; font-weight:800;
-      letter-spacing:.14em; text-transform:uppercase; color:#5fcde3; margin-bottom:16px; }
-    .tagline::before { content:''; width:26px; height:2px; background:var(--gold); }
-    h1 { font-size: clamp(28px, 5.2vw, 48px); font-weight:900; line-height:1.08; letter-spacing:-.032em;
-      margin-bottom:18px; max-width:19ch; text-wrap: balance; }
-    h1 .g { color:#5fcde3; }
-    .phero .lead { font-size: clamp(15.5px, 2.1vw, 18.5px); color:rgba(255,255,255,.82); max-width:60ch; line-height:1.6; }
-    .byline { display:flex; align-items:center; gap:12px; margin-top:26px; padding-top:20px;
-      border-top:1px solid rgba(255,255,255,.14); }
-    .byline picture { display:block; flex-shrink:0; }
-    .byline img { width:44px; height:44px; border-radius:50%; object-fit:cover; display:block; }
-    .byline-t { font-size:13px; color:rgba(255,255,255,.7); line-height:1.45; }
-    .byline-t b { color:#fff; display:block; font-size:13.5px; }
-
-    /* CONTENT */
-    main { padding: 52px 0 20px; }
-    .sec { margin-bottom: 46px; }
-    h2 { font-size: clamp(21px, 3.3vw, 29px); font-weight:800; letter-spacing:-.025em; line-height:1.2;
-      margin-bottom:14px; color:var(--text); text-wrap: balance; }
-    h3 { font-size:17.5px; font-weight:700; letter-spacing:-.012em; margin: 26px 0 8px; color:var(--text); }
-    p { font-size:16px; color:var(--muted); margin-bottom:14px; line-height:1.72; }
-    p strong { color:var(--text); font-weight:700; }
-    .lead-p { font-size:17.5px; color:var(--text); font-weight:500; line-height:1.62; margin-bottom:18px; }
-
-    /* Data callout */
-    .stat-row { display:grid; grid-template-columns:1fr; gap:12px; margin: 22px 0 24px; }
-    .stat { background:var(--white); border:1px solid var(--gb); border-radius:var(--r); padding:20px 22px;
-      box-shadow:var(--shadow); border-left:3px solid var(--teal); }
-    .stat:nth-child(2) { border-left-color: var(--gold); }
-    .stat:nth-child(3) { border-left-color: var(--navy); }
-    .stat b { display:block; font-size:31px; font-weight:900; letter-spacing:-.035em; line-height:1;
-      color:var(--navy); margin-bottom:7px; font-variant-numeric: tabular-nums; }
-    .stat:nth-child(2) b { color:var(--gold2); }
-    .stat span { font-size:14px; color:var(--muted); line-height:1.5; display:block; }
-
-    /* Insight box */
-    .insight { background:linear-gradient(120deg,#0d2b4e 0%,#0e3a66 60%,#0f6bb0 130%); color:#fff;
-      border-radius:var(--r); padding:28px 26px; margin: 26px 0; position:relative; overflow:hidden; }
-    .insight::before { content:''; position:absolute; top:-70px; right:-50px; width:250px; height:250px;
-      border-radius:50%; background:radial-gradient(circle, rgba(245,170,28,.20), transparent 66%); pointer-events:none; }
-    .insight-l { display:block; font-size:11px; font-weight:800; letter-spacing:.13em; text-transform:uppercase;
-      color:#f5c542; margin-bottom:10px; position:relative; z-index:1; }
-    .insight p { color:rgba(255,255,255,.85); font-size:16.5px; margin-bottom:0; position:relative; z-index:1; line-height:1.6; }
-    .insight p strong { color:#fff; }
-
-    /* List */
-    ul.reasons { list-style:none; margin: 16px 0 20px; display:flex; flex-direction:column; gap:11px; }
-    ul.reasons li { position:relative; padding-left:26px; font-size:15.5px; color:var(--muted); line-height:1.6; }
-    ul.reasons li::before { content:''; position:absolute; left:2px; top:9px; width:8px; height:8px;
-      border-radius:2px; background:var(--gold); }
-    ul.reasons li b { color:var(--text); }
-
-    /* Table */
-    .tw { overflow-x:auto; margin: 20px 0 22px; }
-    table { border-collapse:collapse; width:100%; min-width:420px; font-size:15px; background:var(--white);
-      border:1px solid var(--gb); border-radius:var(--r); overflow:hidden; box-shadow:var(--shadow); }
-    th { text-align:left; font-size:11.5px; font-weight:800; letter-spacing:.09em; text-transform:uppercase;
-      color:var(--muted2); padding:13px 18px; background:var(--bg2); border-bottom:1px solid var(--gb); }
-    td { padding:13px 18px; border-bottom:1px solid var(--gb); color:var(--muted); vertical-align:top; }
-    tr:last-child td { border-bottom:none; }
-    td:first-child { color:var(--text); font-weight:600; }
-    td.n { font-variant-numeric: tabular-nums; white-space:nowrap; font-weight:700; color:var(--navy); }
-
-    .src { font-size:13px; color:var(--muted2); margin-top:-8px; margin-bottom:22px; line-height:1.5; }
-    .src a { color:var(--teal); }
-
-    /* FAQ */
-    .faq-i { background:var(--white); border:1px solid var(--gb); border-radius:var(--r); margin-bottom:10px;
-      overflow:hidden; box-shadow:var(--shadow); }
-    .faq-q { display:flex; align-items:center; justify-content:space-between; gap:14px; width:100%;
-      padding:16px 18px; background:none; border:none; cursor:pointer; font-family:inherit; font-size:15.5px;
-      font-weight:600; color:var(--text); text-align:left; min-height:52px; transition:color .15s; }
-    .faq-q:hover { color:var(--teal); }
-    .faq-q svg { width:14px; height:14px; stroke:var(--muted2); fill:none; stroke-width:2; flex-shrink:0;
-      transition:transform .25s var(--ease); }
-    .faq-i.op { border-color:var(--teal); }
-    .faq-i.op .faq-q svg { transform:rotate(180deg); stroke:var(--teal); }
-    .faq-a { max-height:0; overflow:hidden; padding:0 18px; font-size:15.5px; color:var(--muted);
-      line-height:1.7; transition:max-height .35s var(--ease), padding .25s ease; }
-    .faq-a.op { max-height:600px; padding:0 18px 18px; }
-
-    /* CTA */
-    .cta { background:linear-gradient(135deg,#0d2b4e 0%,#0e3a66 55%,#0f6bb0 125%); color:#fff;
-      border-radius:16px; padding:38px 26px; text-align:center; margin: 46px 0 10px; position:relative; overflow:hidden; }
-    .cta::before { content:''; position:absolute; top:-80px; right:-60px; width:280px; height:280px; border-radius:50%;
-      background:radial-gradient(circle, rgba(15,123,200,.30), transparent 66%); pointer-events:none; }
-    .cta h2 { color:#fff; margin-bottom:10px; position:relative; z-index:1; }
-    .cta p { color:rgba(255,255,255,.8); font-size:16px; margin-bottom:24px; position:relative; z-index:1;
-      max-width:52ch; margin-left:auto; margin-right:auto; }
-    .btn { display:inline-flex; align-items:center; justify-content:center; gap:9px; background:#0f7bc8; color:#fff;
-      padding:15px 30px; border-radius:8px; font-weight:700; font-size:15.5px; text-decoration:none; min-height:48px;
-      box-shadow:0 4px 18px rgba(14,165,233,.32); transition:transform .2s var(--ease), background .2s, box-shadow .25s;
-      position:relative; z-index:1; }
-    .btn:hover { background:#0d6db0; transform:translateY(-2px); box-shadow:0 7px 26px rgba(14,165,233,.45); }
-    .cta-note { font-size:12.5px; color:rgba(255,255,255,.62); margin-top:14px; position:relative; z-index:1; }
-
-    /* Related */
-    .rel { border-top:1px solid var(--gb2); padding-top:26px; margin-top:40px; }
-    .rel h3 { margin-top:0; font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted2); }
-    .rel-links { display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; }
-    .rel-links a { font-size:14.5px; font-weight:600; color:var(--teal); text-decoration:none;
-      border:1px solid rgba(15,123,200,.3); padding:9px 16px; border-radius:7px; transition:background .2s, border-color .2s; }
-    .rel-links a:hover { background:rgba(15,123,200,.07); border-color:var(--teal); }
-
-    footer { background:var(--navy); color:rgba(255,255,255,.6); padding:34px 0; margin-top:52px; font-size:13px; }
-    .foot-i { display:flex; flex-wrap:wrap; gap:12px 24px; align-items:center; justify-content:space-between; }
-    footer a { color:rgba(255,255,255,.72); text-decoration:none; }
-    footer a:hover { color:#fff; }
-    .foot-links { display:flex; gap:18px; flex-wrap:wrap; }
-
-    @media (min-width:768px) {
-      html { font-size:16px; }
-      .wrap { padding:0 24px; }
-      .phero { padding: 66px 0 72px; }
-      main { padding: 64px 0 20px; }
-      .sec { margin-bottom: 56px; }
-      .stat-row { grid-template-columns: repeat(3,1fr); gap:16px; }
-      .insight { padding:34px 34px; }
-      .cta { padding:52px 44px; }
-    }
-  </style>
+  <link rel="stylesheet" href="page.css" />
 </head>
 <body>
 
-<nav>
-  <div class="wrap">
-    <div class="nav-i">
-      <a href="/" class="nav-logo" aria-label="Thera Recruiting – Startseite">
-        <svg viewBox="0 0 340 110" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="height:42px;width:auto;display:block">
-          <g fill="#f5aa1c">
-            <circle cx="30" cy="40" r="2.4"/><circle cx="40" cy="28" r="2.8"/><circle cx="54" cy="18" r="3.1"/>
-            <circle cx="70" cy="13" r="3.4"/><circle cx="87" cy="13" r="3.4"/><circle cx="103" cy="18" r="3.1"/>
-            <circle cx="117" cy="28" r="2.8"/><circle cx="44" cy="38" r="1.9" opacity=".55"/>
-            <circle cx="56" cy="28" r="2.1" opacity=".55"/><circle cx="72" cy="22" r="2.2" opacity=".55"/>
-            <circle cx="87" cy="22" r="2.2" opacity=".55"/><circle cx="102" cy="28" r="2.1" opacity=".55"/>
-          </g>
-          <circle cx="44" cy="58" r="12" fill="#f5aa1c"/>
-          <path d="M28 96 C 34 54, 78 50, 132 78 C 110 64, 70 70, 50 100 C 38 102, 26 100, 28 96 Z" fill="#0d6d8a"/>
-          <path d="M38 98 C 44 62, 78 60, 122 86 C 104 72, 72 78, 58 100 C 48 102, 36 100, 38 98 Z" fill="#168cb0"/>
-          <path d="M48 100 C 54 76, 76 72, 112 94 C 96 84, 72 88, 64 102 C 56 102, 46 102, 48 100 Z" fill="#2bb0d4" opacity=".75"/>
-          <path d="M14 106 C 42 90, 86 90, 130 104 L 142 108 C 104 100, 70 100, 26 110 Z" fill="#f5aa1c"/>
-          <text x="152" y="58" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="800" fill="#5fcde3" letter-spacing="-1.2">Thera</text>
-          <text x="152" y="96" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700" font-style="italic" fill="#f5aa1c" letter-spacing="-.6">Recruiting</text>
-        </svg>
-      </a>
-      <a href="/#kontakt" class="nav-back">Kostenlose Potenzial-Analyse →</a>
+<nav class="site-nav">
+  <div class="wrap nav-i">
+    <a href="/" class="nav-logo" aria-label="Thera Recruiting – Startseite">
+      <svg viewBox="0 0 340 110" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g fill="#f5aa1c">
+          <circle cx="30" cy="40" r="2.4"/><circle cx="40" cy="28" r="2.8"/><circle cx="54" cy="18" r="3.1"/>
+          <circle cx="70" cy="13" r="3.4"/><circle cx="87" cy="13" r="3.4"/><circle cx="103" cy="18" r="3.1"/>
+          <circle cx="117" cy="28" r="2.8"/><circle cx="44" cy="38" r="1.9" opacity=".55"/>
+          <circle cx="56" cy="28" r="2.1" opacity=".55"/><circle cx="72" cy="22" r="2.2" opacity=".55"/>
+          <circle cx="87" cy="22" r="2.2" opacity=".55"/><circle cx="102" cy="28" r="2.1" opacity=".55"/>
+        </g>
+        <circle cx="44" cy="58" r="12" fill="#f5aa1c"/>
+        <path d="M28 96 C 34 54, 78 50, 132 78 C 110 64, 70 70, 50 100 C 38 102, 26 100, 28 96 Z" fill="#0d6d8a"/>
+        <path d="M38 98 C 44 62, 78 60, 122 86 C 104 72, 72 78, 58 100 C 48 102, 36 100, 38 98 Z" fill="#168cb0"/>
+        <path d="M48 100 C 54 76, 76 72, 112 94 C 96 84, 72 88, 64 102 C 56 102, 46 102, 48 100 Z" fill="#2bb0d4" opacity=".75"/>
+        <path d="M14 106 C 42 90, 86 90, 130 104 L 142 108 C 104 100, 70 100, 26 110 Z" fill="#f5aa1c"/>
+        <text x="152" y="58" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="800" fill="#5fcde3" letter-spacing="-1.2">Thera</text>
+        <text x="152" y="96" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700" font-style="italic" fill="#f5aa1c" letter-spacing="-.6">Recruiting</text>
+      </svg>
+    </a>
+    <div class="nav-scroll">
+      <ul class="nav-links">
+        <li><a href="/#methode">Methode</a></li>
+        <li><a href="/#prozess">Ablauf</a></li>
+        <li><a href="/ratgeber" aria-current="page">Ratgeber</a></li>
+        <li><a href="/#ueber">Über uns</a></li>
+        <li><a href="/#faq">FAQ</a></li>
+      </ul>
     </div>
+    <a href="/arbeitgebercheck" class="nav-cta">Arbeitgebercheck</a>
   </div>
 </nav>
 
-<header class="phero">
+<header class="page-head">
   <div class="wrap">
     <div class="narrow">
-      <p class="crumb"><a href="/">Startseite</a> › Physiotherapeuten finden</p>
-      <span class="tagline">Für Praxisinhaber</span>
+      <nav class="crumb" aria-label="Brotkrümelnavigation">
+        <a href="/">Startseite</a> <span>›</span> <a href="/ratgeber">Ratgeber</a> <span>›</span> Physiotherapeuten finden
+      </nav>
+      <span class="eyebrow">Für Praxisinhaber</span>
       <h1>Physiotherapeuten finden — was Ihre Praxis <span class="g">2026 dafür bieten muss</span></h1>
       <p class="lead">
         Die meisten Ratgeber zu diesem Thema bleiben allgemein. Diese Seite nennt konkrete
@@ -597,10 +442,11 @@
       </div>
 
       <div class="rel">
-        <h3>Weiterlesen</h3>
+        <h2>Weiterlesen</h2>
         <div class="rel-links">
-          <a href="/arbeitgebercheck">Recruiting-Check: Wie gut ist Ihre Praxis aufgestellt?</a>
-          <a href="/">Unsere Methode</a>
+          <a href="/ratgeber">Alle Ratgeber-Beiträge</a>
+          <a href="/arbeitgebercheck">Recruiting-Check für Ihre Praxis</a>
+          <a href="/#methode">Unsere Methode</a>
         </div>
       </div>
 
@@ -608,12 +454,13 @@
   </div>
 </main>
 
-<footer>
+<footer class="site-foot">
   <div class="wrap">
     <div class="foot-i">
       <span>© 2026 Marc Richter / Thera Recruiting · Dresden</span>
       <div class="foot-links">
         <a href="/">Startseite</a>
+        <a href="/ratgeber">Ratgeber</a>
         <a href="/arbeitgebercheck">Recruiting-Check</a>
         <a href="/impressum">Impressum</a>
         <a href="/datenschutz">Datenschutz</a>

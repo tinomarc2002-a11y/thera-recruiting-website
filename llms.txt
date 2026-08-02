@@ -35,4 +35,5 @@ Marc Richter ist ausgebildeter Physiotherapeut; die folgenden Angaben stammen au
 ## Seiten
 - [Startseite](https://www.thera-recruiting.de/): Übersicht, Methode, FAQ, kostenlose Potenzial-Analyse
 - [Recruiting-Check](https://www.thera-recruiting.de/arbeitgebercheck): Kostenloser Selbsttest für Praxen
+- [Ratgeber](https://www.thera-recruiting.de/ratgeber): Übersicht aller Fachbeiträge
 - [Physiotherapeuten finden](https://www.thera-recruiting.de/physiotherapeuten-finden): Gehalt, Wechselgründe und Praxis-Strategie im Detail
