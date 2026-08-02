@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thera-recruiting.de/sitemap.xml
+Sitemap: https://www.thera-recruiting.de/sitemap.xml
