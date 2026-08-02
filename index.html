@@ -368,7 +368,9 @@
     .ps-item { position:relative; border-radius:14px; overflow:hidden; box-shadow:var(--shadow); }
     .ps-item img { width:100%; height:210px; object-fit:cover; display:block; transition:transform .5s var(--ease); }
     .ps-item:hover img { transform:scale(1.04); }
-    .ps-label { position:absolute; bottom:0; left:0; right:0; padding:36px 18px 16px; background:linear-gradient(to top,rgba(8,25,51,.88) 0%,rgba(8,25,51,.25) 65%,transparent 100%); color:#fff; font-size:14px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; }
+    .ps-label { position:absolute; bottom:0; left:0; right:0; padding:36px 18px 16px; background:linear-gradient(to top,rgba(8,25,51,.88) 0%,rgba(8,25,51,.25) 65%,transparent 100%); color:#fff; font-size:14px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; display:flex; align-items:baseline; justify-content:space-between; gap:10px; }
+    .ps-more { font-size:11.5px; font-weight:700; letter-spacing:.06em; color:#5fcde3; text-transform:uppercase; opacity:0; transform:translateX(-6px); transition:opacity .25s var(--ease), transform .25s var(--ease); white-space:nowrap; }
+    a.ps-item:hover .ps-more, a.ps-item:focus-visible .ps-more { opacity:1; transform:none; }
     /* USP - mobile: 1 column */
     .usp-sec { background:var(--bg); }
     .usp-grid { display:grid; grid-template-columns:1fr; gap:0; border:1px solid var(--gb); border-radius:var(--r); overflow:hidden; box-shadow:var(--shadow); }
@@ -845,6 +847,7 @@
       <ul class="nav-links" role="list">
         <li><a href="#methode">Methode</a></li>
         <li><a href="#prozess">Ablauf</a></li>
+        <li><a href="/physiotherapeuten-finden">Wissen</a></li>
         <li><a href="#freebie">Gratis-Leitfaden</a></li>
         <li><a href="#ueber">Über uns</a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -862,6 +865,7 @@
   <button class="mob-close" id="mobClose" aria-label="Schließen">✕</button>
   <a href="#methode"  class="mob-l">Methode</a>
   <a href="#prozess"  class="mob-l">Ablauf</a>
+  <a href="/physiotherapeuten-finden" class="mob-l">Wissen</a>
   <a href="#freebie"  class="mob-l">Gratis-Leitfaden</a>
   <a href="#ueber"    class="mob-l">Über uns</a>
   <a href="#faq"      class="mob-l">FAQ</a>
@@ -1120,10 +1124,10 @@
 <section class="pstrip-sec">
   <div class="wrap">
     <div class="pstrip-grid">
-      <div class="ps-item">
+      <a class="ps-item" href="/physiotherapeuten-finden" aria-label="Physiotherapeuten finden – Gehalt, Wechselgründe und Strategie">
         <img src="img/physiotherapie.jpg" alt="Physiotherapeut bei aktiver Bewegungstherapie mit Patient – Stellenbesetzung Physiotherapie" loading="lazy" decoding="async" width="760" height="560" />
-        <div class="ps-label">Physiotherapie</div>
-      </div>
+        <div class="ps-label">Physiotherapie <span class="ps-more">Mehr erfahren →</span></div>
+      </a>
       <div class="ps-item">
         <img src="img/logopaedie.jpg" alt="Logopädin in der Sprachtherapie – Logopäden rekrutieren für Praxen" loading="lazy" decoding="async" width="760" height="560" />
         <div class="ps-label">Logopädie</div>
@@ -1488,6 +1492,7 @@
         <ul>
           <li><a href="#methode">Unsere Methode</a></li>
           <li><a href="#prozess">Ablauf</a></li>
+          <li><a href="/physiotherapeuten-finden">Physiotherapeuten finden</a></li>
           <li><a href="#freebie">Gratis-Leitfaden</a></li>
           <li><a href="#ueber">Über uns</a></li>
           <li><a href="#faq">FAQ</a></li>
