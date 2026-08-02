@@ -593,9 +593,36 @@
     .hero-deco { position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
     .hero-deco svg { position:absolute; display:block; }
     .hd-wave { left:0; bottom:-2px; width:100%; height:clamp(110px, 20vw, 260px); }
-    .hd-dots { display:none; top:64px; right:-70px; width:min(44vw, 540px); height:auto; animation: heroDrift 10s ease-in-out infinite; }
-    @keyframes heroDrift { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
+    .hd-dots { display:none; top:64px; right:-70px; width:min(44vw, 540px); height:auto; will-change:transform; }
     @media (min-width: 1024px) { .hd-dots { display:block; } }
+
+    /* ======= PREMIUM LAYER: Parallax, Progress, Depth ======= */
+
+    /* Scroll progress bar */
+    .scroll-progress { position:fixed; top:0; left:0; width:100%; height:3px; z-index:2000; pointer-events:none; }
+    .scroll-progress b { display:block; height:100%; background:linear-gradient(90deg,#f5aa1c 0%,#0f7bc8 55%,#5fcde3 100%); transform-origin:left; transform:scaleX(0); }
+
+    /* Sections that carry parallax decor */
+    .prob-sec, .saeul-sec, .proc-sec, .about-sec, .faq-sec, .freebie-sec { position:relative; overflow:hidden; }
+    .sec > .wrap, .sec-sm > .wrap { position:relative; z-index:1; }
+    .sec-deco { position:absolute; pointer-events:none; z-index:0; will-change:transform; display:none; }
+    @media (min-width: 1024px) { .sec-deco { display:block; } }
+
+    /* Hero headline: premium gradient on the teal line + balanced wrapping */
+    .hero-hl { text-wrap: balance; }
+    .sh .title { text-wrap: balance; }
+    .hero-hl .gt { background:linear-gradient(100deg,#8fdcef 0%,#38bdf8 45%,#57b6e8 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+
+    /* Method cards: accent-matched hover glow */
+    .saeul-card:nth-child(1):hover { box-shadow: 0 6px 14px rgba(13,43,78,.06), 0 20px 48px rgba(15,123,200,.15); }
+    .saeul-card:nth-child(2):hover { box-shadow: 0 6px 14px rgba(13,43,78,.06), 0 20px 48px rgba(232,134,15,.15); }
+    .saeul-card:nth-child(3):hover { box-shadow: 0 6px 14px rgba(13,43,78,.06), 0 20px 48px rgba(13,43,78,.15); }
+
+    /* Footer: wave divider mirrors the stats band */
+    footer { position:relative; overflow:hidden; padding-top:84px; }
+    .foot-wave { position:absolute; top:0; left:0; width:100%; height:42px; pointer-events:none; }
+    .foot-wave svg { display:block; width:100%; height:100%; }
+    footer .wrap { position:relative; z-index:1; }
 
     /* Cards: layered shadows for more depth */
     .saeul-card { box-shadow: 0 1px 2px rgba(13,43,78,.05), 0 4px 18px rgba(13,43,78,.08); }
@@ -807,6 +834,7 @@
 </head>
 <body>
 <div class="page-wrap">
+<div class="scroll-progress" aria-hidden="true"><b></b></div>
 
 <!-- ════ NAV ════ -->
 <nav id="nav" role="navigation" aria-label="Hauptnavigation">
@@ -875,7 +903,7 @@
 <!-- ════ HERO ════ -->
 <section class="hero" aria-label="Hero">
   <div class="hero-deco" aria-hidden="true">
-    <svg class="hd-dots" viewBox="0 0 540 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg class="hd-dots" data-plx="-0.12" viewBox="0 0 540 460" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="280" cy="250" r="150" stroke="rgba(95,205,227,.15)" stroke-width="1.3"/>
       <circle cx="280" cy="250" r="196" stroke="rgba(95,205,227,.07)" stroke-width="1"/>
       <g fill="#f5aa1c">
@@ -1015,6 +1043,10 @@
 
 <!-- ════ PROBLEM ════ -->
 <section class="sec prob-sec" id="problem" aria-labelledby="prob-h">
+  <svg class="sec-deco" data-plx="0.12" style="top:-50px; right:-70px; width:300px; height:300px;" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+    <circle cx="100" cy="100" r="88" stroke="rgba(15,123,200,.10)" stroke-width="1.5"/>
+    <circle cx="100" cy="100" r="62" stroke="rgba(232,134,15,.10)" stroke-width="1.5"/>
+  </svg>
   <div class="wrap">
     <div class="sh center r">
       <div class="tag">Die Realität</div>
@@ -1062,6 +1094,14 @@
 
 <!-- ════ SÄULEN ════ -->
 <section class="sec saeul-sec" id="methode" aria-labelledby="saeul-h">
+  <svg class="sec-deco" data-plx="0.09" style="bottom:30px; left:-40px; width:240px; height:170px;" viewBox="0 0 220 160" aria-hidden="true">
+    <g fill="#e8860f" opacity=".16">
+      <circle cx="30" cy="120" r="4"/><circle cx="52" cy="92" r="4.6"/><circle cx="82" cy="70" r="5.2"/>
+      <circle cx="118" cy="56" r="5.8"/><circle cx="156" cy="52" r="5.8"/><circle cx="192" cy="58" r="5.2"/>
+      <circle cx="58" cy="126" r="3.2" opacity=".6"/><circle cx="84" cy="104" r="3.6" opacity=".6"/>
+      <circle cx="116" cy="90" r="4" opacity=".6"/><circle cx="150" cy="86" r="4" opacity=".6"/>
+    </g>
+  </svg>
   <div class="wrap">
     <div class="sh center r">
       <div class="tag">Warum Thera Recruiting</div>
@@ -1236,6 +1276,8 @@
       <path d="M0 30 C260 12, 460 44, 720 28 C1000 12, 1160 46, 1440 20" stroke="rgba(245,170,28,.45)" stroke-width="2" fill="none"/>
     </svg>
   </div>
+  <div class="sec-deco" data-plx="0.16" style="top:-70px; left:-90px; width:340px; height:340px; border-radius:50%; background:radial-gradient(circle, rgba(15,123,200,.22), transparent 65%);" aria-hidden="true"></div>
+  <div class="sec-deco" data-plx="-0.12" style="bottom:-90px; right:-70px; width:300px; height:300px; border-radius:50%; background:radial-gradient(circle, rgba(245,170,28,.13), transparent 65%);" aria-hidden="true"></div>
   <div class="wrap">
     <div class="sh center r" style="margin-bottom:40px">
       <h2 class="title" id="stats-h" style="color:#fff">Eine <span class="gt">Besetzung</span> in Zahlen</h2>
@@ -1264,6 +1306,10 @@
 
 <!-- ════ PROZESS ════ -->
 <section class="sec proc-sec" id="prozess" aria-labelledby="proc-h">
+  <svg class="sec-deco" data-plx="-0.10" style="top:40px; left:-80px; width:280px; height:280px;" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+    <circle cx="100" cy="100" r="90" stroke="rgba(13,43,78,.08)" stroke-width="1.5"/>
+    <circle cx="100" cy="100" r="58" stroke="rgba(15,123,200,.09)" stroke-width="1.5"/>
+  </svg>
   <div class="wrap">
     <div class="sh center r">
       <div class="tag">So funktioniert's</div>
@@ -1299,6 +1345,14 @@
 
 <!-- ════ ABOUT ════ -->
 <section class="sec about-sec" id="ueber" aria-labelledby="about-h">
+  <svg class="sec-deco" data-plx="0.11" style="top:60px; right:-50px; width:230px; height:170px;" viewBox="0 0 220 160" aria-hidden="true">
+    <g fill="#0f7bc8" opacity=".12">
+      <circle cx="30" cy="120" r="4"/><circle cx="52" cy="92" r="4.6"/><circle cx="82" cy="70" r="5.2"/>
+      <circle cx="118" cy="56" r="5.8"/><circle cx="156" cy="52" r="5.8"/><circle cx="192" cy="58" r="5.2"/>
+      <circle cx="58" cy="126" r="3.2" opacity=".6"/><circle cx="84" cy="104" r="3.6" opacity=".6"/>
+      <circle cx="116" cy="90" r="4" opacity=".6"/><circle cx="150" cy="86" r="4" opacity=".6"/>
+    </g>
+  </svg>
   <div class="wrap">
     <div class="about-g">
       <div class="photo-wrap r lft">
@@ -1400,6 +1454,10 @@
 
 <!-- ════ GRATIS-LEITFADEN ════ -->
 <section class="sec freebie-sec" id="freebie" aria-labelledby="freebie-h">
+  <svg class="sec-deco" data-plx="0.13" style="top:-60px; right:-60px; width:260px; height:260px;" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+    <circle cx="100" cy="100" r="86" stroke="rgba(232,134,15,.11)" stroke-width="1.5"/>
+    <circle cx="100" cy="100" r="56" stroke="rgba(15,123,200,.09)" stroke-width="1.5"/>
+  </svg>
   <div class="wrap">
     <div class="freebie-g">
       <div class="freebie-visual r lft">
@@ -1465,6 +1523,12 @@
 
 <!-- ════ FOOTER ════ -->
 <footer aria-label="Seitenfuß">
+  <div class="foot-wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 44" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0 H1440 V16 C1180 40, 1000 6, 720 24 C460 40, 240 8, 0 26 Z" fill="#f7f9fc"/>
+      <path d="M0 28 C240 10, 460 42, 720 26 C1000 8, 1180 42, 1440 18" stroke="rgba(245,170,28,.30)" stroke-width="2" fill="none"/>
+    </svg>
+  </div>
   <div class="wrap">
     <div class="foot-g">
       <div class="foot-brand">
@@ -1594,6 +1658,36 @@
       });
     }, { threshold: 0.5 });
     cntEls.forEach(function(el){ obs.observe(el); });
+  })();
+
+  /* Parallax + scroll progress (single rAF-throttled handler) */
+  (function(){
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var bar = document.querySelector('.scroll-progress b');
+    var els = [].slice.call(document.querySelectorAll('[data-plx]')).map(function(el){
+      return { el: el, speed: parseFloat(el.getAttribute('data-plx')) || 0.1 };
+    });
+    var ticking = false;
+    function update(){
+      ticking = false;
+      if (bar) {
+        var dh = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.transform = 'scaleX(' + (dh > 0 ? (window.scrollY / dh) : 0) + ')';
+      }
+      if (reduce) return;
+      var vh2 = window.innerHeight / 2;
+      els.forEach(function(item){
+        var host = item.el.parentElement;
+        var r = host.getBoundingClientRect();
+        if (r.bottom < -200 || r.top > window.innerHeight + 200) return; // offscreen: skip
+        var offset = (r.top + r.height / 2 - vh2) * item.speed;
+        item.el.style.transform = 'translate3d(0,' + offset.toFixed(1) + 'px,0)';
+      });
+    }
+    function onScroll(){ if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    update();
   })();
 </script>
 <script>
