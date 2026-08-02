@@ -300,7 +300,8 @@
     .mob-close { position:absolute; top:20px; right:20px; width:44px; height:44px; border-radius:10px; cursor:pointer; background:var(--glass); border:1px solid var(--gb); color:var(--text); font-size:18px; display:flex; align-items:center; justify-content:center; transition:background .22s; }
     .mob-close:hover { background:var(--tglow); }
     /* HERO - mobile base: single column */
-    .hero { position:relative; min-height:100dvh; display:flex; align-items:center; padding-top:80px; overflow:hidden; background: radial-gradient(1100px 620px at 82% 10%, rgba(15,123,200,.32) 0%, transparent 60%), radial-gradient(900px 540px at 4% 92%, rgba(245,170,28,.10) 0%, transparent 58%), linear-gradient(142deg, #07102a 0%, #0d2b4e 58%, #0a3a6e 100%); }
+    /* Mobile: Hoehe waechst mit dem Inhalt – kein Abschneiden des Quiz */
+    .hero { position:relative; display:flex; align-items:flex-start; padding:92px 0 150px; overflow:hidden; background: radial-gradient(1100px 620px at 82% 10%, rgba(15,123,200,.32) 0%, transparent 60%), radial-gradient(900px 540px at 4% 92%, rgba(245,170,28,.10) 0%, transparent 58%), linear-gradient(142deg, #07102a 0%, #0d2b4e 58%, #0a3a6e 100%); }
     .hero-g { position:relative; z-index:1; display:flex; flex-direction:column; gap:32px; }
     .hero-l { animation: fadeUp .9s var(--ease) both; }
     .hero-r { animation: fadeUp .9s .15s var(--ease) both; }
@@ -593,8 +594,38 @@
     .hero-deco { position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
     .hero-deco svg { position:absolute; display:block; }
     .hd-wave { left:0; bottom:-2px; width:100%; height:clamp(110px, 20vw, 260px); }
-    .hd-dots { display:none; top:64px; right:-70px; width:min(44vw, 540px); height:auto; will-change:transform; }
-    @media (min-width: 1024px) { .hd-dots { display:block; } }
+    /* Punktbogen: auf Mobil dezent oben rechts, ab Desktop gross */
+    .hd-dots { display:block; top:-26px; right:-96px; width:78vw; height:auto; opacity:.45; will-change:transform; }
+    @media (min-width: 1024px) { .hd-dots { top:64px; right:-70px; width:min(44vw, 540px); opacity:1; } }
+
+    /* ======= MOBILE HERO REFINEMENT ======= */
+    @media (max-width: 767px) {
+      .hero-hl { font-size: clamp(30px, 8.6vw, 40px); line-height:1.06; margin-bottom:14px; }
+      .hero-sub { font-size: 15.5px; line-height:1.62; margin-bottom:22px; }
+
+      /* Klare Hierarchie: ein starker CTA, der zweite als schlanker Textlink */
+      .hero-ctas { gap:4px; margin-bottom:20px; }
+      .hero-ctas .btn-o {
+        background:none; border:none; box-shadow:none; min-height:44px;
+        font-size:14.5px; font-weight:600; color:rgba(255,255,255,.68); padding:8px 0;
+      }
+      .hero-ctas .btn-o::after { content:'→'; margin-left:2px; transition:transform .2s var(--ease); display:inline-block; }
+      .hero-ctas .btn-o:hover { background:none; color:#fff; transform:none; }
+      .hero-ctas .btn-o:hover::after { transform:translateX(3px); }
+
+      /* Vertrauenssignale: eigene Zeile mit feiner Trennlinie */
+      .hero-trust { flex-direction:column; gap:9px; padding-top:18px; border-top:1px solid rgba(255,255,255,.12); }
+      .ht-chip { font-size:13px; color:rgba(255,255,255,.8); gap:10px; }
+      .ht-chip span {
+        width:17px; height:17px; border-radius:50%; background:rgba(56,189,248,.16);
+        display:inline-flex; align-items:center; justify-content:center; font-size:9.5px; flex-shrink:0;
+      }
+
+      /* Abstand zwischen Textblock und Quiz vergroessern */
+      .hero-g { gap:40px; }
+      .quiz-pre { gap:8px; margin-bottom:12px; }
+      .quiz-pre-line { font-size:12.5px; }
+    }
 
     /* ======= PREMIUM LAYER: Parallax, Progress, Depth ======= */
 
@@ -709,7 +740,7 @@
       .sh { margin-bottom: 46px; }
       .sh .title { font-size: clamp(28px,4.5vw,46px); }
       .sh .sub { font-size: 16px; }
-      .hero { padding-top: 90px; }
+      .hero { min-height:100dvh; align-items:center; padding: 90px 0 0; }
       .hero-hl { font-size: clamp(32px,5.5vw,62px); margin-bottom: 20px; }
       .hero-sub { font-size: clamp(15px,2vw,18px); margin-bottom: 28px; }
       .hero-ctas { flex-direction: row; flex-wrap: wrap; }
