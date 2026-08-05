@@ -12,9 +12,8 @@
 (function () {
   'use strict';
 
-  // ---- HIER DIE CLARITY-PROJEKT-ID EINTRAGEN ----
-  // Zu finden unter clarity.microsoft.com → Projekt → Einstellungen → Setup
-  var CLARITY_ID = 'CLARITY_ID_HIER_EINTRAGEN';
+  // Clarity-Projekt-ID (clarity.microsoft.com → Projekt → Einstellungen → Setup)
+  var CLARITY_ID = 'xxsexsw7ui';
 
   var KEY = 'tr-consent';           // localStorage-Schluessel
   var VERSION = '1';                // bei Aenderung des Zwecks hochzaehlen
