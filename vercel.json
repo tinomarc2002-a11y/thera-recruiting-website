@@ -31,6 +31,8 @@
     }
   ],
   "redirects": [
-    { "source": "/arbeitgeber-check", "destination": "/arbeitgebercheck", "permanent": true }
+    { "source": "/arbeitgeber-check", "destination": "/arbeitgebercheck", "permanent": true },
+    { "source": "/index.php", "destination": "/", "permanent": true },
+    { "source": "/index.html", "destination": "/", "permanent": true }
   ]
 }
