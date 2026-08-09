@@ -28,7 +28,7 @@ a { color: inherit; }
 a:focus-visible, button:focus-visible { outline:2px solid var(--teal); outline-offset:3px; border-radius:4px; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration:.01ms !important; transition-duration:.01ms !important; } }
 
-.wrap { max-width: 1160px; margin:0 auto; padding: 0 16px; }
+.wrap { max-width: 1160px; margin:0 auto; padding: 0 20px; }
 .narrow { max-width: 720px; margin:0 auto; }
 
 /* ---------- NAVIGATION ---------- */
