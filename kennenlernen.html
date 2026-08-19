@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0d2b4e" />
+<title>Recruiting-Check – Anmeldung zum Erstgespräch | Thera Recruiting</title>
+<meta name="description" content="In acht kurzen Fragen klären wir, ob sich eine Recruiting-Kampagne für Ihre Praxis rechnet. Kostenlos und unverbindlich." />
+<meta name="robots" content="noindex, follow" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Crect width='128' height='128' rx='24' fill='%230d2b4e'/%3E%3Cg transform='translate(-14,10)'%3E%3Cg fill='%23f5aa1c'%3E%3Ccircle cx='30' cy='40' r='2.4'/%3E%3Ccircle cx='40' cy='28' r='2.8'/%3E%3Ccircle cx='54' cy='18' r='3.1'/%3E%3Ccircle cx='70' cy='13' r='3.4'/%3E%3Ccircle cx='87' cy='13' r='3.4'/%3E%3Ccircle cx='103' cy='18' r='3.1'/%3E%3Ccircle cx='117' cy='28' r='2.8'/%3E%3C/g%3E%3Ccircle cx='44' cy='58' r='13' fill='%23f5aa1c'/%3E%3Cpath d='M28 96 C 34 54, 78 50, 132 78 C 110 64, 70 70, 50 100 C 38 102, 26 100, 28 96 Z' fill='%230d6d8a'/%3E%3Cpath d='M38 98 C 44 62, 78 60, 122 86 C 104 72, 72 78, 58 100 C 48 102, 36 100, 38 98 Z' fill='%23168cb0'/%3E%3Cpath d='M14 106 C 42 90, 86 90, 130 104 L 142 108 C 104 100, 70 100, 26 110 Z' fill='%23f5aa1c'/%3E%3C/g%3E%3C/svg%3E" />
+<link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="fonts.css" />
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0d2b4e; --navy2:#163d6b;
+  --teal:#0f7bc8; --teal2:#0762b0; --tsoft:rgba(15,123,200,.10);
+  --gold:#e8860f;
+  --bg:#f7f9fc; --card:#fff;
+  --text:#0d1f3c; --muted:#4e5a70;
+  --line:rgba(13,43,78,.12);
+}
+html{background:var(--bg);color-scheme:light}
+body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased}
+
+/* Fortschrittsbalken oben, wie im Vorbild */
+.prog{position:fixed;top:0;left:0;right:0;height:4px;background:rgba(13,43,78,.12);z-index:50}
+.prog i{display:block;height:100%;width:0;background:var(--teal);transition:width .4s cubic-bezier(.25,.46,.45,.94)}
+
+.kopf{padding:26px 20px 6px;text-align:center}
+.kopf a{display:inline-block}
+.kopf svg{height:38px;width:auto}
+
+.buehne{max-width:640px;margin:0 auto;padding:14px 20px 80px}
+
+.schritt{display:none}
+.schritt.an{display:block;animation:rein .35s cubic-bezier(.25,.46,.45,.94)}
+@keyframes rein{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+.zaehler{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:14px}
+.intro{font-size:16px;color:var(--muted);text-align:center;margin-bottom:22px;max-width:52ch;margin-left:auto;margin-right:auto}
+.intro b{color:var(--text);font-weight:700}
+.frage{font-size:clamp(21px,4.6vw,28px);font-weight:800;letter-spacing:-.025em;line-height:1.22;text-align:center;margin-bottom:22px;text-wrap:balance}
+
+/* Antwortbloecke: heller Rahmen, darin volle Farbflaechen */
+.opts{background:var(--tsoft);border-radius:12px;padding:10px;display:grid;gap:10px}
+.opt{display:flex;align-items:center;justify-content:center;text-align:center;width:100%;min-height:54px;padding:14px 18px;
+  font-family:inherit;font-size:16px;font-weight:700;color:#fff;background:var(--teal);border:none;border-radius:8px;
+  cursor:pointer;line-height:1.25;transition:background .16s,transform .12s}
+.opt:hover{background:var(--teal2)}
+.opt:active{transform:scale(.985)}
+.opt:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+/* Info-Karten mit Emoji (Frage 7) */
+.karten{display:grid;gap:9px;margin-bottom:20px}
+.karte{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+.karte span{font-size:21px;line-height:1.1;flex:0 0 auto}
+.karte p{font-size:15px;font-weight:600}
+.nachsatz{font-size:clamp(18px,3.6vw,22px);font-weight:800;letter-spacing:-.02em;text-align:center;margin-bottom:18px;text-wrap:balance}
+
+/* Warum wird diese Frage gestellt? */
+.warum{margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
+.warum summary{font-size:14px;font-weight:700;color:var(--teal);cursor:pointer;list-style:none;display:flex;align-items:center;gap:7px}
+.warum summary::-webkit-details-marker{display:none}
+.warum summary::before{content:'?';flex:0 0 18px;height:18px;border-radius:50%;background:var(--teal);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.warum p{font-size:14.5px;color:var(--muted);margin-top:10px;line-height:1.55}
+
+.zurueck{display:block;margin:18px auto 0;background:none;border:none;font-family:inherit;font-size:14px;font-weight:600;color:var(--muted);cursor:pointer;padding:8px 12px}
+.zurueck:hover{color:var(--text)}
+
+/* Abschluss */
+.fin-h{font-size:clamp(22px,4.8vw,30px);font-weight:900;letter-spacing:-.03em;line-height:1.15;text-align:center;margin-bottom:12px;text-wrap:balance}
+.fin-p{font-size:16px;color:var(--muted);text-align:center;margin-bottom:6px}
+.fin-k{font-size:14px;color:var(--muted);text-align:center;margin-bottom:22px}
+form{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;box-shadow:0 2px 16px rgba(13,43,78,.07)}
+.feld{position:relative;margin-bottom:11px}
+.feld span{position:absolute;left:15px;top:50%;transform:translateY(-50%);font-size:17px;pointer-events:none}
+.feld input{width:100%;font-family:inherit;font-size:16px;padding:15px 15px 15px 46px;border:1.5px solid var(--line);border-radius:9px;background:#fff;color:var(--text)}
+.feld input:focus{outline:none;border-color:var(--teal)}
+.feld input::placeholder{color:#93a0b4}
+.senden{width:100%;min-height:56px;display:flex;align-items:center;justify-content:center;gap:9px;font-family:inherit;font-size:16px;font-weight:800;color:#fff;background:var(--navy);border:none;border-radius:9px;cursor:pointer;transition:background .18s,transform .12s;margin-top:4px}
+.senden:hover{background:var(--navy2)}
+.senden:active{transform:scale(.99)}
+.senden:disabled{background:#c2cbd8;cursor:not-allowed}
+.hinweis{font-size:12.5px;color:var(--muted);text-align:center;margin-top:13px;line-height:1.5}
+.hinweis a{color:var(--teal)}
+
+/* Vertrauensblock */
+.beweis{margin-top:28px}
+.beweis h2{font-size:15px;font-weight:800;text-align:center;margin-bottom:14px;letter-spacing:-.01em}
+.stimmen{display:grid;gap:10px}
+.stimme{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.sterne{color:var(--gold);font-size:13px;letter-spacing:2px;margin-bottom:5px}
+.stimme b{display:block;font-size:14.5px;font-weight:750}
+.stimme span{font-size:14px;color:var(--muted)}
+
+.fuss{text-align:center;font-size:12.5px;color:var(--muted);padding:26px 20px 34px}
+.fuss a{color:var(--muted);text-decoration:underline}
+
+@media (min-width:560px){ .buehne{padding-top:20px} .karten{gap:10px} }
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+
+<div class="prog"><i id="progFill"></i></div>
+
+<div class="kopf">
+  <a href="/" aria-label="Thera Recruiting – Startseite">
+    <svg viewBox="0 0 340 110" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g fill="#f5aa1c">
+        <circle cx="30" cy="40" r="2.4"/><circle cx="40" cy="28" r="2.8"/><circle cx="54" cy="18" r="3.1"/>
+        <circle cx="70" cy="13" r="3.4"/><circle cx="87" cy="13" r="3.4"/><circle cx="103" cy="18" r="3.1"/>
+        <circle cx="117" cy="28" r="2.8"/>
+      </g>
+      <circle cx="44" cy="58" r="12" fill="#f5aa1c"/>
+      <path d="M28 96 C 34 54, 78 50, 132 78 C 110 64, 70 70, 50 100 C 38 102, 26 100, 28 96 Z" fill="#0d6d8a"/>
+      <path d="M38 98 C 44 62, 78 60, 122 86 C 104 72, 72 78, 58 100 C 48 102, 36 100, 38 98 Z" fill="#168cb0"/>
+      <path d="M14 106 C 42 90, 86 90, 130 104 L 142 108 C 104 100, 70 100, 26 110 Z" fill="#f5aa1c"/>
+      <text x="152" y="58" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="800" fill="#0d2b4e" letter-spacing="-1.2">Thera</text>
+      <text x="152" y="96" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700" font-style="italic" fill="#e8860f" letter-spacing="-.6">Recruiting</text>
+    </svg>
+  </a>
+</div>
+
+<main class="buehne" id="buehne"></main>
+
+<div class="fuss">
+  <a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a>
+</div>
+
+<script>
+/* ============================================================
+   Kennenlern-Funnel: acht Fragen, danach Kontaktformular.
+   Aufbau und Ablauf nachempfunden, Gestaltung in den Farben
+   von Thera Recruiting.
+   ============================================================ */
+
+var FRAGEN = [
+  {
+    intro: 'Finden Sie im Recruiting-Check heraus, ob sich Ihr Personalengpass mit einer Kampagne lösen lässt.',
+    id: 'teamgroesse',
+    frage: 'Wie viele Therapeuten sind zurzeit in Ihrer Praxis beschäftigt?',
+    opts: ['1 bis 5', '6 bis 10', '11 bis 20', 'Mehr als 20']
+  },
+  {
+    id: 'standorte',
+    frage: 'Für wie viele Standorte suchen Sie Therapeuten?',
+    opts: ['1', '2 bis 3', 'Mehr als 3']
+  },
+  {
+    id: 'anzahl',
+    frage: 'Wie viele Therapeuten suchen Sie aktuell?',
+    opts: ['1', '2 bis 3', 'Mehr als 3']
+  },
+  {
+    id: 'rolle',
+    frage: 'Was ist Ihre Rolle in der Praxis?',
+    opts: ['Inhaberin oder Inhaber', 'Angestellt', 'Personalverantwortlich']
+  },
+  {
+    id: 'vakanz',
+    frage: 'Wie lange ist die Stelle schon unbesetzt?',
+    opts: ['Stelle ist noch besetzt', 'Weniger als 4 Wochen', '4 bis 12 Wochen', 'Länger als 12 Wochen']
+  },
+  {
+    id: 'lage',
+    frage: 'Wo befindet sich Ihre Praxis?',
+    opts: ['Auf dem Land oder in ländlicher Region', 'In einer größeren Stadt oder in deren Nähe']
+  },
+  {
+    id: 'vorteile',
+    karten: [
+      { e: '💶', t: 'Ein gutes Gehalt und geldwerte Vorteile' },
+      { e: '⏱️', t: 'Flexible Arbeitszeiten, etwa echte Teilzeitmodelle' },
+      { e: '🏝️', t: 'Eine Arbeitszeit, die zum Privatleben passt' },
+      { e: '❤️', t: 'Wertschätzung und Anerkennung für die Arbeit' }
+    ],
+    frage: 'Therapeuten wünschen sich von ihren Arbeitgebern vor allem …',
+    nachsatz: '… sind Sie bereit, in diesen Bereichen etwas zu bieten?',
+    opts: ['Ja', 'Nein'],
+    warum: 'Gute Therapeuten können sich aussuchen, wo sie arbeiten. Wer sie zu einem Wechsel bewegen will, muss beim Angebot mithalten. Reichweite allein ersetzt das nicht.'
+  },
+  {
+    id: 'investition',
+    zaehler: 'Letzte Frage',
+    frage: 'Sind Sie bereit, aktiv in die Gewinnung von Therapeuten zu investieren?',
+    opts: ['Ja', 'Nein'],
+    warum: 'Um Therapeuten von Ihrer Praxis und Ihrem Angebot zu überzeugen, ist heute ein gewisser Aufwand nötig. Wir sagen Ihnen im Gespräch offen, in welcher Größenordnung er in Ihrem Fall liegt.'
+  }
+];
+
+var antworten = {};
+var schritt = 0;
+var buehne = document.getElementById('buehne');
+var progFill = document.getElementById('progFill');
+
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function fortschritt(){
+  progFill.style.width = Math.round(schritt / FRAGEN.length * 100) + '%';
+}
+
+function zeichne(){
+  fortschritt();
+  window.scrollTo(0, 0);
+  if (schritt < FRAGEN.length) return zeichneFrage(FRAGEN[schritt]);
+  return zeichneAbschluss();
+}
+
+function zeichneFrage(f){
+  var h = '<div class="schritt an">';
+  h += '<div class="zaehler">' + (f.zaehler ? esc(f.zaehler) : 'Frage ' + (schritt + 1) + ' von ' + FRAGEN.length) + '</div>';
+  if (f.intro) h += '<p class="intro">' + f.intro + '</p>';
+  if (f.karten) {
+    h += '<div class="frage">' + esc(f.frage) + '</div><div class="karten">';
+    f.karten.forEach(function(k){
+      h += '<div class="karte"><span aria-hidden="true">' + k.e + '</span><p>' + esc(k.t) + '</p></div>';
+    });
+    h += '</div><div class="nachsatz">' + esc(f.nachsatz) + '</div>';
+  } else {
+    h += '<div class="frage">' + esc(f.frage) + '</div>';
+  }
+  h += '<div class="opts">';
+  f.opts.forEach(function(o, i){
+    h += '<button class="opt" data-i="' + i + '">' + esc(o) + '</button>';
+  });
+  h += '</div>';
+  if (f.warum) {
+    h += '<details class="warum"><summary>Warum wird diese Frage gestellt?</summary><p>' + esc(f.warum) + '</p></details>';
+  }
+  if (schritt > 0) h += '<button class="zurueck" id="zurueck">Zurück</button>';
+  h += '</div>';
+  buehne.innerHTML = h;
+
+  buehne.querySelectorAll('.opt').forEach(function(b){
+    b.addEventListener('click', function(){
+      antworten[f.id] = f.opts[parseInt(b.dataset.i, 10)];
+      schritt++;
+      zeichne();
+    });
+  });
+  var z = document.getElementById('zurueck');
+  if (z) z.addEventListener('click', function(){ schritt--; zeichne(); });
+}
+
+function zeichneAbschluss(){
+  buehne.innerHTML =
+    '<div class="schritt an">' +
+      '<h1 class="fin-h">Danke. Jetzt können wir Ihnen sagen, ob sich eine Kampagne für Sie rechnet.</h1>' +
+      '<p class="fin-p">Tragen Sie sich für das Erstgespräch ein:</p>' +
+      '<p class="fin-k">kostenlos und unverbindlich</p>' +
+      '<form id="anmeldung" novalidate>' +
+        '<div class="feld"><span aria-hidden="true">👋</span>' +
+          '<input type="text" id="fName" name="name" placeholder="Ihr Name" autocomplete="name" required></div>' +
+        '<div class="feld"><span aria-hidden="true">✉️</span>' +
+          '<input type="email" id="fMail" name="email" placeholder="Ihre E-Mail-Adresse" autocomplete="email" required></div>' +
+        '<div class="feld"><span aria-hidden="true">📞</span>' +
+          '<input type="tel" id="fTel" name="telefon" placeholder="Ihre Telefonnummer" autocomplete="tel" required></div>' +
+        '<button type="submit" class="senden" id="btnSenden">Weiter zur Terminauswahl' +
+          '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="9" x2="14" y2="9"/><polyline points="9,4 14,9 9,14"/></svg>' +
+        '</button>' +
+        '<p class="hinweis">Wir melden uns innerhalb von 24 Stunden. Mit dem Absenden stimmen Sie unserer ' +
+          '<a href="/datenschutz" target="_blank" rel="noopener">Datenschutzerklärung</a> zu.</p>' +
+      '</form>' +
+      '<button class="zurueck" id="zurueck">Zurück</button>' +
+      '<section class="beweis">' +
+        '<h2>Praxen, die ihre Stelle mit uns besetzt haben</h2>' +
+        '<div class="stimmen">' +
+          '<div class="stimme"><div class="sterne" aria-label="fünf von fünf Sternen">★★★★★</div>' +
+            '<b>Platzhalter für eine echte Rückmeldung</b>' +
+            '<span>Name, Praxis, Ort und Ergebnis eintragen, sobald eine Freigabe vorliegt.</span></div>' +
+          '<div class="stimme"><div class="sterne" aria-label="fünf von fünf Sternen">★★★★★</div>' +
+            '<b>Platzhalter für eine echte Rückmeldung</b>' +
+            '<span>Name, Praxis, Ort und Ergebnis eintragen, sobald eine Freigabe vorliegt.</span></div>' +
+        '</div>' +
+      '</section>' +
+    '</div>';
+
+  document.getElementById('zurueck').addEventListener('click', function(){ schritt--; zeichne(); });
+  document.getElementById('anmeldung').addEventListener('submit', absenden);
+}
+
+function absenden(e){
+  e.preventDefault();
+  var name = document.getElementById('fName').value.trim();
+  var mail = document.getElementById('fMail').value.trim();
+  var tel  = document.getElementById('fTel').value.trim();
+  var btn  = document.getElementById('btnSenden');
+
+  if (!name || !mail || !tel) { alert('Bitte füllen Sie alle drei Felder aus.'); return; }
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(mail)) { alert('Bitte prüfen Sie die E-Mail-Adresse.'); return; }
+
+  btn.disabled = true;
+  btn.textContent = 'Wird gesendet …';
+
+  var daten = {
+    name: name, email: mail, telefon: tel,
+    _subject: 'Kennenlern-Funnel: ' + name
+  };
+  FRAGEN.forEach(function(f){ daten[f.id] = antworten[f.id] || '–'; });
+
+  fetch('https://formspree.io/f/mykvyrbb', {
+    method: 'POST',
+    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+    body: JSON.stringify(daten)
+  })
+  .then(function(r){
+    if (r.ok) { window.location.href = '/danke?name=' + encodeURIComponent(name); }
+    else { fehler(btn); }
+  })
+  .catch(function(){ fehler(btn); });
+}
+
+function fehler(btn){
+  btn.disabled = false;
+  btn.textContent = 'Weiter zur Terminauswahl';
+  alert('Beim Senden ist etwas schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie uns an info@thera-recruiting.de');
+}
+
+zeichne();
+</script>
+
+<script src="/consent.js" defer></script>
+</body>
+</html>
