@@ -76,7 +76,15 @@
       '.tr-cc .nein{background:rgba(255,255,255,.09);color:#fff;border-color:rgba(255,255,255,.26)}',
       '.tr-cc .nein:hover{background:rgba(255,255,255,.16)}',
       '.tr-cc-note{font-size:11.5px;color:rgba(255,255,255,.45);margin:12px 0 0;text-align:center}',
-      '@media(min-width:520px){.tr-cc-btns{flex-direction:row-reverse}.tr-cc button{width:auto;flex:1}}',
+      '.tr-cc-btns{flex-direction:row-reverse}.tr-cc button{width:auto;flex:1 1 0;min-width:0}',
+      // Auf dem Handy war der Banner 460 von 812 Pixeln hoch und verdeckte die
+      // Bedienelemente des Quiz. Deshalb hier kompakter.
+      '@media(max-width:519px){.tr-cc{padding:9px}',
+      '.tr-cc-box{padding:15px 15px 13px;border-radius:14px}',
+      '.tr-cc h2{font-size:14.5px;margin-bottom:6px}',
+      '.tr-cc p{font-size:12.5px;line-height:1.5;margin-bottom:11px}',
+      '.tr-cc button{font-size:13px;padding:11px 8px}',
+      '.tr-cc-note{font-size:10.5px;margin-top:9px}}',
       '@media(prefers-reduced-motion:reduce){.tr-cc-box{transition:none;transform:none;opacity:1}}'
     ].join('');
     document.head.appendChild(s);
@@ -92,10 +100,10 @@
     wrap.innerHTML =
       '<div class="tr-cc-box">' +
         '<h2>Dürfen wir verstehen, wie Sie unsere Seite nutzen?</h2>' +
-        '<p>Wir würden gerne <strong>Microsoft Clarity</strong> einsetzen, um zu sehen, welche Inhalte ' +
-        'gelesen werden und wo Besucher hängen bleiben. Dabei werden Cookies gesetzt und Daten an ' +
-        'Microsoft in die USA übertragen. <strong>Ohne Ihre Zustimmung passiert nichts davon.</strong> ' +
-        'Details in unserer <a href="/datenschutz">Datenschutzerklärung</a>.</p>' +
+        '<p>Wir würden <strong>Microsoft Clarity</strong> einsetzen, um zu sehen, wo Besucher ' +
+        'hängen bleiben. Dabei werden Cookies gesetzt und Daten an Microsoft in die USA ' +
+        'übertragen. <strong>Ohne Ihre Zustimmung passiert nichts davon.</strong> ' +
+        '<a href="/datenschutz">Datenschutzerklärung</a></p>' +
         '<div class="tr-cc-btns">' +
           '<button type="button" class="ja">Einverstanden</button>' +
           '<button type="button" class="nein">Nicht einverstanden</button>' +
