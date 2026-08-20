@@ -290,8 +290,22 @@ function zeichne(){
 // so weit gescrollt, dass alle Antworten oberhalb des Banners liegen.
 function antwortenFreiRuecken(){
   // Der Banner erscheint verzoegert, deshalb mehrfach nachmessen.
-  [60, 400, 900].forEach(function(ms){ setTimeout(ruecken, ms); });
+  [60, 400, 900, 1800].forEach(function(ms){ setTimeout(ruecken, ms); });
 }
+
+// Sobald der Banner tatsaechlich im Dokument landet, sofort nachruecken.
+(function(){
+  if (document.querySelector('.tr-cc')) return;
+  var beobachter = new MutationObserver(function(){
+    if (document.querySelector('.tr-cc .tr-cc-box')) {
+      beobachter.disconnect();
+      setTimeout(ruecken, 60);
+      setTimeout(ruecken, 420);
+    }
+  });
+  beobachter.observe(document.body, { childList: true });
+  setTimeout(function(){ beobachter.disconnect(); }, 12000);
+})();
 function ruecken(){
   var kasten = document.querySelector('.opts') || document.querySelector('form');
   var banner = document.querySelector('.tr-cc .tr-cc-box');
