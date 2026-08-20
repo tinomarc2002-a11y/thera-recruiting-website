@@ -727,8 +727,8 @@
     display: block;
     width: 100%;
     height: auto;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.5) 12%, #000 26%);
-    mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.5) 12%, #000 26%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.6) 3%, #000 6%);
+    mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.6) 3%, #000 6%);
   }
 }
 
