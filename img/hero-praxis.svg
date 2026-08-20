@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 760" width="920" height="760"
+     role="img" aria-label="Illustration: Therapeutin mobilisiert das Bein eines Patienten auf einer Behandlungsliege">
+<title>Behandlung auf der Liege</title>
+
+<!--
+  Vertikale Bezugslinien, damit nichts schwebt:
+    Boden           y = 668
+    Liegenfuesse    y = 650 bis 668
+    Auflage oben    y = 398   (darauf liegt der Patient)
+-->
+
+<style>
+  .kontur   { fill: none; stroke: #16233d; stroke-width: 7;  stroke-linecap: round; stroke-linejoin: round; }
+  .glied    { fill: none; stroke: #16233d; stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; }
+  .glied-d  { fill: none; stroke: #16233d; stroke-width: 16; stroke-linecap: round; stroke-linejoin: round; }
+  .haut     { fill: #ffffff; stroke: #16233d; stroke-width: 7; }
+  .gesicht  { fill: none; stroke: #16233d; stroke-width: 5.5; stroke-linecap: round; }
+  .auge     { fill: #16233d; }
+
+  /* Bewegung bleibt dezent: eine langsame Mobilisation, alles andere nur Beiwerk. */
+  #bein-gruppe { animation: mobilisieren 4.4s ease-in-out infinite; transform-origin: 497px 384px; }
+  #arm-oben    { animation: armOben  4.4s ease-in-out infinite; transform-origin: 668px 268px; }
+  #arm-unten   { animation: armUnten 4.4s ease-in-out infinite; transform-origin: 726px 274px; }
+  #bogen-1     { animation: pulsen 4.4s ease-in-out infinite; }
+  #bogen-2     { animation: pulsen 4.4s ease-in-out infinite .35s; }
+  #bogen-3     { animation: pulsen 4.4s ease-in-out infinite .7s; }
+  .funke       { animation: funkeln 3.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  .funke:nth-of-type(2) { animation-delay: .5s; }
+  .funke:nth-of-type(3) { animation-delay: 1s; }
+  #ball        { animation: wippen 6s ease-in-out infinite; transform-origin: 828px 578px; }
+  #blatt-1     { animation: wiegen 7s ease-in-out infinite; transform-origin: 848px 168px; }
+  #blatt-2     { animation: wiegen 7s ease-in-out infinite .8s; transform-origin: 848px 168px; }
+  #brust       { animation: atmen 5.2s ease-in-out infinite; transform-origin: 330px 398px; }
+
+  @keyframes mobilisieren { 0%,100% { transform: rotate(0deg); }   50% { transform: rotate(-7deg); } }
+  @keyframes armOben      { 0%,100% { transform: rotate(0deg); }   50% { transform: rotate(-5deg); } }
+  @keyframes armUnten     { 0%,100% { transform: rotate(0deg); }   50% { transform: rotate(-6deg); } }
+  @keyframes pulsen       { 0%,100% { opacity: .25; }              50% { opacity: .95; } }
+  @keyframes funkeln      { 0%,100% { opacity: .35; transform: scale(.9); } 50% { opacity: 1; transform: scale(1.12); } }
+  @keyframes wippen       { 0%,100% { transform: translateY(0); }  50% { transform: translateY(-6px); } }
+  @keyframes wiegen       { 0%,100% { transform: rotate(0deg); }   50% { transform: rotate(3.5deg); } }
+  @keyframes atmen        { 0%,100% { transform: scaleY(1); }      50% { transform: scaleY(1.03); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    #bein-gruppe, #arm-oben, #arm-unten, #bogen-1, #bogen-2, #bogen-3,
+    .funke, #ball, #blatt-1, #blatt-2, #brust { animation: none; }
+    #bogen-1, #bogen-2, #bogen-3 { opacity: .7; }
+    .funke { opacity: .85; }
+  }
+</style>
+
+<defs>
+  <linearGradient id="ballFarbe" x1="0" y1="0" x2="0.6" y2="1">
+    <stop offset="0" stop-color="#3f7fd4"/><stop offset="1" stop-color="#1c4685"/>
+  </linearGradient>
+  <linearGradient id="liegeFarbe" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#3a6fbe"/><stop offset="1" stop-color="#2a5399"/>
+  </linearGradient>
+  <radialGradient id="schatten" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#050d1e" stop-opacity=".5"/>
+    <stop offset="1" stop-color="#050d1e" stop-opacity="0"/>
+  </radialGradient>
+</defs>
+
+<!-- ============ Hintergrund ============ -->
+
+<g id="regal">
+  <rect x="778" y="212" width="140" height="13" rx="6" fill="#31527f"/>
+  <rect x="792" y="225" width="12" height="26" rx="5" fill="#26426a"/>
+  <rect x="890" y="225" width="12" height="26" rx="5" fill="#26426a"/>
+  <rect x="884" y="176" width="13" height="36" rx="3" fill="#4a7fc4"/>
+  <rect x="899" y="168" width="11" height="44" rx="3" fill="#2bb0d4"/>
+  <path d="M826 184h44l-6 28h-32z" fill="#e8860f"/>
+  <g id="blatt-1"><path d="M848 184c-4-20-20-28-34-26 2 16 14 26 34 26z" fill="#4aa87a"/></g>
+  <g id="blatt-2"><path d="M848 184c4-24 20-32 36-28-4 18-16 28-36 28z" fill="#5cc08c"/></g>
+  <path d="M848 184c0-16 2-26 6-34" fill="none" stroke="#2f7d58" stroke-width="4" stroke-linecap="round"/>
+</g>
+
+<g id="ball">
+  <circle cx="828" cy="578" r="90" fill="url(#ballFarbe)"/>
+  <path d="M772 522a90 90 0 0 1 44-26" fill="none" stroke="#9cc4f2" stroke-width="9" stroke-linecap="round" opacity=".55"/>
+</g>
+
+<ellipse cx="380" cy="686" rx="330" ry="32" fill="url(#schatten)"/>
+
+<!-- ============ Liege ============ -->
+<g id="liege">
+  <path d="M212 470L432 650" stroke="#8fa6c2" stroke-width="17" stroke-linecap="round" fill="none"/>
+  <path d="M432 470L212 650" stroke="#a9bdd6" stroke-width="17" stroke-linecap="round" fill="none"/>
+  <circle cx="322" cy="560" r="16" fill="#c3d2e4"/>
+  <rect x="176" y="650" width="112" height="18" rx="9" fill="#8fa6c2"/>
+  <rect x="356" y="650" width="112" height="18" rx="9" fill="#8fa6c2"/>
+  <rect x="52" y="452" width="608" height="20" rx="9" fill="#24487e"/>
+  <rect x="46" y="398" width="620" height="58" rx="20" fill="url(#liegeFarbe)"/>
+  <path d="M250 400v54M452 400v54" stroke="#24487e" stroke-width="4" opacity=".65"/>
+</g>
+
+<!-- ============ Patient ============ -->
+<g id="patient">
+  <rect x="60" y="356" width="158" height="44" rx="22" fill="#4a80ce"/>
+
+  <!-- gestrecktes Bein, liegt auf der Auflage -->
+  <path d="M498 388L638 392" class="glied"/>
+  <ellipse cx="656" cy="390" rx="26" ry="15" class="haut"/>
+
+  <!-- mobilisiertes Bein -->
+  <g id="bein-gruppe">
+    <path d="M497 384L574 296" class="glied"/>
+    <path d="M574 296L634 348" class="glied"/>
+    <ellipse cx="646" cy="358" rx="24" ry="14" class="haut" transform="rotate(28 646 358)"/>
+  </g>
+
+  <!-- Hose -->
+  <path d="M424 344h96a16 16 0 0 1 16 16v22a16 16 0 0 1-16 16h-96z" fill="#1d3866"/>
+
+  <!-- Oberkoerper -->
+  <g id="brust">
+    <path d="M232 340h206a12 12 0 0 1 12 12v34a12 12 0 0 1-12 12H232a29 29 0 0 1 0-58z" fill="#7fb0e8"/>
+    <path d="M300 340v58" stroke="#5f93d0" stroke-width="4" opacity=".7"/>
+  </g>
+
+  <!-- Arm auf dem Bauch -->
+  <path d="M300 352L352 386" class="glied" stroke-width="12"/>
+  <ellipse cx="362" cy="390" rx="18" ry="13" class="haut" stroke-width="6"/>
+
+  <!-- Kopf, ruht auf dem Kissen -->
+  <circle cx="176" cy="326" r="58" class="haut"/>
+  <circle cx="159" cy="318" r="6.5" class="auge"/>
+  <circle cx="195" cy="318" r="6.5" class="auge"/>
+  <path d="M157 342c10 12 30 12 40 0" class="gesicht"/>
+  <path d="M176 324c-4 6-4 10 2 11" class="gesicht" stroke-width="4.5"/>
+</g>
+
+<!-- ============ Bewegungsboegen ============ -->
+<g fill="none" stroke="#f5aa1c" stroke-linecap="round">
+  <path id="bogen-1" d="M520 314a72 72 0 0 1 26-56"  stroke-width="7"/>
+  <path id="bogen-2" d="M506 340a104 104 0 0 1 34-80" stroke-width="6"/>
+  <path id="bogen-3" d="M492 366a136 136 0 0 1 42-104" stroke-width="5"/>
+</g>
+
+<!-- ============ Therapeutin ============ -->
+<g id="therapeutin">
+  <!-- Beine reichen bis zum Boden -->
+  <path d="M672 380L662 512L644 640" class="glied-d"/>
+  <path d="M716 380L740 510L758 640" class="glied-d"/>
+  <ellipse cx="630" cy="650" rx="30" ry="16" class="haut"/>
+  <ellipse cx="770" cy="650" rx="30" ry="16" class="haut"/>
+
+  <path d="M646 300h96v70a14 14 0 0 1-14 14h-68a14 14 0 0 1-14-14z" fill="#1d3866"/>
+  <path d="M652 246c0-18 16-30 42-30s42 12 42 30v66h-84z" fill="#5b93d6"/>
+  <path d="M672 220l22 22 22-22" fill="none" stroke="#4a7fc4" stroke-width="6" stroke-linejoin="round"/>
+
+  <!-- Arme greifen Knie und Knoechel -->
+  <g id="arm-oben">
+    <path d="M668 268L622 306L584 292" class="glied"/>
+    <ellipse cx="576" cy="290" rx="21" ry="15" class="haut" stroke-width="6" transform="rotate(-18 576 290)"/>
+  </g>
+  <g id="arm-unten">
+    <path d="M726 274L712 342L656 354" class="glied"/>
+    <ellipse cx="646" cy="356" rx="21" ry="15" class="haut" stroke-width="6" transform="rotate(8 646 356)"/>
+  </g>
+
+  <circle cx="694" cy="168" r="58" class="haut"/>
+  <circle cx="678" cy="160" r="6" class="auge"/>
+  <circle cx="712" cy="160" r="6" class="auge"/>
+  <path d="M676 186c10 11 26 11 36 0" class="gesicht"/>
+  <path d="M694 166c-4 6-3 9 2 10" class="gesicht" stroke-width="4.5"/>
+  <path d="M640 152c2-40 30-58 56-58s52 18 54 56c-8-14-20-20-30-16-6-16-24-20-38-10-10 6-16 16-16 28-10-6-20-4-26 0z" fill="#4a3226"/>
+</g>
+
+<!-- ============ Funken ============ -->
+<g stroke="#f5aa1c" stroke-width="6" stroke-linecap="round" fill="none">
+  <g class="funke"><path d="M266 272l-8-18M288 264l2-20M244 288l-18-8"/></g>
+  <g class="funke"><path d="M776 120l14-14M792 142l20-6M766 98l4-20"/></g>
+  <g class="funke"><path d="M602 228l16-10M614 250l20-2"/></g>
+</g>
+
+</svg>
