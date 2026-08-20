@@ -130,13 +130,25 @@ form{background:var(--card);border:1px solid var(--line);border-radius:16px;padd
 .fuss{text-align:center;font-size:12.5px;color:var(--muted);padding:20px 20px 32px}
 .fuss a{color:var(--muted);text-decoration:underline}
 
-@media(max-height:740px){
-  .kopf{padding-top:14px} .kopf svg{height:30px}
-  .frage{margin-bottom:15px;font-size:clamp(20px,4.5vw,27px)}
-  .intro{margin-bottom:13px;font-size:14.5px}
-  .opt-i{min-height:88px;padding:15px 8px 10px}
-  .opt-i svg{width:56px;height:56px}
-  .opt-t{min-height:48px;font-size:14px;padding:10px 8px}
+@media(max-width:519px){
+  /* Weniger konkurrierende Schriftgroessen, mehr Luft */
+  .buehne{padding:10px 16px 56px}
+  .kopf{padding:16px 20px 0} .kopf svg{height:28px}
+  .zaehler{font-size:11.5px;margin-bottom:7px}
+  .frage{font-size:23px;margin-bottom:18px}
+  .intro{font-size:15px;margin-bottom:16px}
+  .opt-i{min-height:92px;padding:16px 8px 10px}
+  .opt-i svg{width:58px;height:58px}
+  .opt-t{min-height:50px;font-size:14.5px;padding:11px 9px}
+  .warum{margin-top:14px;padding:13px 14px}
+  .warum p{font-size:14px}
+  .fuss{padding:16px 20px 26px}
+}
+@media(max-height:700px){
+  .kopf{padding-top:12px} .kopf svg{height:26px}
+  .frage{font-size:21px;margin-bottom:14px}
+  .opt-i{min-height:78px;padding:12px 8px 8px}
+  .opt-i svg{width:50px;height:50px}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
@@ -278,7 +290,7 @@ function ikon(k){ return '<span class="opt-i">' + (BILD[k] || BILD.person1) + '<
 
 var FRAGEN = [
   { id:'teamgroesse',
-    intro:'Finden Sie heraus, ob sich Ihr Personalengpass mit einer Kampagne lösen lässt. Acht kurze Fragen, keine Vorbereitung nötig.',
+    intro:'Acht kurze Fragen. Danach wissen Sie, ob sich Werbung für Ihre Praxis lohnt.',
     frage:'Wie viele Therapeuten sind zurzeit in Ihrer Praxis beschäftigt?',
     opts:[['1 bis 5','person1'],['6 bis 10','person2'],['11 bis 20','person3'],['Mehr als 20','personGruppe']] },
   { id:'standorte',
@@ -298,31 +310,31 @@ var FRAGEN = [
     opts:[['Ländliche Region','land','Auf dem Land oder in ländlicher Region'],['Stadt oder Umland','stadt','In einer größeren Stadt oder in deren Nähe']] },
   { id:'vorteile',
     karten:[
-      {e:'💶', t:'Ein gutes Gehalt und geldwerte Vorteile'},
-      {e:'⏱️', t:'Flexible Arbeitszeiten, etwa echte Teilzeitmodelle'},
-      {e:'🏝️', t:'Eine Arbeitszeit, die zum Privatleben passt'},
-      {e:'❤️', t:'Wertschätzung und Anerkennung für die Arbeit'}
+      {e:'💶', t:'Ein gutes Gehalt'},
+      {e:'⏱️', t:'Flexible Arbeitszeiten'},
+      {e:'🏝️', t:'Zeit fürs Privatleben'},
+      {e:'❤️', t:'Wertschätzung im Team'}
     ],
     frage:'Therapeuten wünschen sich von ihren Arbeitgebern vor allem …',
     nachsatz:'… sind Sie bereit, in diesen Bereichen etwas zu bieten?',
     opts:[['Ja','ja','Ja, daran können wir arbeiten'],['Nein','nein','Nein, das kommt nicht infrage']],
-    warum:['Gute Therapeuten können sich aussuchen, wo sie arbeiten. Wer sie zu einem Wechsel bewegen will, muss beim Angebot mithalten. Reichweite allein ersetzt das nicht.'] },
+    warum:['Gute Therapeuten können sich aussuchen, wo sie arbeiten. Wer sie zum Wechsel bewegen will, muss beim Angebot mithalten. Reichweite allein reicht nicht.'] },
   { id:'investition', zaehler:'Letzte Frage',
     frage:'Sind Sie bereit, aktiv in die Gewinnung von Therapeuten zu investieren?',
     opts:[['Ja','ja','Ja, wenn es sich rechnet'],['Nein','nein','Nein, im Moment nicht']],
     warum:[
-      '<strong>Unser Honorar ist erfolgsbasiert.</strong> Zu Beginn wird neben dem Werbebudget nur eine Commitment-Fee fällig. Bleibt die Suche erfolglos, bekommen Sie diese zurück. Kommt eine Einstellung zustande, wird sie auf unser Honorar angerechnet.',
-      'Davon getrennt ist das <strong>Werbebudget</strong>, das Sie selbst tragen. Üblich sind 750 bis 1.500 Euro im Monat, die direkt an die Plattformen gehen. Ohne dieses Budget gibt es keine Reichweite, deshalb sprechen wir es vorher an und nicht hinterher.'
+      '<strong>Sie zahlen nur für Ergebnisse.</strong> Zu Beginn wird nur eine Commitment-Fee fällig. Bleibt die Suche erfolglos, bekommen Sie sie zurück. Bei einer Einstellung wird sie angerechnet.',
+      'Das <strong>Werbebudget</strong> tragen Sie selbst, üblich sind 750 bis 1.500 Euro im Monat. Ohne Budget keine Reichweite, deshalb sprechen wir es vorher an.'
     ] }
 ];
 
 var GRUENDE = [
-  { i:'handschlag', b:'100 % erfolgsbasiert',
-    t:'Zu Beginn wird neben dem Werbebudget nur eine Commitment-Fee fällig. Bleibt die Suche erfolglos, erhalten Sie sie zurück; führt sie zu einer Einstellung, wird sie auf unser Honorar angerechnet. Unterm Strich zahlen Sie also für Ergebnisse.' },
+  { i:'handschlag', b:'Sie zahlen nur für Ergebnisse',
+    t:'Zu Beginn wird nur eine Commitment-Fee fällig. Bleibt die Suche erfolglos, bekommen Sie sie zurück; führt sie zu einer Einstellung, wird sie angerechnet.' },
   { i:'stethoskop', b:'Von einem Physiotherapeuten geführt',
-    t:'Marc Richter ist ausgebildeter Physiotherapeut und hat den Aufbau einer Praxis von null auf über 60 Mitarbeiter miterlebt. Sie müssen im Gespräch nichts erklären.' },
+    t:'Marc Richter ist ausgebildeter Physiotherapeut. Sie müssen im Gespräch nichts erklären.' },
   { i:'fokus', b:'Nur Physio, Ergo und Logo',
-    t:'Keine andere Branche. Jede Kampagne und jedes Bewerbergespräch dreht sich um Therapieberufe.' }
+    t:'Keine andere Branche. Jede Kampagne dreht sich um Therapieberufe.' }
 ];
 
 var antworten = {}, schritt = 0;
