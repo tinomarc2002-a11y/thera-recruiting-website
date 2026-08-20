@@ -45,7 +45,13 @@ body::after{width:340px;height:340px;background:rgba(232,134,15,.09);bottom:-150
 .opts{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
 .opts[data-n="2"]{grid-template-columns:repeat(2,1fr)}
 .opts[data-n="3"]{grid-template-columns:repeat(3,1fr)}
-@media(max-width:519px){.opts[data-n="3"]{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:519px){.opts[data-n="3"]{grid-template-columns:repeat(2,1fr)}
+  .karten{grid-template-columns:repeat(2,1fr);gap:8px}
+  .karte{flex-direction:column;align-items:flex-start;gap:6px;padding:10px 11px}
+  .karte b{font-size:19px}
+  .karte p{font-size:13.5px;line-height:1.35}
+  .nachsatz{margin-bottom:13px}
+}
 .opt{position:relative;display:flex;flex-direction:column;padding:0;overflow:hidden;
   font-family:inherit;border:none;border-radius:14px;cursor:pointer;background:#e4f1fa;
   box-shadow:0 3px 14px rgba(13,43,78,.10);
@@ -305,14 +311,14 @@ var FRAGEN = [
     frage:'Sind Sie bereit, aktiv in die Gewinnung von Therapeuten zu investieren?',
     opts:[['Ja','ja','Ja, wenn es sich rechnet'],['Nein','nein','Nein, im Moment nicht']],
     warum:[
-      '<strong>Unser Honorar ist erfolgsbasiert.</strong> Es wird erst fällig, wenn Sie jemanden einstellen. Vorher zahlen Sie uns nichts, weder Grundgebühr noch Vorkasse.',
+      '<strong>Unser Honorar ist erfolgsbasiert.</strong> Zu Beginn wird neben dem Werbebudget nur eine Commitment-Fee fällig. Bleibt die Suche erfolglos, bekommen Sie diese zurück. Kommt eine Einstellung zustande, wird sie auf unser Honorar angerechnet.',
       'Davon getrennt ist das <strong>Werbebudget</strong>, das Sie selbst tragen. Üblich sind 750 bis 1.500 Euro im Monat, die direkt an die Plattformen gehen. Ohne dieses Budget gibt es keine Reichweite, deshalb sprechen wir es vorher an und nicht hinterher.'
     ] }
 ];
 
 var GRUENDE = [
   { i:'handschlag', b:'100 % erfolgsbasiert',
-    t:'Unser Honorar wird erst fällig, wenn Sie jemanden einstellen. Keine Grundgebühr, keine Vorkasse, kein Risiko auf Ihrer Seite.' },
+    t:'Zu Beginn wird neben dem Werbebudget nur eine Commitment-Fee fällig. Bleibt die Suche erfolglos, erhalten Sie sie zurück; führt sie zu einer Einstellung, wird sie auf unser Honorar angerechnet. Unterm Strich zahlen Sie also für Ergebnisse.' },
   { i:'stethoskop', b:'Von einem Physiotherapeuten geführt',
     t:'Marc Richter ist ausgebildeter Physiotherapeut und hat den Aufbau einer Praxis von null auf über 60 Mitarbeiter miterlebt. Sie müssen im Gespräch nichts erklären.' },
   { i:'fokus', b:'Nur Physio, Ergo und Logo',
