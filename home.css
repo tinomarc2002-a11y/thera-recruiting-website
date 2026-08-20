@@ -83,7 +83,6 @@
     .hero { position:relative; display:flex; align-items:flex-start; padding:92px 0 150px; overflow:hidden; background: radial-gradient(1100px 620px at 82% 10%, rgba(15,123,200,.32) 0%, transparent 60%), radial-gradient(900px 540px at 4% 92%, rgba(245,170,28,.10) 0%, transparent 58%), linear-gradient(142deg, #07102a 0%, #0d2b4e 58%, #0a3a6e 100%); }
     .hero-g { position:relative; z-index:1; display:flex; flex-direction:column; gap:32px; }
     .hero-l { animation: fadeUp .9s var(--ease) both; }
-    .hero-r { animation: fadeUp .9s .15s var(--ease) both; }
     .hero-hl { font-size: clamp(28px, 8vw, 62px); font-weight: 900; line-height: 1.05; letter-spacing: -.035em; margin-bottom: 18px; color:#fff; text-rendering: optimizeLegibility; }
     .hero-sub { font-size: clamp(14px, 3.8vw, 18px); color:rgba(255,255,255,.82); line-height:1.6; margin:0 0 24px; }
     .hero-sub strong { color:#fff; }
@@ -596,9 +595,10 @@
       .nav-cta-d { display: inline-flex; }
       .hbg { display: none; }
       .hero { padding-top: 90px; }
-      .hero-g { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+      /* Hero ist einspaltig, seit die Check-Karte entfernt wurde. */
+      .hero-g { display:block; }
+      .hero-l { max-width: 760px; }
       .hero-l { animation: fadeLeft .9s var(--ease) both; }
-      .hero-r { animation: fadeRight .9s .2s var(--ease) both; }
       .hero-hl { font-size:clamp(36px,5vw,62px); margin-bottom:22px; }
       .hero-sub { font-size:clamp(15px,1.4vw,18px); margin-bottom:32px; }
       .hero-ctas { margin-bottom: 30px; }
