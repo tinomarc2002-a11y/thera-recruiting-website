@@ -352,7 +352,7 @@ function zeichneFrage(f){
   });
   h += '</div>';
   if (f.warum){
-    h += '<details class="warum"><summary>Warum wird diese Frage gestellt?</summary>' +
+    h += '<details class="warum" open><summary>Warum wird diese Frage gestellt?</summary>' +
          f.warum.map(function(p){ return '<p>' + p + '</p>'; }).join('') + '</details>';
   }
   if (schritt > 0) h += '<button class="zurueck" id="zurueck">← Zurück</button>';
