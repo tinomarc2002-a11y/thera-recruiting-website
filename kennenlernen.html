@@ -423,11 +423,17 @@ function antwortenFreiRuecken(){
 }
 function ruecken(){
   var kasten = document.querySelector('.opts') || document.querySelector('form');
+  if (!kasten) return;
+  // Der aufgeklappte Hinweis soll mit ins Bild, deshalb ist er das Ziel.
+  var ziel = document.querySelector('.warum') || kasten;
   var banner = document.querySelector('.tr-cc .tr-cc-box');
-  if (!kasten || !banner) return;
-  var frei = innerHeight - banner.getBoundingClientRect().height - 18;
-  var fehlt = Math.ceil(kasten.getBoundingClientRect().bottom - frei);
-  if (fehlt > 2) window.scrollTo(0, window.scrollY + fehlt);
+  var frei = innerHeight - (banner ? banner.getBoundingClientRect().height + 18 : 10);
+  var fehlt = Math.ceil(ziel.getBoundingClientRect().bottom - frei);
+  if (fehlt <= 2) return;
+  // Nur so weit, dass die Antwortkarten oben nicht verschwinden.
+  var spielraum = Math.max(0, Math.floor(kasten.getBoundingClientRect().top - 8));
+  var weg = Math.min(fehlt, spielraum);
+  if (weg > 2) window.scrollTo(0, window.scrollY + weg);
 }
 (function(){
   if (document.querySelector('.tr-cc')) return;
