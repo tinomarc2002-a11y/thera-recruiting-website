@@ -288,9 +288,17 @@ function zeichne(){
 // Der Einwilligungsbanner liegt fest ueber dem unteren Seitenrand. Solange er
 // da ist, koennen die unteren Antwortflaechen dahinter verschwinden. Dann wird
 // so weit gescrollt, dass alle Antworten oberhalb des Banners liegen.
+var nachlauf = null;
 function antwortenFreiRuecken(){
-  // Der Banner erscheint verzoegert, deshalb mehrfach nachmessen.
-  [60, 400, 900, 1800].forEach(function(ms){ setTimeout(ruecken, ms); });
+  // Der Banner erscheint verzoegert und faehrt animiert ein. Deshalb wird
+  // rund drei Sekunden lang nachgemessen, bis seine Endhoehe feststeht.
+  clearInterval(nachlauf);
+  var runden = 0;
+  ruecken();
+  nachlauf = setInterval(function(){
+    ruecken();
+    if (++runden > 12 || !document.querySelector('.tr-cc')) clearInterval(nachlauf);
+  }, 260);
 }
 
 // Sobald der Banner tatsaechlich im Dokument landet, sofort nachruecken.
@@ -299,8 +307,7 @@ function antwortenFreiRuecken(){
   var beobachter = new MutationObserver(function(){
     if (document.querySelector('.tr-cc .tr-cc-box')) {
       beobachter.disconnect();
-      setTimeout(ruecken, 60);
-      setTimeout(ruecken, 420);
+      antwortenFreiRuecken();
     }
   });
   beobachter.observe(document.body, { childList: true });
