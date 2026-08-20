@@ -90,6 +90,16 @@
     document.head.appendChild(s);
   }
 
+  // Der Banner liegt fest ueber dem Seitenende. Ohne zusaetzlichen Platz
+  // verdeckt er Inhalte, auf schmalen Schirmen zum Beispiel die unteren
+  // Antwortflaechen im Funnel.
+  function platzSchaffen(wrap) {
+    var box = wrap.querySelector('.tr-cc-box');
+    if (!box) return;
+    var h = Math.ceil(box.getBoundingClientRect().height) + 28;
+    document.body.style.paddingBottom = h + 'px';
+  }
+
   function bannerZeigen() {
     stile();
     var wrap = document.createElement('div');
@@ -112,14 +122,21 @@
       '</div>';
     document.body.appendChild(wrap);
     requestAnimationFrame(function () {
-      requestAnimationFrame(function () { wrap.classList.add('show'); });
+      requestAnimationFrame(function () {
+        wrap.classList.add('show');
+        platzSchaffen(wrap);
+      });
+      addEventListener('resize', function () { platzSchaffen(wrap); });
     });
 
     function schliessen(status) {
       speichern(status);
       if (status === 'granted') clarityLaden();
       wrap.classList.remove('show');
-      setTimeout(function () { wrap.remove(); }, 340);
+      setTimeout(function () {
+        wrap.remove();
+        document.body.style.paddingBottom = '';
+      }, 340);
     }
     wrap.querySelector('.ja').addEventListener('click', function () { schliessen('granted'); });
     wrap.querySelector('.nein').addEventListener('click', function () { schliessen('denied'); });
