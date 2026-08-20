@@ -335,7 +335,7 @@
           Wir finden qualifizierte Therapeuten für Festanstellungen in Ihrer Region. <strong>Planbar, erfolgsbasiert, ohne Vorabkosten.</strong>
         </p>
         <div class="hero-ctas">
-          <a href="#quiz-anker" class="btn btn-p">
+          <a href="/kennenlernen" class="btn btn-p">
             <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7V3m8 4V3M3 11h18M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             Jetzt Erstgespräch sichern
           </a>
@@ -350,87 +350,30 @@
       <div class="hero-r">
   <div class="quiz-pre">
     <span class="quiz-pre-badge">Kostenlos &amp; unverbindlich</span>
-    <p class="quiz-pre-line">Erfahren Sie in 60 Sekunden, ob wir zu Ihrer Praxis passen.</p>
+    <p class="quiz-pre-line">Acht kurze Fragen. Danach wissen Sie, ob sich eine Kampagne für Ihre Praxis rechnet.</p>
   </div>
-  <div class="quiz-wrap r rgt" id="quiz-anker">
-    <!-- Progress bar -->
-    <div class="quiz-progress-wrap">
-      <div class="quiz-progress-bar" id="qBar"></div>
+  <a class="check-karte r rgt" href="/kennenlernen">
+    <svg class="ck-bild" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="60" cy="60" r="46" fill="rgba(95,205,227,.18)"/>
+      <rect x="30" y="26" width="60" height="72" rx="10" fill="rgba(255,255,255,.94)"/>
+      <rect x="42" y="40" width="36" height="6" rx="3" fill="#0d2b4e"/>
+      <rect x="42" y="55" width="44" height="9" rx="4.5" fill="#0f7bc8"/>
+      <rect x="42" y="70" width="44" height="9" rx="4.5" fill="rgba(15,123,200,.35)"/>
+      <rect x="42" y="85" width="26" height="9" rx="4.5" fill="rgba(15,123,200,.2)"/>
+      <circle cx="92" cy="36" r="16" fill="#f5aa1c"/>
+      <path d="M84 36l6 6 11-12" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="ck-text">
+      <span class="ck-label">Recruiting-Check</span>
+      <strong class="ck-hl">In 60 Sekunden zur Einschätzung</strong>
+      <p class="ck-sub">Teamgröße, offene Stelle, Region und Ihr Angebot. Am Ende sagen wir Ihnen ehrlich, ob sich Werbung für Sie lohnt.</p>
     </div>
-    <div class="quiz-step-label" id="qLabel">Schritt 1 von 4</div>
-
-    <!-- Step 1: Rolle -->
-    <div class="quiz-step active" id="qs1">
-      <h3 class="quiz-h">In welcher Rolle sind Sie tätig?</h3>
-      <div class="quiz-opts" data-step="1" data-mode="single" role="radiogroup" aria-label="Ihre Rolle">
-        <div class="quiz-opt" data-val="inhaber" role="radio" tabindex="0" aria-checked="false"><span>Praxisinhaber/in</span></div>
-        <div class="quiz-opt" data-val="hr" role="radio" tabindex="0" aria-checked="false"><span>HR-Verantwortliche/r</span></div>
-        <div class="quiz-opt" data-val="gf" role="radio" tabindex="0" aria-checked="false"><span>Geschäftsführung</span></div>
-      </div>
-    </div>
-
-    <!-- Step 2: Bedarf -->
-    <div class="quiz-step" id="qs2">
-      <h3 class="quiz-h">Wie viele Therapeuten suchen Sie?</h3>
-      <div class="quiz-opts" data-step="2" data-mode="single" role="radiogroup" aria-label="Anzahl gesuchter Therapeuten">
-        <div class="quiz-opt" data-val="1" role="radio" tabindex="0" aria-checked="false"><span>1 Therapeut/in</span></div>
-        <div class="quiz-opt" data-val="2-3" role="radio" tabindex="0" aria-checked="false"><span>2–3 Therapeuten</span></div>
-        <div class="quiz-opt" data-val="4+" role="radio" tabindex="0" aria-checked="false"><span>4 oder mehr</span></div>
-      </div>
-    </div>
-
-    <!-- Step 3: Fachrichtung -->
-    <div class="quiz-step" id="qs3">
-      <h3 class="quiz-h">Für welche Fachrichtung?</h3>
-      <p class="quiz-sub">Mehrfachauswahl möglich</p>
-      <div class="quiz-opts" data-step="3" data-mode="multi" role="group" aria-label="Fachrichtung">
-        <div class="quiz-opt" data-val="physio" role="checkbox" tabindex="0" aria-checked="false"><span>Physiotherapie</span></div>
-        <div class="quiz-opt" data-val="ergo" role="checkbox" tabindex="0" aria-checked="false"><span>Ergotherapie</span></div>
-        <div class="quiz-opt" data-val="logo" role="checkbox" tabindex="0" aria-checked="false"><span>Logopädie</span></div>
-      </div>
-    </div>
-
-    <!-- Step 4: Kontakt -->
-    <div class="quiz-step" id="qs4">
-      <h3 class="quiz-h">Fast geschafft!</h3>
-      <p class="quiz-sub">Wie können wir Sie erreichen?</p>
-      <div class="quiz-fields">
-        <div class="quiz-field">
-          <label for="qName">Name *</label>
-          <input type="text" id="qName" placeholder="Ihr vollständiger Name" autocomplete="name" />
-        </div>
-        <div class="quiz-field">
-          <label for="qEmail">E-Mail *</label>
-          <input type="email" id="qEmail" placeholder="praxis@example.de" autocomplete="email" />
-        </div>
-        <div class="quiz-field">
-          <label for="qTel">Telefon</label>
-          <input type="tel" id="qTel" placeholder="+49 ..." autocomplete="tel" />
-        </div>
-        <label class="quiz-check">
-          <input type="checkbox" id="qDsgvo" />
-          <span>Ich stimme der Verarbeitung meiner Daten gemäß <a href="/datenschutz" target="_blank" rel="noopener" style="color:#0f7bc8">Datenschutzerklärung</a> zu. *</span>
-        </label>
-      </div>
-    </div>
-
-    <!-- Thank you -->
-    <div class="quiz-thanks" id="qThanks">
-      <div class="qt-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-      </div>
-      <h3>Vielen Dank!</h3>
-      <p>Wir melden uns innerhalb von <strong>24 Stunden</strong> bei Ihnen.</p>
-    </div>
-
-    <!-- Navigation -->
-    <div class="quiz-nav" id="qNav">
-      <button class="quiz-btn-back" id="qBack" style="visibility:hidden">← Zurück</button>
-      <button class="quiz-btn-next" id="qNext">Weiter →</button>
+    <span class="ck-btn">Check starten
+      <svg width="17" height="17" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="9" x2="14" y2="9"/><polyline points="9,4 14,9 9,14"/></svg>
+    </span>
+  </a>
     </div>
   </div>
-</div>
-    </div>
   </div>
 </section>
 
@@ -917,7 +860,7 @@
       </h2>
       <p>Kostenlose Potenzial-Analyse, unverbindlich, in 15 Minuten, mit konkreten Zahlen für Ihre Region.</p>
       <div class="cta-btns">
-        <a href="#quiz-anker" class="btn btn-p" style="font-size:17px;padding:16px 40px;">
+        <a href="/kennenlernen" class="btn btn-p" style="font-size:17px;padding:16px 40px;">
           Jetzt unverbindlich informieren
         </a>
       </div>
@@ -977,7 +920,7 @@
         <h4>Kontakt</h4>
         <ul>
           <li><a href="mailto:info@thera-recruiting.de">info@thera-recruiting.de</a></li>
-          <li><a href="#quiz-anker" style="color:#0ea5e9;font-weight:600;">→ Zur kostenlosen Anfrage</a></li>
+          <li><a href="/kennenlernen" style="color:#0ea5e9;font-weight:600;">→ Zur kostenlosen Anfrage</a></li>
           <li><a href="/impressum">Impressum</a></li>
           <li><a href="/datenschutz">Datenschutz</a></li>
         </ul>

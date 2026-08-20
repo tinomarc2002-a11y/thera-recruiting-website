@@ -109,6 +109,9 @@
   })();
 
 (function(){
+  // Das Hero-Quiz ist auf die eigene Seite /kennenlernen umgezogen.
+  // Ohne diese Pruefung wirft der Block auf der Startseite einen Fehler.
+  if (!document.getElementById('qNext')) return;
   var cur = 1, total = 4;
   var answers = {};
 
