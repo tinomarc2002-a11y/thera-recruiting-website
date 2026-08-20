@@ -688,3 +688,16 @@
   .btn-zwei{padding:15px 34px;min-height:68px}
   .btn-zwei .btn-tun{font-size:17px}
 }
+
+/* ---- Was eine offene Stelle im Monat kostet ---- */
+.preis-hinweis{display:flex;flex-direction:column;align-items:center;gap:8px;max-width:640px;margin:22px auto 0;
+  padding:20px 22px;background:rgba(232,134,15,.07);border:1px solid rgba(232,134,15,.22);border-radius:14px;text-align:center}
+.preis-zahl{font-size:clamp(28px,6vw,40px);font-weight:900;letter-spacing:-.035em;line-height:1;
+  color:var(--gold);font-variant-numeric:tabular-nums}
+.preis-text{font-size:14.5px;line-height:1.55;color:var(--muted);max-width:52ch}
+.preis-text strong{color:var(--text);font-weight:750}
+.preis-text a{color:var(--teal);font-weight:650;text-decoration:underline;text-underline-offset:2px}
+@media(min-width:760px){
+  .preis-hinweis{flex-direction:row;gap:20px;text-align:left;padding:22px 26px}
+  .preis-zahl{flex:0 0 auto}
+}
