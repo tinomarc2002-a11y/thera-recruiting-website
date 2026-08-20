@@ -701,3 +701,28 @@
   .preis-hinweis{flex-direction:row;gap:20px;text-align:left;padding:22px 26px}
   .preis-zahl{flex:0 0 auto}
 }
+
+/* ---- Hero-Illustration rechts, nur auf breiten Schirmen ---- */
+.hero-visual { display: none; }
+@media (min-width: 1200px) {
+  .hero-visual {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(40vw, 620px);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.55) 16%, #000 34%);
+    mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.55) 16%, #000 34%);
+  }
+}
+@media (min-width: 1440px) {
+  .hero-visual { width: min(42vw, 700px); }
+}
