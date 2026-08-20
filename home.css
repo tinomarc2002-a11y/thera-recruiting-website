@@ -702,16 +702,21 @@
   .preis-zahl{flex:0 0 auto}
 }
 
-/* ---- Hero-Illustration rechts, nur auf breiten Schirmen ---- */
+/* ---- Hero-Illustration rechts, nur auf breiten Schirmen ----
+   Die Textspalte (hero-l) ist max. 760px breit und liegt im auf 1160px
+   begrenzten .wrap. Die Bildbreite ist deshalb nicht proportional zum
+   Fenster (vw), sondern als Rest-Rechnung zum tatsaechlich freien
+   Platz neben dem Text: bei jeder Fensterbreite bleiben so konstant
+   rund 48px Abstand zum Text, ohne die Ueberschrift zu unterlaufen. */
 .hero-visual { display: none; }
-@media (min-width: 1200px) {
+@media (min-width: 1250px) {
   .hero-visual {
     display: block;
     position: absolute;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: min(40vw, 620px);
+    width: clamp(300px, calc(50vw - 252px), 620px);
     z-index: 0;
     pointer-events: none;
   }
@@ -722,7 +727,4 @@
     -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.55) 16%, #000 34%);
     mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.55) 16%, #000 34%);
   }
-}
-@media (min-width: 1440px) {
-  .hero-visual { width: min(42vw, 700px); }
 }
