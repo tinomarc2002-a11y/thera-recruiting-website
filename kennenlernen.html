@@ -273,6 +273,22 @@ function zeichne(){
   window.scrollTo(0, 0);
   if (schritt < FRAGEN.length) zeichneFrage(FRAGEN[schritt]);
   else zeichneAbschluss();
+  antwortenFreiRuecken();
+}
+
+// Der Einwilligungsbanner liegt fest ueber dem unteren Seitenrand. Solange er
+// da ist, koennen die unteren Antwortflaechen dahinter verschwinden. Dann wird
+// so weit gescrollt, dass alle Antworten oberhalb des Banners liegen.
+function antwortenFreiRuecken(){
+  requestAnimationFrame(function(){
+    var kasten = document.querySelector('.opts') || document.querySelector('form');
+    if (!kasten) return;
+    var banner = document.querySelector('.tr-cc .tr-cc-box');
+    if (!banner) return;
+    var frei = innerHeight - banner.getBoundingClientRect().height - 22;
+    var unten = kasten.getBoundingClientRect().bottom;
+    if (unten > frei) scrollBy({ top: Math.ceil(unten - frei), behavior: 'auto' });
+  });
 }
 
 function zeichneFrage(f){
