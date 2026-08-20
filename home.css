@@ -672,3 +672,19 @@
 .check-karte:hover .ck-btn{filter:brightness(1.07);box-shadow:0 10px 28px rgba(232,134,15,.48)}
 @media(min-width:900px){ .check-karte{padding:32px 30px 26px} .ck-bild{width:126px;height:126px} }
 @media(prefers-reduced-motion:reduce){ .ck-bild{animation:none} .check-karte::after{display:none} }
+
+/* ---- Zweizeiliger Aufruf: Frage oben, Handlung unten ---- */
+.btn-zwei{flex-direction:column;gap:3px;padding:13px 26px;min-height:62px;line-height:1.25;text-align:center}
+.btn-zwei .btn-frage{font-size:13px;font-weight:600;opacity:.82;letter-spacing:.005em}
+.btn-zwei .btn-tun{display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:800;letter-spacing:-.01em}
+.btn-zwei .btn-tun svg{transition:transform .22s var(--ease)}
+.btn-zwei:hover .btn-tun svg{transform:translateX(4px)}
+@media(max-width:519px){
+  .btn-zwei{padding:12px 18px;min-height:60px}
+  .btn-zwei .btn-frage{font-size:12.5px}
+  .btn-zwei .btn-tun{font-size:15px}
+}
+@media(min-width:900px){
+  .btn-zwei{padding:15px 34px;min-height:68px}
+  .btn-zwei .btn-tun{font-size:17px}
+}
