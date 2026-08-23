@@ -236,3 +236,24 @@ td.n { font-variant-numeric: tabular-nums; white-space:nowrap; font-weight:700; 
   .gcard a { padding:28px 30px 26px; }
   .gcard h2 { font-size:22px; }
 }
+
+/* ---- Diagramme in Ratgeber-Beitraegen ----
+   Farben mit dem Validator geprueft: Helligkeitsband, Chroma, Trennung bei
+   Farbfehlsichtigkeit und Normalsicht. Der Kontrasthinweis fuer den hellen
+   Blauton ist dadurch aufgefangen, dass jeder Wert direkt beschriftet ist. */
+.fig { margin: 28px 0 26px; }
+.fig svg { width: 100%; height: auto; display: block; overflow: visible; }
+.fig-cap { font-size: 13.5px; line-height: 1.55; color: var(--muted); margin-top: 12px; }
+.dax { stroke: rgba(13,43,78,.22); stroke-width: 1.5; }
+.dl  { font-size: 14px; font-weight: 650; fill: var(--text); }
+.dl-c{ font-size: 13.5px; font-weight: 600; fill: var(--muted); text-anchor: middle; }
+.dw  { font-size: 13.5px; font-weight: 750; fill: var(--text); dominant-baseline: middle; }
+.dv  { font-size: 14px; font-weight: 800; fill: #fff; text-anchor: middle; }
+.dv-o{ fill: var(--text); }
+.dv-t{ font-size: 17px; font-weight: 800; fill: var(--text); text-anchor: middle; }
+.dt  { font-size: 14px; font-weight: 750; fill: var(--text); }
+.dleg text { font-size: 13px; fill: var(--muted); }
+@media (max-width: 560px) {
+  .dl { font-size: 13px; } .dw { font-size: 12.5px; }
+  .dl-c { font-size: 12px; } .dleg text { font-size: 12px; }
+}
