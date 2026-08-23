@@ -266,7 +266,7 @@ td.n { font-variant-numeric: tabular-nums; white-space:nowrap; font-weight:700; 
 }
 @media (max-width: 440px) {
   .dl { font-size: 25px; } .dw, .dwi { font-size: 22px; }
-  .dl-c { font-size: 21px; } .dv { font-size: 25px; }
+  .dl-c { font-size: 26px; } .dv { font-size: 25px; }
   .dv-t { font-size: 30px; } .dt { font-size: 24px; }
   .dleg text { font-size: 21px; }
 }
