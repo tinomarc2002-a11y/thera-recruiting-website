@@ -161,7 +161,7 @@
     .usp-ic svg { width:22px; height:22px; display:block; }
     .usp-card:nth-child(2) .usp-ic, .usp-card:nth-child(4) .usp-ic, .usp-card:nth-child(6) .usp-ic { background:linear-gradient(140deg, rgba(232,134,15,.16), rgba(232,134,15,.04)); }
     .usp-card > div { min-width:0; }
-    .usp-card h4 { font-size:15px; font-weight:700; margin-bottom:5px; color:var(--text); letter-spacing:-.01em; }
+    .usp-card h3 { font-size:15px; font-weight:700; margin-bottom:5px; color:var(--text); letter-spacing:-.01em; }
     .usp-card p { font-size:13.5px; color:var(--muted); line-height:1.6; }
     /* STATS - mobile: 2x2 grid */
     .stats-sec { background:#0d2b4e; }
@@ -235,7 +235,7 @@
     .foot-logo { display:flex; align-items:center; height:42px; margin-bottom:14px; }
     .foot-logo img { height:40px; width:auto; filter:brightness(10); }
     .foot-desc { font-size:13px; color:rgba(255,255,255,.62); line-height:1.72; margin-bottom:18px; max-width:300px; }
-    .foot-col h4 { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.09em; color:rgba(255,255,255,.58); margin-bottom:14px; }
+    .foot-col h3 { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.09em; color:rgba(255,255,255,.58); margin-bottom:14px; }
     .foot-col ul { list-style:none; display:flex; flex-direction:column; gap:9px; }
     .foot-col ul li a { font-size:13px; color:rgba(255,255,255,.68); transition:color .22s; }
     .foot-col ul li a:hover { color:#fff; }
