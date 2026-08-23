@@ -253,7 +253,19 @@ td.n { font-variant-numeric: tabular-nums; white-space:nowrap; font-weight:700; 
 .dv-t{ font-size: 17px; font-weight: 800; fill: var(--text); text-anchor: middle; }
 .dt  { font-size: 14px; font-weight: 750; fill: var(--text); }
 .dleg text { font-size: 13px; fill: var(--muted); }
-@media (max-width: 560px) {
-  .dl { font-size: 13px; } .dw { font-size: 12.5px; }
-  .dl-c { font-size: 12px; } .dleg text { font-size: 12px; }
+/* Das SVG skaliert mit dem Container, also skaliert die Schrift mit.
+   Bei 375px Fensterbreite betraegt der Faktor rund 0,49 - aus 13,5px
+   wuerden 6,6px. Deshalb wird die Schrift im Zeichenraum gegengerechnet,
+   damit sie gerendert wieder bei rund 13px landet. */
+@media (max-width: 620px) {
+  .dl { font-size: 19px; } .dw { font-size: 18px; }
+  .dl-c { font-size: 17px; } .dv { font-size: 19px; }
+  .dv-t { font-size: 23px; } .dt { font-size: 19px; }
+  .dleg text { font-size: 17px; }
+}
+@media (max-width: 440px) {
+  .dl { font-size: 25px; } .dw { font-size: 24px; }
+  .dl-c { font-size: 21px; } .dv { font-size: 25px; }
+  .dv-t { font-size: 30px; } .dt { font-size: 24px; }
+  .dleg text { font-size: 21px; }
 }
