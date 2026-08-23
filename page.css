@@ -248,6 +248,7 @@ td.n { font-variant-numeric: tabular-nums; white-space:nowrap; font-weight:700; 
 .dl  { font-size: 14px; font-weight: 650; fill: var(--text); }
 .dl-c{ font-size: 13.5px; font-weight: 600; fill: var(--muted); text-anchor: middle; }
 .dw  { font-size: 13.5px; font-weight: 750; fill: var(--text); dominant-baseline: middle; }
+.dwi { font-size: 13.5px; font-weight: 800; fill: #fff; text-anchor: end; dominant-baseline: middle; }
 .dv  { font-size: 14px; font-weight: 800; fill: #fff; text-anchor: middle; }
 .dv-o{ fill: var(--text); }
 .dv-t{ font-size: 17px; font-weight: 800; fill: var(--text); text-anchor: middle; }
@@ -258,13 +259,13 @@ td.n { font-variant-numeric: tabular-nums; white-space:nowrap; font-weight:700; 
    wuerden 6,6px. Deshalb wird die Schrift im Zeichenraum gegengerechnet,
    damit sie gerendert wieder bei rund 13px landet. */
 @media (max-width: 620px) {
-  .dl { font-size: 19px; } .dw { font-size: 18px; }
+  .dl { font-size: 19px; } .dw, .dwi { font-size: 18px; }
   .dl-c { font-size: 17px; } .dv { font-size: 19px; }
   .dv-t { font-size: 23px; } .dt { font-size: 19px; }
   .dleg text { font-size: 17px; }
 }
 @media (max-width: 440px) {
-  .dl { font-size: 25px; } .dw { font-size: 24px; }
+  .dl { font-size: 25px; } .dw, .dwi { font-size: 22px; }
   .dl-c { font-size: 21px; } .dv { font-size: 25px; }
   .dv-t { font-size: 30px; } .dt { font-size: 24px; }
   .dleg text { font-size: 21px; }
