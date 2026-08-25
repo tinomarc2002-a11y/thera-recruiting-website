@@ -692,6 +692,7 @@ function buildLeadPayload(contact) {
 
   // Email subject + reply-to
   payload['_subject'] = 'Recruiting-Check: ' + contact.name + ' – Score ' + total + '/100';
+  if (window.trHerkunft) Object.assign(payload, trHerkunft());
   payload['email'] = contact.email; // Formspree uses this as reply-to
 
   return { payload: payload, total: total };

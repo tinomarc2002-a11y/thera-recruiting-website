@@ -176,7 +176,8 @@
       btn.disabled = true;
       btn.textContent = 'Wird gesendet …';
 
-      var payload = {
+      var payload = window.trHerkunft ? trHerkunft() : {};
+      Object.assign(payload, {
         name:    name,
         email:   email,
         telefon: tel || '–',
@@ -184,7 +185,7 @@
         anzahl:  collectAnswers('qs2'),
         branche: collectAnswers('qs3'),
         _subject: 'Neue Anfrage von ' + name + ' via Thera-Recruiting.de'
-      };
+      });
 
       fetch('https://formspree.io/f/mykvyrbb', {
         method:  'POST',

@@ -270,3 +270,50 @@ td.n { font-variant-numeric: tabular-nums; white-space:nowrap; font-weight:700; 
   .dv-t { font-size: 30px; } .dt { font-size: 24px; }
   .dleg text { font-size: 21px; }
 }
+
+/* ---- Handlungsaufforderung im Fliesstext ----
+   Bewusst leichter als der grosse .cta-Block am Seitenende: keine
+   Flaeche, keine Ueberschrift, nur ein Satz und ein Link. Sonst
+   liest sich ein Ratgeber wie eine Aneinanderreihung von Bannern.
+   Der Akzentbalken links markiert den Einschub, ohne den Lesefluss
+   zu unterbrechen. */
+.cta-in {
+  margin: 30px 0;
+  padding: 18px 20px 18px 22px;
+  border-left: 3px solid var(--teal);
+  background: rgba(15,123,200,.055);
+  border-radius: 0 10px 10px 0;
+}
+.cta-in p {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--text);
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+.cta-in a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 15px;
+  font-weight: 750;
+  color: var(--teal2);
+  text-decoration: none;
+  border-bottom: 2px solid rgba(15,123,200,.32);
+  padding-bottom: 1px;
+  transition: border-color .18s, gap .18s;
+}
+.cta-in a { position: relative; }
+.cta-in a::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; top: 50%;
+  height: 44px;
+  transform: translateY(-50%);
+}
+.cta-in a:hover { border-bottom-color: var(--teal2); gap: 11px; }
+.cta-in a svg { width: 15px; height: 15px; flex: none; }
+@media (max-width: 560px) {
+  .cta-in { padding: 16px 16px 16px 18px; margin: 24px 0; }
+  .cta-in p { font-size: 15px; }
+}

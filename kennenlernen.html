@@ -488,7 +488,9 @@ function absenden(e){
   btn.disabled = true;
   btn.textContent = 'Wird gesendet …';
 
-  var daten = { name:name, email:mail, telefon:tel, _subject:'Kennenlern-Funnel: ' + name };
+  var daten = window.trHerkunft ? trHerkunft() : {};
+  daten.name = name; daten.email = mail; daten.telefon = tel;
+  daten._subject = 'Kennenlern-Funnel: ' + name;
   FRAGEN.forEach(function(f){ daten[f.id] = antworten[f.id] || '–'; });
 
   fetch('https://formspree.io/f/mykvyrbb', {
@@ -509,6 +511,7 @@ function fehler(btn){
 zeichne();
 </script>
 
+<script src="/herkunft.js" defer></script>
 <script src="/consent.js" defer></script>
 </body>
 </html>
