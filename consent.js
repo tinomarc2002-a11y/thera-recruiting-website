@@ -29,6 +29,11 @@
   var CLARITY_ID = 'xxsexsw7ui';
   var KEY = 'tr-consent';
   var VERSION = '2';
+  // Eine Einwilligung gilt nicht unbegrenzt. Die Aufsichtsbehoerden
+  // erwarten eine erneute Abfrage nach angemessener Zeit; zwoelf Monate
+  // sind der in Deutschland uebliche Rahmen. Danach faellt der
+  // gespeicherte Eintrag weg und es wird neu gefragt.
+  var GUELTIG_TAGE = 365;
   var clarityGeladen = false;
 
   // Kategorien. "pflicht" heisst: nicht abwaehlbar.
@@ -52,6 +57,13 @@
 
   /* ---------- Speicher ---------- */
 
+  function abgelaufen(ts) {
+    if (!ts) return true;
+    var alter = Date.now() - new Date(ts).getTime();
+    if (isNaN(alter)) return true;
+    return alter > GUELTIG_TAGE * 864e5;
+  }
+
   function gespeichert() {
     try {
       var roh = localStorage.getItem(KEY);
@@ -62,9 +74,14 @@
       // Entscheidung betraf denselben Zweck und gilt weiter, sonst
       // wuerden wir jeden erneut fragen, der schon geantwortet hat.
       if (d.v === '1' && d.status) {
-        return { v: VERSION, kategorien: { statistik: d.status === 'granted' }, ts: d.ts };
+        d = { v: VERSION, kategorien: { statistik: d.status === 'granted' }, ts: d.ts };
       }
-      return d.v === VERSION && d.kategorien ? d : null;
+      if (d.v !== VERSION || !d.kategorien) return null;
+      if (abgelaufen(d.ts)) {
+        try { localStorage.removeItem(KEY); } catch (e2) {}
+        return null;
+      }
+      return d;
     } catch (e) { return null; }
   }
 
