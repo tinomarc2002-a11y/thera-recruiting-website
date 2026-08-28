@@ -1,47 +1,94 @@
 /* ============================================================
-   consent.js — Einwilligungsbanner + Microsoft Clarity
+   consent.js — Einwilligungsbanner mit Kategorieauswahl
    ------------------------------------------------------------
-   Clarity wird AUSSCHLIESSLICH nach aktiver Einwilligung geladen
-   (§ 25 TDDDG). Ohne Zustimmung findet keinerlei Verbindung zu
-   Microsoft statt und es werden keine Cookies gesetzt.
+   Microsoft Clarity wird ausschliesslich nach aktiver Einwilligung
+   geladen (§ 25 TDDDG). Ohne Zustimmung entsteht keine Verbindung zu
+   Microsoft und es werden keine Cookies gesetzt.
 
-   Ablehnen und Zustimmen sind gleichwertig gestaltet, es gibt
-   keine Vorauswahl. Die Entscheidung ist jederzeit widerrufbar
-   über den Link "Cookie-Einstellungen" im Fussbereich.
+   Aufbau:
+   - Erste Ansicht: Alle akzeptieren, Nur notwendige, Einstellungen.
+     Annehmen und Ablehnen liegen auf derselben Ebene, gleich gross,
+     ohne Vorauswahl. Eine hervorgehobene Zustimmung neben einem
+     versteckten Ablehnen waere keine freiwillige Einwilligung.
+   - Zweite Ansicht: je Kategorie ein Schalter. Notwendig ist fest
+     an und nicht abwaehlbar, weil dort nur die Entscheidung selbst
+     gespeichert wird.
+
+   Es gibt bewusst nur die Kategorien, die es wirklich gibt. Eine
+   Rubrik "Marketing" ohne Marketingdienst waere eine Falschangabe
+   gegenueber dem Besucher.
+
+   Widerruf: dauerhafter Schalter unten links, zusaetzlich der Link
+   im Fussbereich. Beim Entzug der Statistik-Einwilligung werden die
+   Clarity-Cookies geloescht und die Seite neu geladen, weil ein
+   bereits geladenes Skript sich nicht zurueckholen laesst.
    ============================================================ */
 (function () {
   'use strict';
 
-  // Clarity-Projekt-ID (clarity.microsoft.com → Projekt → Einstellungen → Setup)
   var CLARITY_ID = 'xxsexsw7ui';
-
-  var KEY = 'tr-consent';           // localStorage-Schluessel
-  var VERSION = '1';                // bei Aenderung des Zwecks hochzaehlen
+  var KEY = 'tr-consent';
+  var VERSION = '2';
   var clarityGeladen = false;
+
+  // Kategorien. "pflicht" heisst: nicht abwaehlbar.
+  var KATEGORIEN = [
+    {
+      id: 'notwendig',
+      pflicht: true,
+      name: 'Notwendig',
+      text: 'Speichert allein Ihre Entscheidung auf dieser Seite, damit wir Sie nicht ' +
+            'bei jedem Besuch erneut fragen. Kein Versand an Dritte.'
+    },
+    {
+      id: 'statistik',
+      pflicht: false,
+      name: 'Statistik',
+      text: 'Microsoft Clarity zeigt uns anonymisiert, wo Besucher auf der Seite ' +
+            'haengen bleiben. Dabei werden Cookies gesetzt und Daten an Microsoft in ' +
+            'die USA uebertragen.'
+    }
+  ];
+
+  /* ---------- Speicher ---------- */
 
   function gespeichert() {
     try {
       var roh = localStorage.getItem(KEY);
       if (!roh) return null;
       var d = JSON.parse(roh);
-      return d && d.v === VERSION ? d : null;
+      if (!d) return null;
+      // Fassung 1 kannte nur ein Ja oder Nein fuer alles. Diese
+      // Entscheidung betraf denselben Zweck und gilt weiter, sonst
+      // wuerden wir jeden erneut fragen, der schon geantwortet hat.
+      if (d.v === '1' && d.status) {
+        return { v: VERSION, kategorien: { statistik: d.status === 'granted' }, ts: d.ts };
+      }
+      return d.v === VERSION && d.kategorien ? d : null;
     } catch (e) { return null; }
   }
 
-  function speichern(status) {
+  function speichern(kategorien) {
     try {
       localStorage.setItem(KEY, JSON.stringify({
-        v: VERSION, status: status, ts: new Date().toISOString()
+        v: VERSION, kategorien: kategorien, ts: new Date().toISOString()
       }));
-    } catch (e) { /* localStorage gesperrt – dann gilt Ablehnung fuer diese Sitzung */ }
+    } catch (e) { /* Speicher gesperrt, dann gilt Ablehnung fuer diese Sitzung */ }
+  }
+
+  function clarityCookiesLoeschen() {
+    ['_clck', '_clsk', 'CLID', 'ANONCHK', 'MR', 'MUID', 'SM'].forEach(function (n) {
+      ['/', location.pathname].forEach(function (pfad) {
+        document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + pfad;
+        document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + pfad +
+                          '; domain=.' + location.hostname;
+      });
+    });
   }
 
   function clarityLaden() {
     if (clarityGeladen) return;
-    if (!CLARITY_ID || CLARITY_ID.indexOf('HIER_EINTRAGEN') !== -1) {
-      console.warn('[consent] Clarity-Projekt-ID fehlt – Tracking bleibt inaktiv.');
-      return;
-    }
+    if (!CLARITY_ID) return;
     clarityGeladen = true;
     (function (c, l, a, r, i, t, y) {
       c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
@@ -50,6 +97,20 @@
       y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
     })(window, document, 'clarity', 'script', CLARITY_ID);
   }
+
+  function anwenden(kategorien, vorher) {
+    var warAn = vorher && vorher.statistik;
+    if (kategorien.statistik) {
+      clarityLaden();
+    } else if (warAn || clarityGeladen) {
+      // Ein geladenes Skript laesst sich nicht zurueckholen. Cookies weg,
+      // dann neu laden, damit die Verarbeitung tatsaechlich endet.
+      clarityCookiesLoeschen();
+      location.reload();
+    }
+  }
+
+  /* ---------- Stile ---------- */
 
   function stile() {
     if (document.getElementById('tr-consent-style')) return;
@@ -61,88 +122,227 @@
       '.tr-cc-box{pointer-events:auto;max-width:560px;width:100%;background:#0d2b4e;color:#fff;',
       'border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:22px 22px 18px;',
       'box-shadow:0 22px 60px rgba(0,0,0,.38);transform:translateY(16px);opacity:0;',
+      'max-height:calc(100vh - 28px);overflow-y:auto;',
       'transition:transform .38s cubic-bezier(.34,1.4,.64,1),opacity .32s ease}',
       '.tr-cc.show .tr-cc-box{transform:none;opacity:1}',
       '.tr-cc h2{font-size:16px;font-weight:800;letter-spacing:-.02em;margin:0 0 8px;color:#fff}',
       '.tr-cc p{font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.76);margin:0 0 16px}',
       '.tr-cc a{color:#5fcde3;text-decoration:underline;text-underline-offset:2px}',
-      '.tr-cc-btns{display:flex;flex-direction:column;gap:9px}',
+      '.tr-cc-btns{display:flex;flex-direction:row-reverse;gap:9px;flex-wrap:wrap}',
       '.tr-cc button{font-family:inherit;font-size:14.5px;font-weight:700;border-radius:99px;',
-      'min-height:48px;padding:13px 22px;cursor:pointer;border:1.5px solid transparent;',
-      'transition:background .2s,border-color .2s,transform .2s,filter .2s;width:100%}',
+      'min-height:48px;padding:13px 18px;cursor:pointer;border:1.5px solid transparent;',
+      'transition:background .2s,border-color .2s,transform .2s,filter .2s;flex:1 1 0;min-width:0}',
       '.tr-cc button:active{transform:scale(.98)}',
       '.tr-cc .ja{background:linear-gradient(135deg,#38bdf8,#0f7bc8);color:#fff;box-shadow:0 5px 18px rgba(14,165,233,.34)}',
       '.tr-cc .ja:hover{filter:brightness(1.07)}',
       '.tr-cc .nein{background:rgba(255,255,255,.09);color:#fff;border-color:rgba(255,255,255,.26)}',
       '.tr-cc .nein:hover{background:rgba(255,255,255,.16)}',
+      '.tr-cc .mehr{background:none;color:rgba(255,255,255,.72);border-color:transparent;',
+      'text-decoration:underline;text-underline-offset:3px;flex:0 0 100%;min-height:40px;font-weight:600;font-size:13px}',
+      '.tr-cc .mehr:hover{color:#fff}',
       '.tr-cc-note{font-size:11.5px;color:rgba(255,255,255,.45);margin:12px 0 0;text-align:center}',
-      '.tr-cc-btns{flex-direction:row-reverse}.tr-cc button{width:auto;flex:1 1 0;min-width:0}',
-      // Auf dem Handy war der Banner 460 von 812 Pixeln hoch und verdeckte die
-      // Bedienelemente des Quiz. Deshalb hier kompakter.
+      // Kategorieliste
+      '.tr-cc-cats{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}',
+      '.tr-cc-cat{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12);',
+      'border-radius:12px;padding:13px 14px}',
+      '.tr-cc-cat-top{display:flex;align-items:center;justify-content:space-between;gap:12px}',
+      '.tr-cc-cat-name{font-size:14px;font-weight:750;color:#fff}',
+      '.tr-cc-cat p{font-size:12.5px;line-height:1.5;margin:7px 0 0;color:rgba(255,255,255,.66)}',
+      // Schalter
+      '.tr-sw{position:relative;flex:none;width:46px;height:26px}',
+      '.tr-sw input{position:absolute;inset:0;opacity:0;margin:0;width:100%;height:100%;cursor:pointer}',
+      '.tr-sw input:disabled{cursor:not-allowed}',
+      '.tr-sw span{position:absolute;inset:0;border-radius:99px;background:rgba(255,255,255,.20);',
+      'transition:background .2s;pointer-events:none}',
+      '.tr-sw span::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;',
+      'border-radius:50%;background:#fff;transition:transform .2s}',
+      '.tr-sw input:checked+span{background:#0f7bc8}',
+      '.tr-sw input:checked+span::after{transform:translateX(20px)}',
+      '.tr-sw input:disabled+span{background:#0f7bc8;opacity:.5}',
+      '.tr-sw input:focus-visible+span{outline:2px solid #5fcde3;outline-offset:2px}',
+      // Dauerhafter Schalter unten links
+      '.tr-cc-fab{position:fixed;left:16px;bottom:16px;z-index:8500;width:46px;height:46px;',
+      'border-radius:50%;background:#0d2b4e;border:1px solid rgba(255,255,255,.22);cursor:pointer;',
+      'display:flex;align-items:center;justify-content:center;padding:0;',
+      'box-shadow:0 6px 20px rgba(13,43,78,.34);transition:transform .2s,box-shadow .2s}',
+      '.tr-cc-fab:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(13,43,78,.44)}',
+      '.tr-cc-fab svg{width:23px;height:23px;display:block}',
+      '.tr-cc-fab:focus-visible{outline:2px solid #0f7bc8;outline-offset:3px}',
       '@media(max-width:519px){.tr-cc{padding:9px}',
-      '.tr-cc-box{padding:15px 15px 13px;border-radius:14px}',
+      '.tr-cc-box{padding:15px 15px 13px;border-radius:14px;max-height:calc(100vh - 18px)}',
       '.tr-cc h2{font-size:14.5px;margin-bottom:6px}',
       '.tr-cc p{font-size:12.5px;line-height:1.5;margin-bottom:11px}',
       '.tr-cc button{font-size:13px;padding:11px 8px}',
-      '.tr-cc-note{font-size:10.5px;margin-top:9px}}',
-      '@media(prefers-reduced-motion:reduce){.tr-cc-box{transition:none;transform:none;opacity:1}}'
+      '.tr-cc-note{font-size:10.5px;margin-top:9px}',
+      '.tr-cc-fab{left:12px;bottom:12px;width:42px;height:42px}}',
+      '@media(prefers-reduced-motion:reduce){.tr-cc-box{transition:none;transform:none;opacity:1}',
+      '.tr-sw span,.tr-sw span::after,.tr-cc-fab{transition:none}}'
     ].join('');
     document.head.appendChild(s);
   }
 
+  /* ---------- Banner ---------- */
+
   // Der Banner liegt fest ueber dem Seitenende. Ohne zusaetzlichen Platz
-  // verdeckt er Inhalte, auf schmalen Schirmen zum Beispiel die unteren
-  // Antwortflaechen im Funnel.
+  // verdeckt er Inhalte, auf schmalen Schirmen etwa die Antwortflaechen
+  // im Funnel.
   function platzSchaffen(wrap) {
     var box = wrap.querySelector('.tr-cc-box');
     if (!box) return;
-    var h = Math.ceil(box.getBoundingClientRect().height) + 28;
-    document.body.style.paddingBottom = h + 'px';
+    document.body.style.paddingBottom =
+      (Math.ceil(box.getBoundingClientRect().height) + 28) + 'px';
   }
 
-  function bannerZeigen() {
+  function esc(t) {
+    return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function bannerZeigen(vorauswahl) {
+    if (document.querySelector('.tr-cc')) return;
     stile();
+
+    var vorher = gespeichert();
+    var stand = {};
+    KATEGORIEN.forEach(function (k) {
+      stand[k.id] = k.pflicht ? true
+        : !!(vorher && vorher.kategorien && vorher.kategorien[k.id]);
+    });
+
     var wrap = document.createElement('div');
     wrap.className = 'tr-cc';
     wrap.setAttribute('role', 'dialog');
     wrap.setAttribute('aria-modal', 'false');
-    wrap.setAttribute('aria-label', 'Hinweis zur Websiteanalyse');
-    wrap.innerHTML =
-      '<div class="tr-cc-box">' +
-        '<h2>Dürfen wir verstehen, wie Sie unsere Seite nutzen?</h2>' +
-        '<p>Wir würden <strong>Microsoft Clarity</strong> einsetzen, um zu sehen, wo Besucher ' +
-        'hängen bleiben. Dabei werden Cookies gesetzt und Daten an Microsoft in die USA ' +
-        'übertragen. <strong>Ohne Ihre Zustimmung passiert nichts davon.</strong> ' +
-        '<a href="/datenschutz">Datenschutzerklärung</a></p>' +
-        '<div class="tr-cc-btns">' +
-          '<button type="button" class="ja">Einverstanden</button>' +
-          '<button type="button" class="nein">Nicht einverstanden</button>' +
-        '</div>' +
-        '<p class="tr-cc-note">Jederzeit widerrufbar über „Cookie-Einstellungen“ im Seitenfuß.</p>' +
-      '</div>';
+    wrap.setAttribute('aria-label', 'Einstellungen zu Cookies und Websiteanalyse');
     document.body.appendChild(wrap);
-    requestAnimationFrame(function () {
-      requestAnimationFrame(function () {
+
+    function uebersicht() {
+      wrap.innerHTML =
+        '<div class="tr-cc-box">' +
+          '<h2>Dürfen wir verstehen, wie Sie unsere Seite nutzen?</h2>' +
+          '<p>Notwendige Speicherung brauchen wir, damit wir Sie nicht bei jedem Besuch ' +
+          'erneut fragen. Für die Statistik würden wir <strong>Microsoft Clarity</strong> ' +
+          'einsetzen. <strong>Ohne Ihre Zustimmung passiert das nicht.</strong> ' +
+          '<a href="/datenschutz">Datenschutzerklärung</a></p>' +
+          '<div class="tr-cc-btns">' +
+            '<button type="button" class="ja">Alle akzeptieren</button>' +
+            '<button type="button" class="nein">Nur notwendige</button>' +
+            '<button type="button" class="mehr">Einstellungen anpassen</button>' +
+          '</div>' +
+          '<p class="tr-cc-note">Jederzeit änderbar über das Cookie-Symbol unten links.</p>' +
+        '</div>';
+      wrap.querySelector('.ja').addEventListener('click', function () {
+        KATEGORIEN.forEach(function (k) { stand[k.id] = true; });
+        fertig();
+      });
+      wrap.querySelector('.nein').addEventListener('click', function () {
+        KATEGORIEN.forEach(function (k) { stand[k.id] = k.pflicht; });
+        fertig();
+      });
+      wrap.querySelector('.mehr').addEventListener('click', einstellungen);
+      nachZeichnen();
+    }
+
+    function einstellungen() {
+      var reihen = KATEGORIEN.map(function (k) {
+        return '<div class="tr-cc-cat">' +
+            '<div class="tr-cc-cat-top">' +
+              '<span class="tr-cc-cat-name" id="lbl-' + k.id + '">' + esc(k.name) + '</span>' +
+              '<label class="tr-sw">' +
+                '<input type="checkbox" data-kat="' + k.id + '"' +
+                  (stand[k.id] ? ' checked' : '') +
+                  (k.pflicht ? ' disabled' : '') +
+                  ' aria-labelledby="lbl-' + k.id + '">' +
+                '<span></span>' +
+              '</label>' +
+            '</div>' +
+            '<p>' + esc(k.text) + (k.pflicht ? ' Diese Kategorie ist nicht abwählbar.' : '') + '</p>' +
+          '</div>';
+      }).join('');
+
+      wrap.innerHTML =
+        '<div class="tr-cc-box">' +
+          '<h2>Was möchten Sie erlauben?</h2>' +
+          '<div class="tr-cc-cats">' + reihen + '</div>' +
+          '<div class="tr-cc-btns">' +
+            '<button type="button" class="ja alle">Alle akzeptieren</button>' +
+            '<button type="button" class="nein sichern">Auswahl speichern</button>' +
+          '</div>' +
+          '<p class="tr-cc-note">Details in der <a href="/datenschutz">Datenschutzerklärung</a>.</p>' +
+        '</div>';
+
+      wrap.querySelectorAll('input[data-kat]').forEach(function (i) {
+        i.addEventListener('change', function () {
+          stand[i.getAttribute('data-kat')] = i.checked;
+        });
+      });
+      wrap.querySelector('.alle').addEventListener('click', function () {
+        KATEGORIEN.forEach(function (k) { stand[k.id] = true; });
+        fertig();
+      });
+      wrap.querySelector('.sichern').addEventListener('click', fertig);
+      nachZeichnen();
+      var erster = wrap.querySelector('input[data-kat]:not(:disabled)');
+      if (erster) erster.focus();
+    }
+
+    // Der Platz am Seitenende wird sofort reserviert und nicht erst im
+    // Animationsschritt. In einem Hintergrundtab oder im Energiesparmodus
+    // pausiert requestAnimationFrame, und dann bliebe der Banner
+    // unsichtbar ueber dem Inhalt liegen. Bei einem Einwilligungsbanner
+    // darf das nicht von der Bildwiederholung abhaengen.
+    function nachZeichnen() {
+      platzSchaffen(wrap);
+      var einblenden = function () {
         wrap.classList.add('show');
         platzSchaffen(wrap);
-      });
-      addEventListener('resize', function () { platzSchaffen(wrap); });
-    });
+      };
+      requestAnimationFrame(function () { requestAnimationFrame(einblenden); });
+      setTimeout(einblenden, 60);
+    }
 
-    function schliessen(status) {
-      speichern(status);
-      if (status === 'granted') clarityLaden();
+    function fertig() {
+      var alt = vorher && vorher.kategorien ? vorher.kategorien : null;
+      speichern(stand);
       wrap.classList.remove('show');
       setTimeout(function () {
         wrap.remove();
         document.body.style.paddingBottom = '';
+        schalterZeigen();
+        anwenden(stand, alt);
       }, 340);
     }
-    wrap.querySelector('.ja').addEventListener('click', function () { schliessen('granted'); });
-    wrap.querySelector('.nein').addEventListener('click', function () { schliessen('denied'); });
+
+    addEventListener('resize', function () {
+      if (document.body.contains(wrap)) platzSchaffen(wrap);
+    });
+
+    if (vorauswahl === 'einstellungen') einstellungen(); else uebersicht();
   }
 
-  /* Link "Cookie-Einstellungen" in allen Fussbereichen ergaenzen */
+  /* ---------- Dauerhafter Schalter unten links ---------- */
+
+  function schalterZeigen() {
+    stile();
+    if (document.querySelector('.tr-cc-fab')) return;
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'tr-cc-fab';
+    b.setAttribute('aria-label', 'Cookie-Einstellungen ändern');
+    b.title = 'Cookie-Einstellungen ändern';
+    b.innerHTML =
+      '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">' +
+        '<path d="M12 2.6a9.4 9.4 0 108.9 12.4 4.2 4.2 0 01-4.9-5.4 3.6 3.6 0 01-4-4 9.6 9.6 0 00-4-3z" ' +
+          'stroke="#f5aa1c" stroke-width="1.7" stroke-linejoin="round"/>' +
+        '<circle cx="9" cy="13.4" r="1.25" fill="#5fcde3"/>' +
+        '<circle cx="13.6" cy="16.6" r="1.1" fill="#5fcde3"/>' +
+        '<circle cx="8.2" cy="8.4" r="1" fill="#5fcde3"/>' +
+      '</svg>';
+    b.addEventListener('click', function () { bannerZeigen('einstellungen'); });
+    document.body.appendChild(b);
+  }
+
+  /* ---------- Link im Fussbereich ---------- */
+
   function widerrufLink() {
     document.querySelectorAll('.foot-links, .foot-col ul').forEach(function (ziel) {
       if (ziel.querySelector('[data-consent-reset]')) return;
@@ -152,8 +352,7 @@
       a.setAttribute('data-consent-reset', '');
       a.addEventListener('click', function (e) {
         e.preventDefault();
-        try { localStorage.removeItem(KEY); } catch (err) {}
-        if (!document.querySelector('.tr-cc')) bannerZeigen();
+        bannerZeigen('einstellungen');
       });
       if (ziel.tagName === 'UL') {
         var li = document.createElement('li'); li.appendChild(a); ziel.appendChild(li);
@@ -165,8 +364,12 @@
 
   function start() {
     var s = gespeichert();
-    if (s && s.status === 'granted') { clarityLaden(); }
-    else if (!s) { bannerZeigen(); }
+    if (s) {
+      if (s.kategorien.statistik) clarityLaden();
+      schalterZeigen();
+    } else {
+      bannerZeigen();
+    }
     widerrufLink();
   }
 
