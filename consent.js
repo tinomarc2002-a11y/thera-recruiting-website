@@ -93,7 +93,16 @@
     } catch (e) { /* Speicher gesperrt, dann gilt Ablehnung fuer diese Sitzung */ }
   }
 
+  // Clarity setzt laut Microsoft nicht nur eigene Cookies (_clck, _clsk),
+  // sondern auch Drittanbieter-Cookies auf Microsoft-Domains: CLID,
+  // MUID, ANONCHK, MR und SM. An die kommt document.cookie nicht heran,
+  // weil sie auf einer fremden Domain liegen. Nur Clarity selbst kann
+  // sie loeschen, ueber consent false. Deshalb zuerst dieser Aufruf und
+  // erst danach das Aufraeumen der eigenen Cookies.
   function clarityCookiesLoeschen() {
+    try {
+      if (typeof window.clarity === 'function') window.clarity('consent', false);
+    } catch (e) { /* Clarity nicht erreichbar, dann bleibt der Reload */ }
     ['_clck', '_clsk', 'CLID', 'ANONCHK', 'MR', 'MUID', 'SM'].forEach(function (n) {
       ['/', location.pathname].forEach(function (pfad) {
         document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=' + pfad;
@@ -113,6 +122,19 @@
       t.src = 'https://www.clarity.ms/tag/' + i;
       y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
     })(window, document, 'clarity', 'script', CLARITY_ID);
+
+    // Seit dem 31. Oktober 2025 verlangt Clarity fuer Besuche aus dem
+    // EWR ein ausdrueckliches Einwilligungssignal. Ohne dieses Signal
+    // laeuft der Dienst im No-Consent-Modus und vergibt je Seitenaufruf
+    // eine neue Kennung. Der Aufruf landet in der Warteschlange des
+    // Ladeschnipsels und wird abgearbeitet, sobald das Skript da ist.
+    //
+    // ad_Storage steht auf denied, weil auf dieser Website keine
+    // Werbung ausgeliefert wird. Eine Einwilligung fuer Werbezwecke
+    // wurde nie eingeholt und darf deshalb auch nicht gemeldet werden.
+    try {
+      window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'granted' });
+    } catch (e) { /* ohne Signal laeuft Clarity im eingeschraenkten Modus */ }
   }
 
   function anwenden(kategorien, vorher) {
