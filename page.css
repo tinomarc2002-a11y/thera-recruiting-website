@@ -54,16 +54,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--teal); outline-o
   padding:10px 18px; border-radius:7px; text-decoration:none; white-space:nowrap;
   box-shadow:0 2px 10px rgba(15,123,200,.32); transition:background .2s, transform .2s var(--ease); }
 .nav-cta:hover { background:var(--teal2); transform:translateY(-1px); }
-/* LinkedIn oben rechts: nur das Zeichen, damit die Leiste schlank bleibt */
-.nav-li { display:inline-flex; align-items:center; justify-content:center;
-  width:36px; height:36px; border-radius:50%; flex-shrink:0;
-  color:rgba(255,255,255,.72); border:1px solid rgba(255,255,255,.20);
-  transition:color .2s, border-color .2s, background .2s; }
-.nav-li:hover { color:#fff; border-color:rgba(255,255,255,.5); background:rgba(255,255,255,.08); }
-.nav-li svg { width:17px; height:17px; display:block; }
-/* Icon vor dem Wort im Fussbereich */
-.foot-links a.mit-li { display:inline-flex; align-items:center; gap:6px; }
-.foot-links a.mit-li svg { width:15px; height:15px; flex:none; }
+
 @media (min-width: 720px) {
   .nav-cta { display:inline-block; }
   .nav-links a { font-size:14px; padding:8px 13px; }
@@ -112,7 +103,6 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--teal); outline-o
   border-bottom:1px solid rgba(95,205,227,.32); padding-bottom:1px;
   transition:border-color .18s, color .18s; }
 .byline-li:hover { color:#fff; border-bottom-color:rgba(255,255,255,.6); }
-.byline-li svg { width:13px; height:13px; flex:none; }
 /* Trefferflaeche auf 44px ziehen, ohne das Aussehen zu aendern */
 .byline-li { position:relative; }
 .byline-li::after { content:''; position:absolute; left:0; right:0; top:50%;
