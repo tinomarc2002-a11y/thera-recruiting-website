@@ -417,6 +417,21 @@
 
   /* ---------- Link im Fussbereich ---------- */
 
+  // Seiten koennen einen eigenen Ausloeser mitbringen: Jedes Element mit
+  // data-consent-open oeffnet die Einstellungsansicht. Gebraucht von der
+  // Cookie-Richtlinie, damit dort ein echter Knopf steht statt nur der
+  // Beschreibung, wo man klicken muesste.
+  function eigeneAusloeser() {
+    document.querySelectorAll('[data-consent-open]').forEach(function (el) {
+      if (el.getAttribute('data-consent-open') === 'aktiv') return;
+      el.setAttribute('data-consent-open', 'aktiv');
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        bannerZeigen('einstellungen');
+      });
+    });
+  }
+
   function widerrufLink() {
     document.querySelectorAll('.foot-links, .foot-col ul').forEach(function (ziel) {
       if (ziel.querySelector('[data-consent-reset]')) return;
@@ -445,6 +460,7 @@
       bannerZeigen();
     }
     widerrufLink();
+    eigeneAusloeser();
   }
 
   if (document.readyState === 'loading') {
