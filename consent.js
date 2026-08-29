@@ -14,9 +14,12 @@
      an und nicht abwaehlbar, weil dort nur die Entscheidung selbst
      gespeichert wird.
 
-   Es gibt bewusst nur die Kategorien, die es wirklich gibt. Eine
-   Rubrik "Marketing" ohne Marketingdienst waere eine Falschangabe
-   gegenueber dem Besucher.
+   Drei Kategorien, und jede steht fuer eine Verarbeitung, die es
+   wirklich gibt. Eine erfundene Rubrik waere eine Falschangabe
+   gegenueber dem Besucher. Statistik und Microsoft-Kennungen sind
+   getrennt, weil Clarity zwei unabhaengige Signale kennt und die
+   Kennungen auf Microsoft-Domains einem anderen Zweck dienen als die
+   Reichweitenmessung auf dieser Website.
 
    Widerruf: dauerhafter Schalter unten links, zusaetzlich der Link
    im Fussbereich. Beim Entzug der Statistik-Einwilligung werden die
@@ -37,21 +40,37 @@
   var clarityGeladen = false;
 
   // Kategorien. "pflicht" heisst: nicht abwaehlbar.
+  //
+  // Statistik und Microsoft-Kennungen sind getrennt, weil Clarity ueber
+  // seine Schnittstelle zwei unabhaengige Signale kennt: analytics_Storage
+  // steuert die eigenen Cookies _clck und _clsk, ad_Storage die
+  // Drittanbieter-Cookies auf Microsoft-Domains. MUID nutzt Microsoft
+  // nach eigener Angabe auch fuer Werbung. Das ist ein anderer Zweck und
+  // gehoert deshalb in eine eigene Entscheidung.
   var KATEGORIEN = [
     {
       id: 'notwendig',
       pflicht: true,
       name: 'Notwendig',
       text: 'Speichert allein Ihre Entscheidung auf dieser Seite, damit wir Sie nicht ' +
-            'bei jedem Besuch erneut fragen. Kein Versand an Dritte.'
+            'bei jedem Besuch erneut fragen. Kein Versand an Dritte, kein Cookie.'
     },
     {
       id: 'statistik',
       pflicht: false,
       name: 'Statistik',
-      text: 'Microsoft Clarity zeigt uns anonymisiert, wo Besucher auf der Seite ' +
-            'haengen bleiben. Dabei werden Cookies gesetzt und Daten an Microsoft in ' +
-            'die USA uebertragen.'
+      text: 'Microsoft Clarity zeigt uns, welche Seiten wie oft aufgerufen werden und wo ' +
+            'Besucher haengen bleiben. Setzt die Cookies _clck und _clsk auf dieser ' +
+            'Website und uebertraegt Nutzungsdaten an Microsoft in die USA.'
+    },
+    {
+      id: 'werbung',
+      pflicht: false,
+      name: 'Microsoft-Kennungen',
+      text: 'Erlaubt Microsoft zusaetzlich, wiedererkennbare Kennungen auf eigenen Domains ' +
+            'zu setzen (MUID, CLID und weitere). Microsoft nutzt diese nach eigener Angabe ' +
+            'auch fuer Werbung. Fuer unsere Auswertung ist das nicht noetig, wir empfehlen ' +
+            'diese Kategorie ausgeschaltet zu lassen.'
     }
   ];
 
@@ -74,7 +93,10 @@
       // Entscheidung betraf denselben Zweck und gilt weiter, sonst
       // wuerden wir jeden erneut fragen, der schon geantwortet hat.
       if (d.v === '1' && d.status) {
-        d = { v: VERSION, kategorien: { statistik: d.status === 'granted' }, ts: d.ts };
+        d = { v: VERSION, kategorien: {
+          statistik: d.status === 'granted',
+          werbung: false
+        }, ts: d.ts };
       }
       if (d.v !== VERSION || !d.kategorien) return null;
       if (abgelaufen(d.ts)) {
@@ -112,16 +134,17 @@
     });
   }
 
-  function clarityLaden() {
-    if (clarityGeladen) return;
+  function clarityLaden(kategorien) {
     if (!CLARITY_ID) return;
-    clarityGeladen = true;
-    (function (c, l, a, r, i, t, y) {
-      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
-      t = l.createElement(r); t.async = 1;
-      t.src = 'https://www.clarity.ms/tag/' + i;
-      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-    })(window, document, 'clarity', 'script', CLARITY_ID);
+    if (!clarityGeladen) {
+      clarityGeladen = true;
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+        t = l.createElement(r); t.async = 1;
+        t.src = 'https://www.clarity.ms/tag/' + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, 'clarity', 'script', CLARITY_ID);
+    }
 
     // Seit dem 31. Oktober 2025 verlangt Clarity fuer Besuche aus dem
     // EWR ein ausdrueckliches Einwilligungssignal. Ohne dieses Signal
@@ -129,21 +152,33 @@
     // eine neue Kennung. Der Aufruf landet in der Warteschlange des
     // Ladeschnipsels und wird abgearbeitet, sobald das Skript da ist.
     //
-    // ad_Storage steht auf denied, weil auf dieser Website keine
-    // Werbung ausgeliefert wird. Eine Einwilligung fuer Werbezwecke
-    // wurde nie eingeholt und darf deshalb auch nicht gemeldet werden.
+    // Die beiden Flaggen entsprechen genau den beiden Kategorien im
+    // Banner. Es wird nie mehr gemeldet, als der Besucher erlaubt hat.
     try {
-      window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'granted' });
+      window.clarity('consentv2', {
+        ad_Storage: kategorien.werbung ? 'granted' : 'denied',
+        analytics_Storage: kategorien.statistik ? 'granted' : 'denied'
+      });
     } catch (e) { /* ohne Signal laeuft Clarity im eingeschraenkten Modus */ }
   }
 
-  function anwenden(kategorien, vorher) {
-    var warAn = vorher && vorher.statistik;
-    if (kategorien.statistik) {
-      clarityLaden();
-    } else if (warAn || clarityGeladen) {
-      // Ein geladenes Skript laesst sich nicht zurueckholen. Cookies weg,
-      // dann neu laden, damit die Verarbeitung tatsaechlich endet.
+  // Eine Erweiterung der Erlaubnis laesst sich sofort anwenden. Eine
+  // Einschraenkung nicht: Ein geladenes Skript laesst sich nicht
+  // zurueckholen, und bereits gesetzte Cookies muessen weg. Deshalb wird
+  // bei jeder Ruecknahme aufgeraeumt und neu geladen.
+  function anwenden(neu, alt) {
+    var ruecknahme = alt && (
+      (alt.statistik && !neu.statistik) ||
+      (alt.werbung && !neu.werbung)
+    );
+    if (ruecknahme) {
+      clarityCookiesLoeschen();
+      location.reload();
+      return;
+    }
+    if (neu.statistik) {
+      clarityLaden(neu);
+    } else if (clarityGeladen) {
       clarityCookiesLoeschen();
       location.reload();
     }
@@ -404,7 +439,7 @@
   function start() {
     var s = gespeichert();
     if (s) {
-      if (s.kategorien.statistik) clarityLaden();
+      if (s.kategorien.statistik) clarityLaden(s.kategorien);
       schalterZeigen();
     } else {
       bannerZeigen();
