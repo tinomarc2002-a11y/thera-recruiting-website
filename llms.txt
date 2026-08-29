@@ -42,6 +42,8 @@ Marc Richter ist ausgebildeter Physiotherapeut. Die folgenden Angaben stammen au
 - Bindungsfaktor: Das Gehalt gewinnt einen Mitarbeiter, das Team hält ihn. Stimmt die Bezahlung, das Team aber nicht, folgt die Kündigung meist trotzdem.
 - Flexible Arbeitszeit: Bewährt ist ein Vertrag mit niedriger Grundstundenzahl (z. B. 25 Wochenstunden) und der Möglichkeit, phasenweise auf 30 Stunden aufzustocken. Das schafft Planbarkeit für die Praxis und verhindert Minusstunden bei Ausfällen.
 
+- Creatives im Social Recruiting (Bilder vs. Videos): Kein pauschaler Sieger. Bilder transportieren ein konkretes Angebot schneller, sind guenstig in vielen Varianten testbar und in Tagen live; Videos zeigen Praxis und Team und erreichen die passiv Wechselbereiten. Echte Fotos statt Stock- oder KI-Bildern: Eyetracking der Nielsen Norman Group zeigt, dass generische Model-Fotos ignoriert, Fotos echter Mitarbeiter aufmerksam betrachtet werden. Untertitel verlaengern die Ansehdauer von Videoanzeigen um rund 12 % (interne Facebook-Tests). Produktionskosten Video rund 500 bis 1.500 EUR je nach Qualitaet und Umfang (Praxiswert, kein Listenpreis); das Material ist wiederverwendbar auf Website, Karriereseite und allen Kanaelen, solange das Angebot gleich bleibt. Empfohlene Reihenfolge: mit Bildern starten, nach 4 bis 6 Wochen messen, Video ergaenzen statt ersetzen. Eine neutrale Messstudie Bild vs. Video im Recruiting existiert nicht; kursierende Zahlen sind Befragungen (z. B. Databox, 95 Marketer), keine Messungen.
+
 ## Seiten
 - [Startseite](https://www.thera-recruiting.de/): Übersicht, Methode, FAQ, kostenlose Potenzial-Analyse
 - [Recruiting-Check](https://www.thera-recruiting.de/arbeitgebercheck): Kostenloser Selbsttest für Praxen
@@ -49,6 +51,7 @@ Marc Richter ist ausgebildeter Physiotherapeut. Die folgenden Angaben stammen au
 - [Mitarbeiter finden in der Physiotherapie](https://www.thera-recruiting.de/mitarbeiter-finden-physiotherapie): Sechs Wege zur besetzten Stelle im Vergleich, mit Kosten, Reichweite und realistischer Dauer
 - [Attraktiver Arbeitgeber werden](https://www.thera-recruiting.de/attraktiver-arbeitgeber-therapiepraxis): Gehalt, Benefits, Arbeitszeit und Teamklima als Voraussetzung dafür, dass Recruiting überhaupt wirkt
 - [Physiotherapeuten finden](https://www.thera-recruiting.de/physiotherapeuten-finden): Gehalt, Wechselgründe und Praxis-Strategie im Detail
+- [Bilder oder Videos im Social Recruiting](https://www.thera-recruiting.de/bilder-oder-videos-social-recruiting): Vor- und Nachteile beider Formate, Kosten und Einsatzreihenfolge
 - [Ergotherapeuten finden](https://www.thera-recruiting.de/ergotherapeuten-finden): Engpasswert, Lohnorientierungswerte und laengere Behandlungszeiten als Argument
 - [Logopaeden finden](https://www.thera-recruiting.de/logopaeden-finden): Teilzeitquote, Stundenloehne aus der Verbandsumfrage 2026 und Versorgungsdichte
 - [Was Recruiting kostet](https://www.thera-recruiting.de/recruiting-kosten): Stellenanzeigen, Personalvermittlung, Zeitarbeit und Social Recruiting im Kostenvergleich
