@@ -1091,3 +1091,7 @@ input { font: inherit; }
 .check-info-note { font-size: 15px; color: var(--ink-soft); }
 .check-info-note a { color: var(--blue-mid); text-decoration: underline; text-underline-offset: 2px; }
 @media (min-width: 768px) { .check-info-grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* LinkedIn im Fussbereich: kleines Zeichen vor dem Wort */
+.foot-li { display: inline-flex; align-items: center; gap: 6px; }
+.foot-li svg { width: 14px; height: 14px; flex: none; }

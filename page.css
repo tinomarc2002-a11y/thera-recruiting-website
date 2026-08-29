@@ -241,6 +241,10 @@ td.n { font-variant-numeric: tabular-nums; white-space:nowrap; font-weight:700; 
 .site-foot a { color:rgba(255,255,255,.72); text-decoration:none; }
 .site-foot a:hover { color:#fff; }
 .foot-links { display:flex; gap:18px; flex-wrap:wrap; }
+/* LinkedIn im Fussbereich: kleines Zeichen vor dem Wort, sonst wie
+   die Nachbarlinks. Erkennungsmerkmal, keine Hervorhebung. */
+.foot-li { display:inline-flex; align-items:center; gap:6px; }
+.foot-li svg { width:14px; height:14px; flex:none; }
 
 @media (min-width:768px) {
   html { font-size:16px; }
