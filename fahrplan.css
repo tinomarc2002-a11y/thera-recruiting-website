@@ -169,7 +169,9 @@ a { color: var(--sky); }
 .final { text-align: left; }
 .final .who { display: flex; gap: 16px; align-items: flex-start; margin-top: 38px;
   padding-top: 28px; border-top: 1px solid rgba(255,255,255,.12); max-width: 640px; }
-.final .who img { width: 62px; height: 62px; border-radius: 50%; flex: none; }
+.final .who picture { flex: none; display: block; }
+.final .who img { width: 62px; height: 62px; border-radius: 50%;
+  object-fit: cover; display: block; }
 .final .who p { font-size: 13.5px; color: rgba(255,255,255,.72); line-height: 1.6; }
 .final .who b { color: #fff; display: block; margin-bottom: 3px; font-size: 14.5px; }
 
