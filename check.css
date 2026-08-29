@@ -73,6 +73,15 @@ input { font: inherit; }
 .brand img { height: 42px; width: auto; }
 .header-meta { font-size: 14px; color: var(--muted); font-weight: 500; }
 .header-meta strong { color: var(--blue-deep); font-weight: 600; }
+/* LinkedIn im Kopf: heller Hintergrund, deshalb Linie und Text in Blau */
+.header-right { display: flex; align-items: center; gap: 16px; }
+.nav-li { display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
+  color: var(--muted); border: 1px solid rgba(13,43,78,.18);
+  transition: color .2s, border-color .2s, background .2s; }
+.nav-li:hover { color: var(--blue-deep); border-color: var(--blue-deep);
+  background: rgba(15,123,200,.07); }
+.nav-li svg { width: 16px; height: 16px; display: block; }
 @media (max-width: 640px) {
   .header-meta { display: none; }
   .brand img { height: 36px; }

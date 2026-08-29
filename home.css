@@ -68,6 +68,17 @@
     .nav-logo img { height:42px; width:auto; object-fit:contain; }
     .nav-links { display:none; }
     .nav-cta-d { display:none; }
+    /* LinkedIn oben rechts, erst ab Tablet neben der Handlungsaufforderung */
+    .nav-li { display:none; align-items:center; justify-content:center;
+      width:36px; height:36px; border-radius:50%; flex-shrink:0;
+      color:rgba(255,255,255,.72); border:1px solid rgba(255,255,255,.20);
+      transition:color .2s, border-color .2s, background .2s; }
+    .nav-li:hover { color:#fff; border-color:rgba(255,255,255,.5); background:rgba(255,255,255,.08); }
+    .nav-li svg { width:17px; height:17px; display:block; }
+    nav.sc .nav-li { color:var(--muted); border-color:var(--gb2); }
+    nav.sc .nav-li:hover { color:var(--teal); border-color:var(--teal); background:var(--tglow); }
+    .foot-col a.mit-li { display:inline-flex; align-items:center; gap:6px; }
+    .foot-col a.mit-li svg { width:15px; height:15px; flex:none; }
     .hbg { display:flex; flex-direction:column; gap:5px; cursor:pointer; padding:6px; background:none; border:none; min-height:44px; min-width:44px; align-items:center; justify-content:center; }
     .hbg span { display:block; width:24px; height:2px; background:var(--text); border-radius:2px; transition:.3s; }
     nav:not(.sc) .hbg span { background: #fff; }
@@ -593,6 +604,7 @@
       nav:not(.sc) .nav-cta-d { background:var(--teal); box-shadow:0 2px 10px rgba(15,123,200,.35); }
       nav:not(.sc) .nav-cta-d:hover { background:var(--teal2); }
       .nav-cta-d { display: inline-flex; }
+      .nav-li { display: inline-flex; }
       .hbg { display: none; }
       .hero { padding-top: 90px; }
       /* Hero ist einspaltig, seit die Check-Karte entfernt wurde. */
