@@ -415,6 +415,30 @@
     document.body.appendChild(b);
   }
 
+  /* ---------- Klick-Ereignisse an Clarity melden ---------- */
+
+  // Jedes Element mit data-clarity-event meldet beim Klick ein benanntes
+  // Ereignis an Clarity. Im Dashboard lassen sich Aufzeichnungen danach
+  // filtern, etwa um zu sehen, wer von der Startseite zum Fahrplan geht.
+  //
+  // Gemeldet wird nur, wenn Clarity ueberhaupt geladen ist, also nach
+  // Einwilligung in die Kategorie Statistik. Ohne Einwilligung passiert
+  // hier nichts, und der Klick funktioniert trotzdem normal: Der
+  // Aufruf ist in try/catch gekapselt, damit ein Fehler niemals die
+  // Navigation verhindert.
+  function klickEreignisse() {
+    document.querySelectorAll('[data-clarity-event]').forEach(function (el) {
+      if (el.getAttribute('data-tr-ev') === 'an') return;
+      el.setAttribute('data-tr-ev', 'an');
+      el.addEventListener('click', function () {
+        if (!clarityGeladen) return;
+        try {
+          window.clarity('event', el.getAttribute('data-clarity-event'));
+        } catch (e) { /* Ereignis verloren, Klick laeuft weiter */ }
+      });
+    });
+  }
+
   /* ---------- Link im Fussbereich ---------- */
 
   // Seiten koennen einen eigenen Ausloeser mitbringen: Jedes Element mit
@@ -461,6 +485,7 @@
     }
     widerrufLink();
     eigeneAusloeser();
+    klickEreignisse();
   }
 
   if (document.readyState === 'loading') {
