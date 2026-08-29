@@ -129,6 +129,14 @@ p strong { color:var(--text); font-weight:700; }
 .insight p { color:rgba(255,255,255,.85); font-size:16.5px; margin-bottom:0; position:relative; z-index:1; line-height:1.6; }
 .insight p strong { color:#fff; }
 
+/* Nummerierte Schritte */
+ol.steps { list-style:none; counter-reset:schritt; margin:18px 0 20px; display:flex; flex-direction:column; gap:14px; }
+ol.steps li { position:relative; padding-left:44px; font-size:15.5px; color:var(--muted); line-height:1.6; counter-increment:schritt; }
+ol.steps li::before { content:counter(schritt); position:absolute; left:0; top:1px; width:28px; height:28px;
+  border-radius:50%; background:var(--navy); color:#fff; font-size:13.5px; font-weight:800;
+  display:flex; align-items:center; justify-content:center; }
+ol.steps li b { color:var(--text); }
+
 /* Aufzählung mit Goldpunkt */
 ul.reasons { list-style:none; margin: 16px 0 20px; display:flex; flex-direction:column; gap:11px; }
 ul.reasons li { position:relative; padding-left:26px; font-size:15.5px; color:var(--muted); line-height:1.6; }
