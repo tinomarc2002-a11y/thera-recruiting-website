@@ -97,6 +97,16 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--teal); outline-o
 .byline img { width:44px; height:44px; border-radius:50%; object-fit:cover; display:block; }
 .byline-t { font-size:13px; color:rgba(255,255,255,.7); line-height:1.45; }
 .byline-t b { color:#fff; display:block; font-size:13.5px; }
+.byline-li { display:flex; width:fit-content; align-items:center; gap:5px; margin-top:6px;
+  font-size:12.5px; font-weight:600; color:#5fcde3; text-decoration:none;
+  border-bottom:1px solid rgba(95,205,227,.32); padding-bottom:1px;
+  transition:border-color .18s, color .18s; }
+.byline-li:hover { color:#fff; border-bottom-color:rgba(255,255,255,.6); }
+.byline-li svg { width:13px; height:13px; flex:none; }
+/* Trefferflaeche auf 44px ziehen, ohne das Aussehen zu aendern */
+.byline-li { position:relative; }
+.byline-li::after { content:''; position:absolute; left:0; right:0; top:50%;
+  height:44px; transform:translateY(-50%); }
 
 /* ---------- INHALT ---------- */
 main { padding: 48px 0 20px; }
