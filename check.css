@@ -1094,4 +1094,4 @@ input { font: inherit; }
 
 /* LinkedIn im Fussbereich: kleines Zeichen vor dem Wort */
 .foot-li { display: inline-flex; align-items: center; gap: 6px; }
-.foot-li svg { width: 14px; height: 14px; flex: none; }
+.foot-li svg { width: 18px; height: 18px; flex: none; display: block; }

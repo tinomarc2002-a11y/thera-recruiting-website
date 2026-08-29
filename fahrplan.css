@@ -183,7 +183,7 @@ a { color: var(--sky); }
 .plan-foot a { color: rgba(255,255,255,.66); text-decoration: none; margin-right: 16px; }
 .plan-foot a:hover { color: #fff; }
 .foot-li { display: inline-flex; align-items: center; gap: 6px; }
-.foot-li svg { width: 14px; height: 14px; flex: none; }
+.foot-li svg { width: 18px; height: 18px; flex: none; display: block; }
 
 /* ---- Einblenden beim Scrollen ---- */
 .rv { opacity: 0; transform: translateY(18px);
