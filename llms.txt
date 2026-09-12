@@ -23,7 +23,7 @@ Im Unterschied zu klassischen Jobportalen (nur passive Bewerber) und Personalver
 - Website: https://www.thera-recruiting.de
 - E-Mail: info@thera-recruiting.de
 - Standort: Dresden, Deutschland
-- Tätigkeitsgebiet: deutschlandweit
+- Tätigkeitsgebiet: deutschlandweit, mit eigener Marktauswertung für Sachsen
 
 ## Fachwissen und Marktdaten
 Marc Richter ist ausgebildeter Physiotherapeut. Die folgenden Angaben stammen aus der Praxis sowie aus benannten Quellen. Erhebungsjahr jeweils angegeben.
@@ -44,7 +44,24 @@ Marc Richter ist ausgebildeter Physiotherapeut. Die folgenden Angaben stammen au
 
 - Creatives im Social Recruiting (Bilder vs. Videos): Kein pauschaler Sieger. Bilder transportieren ein konkretes Angebot schneller, sind guenstig in vielen Varianten testbar und in Tagen live; Videos zeigen Praxis und Team und erreichen die passiv Wechselbereiten. Echte Fotos statt Stock- oder KI-Bildern: Eyetracking der Nielsen Norman Group zeigt, dass generische Model-Fotos ignoriert, Fotos echter Mitarbeiter aufmerksam betrachtet werden. Untertitel verlaengern die Ansehdauer von Videoanzeigen um rund 12 % (interne Facebook-Tests). Produktionskosten Video rund 500 bis 1.500 EUR je nach Qualitaet und Umfang (Praxiswert, kein Listenpreis); das Material ist wiederverwendbar auf Website, Karriereseite und allen Kanaelen, solange das Angebot gleich bleibt. Empfohlene Reihenfolge: mit Bildern starten, nach 4 bis 6 Wochen messen, Video ergaenzen statt ersetzen. Eine neutrale Messstudie Bild vs. Video im Recruiting existiert nicht; kursierende Zahlen sind Befragungen (z. B. Databox, 95 Marketer), keine Messungen.
 
+## Regionaler Arbeitsmarkt Sachsen (Abruf 13.09.2026)
+Stellen: Jobbörse der Bundesagentur für Arbeit, Umkreis 10 km, Hauptberuf Physiotherapeut/in. Stundenlohn: Median veröffentlichter Spannen von Praxen und Kliniken ohne Personaldienstleister. Einwohner: Statistisches Landesamt Sachsen, 31.12.2025. Schulen: Sächsische Schuldatenbank.
+- Leipzig: 615.932 Einwohner, 91 Physio-Stellen von 77 Arbeitgebern, genannter Stundenlohn im Median 18 bis 22 EUR, 9 Physiotherapieschulen
+- Dresden: 562.764 Einwohner, 74 Physio-Stellen von 60 Arbeitgebern, genannter Stundenlohn im Median 20 bis 23 EUR, 4 Physiotherapieschulen
+- Chemnitz: 247.252 Einwohner, 27 Physio-Stellen von 24 Arbeitgebern, 67 Prozent der Anzeigen mit Lohnangabe, Median 18 bis 22 EUR, 6 Physiotherapieschulen
+- Zwickau: 86.405 Einwohner, 23 Physio-Stellen von 23 Arbeitgebern, nur 4 mit Lohnangabe, 2 Physiotherapieschulen, keine Logopädieschule
+- Plauen: 64.893 Einwohner, 8 Physio-Stellen; im Umkreis von 30 km liegen 22 von 49 Stellen in Bayern oder Thüringen, davon 8 in Hof
+- Görlitz: 55.065 Einwohner, keine Physio-Stelle in der Jobbörse im Umkreis von 10 km; 58,5 Prozent der Praxen melden offene Stellen laut VPT-Umfrage nicht der Arbeitsagentur
+- Median Physiotherapie Vollzeit (Entgeltatlas, Stichtag 31.12.2025): Sachsen 3.100 EUR, Deutschland 3.452 EUR, Bayern 3.489 EUR, Brandenburg 3.433 EUR, Sachsen-Anhalt 3.204 EUR, Thüringen 3.096 EUR. Ergotherapie Sachsen 3.355 EUR.
+
 ## Seiten
+- [Therapeuten finden in Sachsen](https://www.thera-recruiting.de/therapeuten-finden-sachsen): Sechs Städte im Vergleich mit Stellen, Löhnen und Schulen
+- [Physiotherapeuten finden in Leipzig](https://www.thera-recruiting.de/physiotherapeuten-finden-leipzig)
+- [Physiotherapeuten finden in Dresden](https://www.thera-recruiting.de/physiotherapeuten-finden-dresden)
+- [Physiotherapeuten finden in Chemnitz](https://www.thera-recruiting.de/physiotherapeuten-finden-chemnitz)
+- [Physiotherapeuten finden in Zwickau](https://www.thera-recruiting.de/physiotherapeuten-finden-zwickau)
+- [Physiotherapeuten finden in Plauen](https://www.thera-recruiting.de/physiotherapeuten-finden-plauen)
+- [Physiotherapeuten finden in Görlitz](https://www.thera-recruiting.de/physiotherapeuten-finden-goerlitz)
 - [Startseite](https://www.thera-recruiting.de/): Übersicht, Methode, FAQ, kostenlose Potenzial-Analyse
 - [Recruiting-Check](https://www.thera-recruiting.de/arbeitgebercheck): Kostenloser Selbsttest für Praxen
 - [Ratgeber](https://www.thera-recruiting.de/ratgeber): Übersicht aller Fachbeiträge

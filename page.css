@@ -191,7 +191,7 @@ td.n { font-variant-numeric: tabular-nums; white-space:nowrap; font-weight:700; 
 .gcard a { display:block; padding:24px 24px 22px; text-decoration:none; }
 .gcard-tag { display:inline-block; font-size:11px; font-weight:800; letter-spacing:.12em;
   text-transform:uppercase; color:var(--gold2); margin-bottom:10px; }
-.gcard h2 { font-size:20px; margin-bottom:9px; letter-spacing:-.02em; line-height:1.25; }
+.gcard h2, .gcard h3 { font-size:20px; margin-bottom:9px; letter-spacing:-.02em; line-height:1.25; }
 .gcard p { font-size:15px; margin-bottom:14px; }
 .gcard-more { font-size:14px; font-weight:700; color:var(--teal); display:inline-flex; align-items:center; gap:6px; }
 .gcard-more::after { content:'→'; transition:transform .2s var(--ease); display:inline-block; }
@@ -256,7 +256,7 @@ td.n { font-variant-numeric: tabular-nums; white-space:nowrap; font-weight:700; 
   .insight { padding:34px; }
   .cta { padding:52px 44px; }
   .gcard a { padding:28px 30px 26px; }
-  .gcard h2 { font-size:22px; }
+  .gcard h2, .gcard h3 { font-size:22px; }
 }
 
 /* ---- Diagramme in Ratgeber-Beitraegen ----
