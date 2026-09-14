@@ -930,3 +930,269 @@ body.tr-page .gcard h3::before { display: none; }
   body.tr-page .kurz li { font-size: 16.5px; }
 }
 body.tr-page main .sec > p, body.tr-page ul.reasons li, body.tr-page ol.steps li { font-weight: 400 !important; color: #1a2536 !important; }
+
+
+/* ============================================================
+   DESKTOP BREIT  (Stufe 4)
+   ------------------------------------------------------------
+   Handy bleibt wie oben. Ab 1100 px: breite Seite mit weichen
+   Rändern, zweispaltiger Einstieg, Texte in Karten linksbündig,
+   Farbflächen als abgerundete Tafeln mit Abstand zum Fensterrand.
+   ============================================================ */
+@media (min-width: 1100px) {
+  :root { --d-r: 22px; --d-rb: 14px; --d-col: 46rem; --d-wide: 78rem;
+          --d-shadow: 0 2px 6px rgba(13, 43, 78, .05), 0 18px 40px rgba(13, 43, 78, .07); }
+  body.tr { font-size: 17px; }
+
+  /* ---------- Startseite + Stadtseiten ---------- */
+  body.tr-home .wrap, body.tr-home nav#nav .wrap, body.tr-home .nav-i { max-width: var(--d-wide) !important; padding: 0 40px; }
+  body.tr-home .sec { padding: 84px 0; }
+  body.tr-home .sec-sm { padding: 60px 0; }
+  body.tr-home .sh { max-width: 50rem; margin-bottom: 44px; }
+  body.tr-home .sh .title, body.tr-home .about-h, body.tr-home #freebie-h, body.tr-home #cta-h { font-size: 40px !important; }
+  body.tr-home .sh .sub { font-size: 18px !important; }
+
+  /* Einstieg zweispaltig: Text links, Bild rechts */
+  body.tr-home .hero { padding: 72px 0 64px !important; text-align: left; }
+  body.tr-home .hero .wrap { max-width: var(--d-wide) !important; }
+  body.tr-home .hero-l {
+    display: grid !important; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+    column-gap: 64px; align-items: center;
+  }
+  body.tr-home .hero-l > * { grid-column: 1; }
+  body.tr-home .hero-hl { font-size: 54px !important; line-height: 1.1 !important; margin-bottom: 22px !important; }
+  body.tr-home .hero-sub { font-size: 20px !important; max-width: 36rem; margin: 0 0 30px !important; }
+  body.tr-home .hero-ctas .btn { margin-left: 0; }
+  body.tr-home .hero-trust { justify-content: flex-start; }
+  body.tr-home .hero-visual-m {
+    grid-column: 2 !important; grid-row: 1 / span 4; margin: 0 !important; max-width: none;
+    padding: 34px 34px 0; border-radius: 32px !important;
+  }
+  body.tr-home .hero-visual-m img { max-width: 100%; }
+
+  /* Farbflächen als abgerundete Tafeln */
+  body.tr-home section.saeul-sec, body.tr-home section.stats-sec {
+    margin: 0 32px; border-radius: 36px; overflow: hidden;
+  }
+  body.tr-home .prob-good, body.tr-home .cta-band { border-radius: 32px !important; }
+  body.tr-home footer { margin: 60px 32px 32px !important; border-radius: 36px; }
+
+  /* Problem: Preis-Karte breiter, Karten im Raster, Text linksbündig */
+  body.tr-home .preis-hinweis { max-width: 52rem; padding: 34px 40px !important; }
+  body.tr-home .preis-zahl { font-size: 44px !important; }
+  body.tr-home .prob-list { grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 28px; }
+  body.tr-home .prob-item:first-child { grid-column: 1 / -1 !important; }
+  body.tr-home .prob-item { padding: 30px 28px !important; text-align: left; }
+  body.tr-home .prob-n { justify-content: flex-start; }
+  body.tr-home .prob-good { margin-top: 28px !important; padding: 46px 56px !important; }
+  body.tr-home .prob-good .btn { width: auto; min-width: 20rem; }
+
+  /* Säulen, Zusagen, Ablauf */
+  body.tr-home .saeul-grid, body.tr-home .proc-steps { gap: 24px; }
+  body.tr-home .saeul-card { padding: 34px 32px !important; text-align: left; }
+  body.tr-home .feat-li { text-align: left; }
+  body.tr-home .usp-grid { grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  body.tr-home .usp-card { padding: 30px 28px !important; text-align: left; }
+  body.tr-home .usp-card:nth-child(even) { transform: none; }
+  body.tr-home .usp-card:nth-child(3n+2) { transform: translateY(16px); }
+  body.tr-home .proc-step { padding: 34px 30px !important; }
+  body.tr-home .pstrip-grid { gap: 24px; }
+  body.tr-home .ps-item img { aspect-ratio: 16/10; }
+  body.tr-home .stats-grid { gap: 22px; }
+  body.tr-home .stat-card { padding: 30px 18px !important; border-radius: 24px !important; }
+
+  /* Über uns, FAQ, Leitfaden, Abschluss */
+  body.tr-home .about-g { grid-template-columns: 360px 1fr; gap: 64px; padding: 52px 56px !important; }
+  body.tr-home .photo-wrap { max-width: 360px; }
+  body.tr-home .about-p, body.tr-home .check-list { max-width: none; }
+  body.tr-home .faq-list { max-width: 58rem; gap: 14px; }
+  body.tr-home .faq-q { font-size: 18px !important; padding: 22px 26px !important; }
+  body.tr-home .faq-q:hover { padding-left: 26px !important; }
+  body.tr-home .faq-a { font-size: 17px !important; }
+  body.tr-home .freebie-g { padding: 52px 56px !important; }
+  body.tr-home .freebie-content p, body.tr-home .freebie-list { max-width: 44rem; }
+  body.tr-home .cta-band { padding: 64px 56px !important; }
+
+  /* ---------- Ratgeber- und Unterseiten ---------- */
+  body.tr-page .wrap { max-width: var(--d-wide); padding: 0 40px; }
+  body.tr-page .narrow { max-width: 60rem; }
+  body.tr-page .site-nav .nav-i { max-width: var(--d-wide) !important; }
+  body.tr-page .page-head { margin: 24px 32px 0; border-radius: 36px; padding: 70px 0 64px !important; }
+  body.tr-page .page-head h1 { font-size: 50px !important; line-height: 1.12 !important; }
+  body.tr-page .page-head .lead { font-size: 20px !important; max-width: 46rem; }
+  body.tr-page main { padding-top: 56px !important; }
+  body.tr-page h2 { font-size: 34px !important; }
+  body.tr-page p, body.tr-page .kurz li, body.tr-page ol.steps li, body.tr-page ul.reasons li { font-size: 18px !important; }
+  body.tr-page .kurz { padding: 38px 44px 36px; border-radius: 24px; }
+  body.tr-page .stat, body.tr-page .insight, body.tr-page .cta-in, body.tr-page .gcard, body.tr-page table { border-radius: 22px !important; }
+  body.tr-page .insight { padding: 34px 38px !important; }
+  body.tr-page .cta { padding: 56px 48px !important; border-radius: 32px !important; }
+  body.tr-page .card-list { display: grid !important; grid-template-columns: 1fr 1fr; grid-auto-flow: dense; gap: 22px; }
+  body.tr-page .card-list .gcard a { padding: 30px 32px 28px; }
+  body.tr-page .card-list .gcard:has(a + a) { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; }
+  body.tr-page .card-list .gcard a + a { border-top: 0 !important; }
+  body.tr-page .site-foot { margin: 64px 32px 32px !important; border-radius: 36px; }
+
+  /* ---------- Fahrplan, Check, Rechtliches ---------- */
+  body.tr-plan .wrap { max-width: var(--d-wide); padding: 0 40px; }
+  body.tr-plan .sub, body.tr-plan p.txt, body.tr-plan .hero-stats, body.tr-plan .fails, body.tr-plan .quote, body.tr-plan .phasen, body.tr-plan .proof-note { max-width: 60rem !important; }
+  body.tr-plan .blk h2 { font-size: 40px !important; }
+  body.tr-plan .hero h1 { font-size: 52px !important; }
+  body.tr-plan section#plan, body.tr-plan section#termin { margin: 0 32px; border-radius: 36px; }
+  body.tr-plan .check-card, body.tr-plan .hstat, body.tr-plan .pstat, body.tr-plan .weg li { border-radius: 22px !important; }
+  body.tr-check .question-card, body.tr-check .score-card, body.tr-check .booking, body.tr-check .breakdown,
+  body.tr-check .check-info-grid > div { border-radius: 24px !important; }
+  body.tr-check .check-info { margin: 0 32px; border-radius: 36px; }
+  body.tr-legal .page-wrap { max-width: 60rem; border-radius: 28px; padding: 56px 64px !important; }
+  body.tr-home nav#nav .nav-i { padding: 0 !important; max-width: none !important; width: 100%; }
+  body.tr-home .pstrip-sec { padding-top: 56px !important; }
+  body.tr-home nav#nav .nav-cta-d { margin: 0 0 0 auto !important; }
+}
+body.tr-home .cta-note::before { content: none !important; }
+
+
+/* ============================================================
+   HANDY OHNE KÄSTCHEN  (Stufe 5)
+   ------------------------------------------------------------
+   Bis 767 px: Inhalte stehen offen untereinander, getrennt durch
+   feine Linien. Farbflächen laufen über die volle Breite.
+   Nur Preis-Hinweis, Kurzfassung und Tabellen bleiben gerahmt.
+   ============================================================ */
+@media (max-width: 767px) {
+  /* offene Einträge statt Karten */
+  body.tr-home .prob-item, body.tr-home .prob-item:first-child, body.tr-home .prob-item:nth-child(4),
+  body.tr-home .usp-card, body.tr-home .usp-card:nth-child(3n+2), body.tr-home .usp-card:nth-child(6),
+  body.tr-home .proc-step, body.tr-home .about-g, body.tr-home .faq-item,
+  body.tr-page .stat, body.tr-page .stat:nth-child(2), body.tr-page .gcard, body.tr-page .faq-i {
+    background: transparent !important; border: 0 !important; border-radius: 0 !important;
+    box-shadow: none !important; transform: none !important;
+  }
+  body.tr-home .prob-list, body.tr-home .usp-grid, body.tr-home .proc-steps, body.tr-home .faq-list { gap: 0 !important; }
+  body.tr-home .prob-item, body.tr-home .usp-card, body.tr-home .proc-step {
+    padding: 22px 2px !important; text-align: left; border-bottom: 1px solid var(--d-frame) !important;
+  }
+  body.tr-home .prob-item:last-child, body.tr-home .usp-card:last-child, body.tr-home .proc-step:last-child { border-bottom: 0 !important; }
+  body.tr-home .prob-n { justify-content: flex-start; }
+  body.tr-home .prob-item h3, body.tr-home .usp-card h3 { position: relative; padding-left: 14px; }
+  body.tr-home .prob-item h3::before, body.tr-home .usp-card h3::before {
+    content: ""; position: absolute; left: 0; top: .2em; bottom: .2em; width: 4px; border-radius: 2px; background: var(--d-brand);
+  }
+  body.tr-home .usp-card:nth-child(even) h3::before { background: var(--d-gold); }
+  body.tr-home .prob-item:first-child h3 { color: var(--d-ink) !important; }
+  body.tr-home .prob-item:first-child p { color: var(--d-grey) !important; }
+  body.tr-home .prob-item:first-child .prob-n span { color: var(--d-brand) !important; }
+  body.tr-home .proc-step { display: grid !important; grid-template-columns: 44px 1fr; gap: 0 14px; align-items: start; }
+  body.tr-home .proc-num { margin: 2px 0 0 !important; }
+  body.tr-home .proc-body, body.tr-home .proc-body h3 { text-align: left !important; }
+  body.tr-home .faq-item { border-bottom: 1px solid var(--d-frame) !important; }
+  body.tr-home .faq-q { padding: 18px 2px !important; }
+  body.tr-home .faq-q:hover { padding-left: 2px !important; }
+  body.tr-home .about-g { padding: 0 !important; }
+
+  /* Säulen auf Navy: offen, weiße Schrift */
+  body.tr-home .saeul-card {
+    background: transparent !important; border: 0 !important; border-top: 1px solid rgba(255,255,255,.16) !important;
+    box-shadow: none !important; border-radius: 0 !important; padding: 26px 2px !important; text-align: left;
+  }
+  body.tr-home .saeul-grid { gap: 0 !important; }
+  body.tr-home .saeul-card h3 { color: #fff !important; }
+  body.tr-home .saeul-card > p { color: rgba(255,255,255,.78) !important; }
+  body.tr-home .feat-list { border-top-color: rgba(255,255,255,.16) !important; }
+  body.tr-home .feat-li { color: rgba(255,255,255,.9) !important; text-align: left; }
+  body.tr-home .feat-li::before { color: var(--d-gold) !important; }
+
+  /* Kennzahlen offen im Raster */
+  body.tr-home .stat-card { background: transparent !important; border: 0 !important; border-radius: 0 !important; padding: 16px 6px !important; }
+  body.tr-home .stats-grid { gap: 0 !important; }
+  body.tr-home .stat-card:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.22) !important; }
+  body.tr-home .stat-card:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.22) !important; }
+
+  /* Farbkästen werden Bänder über die volle Breite */
+  body.tr-home .prob-good, body.tr-home .cta-band, body.tr-home .freebie-g {
+    margin-left: -16px !important; margin-right: -16px !important; border-radius: 0 !important;
+    border-left: 0 !important; border-right: 0 !important; box-shadow: none !important; padding: 36px 20px !important;
+  }
+  body.tr-home .ps-item { border: 0 !important; box-shadow: none !important; background: transparent !important; border-bottom: 0 !important; }
+  body.tr-home .ps-item img { border-radius: var(--d-r) !important; }
+  body.tr-home .ps-label { padding: 10px 2px 4px !important; }
+  body.tr-home .hero-visual-m { transform: none; box-shadow: 8px 8px 0 var(--d-gold) !important; }
+
+  /* Ratgeber und Unterseiten */
+  body.tr-page .stat { padding: 18px 2px !important; text-align: left; border-bottom: 1px solid var(--d-frame) !important; }
+  body.tr-page .stat b { display: block; }
+  body.tr-page .gcard { border-bottom: 1px solid var(--d-frame) !important; }
+  body.tr-page .gcard a { border-left: 0 !important; padding: 22px 2px !important; background: transparent !important; }
+  body.tr-page .card-list { gap: 0 !important; }
+  body.tr-page .faq-i { border-bottom: 1px solid var(--d-frame) !important; }
+  body.tr-page .insight, body.tr-page .cta, body.tr-page .cta-in {
+    margin-left: -16px !important; margin-right: -16px !important; border-radius: 0 !important;
+    border-left: 0 !important; border-right: 0 !important; box-shadow: none !important; padding: 30px 20px !important;
+  }
+  body.tr-page .kurz { margin-left: -16px; margin-right: -16px; border-radius: 0; border-right: 0; border-top: 0; border-bottom: 0; box-shadow: none; }
+  body.tr-legal .page-wrap { background: transparent; border: 0; box-shadow: none; padding: 20px 2px !important; }
+}
+
+/* Handy: ein paar Kästen bleiben bewusst, damit es nicht zu gleichförmig wird */
+@media (max-width: 767px) {
+  /* erstes Problem als dunkle Karte */
+  body.tr-home .prob-item:first-child {
+    background: var(--d-navy) !important; border-radius: var(--d-r) !important; padding: 22px 20px !important;
+    border-bottom: 0 !important; margin-bottom: 8px;
+  }
+  body.tr-home .prob-item:first-child h3 { color: #fff !important; }
+  body.tr-home .prob-item:first-child h3::before { background: var(--d-gold); }
+  body.tr-home .prob-item:first-child p { color: rgba(255,255,255,.8) !important; }
+  body.tr-home .prob-item:first-child .prob-n span { color: var(--d-gold) !important; }
+
+  /* Säulen wieder als weiße Karten auf Navy */
+  body.tr-home .saeul-grid { gap: 14px !important; }
+  body.tr-home .saeul-card {
+    background: #fff !important; border: 0 !important; border-top: 5px solid var(--d-brand) !important;
+    border-radius: var(--d-r) !important; padding: 24px 20px !important;
+  }
+  body.tr-home .saeul-card:nth-child(2) { border-top-color: var(--d-gold) !important; }
+  body.tr-home .saeul-card:nth-child(3) { border-top-color: #5fcde3 !important; }
+  body.tr-home .saeul-card h3 { color: var(--d-ink) !important; }
+  body.tr-home .saeul-card > p { color: var(--d-grey) !important; }
+  body.tr-home .feat-list { border-top-color: var(--d-frame) !important; }
+  body.tr-home .feat-li { color: var(--d-text) !important; }
+  body.tr-home .feat-li::before { color: var(--d-gold-dark) !important; }
+
+  /* Leitfaden als hellblaue Karte */
+  body.tr-home .freebie-g {
+    margin-left: 0 !important; margin-right: 0 !important; border-radius: var(--d-r) !important;
+    border: 1px solid #c5ddf2 !important; padding: 28px 20px !important;
+  }
+
+  /* Artikel: Kurzfassung und Hinweise bleiben Karten */
+  body.tr-page .kurz {
+    margin-left: 0; margin-right: 0; border-radius: var(--d-r); border: 1px solid var(--d-frame);
+    border-left: 6px solid var(--d-brand); box-shadow: var(--d-shadow);
+  }
+  body.tr-page .insight, body.tr-page .cta-in {
+    margin-left: 0 !important; margin-right: 0 !important; border-radius: var(--d-r) !important; padding: 24px 20px !important;
+  }
+  body.tr-page .sec:nth-of-type(even) .insight { border: 1px solid #c5ddf2 !important; }
+  body.tr-page .cta-in { border: 1px solid #f2cf8f !important; }
+}
+
+/* Handy: gleiche Mischung auf Fahrplan und Arbeitgebercheck */
+@media (max-width: 767px) {
+  body.tr-plan .hstat, body.tr-plan .hstat:nth-child(2), body.tr-plan .pstat, body.tr-plan .weg li {
+    background: transparent !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important;
+    border-bottom: 1px solid var(--d-frame) !important; padding: 18px 2px !important;
+  }
+  body.tr-plan .hstat:last-child, body.tr-plan .pstat:last-child, body.tr-plan .weg li:last-child { border-bottom: 0 !important; }
+  body.tr-plan .hero-stats, body.tr-plan .proof-stats, body.tr-plan .weg { gap: 0 !important; }
+  body.tr-plan section#plan, body.tr-plan section#termin, body.tr-check .check-info { margin: 0 !important; border-radius: 0 !important; }
+  body.tr-check .check-info-grid > div, body.tr-check .check-info-grid > div:nth-child(2) {
+    background: transparent !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important;
+    border-bottom: 1px solid rgba(255,255,255,.16) !important;
+  }
+  body.tr-check .check-info-grid > div h3 { color: #fff !important; }
+  body.tr-check .check-info-grid > div p { color: rgba(255,255,255,.8) !important; }
+  body.tr-check .check-info-grid { gap: 0 !important; }
+}
+@media (max-width: 767px) {
+  body.tr-legal table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
