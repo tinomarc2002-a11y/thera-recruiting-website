@@ -239,11 +239,11 @@ const questions = [
 const insightsLib = {
   q5: {
     title: 'Kanalmix erweitern – raus aus der Jobportal-Falle',
-    text: 'Wer nur auf Jobportalen sucht, erreicht ausschließlich aktive Wechsler (rund 20% des Marktes). Die starken Therapeuten sind passiv – die erreichen Sie nur über Social Media Ads, Direktansprache und eine gezielte Außenwirkung.'
+    text: 'Wer nur auf Jobportalen sucht, erreicht ausschließlich aktive Wechsler (rund 7 % der Beschäftigten). Die starken Therapeuten suchen nicht aktiv. Erreichbar sind sie nur über Social Media Ads, Direktansprache und eine gezielte Außenwirkung.'
   },
   q6: {
     title: 'Passive Kandidaten systematisch ansprechen',
-    text: 'Solange Sie nur auf Bewerbungen reagieren, kämpfen Sie um die 20% wechselbereiten Therapeuten gegen alle anderen Praxen. Wer passive Therapeuten systematisch mit Ads und Direktansprache anspricht, verdoppelt seine Auswahl – und gewinnt die Stärksten.'
+    text: 'Solange Sie nur auf Bewerbungen reagieren, kämpfen Sie um die rund 7 % aktiv suchenden Therapeuten gegen alle anderen Praxen. Wer passive Therapeuten systematisch mit Ads und Direktansprache anspricht, verdoppelt seine Auswahl und gewinnt die Stärksten.'
   },
   q7: {
     title: 'Team auf Social Media sichtbar machen',
@@ -251,7 +251,7 @@ const insightsLib = {
   },
   q8: {
     title: 'Eigene Karriereseite mit klarem USP aufbauen',
-    text: 'Eine Karriereseite mit klarem "Warum bei uns?"-Statement, Team, Benefits und Gehalt vervielfacht die Bewerbungen aus jedem Kanal. Ohne sie verpufft jeder Ad-Euro – egal wie gut die Anzeige ist.'
+    text: 'Eine Karriereseite mit klarem "Warum bei uns?"-Statement, Team, Benefits und Gehalt vervielfacht die Bewerbungen aus jedem Kanal. Ohne sie verpufft jeder Euro für Anzeigen, egal wie gut die Anzeige ist.'
   },
   q9: {
     title: 'Stellenanzeigen radikal überarbeiten',
@@ -259,15 +259,15 @@ const insightsLib = {
   },
   q10: {
     title: 'Eigenen USP klar formulieren',
-    text: 'Wenn Sie selbst nicht aus dem Stand 3 Gründe nennen können, warum jemand bei IHNEN arbeiten soll – wie sollen es Ihre Anzeigen, Ihre Website oder Ihre Ads tun? Das ist der wichtigste Schritt vor allem anderen.'
+    text: 'Wenn Sie selbst nicht aus dem Stand 3 Gründe nennen können, warum jemand bei IHNEN arbeiten soll, wie sollen es Ihre Anzeigen, Ihre Website oder Ihre Ads tun? Das ist der wichtigste Schritt vor allem anderen.'
   },
   q11: {
     title: 'Differenzierende Benefits einführen',
-    text: 'Mit den richtigen Benefits (4-Tage-Woche, Fortbildungsbudget mit Freistellung, EGYM Wellpass) heben Sie sich klar von Standard-Praxen ab – und geben Ihrem Marketing ein konkretes Versprechen, mit dem es werben kann.'
+    text: 'Mit den richtigen Benefits (4-Tage-Woche, Fortbildungsbudget mit Freistellung, EGYM Wellpass) heben Sie sich klar von Standard-Praxen ab und geben Ihrem Marketing ein konkretes Versprechen, mit dem es werben kann.'
   },
   q12: {
     title: 'Bewerbungsprozess radikal vereinfachen',
-    text: 'Lebenslauf und Anschreiben sind heute Conversion-Killer. Eine Bewerbung in unter 60 Sekunden ohne Unterlagen vervielfacht die Bewerbungen – erfahrungsgemäß Faktor 3 bis 5. Das ist der schnellste Hebel überhaupt.'
+    text: 'Lebenslauf und Anschreiben sind heute Conversion-Killer. Eine Bewerbung in unter 60 Sekunden ohne Unterlagen vervielfacht die Bewerbungen, erfahrungsgemäß um den Faktor 3 bis 5. Das ist der schnellste Hebel überhaupt.'
   },
   q13: {
     title: 'Antwortzeit auf unter 24 Stunden bringen',
@@ -275,7 +275,7 @@ const insightsLib = {
   },
   q14: {
     title: 'Strukturierten Recruiting-Prozess etablieren',
-    text: 'Ohne klaren Ablauf (Gespräch → Hospitation/Probearbeit → Entscheidung) wirken Sie unprofessionell – und verlieren Bewerber, die mehrere Praxen vergleichen. Ein strukturierter Prozess ist ein Auswahl-Kriterium für gute Therapeuten.'
+    text: 'Ohne klaren Ablauf (Gespräch → Hospitation/Probearbeit → Entscheidung) wirken Sie unprofessionell und verlieren Bewerber, die mehrere Praxen vergleichen. Ein strukturierter Prozess ist ein Auswahl-Kriterium für gute Therapeuten.'
   }
 };
 
@@ -471,14 +471,14 @@ function getScoreTier(score) {
     badge: 'kritisch',
     badgeText: 'Kritischer Handlungsbedarf',
     title: 'Hier liegt sehr viel Potenzial.',
-    text: 'Ihre Praxis verliert aktuell mit hoher Wahrscheinlichkeit Bewerber an attraktivere Arbeitgeber. Die gute Nachricht: Schon mit wenigen gezielten Maßnahmen verändern Sie das Bild deutlich – die Hebel unten zeigen, wo Sie ansetzen können.',
+    text: 'Ihre Praxis verliert aktuell mit hoher Wahrscheinlichkeit Bewerber an attraktivere Arbeitgeber. Die gute Nachricht: Schon mit wenigen gezielten Maßnahmen verändern Sie das Bild deutlich. Die Hebel unten zeigen, wo Sie ansetzen können.',
     color: '#C03434'
   };
   if (score <= 69) return {
     badge: 'durchschnitt',
     badgeText: 'Durchschnittlicher Arbeitgeber',
     title: 'Sie liegen im Mittelfeld.',
-    text: 'Ihre Praxis ist auf einem soliden Niveau – aber nicht herausragend. Bewerber haben heute die Wahl und entscheiden sich für die attraktivsten Praxen. Mit gezielten Optimierungen schaffen Sie den Sprung in die Top-Liga.',
+    text: 'Ihre Praxis ist auf einem soliden Niveau, aber noch nicht herausragend. Bewerber haben heute die Wahl und entscheiden sich für die attraktivsten Praxen. Mit gezielten Optimierungen schaffen Sie den Sprung in die Top-Liga.',
     color: '#E89414'
   };
   if (score <= 84) return {
@@ -492,7 +492,7 @@ function getScoreTier(score) {
     badge: 'top',
     badgeText: 'Top-Arbeitgeber',
     title: 'Sie gehören zu den Top-Arbeitgebern.',
-    text: 'Beeindruckend – Sie machen es bereits sehr gut. Jetzt geht es darum, diese Position systematisch sichtbar zu machen und gezielt für die Mitarbeitergewinnung einzusetzen. Hier liegt der eigentliche Hebel.',
+    text: 'Beeindruckend, Sie machen es bereits sehr gut. Jetzt geht es darum, diese Position systematisch sichtbar zu machen und gezielt für die Mitarbeitergewinnung einzusetzen. Hier liegt der eigentliche Hebel.',
     color: '#1F7A2F'
   };
 }
@@ -502,8 +502,8 @@ function getGoldfrageInsight(goldValue, score) {
   if (goldValue === 0) return {
     title: 'Sie würden sich selbst nicht bewerben.',
     text: score >= 70
-      ? `Trotz solidem Score (${score}/100) gibt es offenbar tieferliegende Themen, die selbst Sie als Inhaber stören. Das ist der wichtigste Ansatzpunkt – egal was die Punktzahl sagt.`
-      : 'Das ist eine ehrliche Antwort – und sie deckt sich mit dem Score. Genau hier liegt der Ansatzpunkt: Was würde sich für Sie selbst ändern müssen, damit Sie wieder gerne hier arbeiten würden?'
+      ? `Trotz solidem Score (${score}/100) gibt es offenbar tieferliegende Themen, die selbst Sie als Inhaber stören. Das ist der wichtigste Ansatzpunkt, egal was die Punktzahl sagt.`
+      : 'Das ist eine ehrliche Antwort, und sie deckt sich mit dem Score. Genau hier liegt der Ansatzpunkt: Was würde sich für Sie selbst ändern müssen, damit Sie wieder gerne hier arbeiten würden?'
   };
   if (goldValue === 1) return {
     title: 'Sie haben Zweifel an Ihrer eigenen Praxis.',
@@ -511,13 +511,13 @@ function getGoldfrageInsight(goldValue, score) {
   };
   if (goldValue === 2) return {
     title: 'Sie würden sich wahrscheinlich bewerben.',
-    text: 'Ein gutes Zeichen – die Grundlagen passen. Mit gezielten Verbesserungen wird aus "wahrscheinlich" ein klares "definitiv" – und genau das wirkt auch nach außen.'
+    text: 'Ein gutes Zeichen: Die Grundlagen passen. Mit gezielten Verbesserungen wird aus "wahrscheinlich" ein klares "definitiv" , und genau das wirkt auch nach außen.'
   };
   return {
     title: 'Sie würden sich definitiv selbst bewerben.',
     text: score >= 70
-      ? 'Das passt zum Score – Sie wissen, was Sie haben, und stehen voll dahinter. Diese Authentizität ist Ihr stärkstes Recruiting-Argument. Jetzt muss es nur noch sichtbar werden.'
-      : `Interessant: Sie würden sich selbst bewerben, der Score liegt aber bei ${score}/100. Das deutet darauf hin, dass Ihre Praxis besser ist, als sie nach außen wirkt – oder Sie zu wenig vergleichen. Beides klären wir gerne im Gespräch.`
+      ? 'Das passt zum Score: Sie wissen, was Sie haben, und stehen voll dahinter. Diese Authentizität ist Ihr stärkstes Recruiting-Argument. Jetzt muss es nur noch sichtbar werden.'
+      : `Interessant: Sie würden sich selbst bewerben, der Score liegt aber bei ${score}/100. Das deutet darauf hin, dass Ihre Praxis besser ist, als sie nach außen wirkt, oder dass Sie zu wenig vergleichen. Beides klären wir gerne im Gespräch.`
   };
 }
 

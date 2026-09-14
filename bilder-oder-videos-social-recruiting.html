@@ -100,7 +100,7 @@
             "name": "Wann sollte eine Praxis von Bildern auf Video umsteigen?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Nicht umsteigen, ergänzen. Bewährt hat sich, mit Bildern zu starten und vier bis sechs Wochen zu messen, ob qualifizierte Bewerbungen kommen. Bleiben die Ergebnisse dahinter zurück, ist Video der nächste Hebel: Es transportiert mehr Kontext und mehr Vertrauen. Die Investition trägt über die Kampagne hinaus, weil das Material auch auf der Website und der Karriereseite weiterarbeitet."
+              "text": "Nicht umsteigen, ergänzen. Bewährt hat sich, mit Bildern zu starten und vier bis sechs Wochen zu messen, ob qualifizierte Bewerbungen kommen. Bleiben die Bewerbungen hinter den Erwartungen zurück, ist Video der nächste Hebel: Es transportiert mehr Kontext und mehr Vertrauen. Die Investition trägt über die Kampagne hinaus, weil das Material auch auf der Website und der Karriereseite weiterarbeitet."
             }
           }
         ]
@@ -112,8 +112,9 @@
   <link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="fonts.css" />
   <link rel="stylesheet" href="page.css" />
+  <link rel="stylesheet" href="/design.css" />
 </head>
-<body>
+<body class="tr tr-page">
 
 <nav class="site-nav">
   <div class="wrap nav-i">
@@ -179,18 +180,29 @@
   <div class="wrap">
     <div class="narrow">
 
+      <aside class="kurz" aria-label="Das Wichtigste in Kürze">
+        <span class="kurz-l">Das Wichtigste in Kürze</span>
+        <ul>
+          <li><b>Einen pauschalen Sieger gibt es nicht.</b> Bilder zeigen das Angebot, Videos zeigen, wie es sich anfühlt, dort zu arbeiten.</li>
+          <li><b>Bilder</b> sind günstig, in Tagen live und lassen sich in vielen Varianten testen.</li>
+          <li><b>Videos</b> erreichen eher die 29 Prozent, die wechseln würden, aber nicht suchen. Untertitel verlängern die Ansehdauer um rund 12 Prozent.</li>
+          <li><b>Unsere Reihenfolge:</b> mit Bildern starten, nach vier bis sechs Wochen messen, dann Video ergänzen.</li>
+        </ul>
+      </aside>
+
+
       <section class="sec">
         <p class="lead-p">
           Die Frage kommt in fast jedem Erstgespräch: Sollen wir mit Bildern werben oder
           gleich ein Video drehen lassen? Die ehrliche Antwort ist unbequemer als jedes
-          Verkaufsargument: Einen pauschalen Sieger gibt es nicht. Es gibt aber eine klare
+          Verkaufsargument: <strong>Einen pauschalen Sieger gibt es nicht.</strong> Es gibt aber eine klare
           Logik, wann was seine Stärken ausspielt, und eine Reihenfolge, die das Budget schont.
         </p>
 
         <div class="stat-row">
           <div class="stat">
             <b>10 %</b>
-            <span>mehr Zeit verbrachten Nutzer im Blickverlauf auf Fotos echter Mitarbeiter als auf deren Lebensläufen, obwohl der Text dreimal so viel Platz einnahm</span>
+            <span>mehr Blickzeit bekamen Fotos echter Mitarbeiter als ihre Lebensläufe, obwohl der Text dreimal so viel Platz einnahm</span>
           </div>
           <div class="stat">
             <b>12 %</b>
@@ -213,7 +225,7 @@
       <section class="sec">
         <h2>Was Bilder gut können</h2>
         <p>
-          Ein Bild braucht keine acht Sekunden Aufmerksamkeit. Wer durch den Feed scrollt,
+          Ein Bild braucht nur einen kurzen Blick. Wer durch den Feed scrollt,
           erfasst in einem Augenblick, worum es geht: welche Praxis, welche Stelle, welches
           Gehalt.
         </p>
@@ -233,7 +245,7 @@
       <section class="sec">
         <h2>Was Videos gut können</h2>
         <p>
-          Ein Bild zeigt das Angebot. Ein Video zeigt, wie es sich anfühlt, dort zu arbeiten:
+          Ein Bild zeigt das Angebot. <strong>Ein Video zeigt, wie es sich anfühlt, dort zu arbeiten</strong>:
           die Räume, das Team, den Umgangston, die Inhaberin, die in die Kamera spricht.
         </p>
         <ul class="reasons">
@@ -302,22 +314,20 @@
       <section class="sec">
         <h2>Was ins Bild gehört</h2>
         <p>
-          Das beste Format nützt nichts, wenn der Inhalt austauschbar ist. In die Anzeige
-          gehört, was die Stelle tatsächlich attraktiv macht:
+          Das beste Format nützt nichts, wenn der Inhalt austauschbar ist. <strong>In die Anzeige
+          gehört, was die Stelle tatsächlich attraktiv macht:</strong>
         </p>
         <ul class="reasons">
-          <li><b>Das Gehalt, wenn es über dem Markt liegt.</b> Denn danach
-            <a href="/attraktiver-arbeitgeber-therapiepraxis">sortieren Bewerber zuerst</a>.</li>
-          <li><b>Starke Benefits, wenn das Gehalt nur Durchschnitt ist.</b> Längere Taktung,
+          <li><b>Das Gehalt, wenn es über dem Markt liegt.</b> Danach <a href="/attraktiver-arbeitgeber-therapiepraxis">sortieren Bewerber nämlich zuerst</a>.</li>
+          <li><b>Starke Benefits, wenn das Gehalt nur Durchschnitt ist.</b> Längere Behandlungszeiten,
             flexible Arbeitszeiten, betriebliche Krankenversicherung, ein Team, das
             erkennbar zusammenhält.</li>
           <li><b>Besonderheiten statt Floskeln.</b> Erfahrene Therapeuten lesen
-            „leistungsgerechte Vergütung" längst als Warnsignal.</li>
+            „leistungsgerechte Vergütung“ längst als Warnsignal.</li>
         </ul>
         <p>
-          Und: echte Menschen, keine KI-Bilder, keine Stockfotos. Das ist keine
-          Geschmacksfrage. Die <a href="https://www.nngroup.com/articles/photos-as-web-content/" target="_blank" rel="noopener">Eyetracking-Untersuchungen der Nielsen Norman Group</a>
-          zeigen, dass Nutzer generische Model-Fotos schlicht ignorieren, Fotos echter
+          Zeigen Sie außerdem echte Menschen statt KI-Bildern oder Stockfotos. Mit Geschmack hat das wenig zu tun. Die <a href="https://www.nngroup.com/articles/photos-as-web-content/" target="_blank" rel="noopener">Eyetracking-Untersuchungen der Nielsen Norman Group</a>
+          zeigen, <strong>dass Nutzer generische Model-Fotos schlicht ignorieren</strong>, Fotos echter
           Mitarbeiter dagegen aufmerksam betrachten, auf Teamseiten sogar länger als die
           Lebensläufe daneben. Wer sich bewirbt, will sehen, mit wem er künftig arbeitet.
           Ein generiertes Gesicht beantwortet diese Frage nicht.
@@ -327,8 +337,8 @@
       <section class="sec">
         <h2>Nach dem Klick: die Karriereseite muss halten, was die Anzeige zeigt</h2>
         <p>
-          Die Anzeige ist nur der erste Kontakt. Auf der Karriereseite entscheidet sich, ob
-          aus Interesse eine Bewerbung wird. Drei Dinge gehören dorthin:
+          Die Anzeige ist nur der erste Kontakt. <strong>Auf der Karriereseite entscheidet sich, ob
+          aus Interesse eine Bewerbung wird.</strong> Drei Dinge gehören dorthin:
         </p>
         <ul class="reasons">
           <li><b>Bilder vom echten Team.</b> Die sympathischsten, authentischsten Aufnahmen
@@ -362,8 +372,7 @@
         </ol>
         <p>
           Wer es eilig hat und das Budget mitbringt, testet beide Formate von Beginn an
-          parallel. Der schnellste Weg zu belastbaren Zahlen, aber auch der teuerste
-          Einstieg.
+          parallel. <strong>Das ist der schnellste Weg zu belastbaren Zahlen, aber auch der teuerste Einstieg.</strong>
         </p>
       </section>
 
@@ -428,8 +437,7 @@
           </button>
           <div class="faq-a" id="fa4">
             Nicht umsteigen, ergänzen. Bewährt hat sich, mit Bildern zu starten und vier bis
-            sechs Wochen zu messen, ob qualifizierte Bewerbungen kommen. Bleiben die
-            Ergebnisse dahinter zurück, ist Video der nächste Hebel: Es transportiert mehr
+            sechs Wochen zu messen, ob qualifizierte Bewerbungen kommen. Bleiben die Bewerbungen hinter den Erwartungen zurück, ist Video der nächste Hebel: Es transportiert mehr
             Kontext und mehr Vertrauen. Die Investition trägt über die Kampagne hinaus, weil
             das Material auch auf der Website und der Karriereseite weiterarbeitet.
           </div>
