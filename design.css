@@ -1196,3 +1196,18 @@ body.tr-home .cta-note::before { content: none !important; }
 @media (max-width: 767px) {
   body.tr-legal table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 }
+
+/* Aufgeräumter Seitenfuß der Startseite: nur Logo, ein Satz, drei Links */
+body.tr-home .foot-mini ul {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px;
+}
+body.tr-home .foot-mini a {
+  color: rgba(255,255,255,.82) !important; font-size: 14px; font-weight: 400; text-decoration: none;
+}
+body.tr-home .foot-mini a:hover { color: var(--d-gold) !important; }
+body.tr-home .foot-mini .foot-anfrage { color: var(--d-gold) !important; font-weight: 600; }
+body.tr-home footer { padding-top: 34px !important; }
+@media (min-width: 1100px) {
+  body.tr-home .foot-g { gap: 22px !important; }
+}
