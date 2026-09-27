@@ -1211,3 +1211,19 @@ body.tr-home footer { padding-top: 34px !important; }
 @media (min-width: 1100px) {
   body.tr-home .foot-g { gap: 22px !important; }
 }
+
+/* Arbeitgebercheck: der Terminblock bleibt dunkel, seine Schrift ist weiß */
+body.tr-check .booking {
+  background: var(--d-navy) !important; border: 0 !important; color: #fff !important;
+}
+body.tr-check .booking h3, body.tr-check .booking h4 { color: #fff !important; }
+body.tr-check .booking h3 em { color: var(--d-gold) !important; font-weight: 500 !important; }
+body.tr-check .booking .booking-eyebrow { color: var(--d-gold) !important; }
+body.tr-check .booking .check-icon { background: var(--d-gold) !important; }
+body.tr-check .booking .check-icon svg { stroke: var(--d-navy) !important; }
+body.tr-check .booking .booking-submit { background: var(--d-gold) !important; color: var(--d-navy) !important; }
+body.tr-check .booking .booking-meta a { color: var(--d-gold) !important; }
+body.tr-check .booking .form-success .success-icon { background: var(--d-gold) !important; }
+@media (max-width: 767px) {
+  body.tr-check .booking { padding: 32px 20px !important; border-radius: var(--d-r) !important; }
+}
