@@ -1236,3 +1236,21 @@ body.tr-check .post-score-cta .btn-primary {
 @media (max-width: 767px) {
   body.tr-check .post-score-cta .btn-primary { width: 100% !important; }
 }
+
+/* Terminkalender im Abschlussbereich der Startseite */
+body.tr-home .termin-box {
+  margin: 28px auto 0; max-width: 56rem; background: var(--d-card);
+  border: 1px solid var(--d-frame); border-radius: var(--d-r); box-shadow: var(--d-shadow);
+  padding: 26px 18px 10px; text-align: center; overflow: hidden;
+}
+body.tr-home .termin-h { font-size: 22px !important; font-weight: 400 !important; color: var(--d-ink) !important; line-height: 1.25; }
+body.tr-home .termin-p { font-size: 15.5px !important; color: var(--d-grey) !important; margin: 8px auto 14px; max-width: 34rem; }
+body.tr-home .termin-p a { color: var(--d-brand); text-decoration: underline; }
+body.tr-home .calendly-inline-widget { width: 100%; }
+@media (min-width: 1100px) {
+  body.tr-home .termin-box { max-width: 62rem; padding: 36px 28px 16px; border-radius: 28px; }
+  body.tr-home .termin-h { font-size: 28px !important; }
+}
+@media (max-width: 420px) {
+  body.tr-home .termin-box { padding-left: 10px; padding-right: 10px; }
+}
