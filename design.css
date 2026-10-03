@@ -1254,3 +1254,5 @@ body.tr-home .calendly-inline-widget { width: 100%; }
 @media (max-width: 420px) {
   body.tr-home .termin-box { padding-left: 10px; padding-right: 10px; }
 }
+body.tr-home .termin-fallback { font-size: 14px !important; color: var(--d-grey) !important; margin: 10px 0 6px; }
+body.tr-home .termin-fallback a { color: var(--d-brand); text-decoration: underline; }
