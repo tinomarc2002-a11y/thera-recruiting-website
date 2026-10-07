@@ -494,7 +494,7 @@ function absenden(e){
   daten._subject = 'Kennenlern-Funnel: ' + name;
   FRAGEN.forEach(function(f){ daten[f.id] = antworten[f.id] || '–'; });
 
-  if (window.trZapier) trZapier(daten);
+  if (window.trZapier) trZapier(Object.assign({ formular: 'Kennenlern-Funnel' }, daten));
 
   fetch('https://formspree.io/f/mykvyrbb', {
     method:'POST',

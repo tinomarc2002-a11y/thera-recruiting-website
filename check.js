@@ -718,7 +718,15 @@ function submitBooking(e) {
 
   const built = buildLeadPayload(contact);
 
-  if (window.trZapier) trZapier(built.payload);
+  if (window.trZapier) {
+    // Zapier braucht dieselben Feldnamen wie beim Funnel, sonst greift die Zuordnung nicht
+    trZapier(Object.assign({}, built.payload, {
+      formular: 'Arbeitgebercheck',
+      name: contact.name,
+      email: contact.email,
+      telefon: contact.telefon
+    }));
+  }
 
   fetch(FORMSPREE_ENDPOINT, {
     method: 'POST',
