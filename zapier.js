@@ -17,7 +17,7 @@
    Störung bei Zapier den Besucher nie aufhält.
    ============================================================ */
 (function () {
-  var HOOK = '';
+  var HOOK = 'https://hooks.zapier.com/hooks/catch/27300422/4m73w90/';
 
   function flach(daten) {
     var felder = new URLSearchParams();
