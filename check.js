@@ -718,6 +718,8 @@ function submitBooking(e) {
 
   const built = buildLeadPayload(contact);
 
+  if (window.trZapier) trZapier(built.payload);
+
   fetch(FORMSPREE_ENDPOINT, {
     method: 'POST',
     headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
