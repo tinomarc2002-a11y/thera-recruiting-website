@@ -1,0 +1,135 @@
+/* ============================================================
+   ratgeber.css — Leseebene der Ratgeber-Beiträge
+   ------------------------------------------------------------
+   Liegt nach design.css und ergänzt sie nur. Vier Bausteine:
+   1. Kopfzeile mit Stand und Lesezeit
+   2. Sprungliste "Auf dieser Seite"
+   3. Zweispaltige Abschnitte: Punkte links, Zeichnung rechts
+   4. Tabellen, die auf dem Handy zu Karten werden
+   Mobil zuerst gebaut, der Desktop kommt per min-width dazu.
+   ============================================================ */
+
+body.tr-page {
+  --rg-linie: #dde3ec;
+  --rg-sand: #f6f1e7;
+  --rg-navy: #0d2b4e;
+  --rg-gold: #e8860f;
+  --rg-teal: #0f7bc8;
+}
+
+/* ---------- 1. Kopfzeile ---------- */
+.rg-meta {
+  display: flex; flex-wrap: wrap; gap: 6px 18px;
+  font-size: 13.5px; color: var(--d-grey);
+  margin: 14px 0 0;
+}
+.rg-meta span { display: inline-flex; align-items: center; gap: 6px; }
+.rg-meta svg { width: 14px; height: 14px; flex: none; stroke: currentColor; fill: none; stroke-width: 1.8; }
+
+/* ---------- 2. Sprungliste ---------- */
+.rg-toc {
+  margin: 26px 0 8px;
+  border-top: 1px solid var(--rg-linie);
+  border-bottom: 1px solid var(--rg-linie);
+  padding: 16px 0 14px;
+}
+.rg-toc-l {
+  display: block; font-size: 11.5px; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--d-grey); margin-bottom: 10px;
+}
+.rg-toc ol { list-style: none; counter-reset: rg; margin: 0; padding: 0; }
+.rg-toc li { counter-increment: rg; margin: 0; }
+.rg-toc a {
+  display: flex; gap: 12px; align-items: baseline;
+  padding: 7px 0; color: var(--d-text); text-decoration: none;
+  font-size: 15.5px; line-height: 1.45;
+}
+.rg-toc a::before {
+  content: counter(rg, decimal-leading-zero);
+  font-size: 12.5px; font-weight: 600; color: var(--rg-gold);
+  font-variant-numeric: tabular-nums; flex: none;
+}
+.rg-toc a:hover { color: var(--rg-teal); }
+
+/* ---------- 3. Abschnitt mit Zeichnung ---------- */
+.rg-zeile { margin: 0 0 6px; }
+.rg-punkte { margin: 18px 0 0; }
+.rg-punkt {
+  padding: 15px 0; border-top: 1px solid var(--rg-linie);
+  font-size: 16px; line-height: 1.68; color: var(--d-text);
+}
+.rg-punkt:last-child { border-bottom: 1px solid var(--rg-linie); }
+.rg-punkt b { display: block; font-weight: 600; color: var(--d-ink); margin-bottom: 2px; }
+
+.rg-illu { margin: 20px 0 6px; }
+.rg-illu svg { width: 100%; height: auto; display: block; overflow: visible; }
+.rg-illu figcaption {
+  font-size: 13px; line-height: 1.55; color: var(--d-grey); margin-top: 10px;
+}
+.rg-illu-rahmen {
+  background: var(--rg-sand); border-radius: 14px; padding: 18px 16px;
+}
+
+/* Beschriftungen in den Zeichnungen */
+.rg-t  { font: 600 13px/1.2 Inter, sans-serif; fill: var(--d-ink); }
+.rg-tk { font: 500 11.5px/1.2 Inter, sans-serif; fill: var(--d-grey); }
+.rg-tz { font: 700 20px/1 Inter, sans-serif; fill: var(--rg-navy); }
+.rg-tw { font: 700 12px/1 Inter, sans-serif; fill: #fff; }
+.rg-linie { stroke: var(--rg-navy); stroke-width: 1.6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.rg-linie-d { stroke: var(--d-grey); stroke-width: 1.2; fill: none; stroke-dasharray: 4 4; }
+
+/* ---------- 4. Tabelle wird auf dem Handy zur Karte ---------- */
+@media (max-width: 719px) {
+  body.tr-page .tw { overflow: visible; }
+  body.tr-page .tw table,
+  body.tr-page .tw tbody { display: block; min-width: 0; width: 100%; border: 0; background: none; box-shadow: none; }
+  body.tr-page .tw thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  body.tr-page .tw tr {
+    display: block; background: var(--d-card); border: 1px solid var(--d-frame);
+    border-radius: 12px; padding: 4px 14px 10px; margin-bottom: 10px;
+  }
+  body.tr-page .tw td {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 14px;
+    border: 0; border-bottom: 1px solid var(--rg-linie); padding: 9px 0;
+    font-size: 15px; text-align: right;
+  }
+  body.tr-page .tw tr td:last-child { border-bottom: 0; }
+  body.tr-page .tw td::before {
+    content: attr(data-kopf); text-align: left; flex: none;
+    font-size: 12.5px; font-weight: 600; letter-spacing: .02em;
+    color: var(--d-grey); padding-top: 2px;
+  }
+  body.tr-page .tw td:first-child {
+    display: block; text-align: left; font-weight: 600; font-size: 16.5px;
+    color: var(--d-ink); padding: 12px 0 10px;
+  }
+  body.tr-page .tw td:first-child::before { content: none; }
+}
+
+/* ---------- 5. Quellen ---------- */
+.rg-fn { font-size: 11px; font-weight: 700; vertical-align: super; line-height: 0; }
+.rg-fn a { color: var(--rg-teal); text-decoration: none; padding: 0 1px; }
+.rg-quellen { margin: 34px 0 0; padding-top: 18px; border-top: 1px solid var(--rg-linie); }
+.rg-quellen h2 { font-size: 17px !important; margin-bottom: 10px !important; }
+.rg-quellen ol { margin: 0; padding-left: 18px; }
+.rg-quellen li { font-size: 13.5px; line-height: 1.6; color: var(--d-grey); margin-bottom: 7px; }
+.rg-quellen a { color: var(--rg-teal); }
+
+/* ---------- 6. Zitat aus der Praxis ---------- */
+.rg-stimme {
+  margin: 24px 0; padding: 0 0 0 16px; border-left: 3px solid var(--rg-gold);
+}
+.rg-stimme p { font-size: 17.5px; line-height: 1.6; color: var(--d-ink); font-weight: 400; margin: 0 0 8px; }
+.rg-stimme cite { font-style: normal; font-size: 13.5px; color: var(--d-grey); }
+
+/* ---------- Desktop ---------- */
+@media (min-width: 900px) {
+  .rg-zeile {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
+    column-gap: 46px; align-items: start; margin-bottom: 10px;
+  }
+  .rg-zeile > .rg-kopf { grid-column: 1 / -1; }
+  .rg-illu { grid-column: 2; grid-row: 2; position: sticky; top: 92px; margin-top: 24px; }
+  .rg-punkte { grid-column: 1; grid-row: 2; }
+  .rg-toc ol { columns: 2; column-gap: 34px; }
+}
