@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<!-- Motive der Ratgeber. Strichzeichnung in Navy mit einem goldenen Akzent.
+     Eingebunden per <use href="/cover.svg#name"/>. -->
+<defs>
+  <style>
+    .k  { fill: none; stroke: #0d2b4e; stroke-width: 3.4; stroke-linecap: round; stroke-linejoin: round; }
+    .kd { fill: none; stroke: #0d2b4e; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+    .g  { fill: #e8860f; }
+    .gk { fill: none; stroke: #e8860f; stroke-width: 3.4; stroke-linecap: round; stroke-linejoin: round; }
+    .f  { fill: #0d2b4e; }
+    .s  { fill: #f6f1e7; }
+  </style>
+</defs>
+
+<!-- Wegweiser mit sechs Armen: Mitarbeiter finden -->
+<symbol id="wege" viewBox="0 0 120 120">
+  <path class="k" d="M60 104V34"/>
+  <path class="k" d="M60 40h34l8 9-8 9H60"/>
+  <path class="gk" d="M60 62H26l-8 9 8 9h34"/>
+  <path class="k" d="M60 84h26l7 8-7 8H60"/>
+  <circle class="g" cx="60" cy="24" r="8"/>
+  <path class="kd" d="M44 108h32"/>
+</symbol>
+
+<!-- Preisschild mit Euro: Recruiting-Kosten -->
+<symbol id="kosten" viewBox="0 0 120 120">
+  <path class="k" d="M62 18H30a8 8 0 0 0-8 8v32a8 8 0 0 0 2.3 5.6l34 34a8 8 0 0 0 11.3 0l26.4-26.4a8 8 0 0 0 0-11.3l-34-34A8 8 0 0 0 62 18z"/>
+  <circle class="g" cx="40" cy="36" r="6"/>
+  <path class="gk" d="M72 58a10 10 0 1 0 0 14"/>
+  <path class="gk" d="M62 62h14M62 68h12"/>
+</symbol>
+
+<!-- Gehaltszettel mit Lupe: Physiotherapeuten finden -->
+<symbol id="gehalt" viewBox="0 0 120 120">
+  <rect class="k" x="22" y="16" width="58" height="76" rx="6"/>
+  <path class="kd" d="M34 36h34M34 48h34M34 60h20"/>
+  <circle class="gk" cx="78" cy="76" r="18"/>
+  <path class="gk" d="M91 89l11 11"/>
+</symbol>
+
+<!-- Vertrag mit Haken: Physiotherapeut einstellen -->
+<symbol id="vertrag" viewBox="0 0 120 120">
+  <path class="k" d="M30 14h40l20 20v72H30z"/>
+  <path class="kd" d="M70 14v20h20"/>
+  <path class="kd" d="M42 56h36M42 68h36"/>
+  <circle class="g" cx="60" cy="86" r="13"/>
+  <path d="M54 86l5 5 9-10" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+
+<!-- Magnet: attraktiver Arbeitgeber -->
+<symbol id="magnet" viewBox="0 0 120 120">
+  <path class="k" d="M34 92V58a26 26 0 0 1 52 0v34"/>
+  <path class="k" d="M34 92h18V58a8 8 0 0 1 16 0v34h18"/>
+  <path class="gk" d="M34 92h18M68 92h18"/>
+  <circle class="g" cx="60" cy="24" r="7"/>
+  <path class="kd" d="M46 30l-6-8M74 30l6-8"/>
+</symbol>
+
+<!-- Dienstrad: Benefits -->
+<symbol id="benefits" viewBox="0 0 120 120">
+  <circle class="k" cx="30" cy="80" r="20"/>
+  <circle class="k" cx="90" cy="80" r="20"/>
+  <path class="k" d="M30 80l18-34h22l12 34"/>
+  <path class="kd" d="M48 46h26"/>
+  <circle class="g" cx="60" cy="34" r="8"/>
+</symbol>
+
+<!-- Bild und Abspielzeichen: Bilder oder Videos -->
+<symbol id="medien" viewBox="0 0 120 120">
+  <rect class="k" x="16" y="24" width="60" height="50" rx="6"/>
+  <path class="kd" d="M16 62l16-14 12 11 10-9 12 12"/>
+  <circle class="g" cx="34" cy="40" r="5"/>
+  <rect class="k" x="48" y="54" width="56" height="44" rx="8"/>
+  <path class="gk" d="M68 68l18 10-18 10z"/>
+</symbol>
+
+<!-- Puzzleteil mit Hand: Ergotherapeuten -->
+<symbol id="ergo" viewBox="0 0 120 120">
+  <path class="k" d="M24 30h26a8 8 0 1 1 16 0h26v26a8 8 0 1 0 0 16v26H66a8 8 0 1 0-16 0H24V72a8 8 0 1 1 0-16z"/>
+  <circle class="g" cx="60" cy="60" r="10"/>
+</symbol>
+
+<!-- Sprechblase mit Schallwellen: Logopaeden -->
+<symbol id="logo" viewBox="0 0 120 120">
+  <path class="k" d="M22 34a10 10 0 0 1 10-10h36a10 10 0 0 1 10 10v26a10 10 0 0 1-10 10H46L30 86V70h-8z"/>
+  <circle class="g" cx="40" cy="47" r="4.5"/>
+  <circle class="g" cx="54" cy="47" r="4.5"/>
+  <path class="gk" d="M92 36a24 24 0 0 1 0 34"/>
+  <path class="kd" d="M100 26a38 38 0 0 1 0 54"/>
+</symbol>
+
+<!-- Sachsen als Punktkarte: Regionalbeitrag -->
+<symbol id="sachsen" viewBox="0 0 120 120">
+  <path class="k" d="M16 54l14-18 20 4 16-12 22 8 16 20-10 24-18 18-26-6-20-14z"/>
+  <circle class="g" cx="44" cy="52" r="5"/>
+  <circle class="g" cx="70" cy="44" r="5"/>
+  <circle class="g" cx="58" cy="74" r="5"/>
+  <circle class="f" cx="88" cy="62" r="4"/>
+  <circle class="f" cx="34" cy="70" r="4"/>
+  <circle class="f" cx="76" cy="88" r="4"/>
+</symbol>
+</svg>

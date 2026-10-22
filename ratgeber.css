@@ -133,3 +133,25 @@ body.tr-page {
   .rg-punkte { grid-column: 1; grid-row: 2; }
   .rg-toc ol { columns: 2; column-gap: 34px; }
 }
+
+/* ---------- 7. Cover der Beitraege ---------- */
+.rg-cover {
+  background: var(--rg-sand); border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  height: 132px; margin: 0 0 26px;
+}
+.rg-cover svg { width: 104px; height: 104px; display: block; }
+
+/* Motiv in den Karten der Uebersicht */
+body.tr-page .gcard a { display: grid; grid-template-columns: auto 1fr; column-gap: 16px; }
+.gcard-illu { grid-column: 1; grid-row: 1 / span 4; width: 52px; height: 52px; display: block; }
+body.tr-page .gcard-tag,
+body.tr-page .gcard h2,
+body.tr-page .gcard p,
+body.tr-page .gcard-more { grid-column: 2; }
+
+@media (min-width: 620px) {
+  .rg-cover { height: 164px; }
+  .rg-cover svg { width: 128px; height: 128px; }
+  .gcard-illu { width: 64px; height: 64px; }
+}
