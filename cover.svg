@@ -1,102 +1,139 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-<!-- Motive der Ratgeber. Strichzeichnung in Navy mit einem goldenen Akzent.
-     Eingebunden per <use href="/cover.svg#name"/>. -->
-<defs>
-  <style>
-    .k  { fill: none; stroke: #0d2b4e; stroke-width: 3.4; stroke-linecap: round; stroke-linejoin: round; }
-    .kd { fill: none; stroke: #0d2b4e; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
-    .g  { fill: #e8860f; }
-    .gk { fill: none; stroke: #e8860f; stroke-width: 3.4; stroke-linecap: round; stroke-linejoin: round; }
-    .f  { fill: #0d2b4e; }
-    .s  { fill: #f6f1e7; }
-  </style>
-</defs>
+<!-- Hintergrundmuster der Ratgeber-Titelbilder.
+     Nur Flaeche und Geometrie, die Zahl steht als Text darueber im HTML.
+     Eingebunden per <use href="/cover.svg#m-name"/> in ein SVG mit
+     preserveAspectRatio="xMidYMid slice". Zeichenraum immer 320 x 180. -->
 
-<!-- Wegweiser mit sechs Armen: Mitarbeiter finden -->
-<symbol id="wege" viewBox="0 0 120 120">
-  <path class="k" d="M60 104V34"/>
-  <path class="k" d="M60 40h34l8 9-8 9H60"/>
-  <path class="gk" d="M60 62H26l-8 9 8 9h34"/>
-  <path class="k" d="M60 84h26l7 8-7 8H60"/>
-  <circle class="g" cx="60" cy="24" r="8"/>
-  <path class="kd" d="M44 108h32"/>
+<!-- Sechs Wege, die auseinanderlaufen -->
+<symbol id="m-wege" viewBox="0 0 320 180">
+  <g fill="none" stroke-linecap="round">
+    <g stroke="#0f7bc8" stroke-opacity=".22" stroke-width="2.5">
+      <path d="M-10 170 C 90 170, 150 140, 330 28"/>
+      <path d="M-10 170 C 90 170, 160 150, 330 62"/>
+      <path d="M-10 170 C 90 172, 170 158, 330 96"/>
+      <path d="M-10 170 C 90 174, 180 166, 330 130"/>
+      <path d="M-10 170 C 90 176, 190 172, 330 164"/>
+    </g>
+    <path d="M-10 170 C 90 170, 150 140, 330 28" stroke="#e8860f" stroke-width="3.4"/>
+  </g>
+  <circle cx="252" cy="58" r="7" fill="#e8860f"/>
+  <circle cx="252" cy="58" r="15" fill="none" stroke="#e8860f" stroke-opacity=".35" stroke-width="2"/>
 </symbol>
 
-<!-- Preisschild mit Euro: Recruiting-Kosten -->
-<symbol id="kosten" viewBox="0 0 120 120">
-  <path class="k" d="M62 18H30a8 8 0 0 0-8 8v32a8 8 0 0 0 2.3 5.6l34 34a8 8 0 0 0 11.3 0l26.4-26.4a8 8 0 0 0 0-11.3l-34-34A8 8 0 0 0 62 18z"/>
-  <circle class="g" cx="40" cy="36" r="6"/>
-  <path class="gk" d="M72 58a10 10 0 1 0 0 14"/>
-  <path class="gk" d="M62 62h14M62 68h12"/>
+<!-- Aufsteigende Balken: Kosten -->
+<symbol id="m-balken" viewBox="0 0 320 180">
+  <g fill="#ffffff" fill-opacity=".10">
+    <rect x="186" y="118" width="18" height="52" rx="4"/>
+    <rect x="212" y="96" width="18" height="74" rx="4"/>
+    <rect x="238" y="66" width="18" height="104" rx="4"/>
+  </g>
+  <rect x="264" y="28" width="18" height="142" rx="4" fill="#e8860f"/>
+  <g stroke="#ffffff" stroke-opacity=".14" stroke-width="1.5">
+    <path d="M24 170h272M24 128h272M24 86h272M24 44h272"/>
+  </g>
 </symbol>
 
-<!-- Gehaltszettel mit Lupe: Physiotherapeuten finden -->
-<symbol id="gehalt" viewBox="0 0 120 120">
-  <rect class="k" x="22" y="16" width="58" height="76" rx="6"/>
-  <path class="kd" d="M34 36h34M34 48h34M34 60h20"/>
-  <circle class="gk" cx="78" cy="76" r="18"/>
-  <path class="gk" d="M91 89l11 11"/>
+<!-- Muenzstapel: Stundenlohn -->
+<symbol id="m-muenzen" viewBox="0 0 320 180">
+  <g fill="none" stroke="#0f7bc8" stroke-opacity=".20" stroke-width="2.4">
+    <ellipse cx="248" cy="148" rx="42" ry="13"/>
+    <ellipse cx="248" cy="128" rx="42" ry="13"/>
+    <ellipse cx="248" cy="108" rx="42" ry="13"/>
+  </g>
+  <ellipse cx="248" cy="88" rx="42" ry="13" fill="#e8860f" fill-opacity=".92"/>
+  <ellipse cx="248" cy="88" rx="26" ry="7" fill="#ffffff" fill-opacity=".35"/>
+  <g stroke="#0f7bc8" stroke-opacity=".14" stroke-width="2">
+    <path d="M206 88v60M290 88v60"/>
+  </g>
 </symbol>
 
-<!-- Vertrag mit Haken: Physiotherapeut einstellen -->
-<symbol id="vertrag" viewBox="0 0 120 120">
-  <path class="k" d="M30 14h40l20 20v72H30z"/>
-  <path class="kd" d="M70 14v20h20"/>
-  <path class="kd" d="M42 56h36M42 68h36"/>
-  <circle class="g" cx="60" cy="86" r="13"/>
-  <path d="M54 86l5 5 9-10" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- Gestapelte Blaetter: Vertrag und Formalitaeten -->
+<symbol id="m-blaetter" viewBox="0 0 320 180">
+  <g stroke="#0d2b4e" stroke-opacity=".12" fill="#ffffff" fill-opacity=".55" stroke-width="2">
+    <rect x="196" y="18" width="92" height="124" rx="8" transform="rotate(-8 242 80)"/>
+    <rect x="208" y="26" width="92" height="124" rx="8" transform="rotate(4 254 88)"/>
+  </g>
+  <rect x="202" y="34" width="92" height="124" rx="8" fill="#ffffff" stroke="#0d2b4e" stroke-opacity=".18" stroke-width="2"/>
+  <g stroke="#0d2b4e" stroke-opacity=".16" stroke-width="3" stroke-linecap="round">
+    <path d="M218 62h60M218 78h60M218 94h40"/>
+  </g>
+  <circle cx="248" cy="124" r="14" fill="#e8860f"/>
+  <path d="M242 124l4.5 4.5 8-9" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
 </symbol>
 
-<!-- Magnet: attraktiver Arbeitgeber -->
-<symbol id="magnet" viewBox="0 0 120 120">
-  <path class="k" d="M34 92V58a26 26 0 0 1 52 0v34"/>
-  <path class="k" d="M34 92h18V58a8 8 0 0 1 16 0v34h18"/>
-  <path class="gk" d="M34 92h18M68 92h18"/>
-  <circle class="g" cx="60" cy="24" r="7"/>
-  <path class="kd" d="M46 30l-6-8M74 30l6-8"/>
+<!-- Konzentrische Boegen: Anziehungskraft -->
+<symbol id="m-anziehung" viewBox="0 0 320 180">
+  <g fill="none" stroke="#e8860f" stroke-linecap="round">
+    <path d="M268 8a88 88 0 0 1 0 164" stroke-opacity=".18" stroke-width="3"/>
+    <path d="M268 34a62 62 0 0 1 0 112" stroke-opacity=".32" stroke-width="3"/>
+    <path d="M268 60a36 36 0 0 1 0 60" stroke-opacity=".55" stroke-width="3"/>
+  </g>
+  <circle cx="268" cy="90" r="12" fill="#e8860f"/>
+  <g fill="#0d2b4e" fill-opacity=".14">
+    <circle cx="196" cy="60" r="9"/>
+    <circle cx="170" cy="104" r="9"/>
+    <circle cx="214" cy="126" r="9"/>
+  </g>
 </symbol>
 
-<!-- Dienstrad: Benefits -->
-<symbol id="benefits" viewBox="0 0 120 120">
-  <circle class="k" cx="30" cy="80" r="20"/>
-  <circle class="k" cx="90" cy="80" r="20"/>
-  <path class="k" d="M30 80l18-34h22l12 34"/>
-  <path class="kd" d="M48 46h26"/>
-  <circle class="g" cx="60" cy="34" r="8"/>
+<!-- Punktraster mit einem goldenen Punkt: Benefits -->
+<symbol id="m-raster" viewBox="0 0 320 180">
+  <g fill="#0d2b4e" fill-opacity=".12">
+    <circle cx="176" cy="38" r="7"/><circle cx="212" cy="38" r="7"/><circle cx="248" cy="38" r="7"/><circle cx="284" cy="38" r="7"/>
+    <circle cx="176" cy="74" r="7"/><circle cx="212" cy="74" r="7"/><circle cx="284" cy="74" r="7"/>
+    <circle cx="176" cy="110" r="7"/><circle cx="212" cy="110" r="7"/><circle cx="248" cy="110" r="7"/><circle cx="284" cy="110" r="7"/>
+    <circle cx="176" cy="146" r="7"/><circle cx="212" cy="146" r="7"/><circle cx="248" cy="146" r="7"/><circle cx="284" cy="146" r="7"/>
+  </g>
+  <circle cx="248" cy="74" r="13" fill="#e8860f"/>
+  <circle cx="248" cy="74" r="23" fill="none" stroke="#e8860f" stroke-opacity=".30" stroke-width="2"/>
 </symbol>
 
-<!-- Bild und Abspielzeichen: Bilder oder Videos -->
-<symbol id="medien" viewBox="0 0 120 120">
-  <rect class="k" x="16" y="24" width="60" height="50" rx="6"/>
-  <path class="kd" d="M16 62l16-14 12 11 10-9 12 12"/>
-  <circle class="g" cx="34" cy="40" r="5"/>
-  <rect class="k" x="48" y="54" width="56" height="44" rx="8"/>
-  <path class="gk" d="M68 68l18 10-18 10z"/>
+<!-- Zwei Flaechen und ein Abspielzeichen: Bild oder Video -->
+<symbol id="m-medien" viewBox="0 0 320 180">
+  <rect x="166" y="26" width="104" height="76" rx="10" fill="#0f7bc8" fill-opacity=".14"/>
+  <path d="M176 94l24-22 16 14 14-12 20 20z" fill="#0f7bc8" fill-opacity=".30"/>
+  <circle cx="196" cy="50" r="8" fill="#e8860f" fill-opacity=".55"/>
+  <rect x="202" y="74" width="104" height="76" rx="10" fill="#ffffff" fill-opacity=".85" stroke="#0d2b4e" stroke-opacity=".12" stroke-width="2"/>
+  <path d="M244 96l26 16-26 16z" fill="#e8860f"/>
 </symbol>
 
-<!-- Puzzleteil mit Hand: Ergotherapeuten -->
-<symbol id="ergo" viewBox="0 0 120 120">
-  <path class="k" d="M24 30h26a8 8 0 1 1 16 0h26v26a8 8 0 1 0 0 16v26H66a8 8 0 1 0-16 0H24V72a8 8 0 1 1 0-16z"/>
-  <circle class="g" cx="60" cy="60" r="10"/>
+<!-- Zeitblock in einem Raster: Behandlungszeiten -->
+<symbol id="m-zeit" viewBox="0 0 320 180">
+  <g stroke="#0d2b4e" stroke-opacity=".10" stroke-width="2">
+    <path d="M168 20v140M204 20v140M240 20v140M276 20v140M312 20v140"/>
+    <path d="M160 38h160M160 74h160M160 110h160M160 146h160"/>
+  </g>
+  <rect x="204" y="38" width="36" height="72" rx="6" fill="#e8860f" fill-opacity=".9"/>
+  <rect x="240" y="38" width="36" height="36" rx="6" fill="#0f7bc8" fill-opacity=".22"/>
+  <rect x="168" y="74" width="36" height="36" rx="6" fill="#0f7bc8" fill-opacity=".22"/>
 </symbol>
 
-<!-- Sprechblase mit Schallwellen: Logopaeden -->
-<symbol id="logo" viewBox="0 0 120 120">
-  <path class="k" d="M22 34a10 10 0 0 1 10-10h36a10 10 0 0 1 10 10v26a10 10 0 0 1-10 10H46L30 86V70h-8z"/>
-  <circle class="g" cx="40" cy="47" r="4.5"/>
-  <circle class="g" cx="54" cy="47" r="4.5"/>
-  <path class="gk" d="M92 36a24 24 0 0 1 0 34"/>
-  <path class="kd" d="M100 26a38 38 0 0 1 0 54"/>
+<!-- Wellen von einem Punkt: Sprache -->
+<symbol id="m-wellen" viewBox="0 0 320 180">
+  <g fill="none" stroke="#0f7bc8" stroke-linecap="round">
+    <path d="M198 90a52 52 0 0 1 0-0.1" stroke-opacity="0"/>
+    <circle cx="198" cy="90" r="34" stroke-opacity=".16" stroke-width="2.6"/>
+    <circle cx="198" cy="90" r="58" stroke-opacity=".12" stroke-width="2.6"/>
+    <circle cx="198" cy="90" r="82" stroke-opacity=".08" stroke-width="2.6"/>
+  </g>
+  <circle cx="198" cy="90" r="14" fill="#e8860f"/>
+  <g fill="none" stroke="#e8860f" stroke-width="3" stroke-linecap="round" stroke-opacity=".75">
+    <path d="M250 66a34 34 0 0 1 0 48"/>
+    <path d="M272 50a58 58 0 0 1 0 80"/>
+  </g>
 </symbol>
 
-<!-- Sachsen als Punktkarte: Regionalbeitrag -->
-<symbol id="sachsen" viewBox="0 0 120 120">
-  <path class="k" d="M16 54l14-18 20 4 16-12 22 8 16 20-10 24-18 18-26-6-20-14z"/>
-  <circle class="g" cx="44" cy="52" r="5"/>
-  <circle class="g" cx="70" cy="44" r="5"/>
-  <circle class="g" cx="58" cy="74" r="5"/>
-  <circle class="f" cx="88" cy="62" r="4"/>
-  <circle class="f" cx="34" cy="70" r="4"/>
-  <circle class="f" cx="76" cy="88" r="4"/>
+<!-- Sechs verbundene Orte: Regionalvergleich -->
+<symbol id="m-orte" viewBox="0 0 320 180">
+  <g stroke="#0f7bc8" stroke-opacity=".22" stroke-width="2" fill="none">
+    <path d="M186 48L240 30L292 62L258 118L196 132L162 92Z"/>
+  </g>
+  <g fill="#0d2b4e" fill-opacity=".16">
+    <circle cx="240" cy="30" r="8"/><circle cx="292" cy="62" r="8"/>
+    <circle cx="258" cy="118" r="8"/><circle cx="196" cy="132" r="8"/>
+    <circle cx="162" cy="92" r="8"/>
+  </g>
+  <circle cx="186" cy="48" r="12" fill="#e8860f"/>
+  <circle cx="186" cy="48" r="22" fill="none" stroke="#e8860f" stroke-opacity=".3" stroke-width="2"/>
 </symbol>
 </svg>

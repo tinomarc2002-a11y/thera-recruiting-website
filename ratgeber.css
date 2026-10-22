@@ -134,24 +134,72 @@ body.tr-page {
   .rg-toc ol { columns: 2; column-gap: 34px; }
 }
 
-/* ---------- 7. Cover der Beitraege ---------- */
-.rg-cover {
-  background: var(--rg-sand); border-radius: 14px;
-  display: flex; align-items: center; justify-content: center;
-  height: 132px; margin: 0 0 26px;
+/* ---------- 7. Titelbilder ---------- */
+/* Flaeche, Geometrie und die Kernzahl des Beitrags. Die Zahl steht als
+   echter Text darueber, damit sie scharf bleibt und mitwaechst. */
+.rg-cover,
+.gcard-cover {
+  position: relative; overflow: hidden; border-radius: 14px;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  isolation: isolate;
 }
-.rg-cover svg { width: 104px; height: 104px; display: block; }
+.rg-cover { min-height: 168px; padding: 22px 20px; margin: 0 0 28px; }
+.gcard-cover { min-height: 124px; padding: 16px 20px; margin: 0 0 16px; border-radius: 13px 13px 0 0; }
 
-/* Motiv in den Karten der Uebersicht */
-body.tr-page .gcard a { display: grid; grid-template-columns: auto 1fr; column-gap: 16px; }
-.gcard-illu { grid-column: 1; grid-row: 1 / span 4; width: 52px; height: 52px; display: block; }
+.rg-cover-bg {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  z-index: -1; display: block;
+}
+.rg-cover-z, .gcard-cover-z {
+  position: relative; font-weight: 800; letter-spacing: -.035em; line-height: .95;
+  font-variant-numeric: tabular-nums; margin: 0;
+}
+.rg-cover-z { font-size: clamp(40px, 12vw, 58px); }
+.gcard-cover-z { font-size: 36px; }
+.rg-cover-l, .gcard-cover-l {
+  position: relative; display: block; margin-top: 8px;
+  font-size: 13.5px; font-weight: 500; line-height: 1.4; max-width: 15em;
+}
+.gcard-cover-l { font-size: 12.5px; margin-top: 6px; }
+
+/* Farbwelten, damit die Uebersicht Rhythmus bekommt */
+.t-navy { background: #0d2b4e; color: #fff; }
+.t-navy .rg-cover-l, .t-navy .gcard-cover-l { color: rgba(255,255,255,.72); }
+.t-sand { background: #f6f1e7; color: #0d2b4e; }
+.t-sand .rg-cover-l, .t-sand .gcard-cover-l { color: #6b6253; }
+.t-blau { background: #e7f0f8; color: #0d2b4e; }
+.t-blau .rg-cover-l, .t-blau .gcard-cover-l { color: #4e6378; }
+
+/* Karten der Uebersicht: Titelbild randlos oben, Text darunter */
+body.tr-page .gcard { overflow: hidden; }
+body.tr-page .gcard a { display: block; padding: 0 0 20px !important; }
 body.tr-page .gcard-tag,
 body.tr-page .gcard h2,
 body.tr-page .gcard p,
-body.tr-page .gcard-more { grid-column: 2; }
+body.tr-page .gcard-more { padding-left: 20px; padding-right: 20px; }
 
 @media (min-width: 620px) {
-  .rg-cover { height: 164px; }
-  .rg-cover svg { width: 128px; height: 128px; }
-  .gcard-illu { width: 64px; height: 64px; }
+  .rg-cover { min-height: 208px; padding: 28px 26px; }
+  .gcard-cover { min-height: 140px; }
+  .gcard-cover-z { font-size: 42px; }
+}
+
+/* Die Karten-Styles aus design.css duerfen die Zahl nicht kleinrechnen */
+body.tr-page .gcard .gcard-cover-z {
+  font-size: 38px !important; font-weight: 800 !important; color: inherit !important;
+  margin: 0 !important; padding: 0 !important; letter-spacing: -.035em !important; line-height: .95 !important;
+}
+body.tr-page .gcard .gcard-cover-l {
+  font-size: 12.5px !important; font-weight: 500 !important; line-height: 1.4;
+  max-width: min(17em, 60%); padding: 0 !important;
+}
+body.tr-page .rg-cover .rg-cover-z {
+  font-size: clamp(40px, 12vw, 60px) !important; font-weight: 800 !important;
+  color: inherit !important; margin: 0 !important; letter-spacing: -.035em !important; line-height: .95 !important;
+}
+body.tr-page .rg-cover .rg-cover-l {
+  font-size: 14px !important; font-weight: 500 !important; max-width: min(19em, 62%);
+}
+@media (min-width: 620px) {
+  body.tr-page .gcard .gcard-cover-z { font-size: 44px !important; }
 }
