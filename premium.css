@@ -139,3 +139,57 @@ body.tr-home .hero-hl .gt {
 @media (min-width: 1100px) {
   body.tr-home .hero { padding: 84px 0 56px !important; }
 }
+
+/* ---------- 9. Ueber uns: freistehendes Portrait ---------- */
+/* Das Bild ist freigestellt. Es braucht keinen Rahmen, sondern eine
+   Flaeche, auf der es steht. Die Flaeche endet unter den Fuessen, das
+   Bild ragt oben darueber hinaus. */
+body.tr-home .photo-wrap { position: relative; display: block; }
+body.tr-home .marc-steht {
+  position: relative;
+  max-width: 300px;
+  margin: 0 auto;
+  padding-top: 26px;
+}
+body.tr-home .marc-steht::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 108%;
+  height: 76%;
+  background: #f1ece2;
+  border-radius: 150px 150px 18px 18px;
+  z-index: 0;
+}
+body.tr-home .marc-steht picture,
+body.tr-home .marc-steht img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+/* Beschriftung: dunkle Schrift auf heller Flaeche, Kontrast geprueft */
+body.tr-home .photo-badge {
+  position: static !important;
+  display: inline-flex !important;
+  margin: 16px auto 0;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  animation: none !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: var(--d-ink) !important;
+  letter-spacing: .01em;
+  justify-content: center;
+  width: 100%;
+}
+body.tr-home .photo-badge::before { background: var(--d-gold) !important; animation: none !important; }
+
+@media (min-width: 900px) {
+  body.tr-home .marc-steht { max-width: 340px; padding-top: 34px; }
+  body.tr-home .photo-badge { justify-content: flex-start; width: auto; }
+}
