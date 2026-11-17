@@ -193,3 +193,36 @@ body.tr-home .photo-badge::before { background: var(--d-gold) !important; animat
   body.tr-home .marc-steht { max-width: 340px; padding-top: 34px; }
   body.tr-home .photo-badge { justify-content: flex-start; width: auto; }
 }
+
+/* ---------- 10. Platzhalter fuer den Terminkalender ---------- */
+/* Heller Grund, dunkle Schrift: Kontrast gemessen, nicht geschaetzt. */
+.kal-box { min-height: 220px; }
+.kal-ph {
+  background: #f1ece2;
+  border-radius: 16px;
+  padding: 30px 22px 26px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.kal-ph-i {
+  width: 34px; height: 34px; fill: none;
+  stroke: #0d2b4e; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round;
+}
+.kal-ph-t {
+  margin: 0; max-width: 34rem;
+  font-size: 15px; line-height: 1.6; color: #3c4453 !important;
+}
+.kal-ph-t a { color: #0b64a4 !important; text-decoration: underline; text-underline-offset: 2px; }
+.kal-ph-btn {
+  font: 600 16px/1 Inter, system-ui, sans-serif;
+  background: #0f7bc8; color: #fff !important;
+  border: 0; border-radius: 10px;
+  padding: 15px 30px; min-height: 48px; cursor: pointer;
+  transition: background .2s;
+}
+.kal-ph-btn:hover { background: #0b64a4; }
+.kal-ph-btn:focus-visible { outline: 2px solid #0d2b4e; outline-offset: 3px; }
+@media (min-width: 620px) { .kal-ph { padding: 38px 30px 34px; } }
