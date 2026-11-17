@@ -1,0 +1,141 @@
+/* ============================================================
+   premium.css — letzte Stilebene der Startseite
+   ------------------------------------------------------------
+   Nimmt Dekoration zurueck und gibt Typografie und Weissraum
+   mehr Gewicht. Laedt nach design.css, laesst sich durch
+   Entfernen der einen Zeile im HTML komplett zuruecknehmen.
+   ============================================================ */
+
+/* ---------- 1. Hero: groessere, ruhigere Typografie ---------- */
+body.tr-home .hero-hl {
+  font-size: clamp(32px, 8.4vw, 38px) !important;
+  font-weight: 800 !important;
+  letter-spacing: -.035em !important;
+  line-height: 1.06 !important;
+  text-wrap: balance;
+}
+body.tr-home .hero-sub {
+  font-size: 17.5px !important;
+  line-height: 1.6 !important;
+  color: var(--d-grey) !important;
+  max-width: 34rem;
+}
+body.tr-home .hero-sub strong { color: var(--d-ink) !important; font-weight: 600; }
+
+/* ---------- 2. Hero-Bild ohne Kasten und Goldversatz ---------- */
+body.tr-home .hero-visual-m {
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  position: relative;
+  transform: none !important;
+}
+body.tr-home .hero-visual-m::before {
+  content: '';
+  position: absolute;
+  inset: -4% -10% -8% -10%;
+  background: radial-gradient(58% 58% at 50% 46%, rgba(15, 123, 200, .13), rgba(15, 123, 200, 0) 72%);
+  z-index: 0;
+}
+body.tr-home .hero-visual-m img {
+  position: relative;
+  z-index: 1;
+  transform: none !important;
+}
+
+/* ---------- 3. Vertrauenszeile als eine Linie ---------- */
+body.tr-home .hero-trust {
+  gap: 0 !important;
+  align-items: center;
+  margin-top: 26px !important;
+}
+body.tr-home .hero-trust { gap: 8px 22px !important; flex-wrap: wrap; }
+body.tr-home .ht-chip { font-size: 14.5px !important; padding: 0; border: 0; white-space: nowrap; }
+
+/* ---------- 4. Knoepfe: flach statt glaenzend ---------- */
+body.tr-home .btn,
+body.tr-home .btn-p,
+body.tr-home .nav-cta,
+body.tr-home .nav-cta-d {
+  box-shadow: none !important;
+  animation: none !important;
+  border-radius: 10px !important;
+  background-image: none !important;
+}
+body.tr-home .btn-p:hover,
+body.tr-home .btn:hover { transform: none !important; }
+body.tr-home .btn-zwei { line-height: 1.3; padding-top: 13px !important; padding-bottom: 13px !important; }
+body.tr-home .btn-frage { font-size: 12.5px !important; opacity: .72; font-weight: 500 !important; letter-spacing: .01em; }
+body.tr-home .btn-tun { font-size: 16px !important; font-weight: 600 !important; }
+
+/* ---------- 5. Abschnittsrhythmus ---------- */
+body.tr-home .tag {
+  font-size: 11.5px !important;
+  letter-spacing: .17em !important;
+  font-weight: 700 !important;
+  color: var(--d-grey) !important;
+}
+body.tr-home .tag::before {
+  content: '';
+  width: 18px; height: 1px; background: var(--d-gold);
+  display: inline-block; vertical-align: middle;
+}
+body.tr-home .sh .title {
+  font-weight: 800 !important;
+  letter-spacing: -.032em !important;
+  line-height: 1.1 !important;
+}
+body.tr-home .sh .sub { font-size: 16.5px !important; color: var(--d-grey) !important; }
+
+/* ---------- 6. Flaechen beruhigen ---------- */
+body.tr-home .prob-item,
+body.tr-home .saeul-card,
+body.tr-home .wie-schritt,
+body.tr-home .usp-card,
+body.tr-home .proc-step,
+body.tr-home .gcard {
+  box-shadow: none !important;
+  border: 1px solid var(--d-frame) !important;
+  border-radius: 14px !important;
+  background: var(--d-card) !important;
+}
+body.tr-home .prob-item:hover,
+body.tr-home .saeul-card:hover,
+body.tr-home .wie-schritt:hover { border-color: #c8d3e0 !important; transform: none !important; }
+
+/* Die Umsatzrechnung steht als Aussage, nicht als Kasten */
+body.tr-home .preis-hinweis {
+  background: none !important;
+  border: 0 !important;
+  border-top: 1px solid var(--d-frame) !important;
+  border-bottom: 1px solid var(--d-frame) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 30px 0 !important;
+}
+body.tr-home .preis-zahl { letter-spacing: -.03em !important; }
+
+/* ---------- 7. Breiter Desktop ---------- */
+@media (min-width: 900px) {
+  body.tr-home .hero-hl { font-size: 46px !important; }
+  body.tr-home .sec { padding: 88px 0 !important; }
+  body.tr-home .sh { margin-bottom: 48px !important; }
+}
+@media (min-width: 1100px) {
+  body.tr-home .hero { padding: 84px 0 72px !important; }
+  body.tr-home .hero-hl { font-size: 60px !important; }
+  body.tr-home .hero-sub { font-size: 19px !important; margin-bottom: 34px !important; }
+  body.tr-home .sh .title { font-size: 44px !important; }
+  body.tr-home .sec { padding: 104px 0 !important; }
+}
+
+/* ---------- 8. Textmarker feiner, Hero kompakter ---------- */
+body.tr-home .hero-hl .gt {
+  background: linear-gradient(transparent 76%, rgba(245, 170, 28, .34) 76%, rgba(245, 170, 28, .34) 94%, transparent 94%) !important;
+  padding: 0 .04em;
+}
+@media (min-width: 1100px) {
+  body.tr-home .hero { padding: 84px 0 56px !important; }
+}
