@@ -195,33 +195,40 @@
       'padding:14px;pointer-events:none;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}',
       '.tr-cc-box{pointer-events:auto;max-width:560px;width:100%;background:#0d2b4e;color:#fff;',
       'border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:22px 22px 18px;',
-      'box-shadow:0 22px 60px rgba(0,0,0,.38);transform:translateY(16px);opacity:0;',
+      'box-shadow:0 22px 60px rgba(0,0,0,.38);transform:translateY(16px);opacity:1;',
       'max-height:calc(100vh - 28px);overflow-y:auto;',
       'transition:transform .38s cubic-bezier(.34,1.4,.64,1),opacity .32s ease}',
       '.tr-cc.show .tr-cc-box{transform:none;opacity:1}',
-      '.tr-cc h2{font-size:16px;font-weight:800;letter-spacing:-.02em;margin:0 0 8px;color:#fff}',
-      '.tr-cc p{font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.76);margin:0 0 16px}',
-      '.tr-cc a{color:#5fcde3;text-decoration:underline;text-underline-offset:2px}',
+      '.tr-cc .tr-cc-box h2{font-size:18px!important;font-weight:700!important;letter-spacing:-.02em;',
+      'margin:0 0 10px!important;color:#fff!important;line-height:1.3}',
+      '.tr-cc .tr-cc-box p{font-size:14.5px!important;line-height:1.6!important;',
+      'color:rgba(255,255,255,.88)!important;margin:0 0 18px!important;font-weight:400!important}',
+      '.tr-cc .tr-cc-box strong{color:#fff!important;font-weight:600!important}',
+      '.tr-cc .tr-cc-box a{color:#7fd4ea!important;text-decoration:underline;text-underline-offset:2px}',
       '.tr-cc-btns{display:flex;flex-direction:row-reverse;gap:9px;flex-wrap:wrap}',
       '.tr-cc button{font-family:inherit;font-size:14.5px;font-weight:700;border-radius:99px;',
       'min-height:48px;padding:13px 18px;cursor:pointer;border:1.5px solid transparent;',
       'transition:background .2s,border-color .2s,transform .2s,filter .2s;flex:1 1 0;min-width:0}',
       '.tr-cc button:active{transform:scale(.98)}',
-      '.tr-cc .ja{background:linear-gradient(135deg,#38bdf8,#0f7bc8);color:#fff;box-shadow:0 5px 18px rgba(14,165,233,.34)}',
-      '.tr-cc .ja:hover{filter:brightness(1.07)}',
-      '.tr-cc .nein{background:rgba(255,255,255,.09);color:#fff;border-color:rgba(255,255,255,.26)}',
-      '.tr-cc .nein:hover{background:rgba(255,255,255,.16)}',
-      '.tr-cc .mehr{background:none;color:rgba(255,255,255,.72);border-color:transparent;',
-      'text-decoration:underline;text-underline-offset:3px;flex:0 0 100%;min-height:40px;font-weight:600;font-size:13px}',
-      '.tr-cc .mehr:hover{color:#fff}',
-      '.tr-cc-note{font-size:11.5px;color:rgba(255,255,255,.45);margin:12px 0 0;text-align:center}',
+      '.tr-cc .tr-cc-box button{color:#fff!important;font-size:15px!important;font-weight:600!important}',
+      '.tr-cc .ja{background:#0f7bc8;border-color:#0f7bc8}',
+      '.tr-cc .ja:hover{background:#1689d8;border-color:#1689d8}',
+      '.tr-cc .nein{background:transparent;border-color:rgba(255,255,255,.5)}',
+      '.tr-cc .nein:hover{background:rgba(255,255,255,.12)}',
+      '.tr-cc .tr-cc-box .mehr{background:none;border-color:transparent;',
+      'color:rgba(255,255,255,.8)!important;text-decoration:underline;text-underline-offset:3px;',
+      'flex:0 0 100%;min-height:40px;font-weight:500!important;font-size:13.5px!important}',
+      '.tr-cc .tr-cc-box .mehr:hover{color:#fff!important}',
+      '.tr-cc .tr-cc-box .tr-cc-note{font-size:12px!important;color:rgba(255,255,255,.62)!important;',
+      'margin:14px 0 0!important;text-align:center}',
       // Kategorieliste
       '.tr-cc-cats{margin:0 0 16px;display:flex;flex-direction:column;gap:10px}',
       '.tr-cc-cat{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12);',
       'border-radius:12px;padding:13px 14px}',
       '.tr-cc-cat-top{display:flex;align-items:center;justify-content:space-between;gap:12px}',
-      '.tr-cc-cat-name{font-size:14px;font-weight:750;color:#fff}',
-      '.tr-cc-cat p{font-size:12.5px;line-height:1.5;margin:7px 0 0;color:rgba(255,255,255,.66)}',
+      '.tr-cc .tr-cc-cat-name{font-size:14.5px!important;font-weight:600!important;color:#fff!important}',
+      '.tr-cc .tr-cc-cat p{font-size:13px!important;line-height:1.55!important;margin:7px 0 0!important;',
+      'color:rgba(255,255,255,.82)!important}',
       // Schalter
       '.tr-sw{position:relative;flex:none;width:46px;height:26px}',
       '.tr-sw input{position:absolute;inset:0;opacity:0;margin:0;width:100%;height:100%;cursor:pointer}',
@@ -244,9 +251,9 @@
       '.tr-cc-fab:focus-visible{outline:2px solid #0f7bc8;outline-offset:3px}',
       '@media(max-width:519px){.tr-cc{padding:9px}',
       '.tr-cc-box{padding:15px 15px 13px;border-radius:14px;max-height:calc(100vh - 18px)}',
-      '.tr-cc h2{font-size:14.5px;margin-bottom:6px}',
-      '.tr-cc p{font-size:12.5px;line-height:1.5;margin-bottom:11px}',
-      '.tr-cc button{font-size:13px;padding:11px 8px}',
+      '.tr-cc .tr-cc-box h2{font-size:16.5px!important;margin-bottom:8px!important}',
+      '.tr-cc .tr-cc-box p{font-size:14px!important;line-height:1.55!important;margin-bottom:14px!important}',
+      '.tr-cc .tr-cc-box button{font-size:14.5px!important;padding:12px 10px}',
       '.tr-cc-note{font-size:10.5px;margin-top:9px}',
       '.tr-cc-fab{left:12px;bottom:12px;width:42px;height:42px}}',
       '@media(prefers-reduced-motion:reduce){.tr-cc-box{transition:none;transform:none;opacity:1}',
@@ -292,11 +299,11 @@
     function uebersicht() {
       wrap.innerHTML =
         '<div class="tr-cc-box">' +
-          '<h2>Dürfen wir verstehen, wie Sie unsere Seite nutzen?</h2>' +
-          '<p>Notwendige Speicherung brauchen wir, damit wir Sie nicht bei jedem Besuch ' +
-          'erneut fragen. Für die Statistik würden wir <strong>Microsoft Clarity</strong> ' +
-          'einsetzen. <strong>Ohne Ihre Zustimmung passiert das nicht.</strong> ' +
-          '<a href="/datenschutz">Datenschutzerklärung</a></p>' +
+          '<h2>Wir verwenden Cookies</h2>' +
+          '<p>Um Ihr Erlebnis auf dieser Seite zu verbessern, messen wir mit ' +
+          '<strong>Microsoft Clarity</strong>, welche Inhalte gelesen werden. Das passiert ' +
+          'nur mit Ihrer Zustimmung. Notwendig ist allein die Speicherung Ihrer Entscheidung. ' +
+          '<a href="/datenschutz">Mehr in der Datenschutzerklärung</a></p>' +
           '<div class="tr-cc-btns">' +
             '<button type="button" class="ja">Alle akzeptieren</button>' +
             '<button type="button" class="nein">Nur notwendige</button>' +
